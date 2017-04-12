@@ -87,17 +87,20 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="MVC架构：MVC就是Model-View-Controller，它们的作用是：(数据模型)Model：数据的封装和保存，业务逻辑和实体模型 (视图)View：视图界面，对应于布局文件 (控制器)Controller：业务逻辑，对应于Activity、Fragment等 它们之间的关系如下图所示：View传送指令到Controller,Controller完成业务逻辑后，改变Model的状态，Mo">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/04/09/hello-world/index.html">
+<meta property="og:title" content="Android MVC和MVP的区别和理解">
+<meta property="og:url" content="http://yoursite.com/2017/04/11/Android MVC与MVP的区别和理解/index.html">
 <meta property="og:site_name" content="ibinbin">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2017-04-09T13:09:31.000Z">
+<meta property="og:description" content="MVC架构：MVC就是Model-View-Controller，它们的作用是：(数据模型)Model：数据的封装和保存，业务逻辑和实体模型 (视图)View：视图界面，对应于布局文件 (控制器)Controller：业务逻辑，对应于Activity、Fragment等 它们之间的关系如下图所示：View传送指令到Controller,Controller完成业务逻辑后，改变Model的状态，Mo">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1534031-9ae5ba8a11651f08.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1534031-8f4b6c89c33a6002.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-04-11T14:28:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Android MVC和MVP的区别和理解">
+<meta name="twitter:description" content="MVC架构：MVC就是Model-View-Controller，它们的作用是：(数据模型)Model：数据的封装和保存，业务逻辑和实体模型 (视图)View：视图界面，对应于布局文件 (控制器)Controller：业务逻辑，对应于Activity、Fragment等 它们之间的关系如下图所示：View传送指令到Controller,Controller完成业务逻辑后，改变Model的状态，Mo">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1534031-9ae5ba8a11651f08.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -125,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/09/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/11/Android MVC与MVP的区别和理解/"/>
 
 
 
 
 
-  <title> Hello World | ibinbin </title>
+  <title> Android MVC和MVP的区别和理解 | ibinbin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -304,7 +307,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/09/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/11/Android MVC与MVP的区别和理解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -325,7 +328,7 @@
             
             
               
-                Hello World
+                Android MVC和MVP的区别和理解
               
             
           </h1>
@@ -340,8 +343,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-09T21:09:31+08:00">
-                2017-04-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-11T22:17:00+08:00">
+                2017-04-11
               </time>
             
 
@@ -350,6 +353,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android技术分享/" itemprop="url" rel="index">
+                    <span itemprop="name">Android技术分享</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -376,15 +401,158 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h3 id="MVC架构："><a href="#MVC架构：" class="headerlink" title="MVC架构："></a>MVC架构：</h3><h4 id="MVC就是Model-View-Controller，它们的作用是："><a href="#MVC就是Model-View-Controller，它们的作用是：" class="headerlink" title="MVC就是Model-View-Controller，它们的作用是："></a>MVC就是Model-View-Controller，它们的作用是：</h4><pre><code>(数据模型)Model：数据的封装和保存，业务逻辑和实体模型
+(视图)View：视图界面，对应于布局文件
+(控制器)Controller：业务逻辑，对应于Activity、Fragment等
+</code></pre><h4 id="它们之间的关系如下图所示："><a href="#它们之间的关系如下图所示：" class="headerlink" title="它们之间的关系如下图所示："></a>它们之间的关系如下图所示：</h4><h6 id="View传送指令到Controller-Controller完成业务逻辑后，改变Model的状态，Model将新的数据发送到View，这就是MVC模式的处理逻辑。"><a href="#View传送指令到Controller-Controller完成业务逻辑后，改变Model的状态，Model将新的数据发送到View，这就是MVC模式的处理逻辑。" class="headerlink" title="View传送指令到Controller,Controller完成业务逻辑后，改变Model的状态，Model将新的数据发送到View，这就是MVC模式的处理逻辑。"></a>View传送指令到Controller,Controller完成业务逻辑后，改变Model的状态，Model将新的数据发送到View，这就是MVC模式的处理逻辑。</h6><p><img src="http://upload-images.jianshu.io/upload_images/1534031-9ae5ba8a11651f08.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="MVP架构："><a href="#MVP架构：" class="headerlink" title="MVP架构："></a>MVP架构：</h3><h4 id="MVP是Model-View-Presenter，它们的作用如下："><a href="#MVP是Model-View-Presenter，它们的作用如下：" class="headerlink" title="MVP是Model-View-Presenter，它们的作用如下："></a>MVP是Model-View-Presenter，它们的作用如下：</h4><p><img src="http://upload-images.jianshu.io/upload_images/1534031-8f4b6c89c33a6002.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<pre><code>Model：业务逻辑和实体模型，用来操作实际的数据，包含Bean和Model的抽象接口来降低耦合。
+View：就是Android中的视图，需要建立一个View的抽象接口View Interface。通过实现View的接口来实现View与Presenter的交互，从而降低耦合。对应于Activity，负责View的绘制与用户交互；
+Presenter：View和Model的中间枢纽，处理和用户交互的逻辑。
+</code></pre><h4 id="MVP和MVC的对比："><a href="#MVP和MVC的对比：" class="headerlink" title="MVP和MVC的对比："></a>MVP和MVC的对比：</h4><h5 id="MVP架构：-1"><a href="#MVP架构：-1" class="headerlink" title="MVP架构："></a>MVP架构：</h5><pre><code>View不直接与Model交互，而是通过与Presenter交互来与Model间接交互。
+Presenter与View的交互是通过接口来进行的。
+通常View与Presenter是一对一的，但复杂的View可能绑定多个Presenter来处理逻辑。
+</code></pre><h5 id="MVC架构：-1"><a href="#MVC架构：-1" class="headerlink" title="MVC架构："></a>MVC架构：</h5><pre><code>View可以与Model直接交互。
+Controller是基于行为的，并且可以被多个View共享。
+可以负责决定显示哪个View。
+</code></pre><h5 id="通过一个简单的例子来理解MVP模式："><a href="#通过一个简单的例子来理解MVP模式：" class="headerlink" title="通过一个简单的例子来理解MVP模式："></a>通过一个简单的例子来理解MVP模式：</h5><p>View层：</p>
+<pre><code>/**
+  * ViewInterface
+  * 定义一些通用的view接口
+ */
+public interface LoadDataView {
+    /***
+     * 耗时操作，加载数据，显示Progress
+     */
+    void showLoading();
+    /***
+     * 隐藏Progress
+     */
+    void hideLoading();
+}
+
+/**
+ * 更细小的，用来显示图书细节的View接口
+  */
+public interface LoadBookView extends LoadDataView {
+        void showDetailsView(BookEntity entity);
+}
+
+/***
+ * Fragment,属于View层，实现了ViewInterface（LoadBookView）
+ */
+public class BookDetailFragment extends Fragment implements LoadBookView{
+    /**图书条形码ISBN号*/
+    public static final String ISBN = &quot;9787121060748&quot;;
+    /**持Presenter对象*/
+    private BookDetailsPresenter presenter;
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        initWidget();
+        presenter = new BookDetailsPresenter(getActivity(), ISBN); // 实例化一个presenter对象
+        presenter.setView(this); //让Presenter持一个ViewInterface实例（LoadBookView）
+        presenter.loadData(); //告诉Presenter快给我加载Data
+    }    
+
+     @Override
+    public void showDetailsView(BookEntity entity) {
+        //更新UI等操作
+    }
+
+    @Override
+    public void showLoading() {
+        rlProgress.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideLoading() {
+        rlProgress.setVisibility(View.GONE);
+    }
+}
+</code></pre><p>2、Presenter层：</p>
+<pre><code>public class BookDetailsPresenter {
+    /**持一个Model层的对象，用来从网页接口Rest Api中提取数据*/
+    private RestApi restApi = null;
+    /**一个ViewInterface对象，用来回调Data给View*/
+    private LoadBookView loadBookView;
+    private String isbn;
+
+    public BookDetailsPresenter(Context context, String isbn) {
+        restApi = new RestApiImpl(context);
+        this.isbn =isbn;
+    }
+    public void setView(LoadBookView loadBookView) {
+        this.loadBookView = loadBookView;
+    }
+    public void loadData() {
+        loadBookView.showLoading();
+        //耗时操作，开个线程异步的加载数据
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                restApi.getBookDetailByIsbn(isbn, bookDetailsCallback);
+            }
+        });
+        thread.start();
+    }
+    //匿名内部类，接收bookDetailCallback的回调数据
+    private RestApi.BookDetailsCallback bookDetailsCallback = new RestApi.BookDetailsCallback() {
+        @Override
+        public void onBookEntityLoaded(BookEntity bookEntity) {
+            notifyDataLoadedSuccessful(bookEntity);
+            BookDetailsPresenter.this.loadBookView.hideLoading();
+        }
+
+        @Override
+        public void onError(Exception e) {
+            //异常后的相关处理
+        }
+    };
+
+    /***
+    * 通知获取数据成功了，赶快通知UI更新吧
+    */
+    private void notifyDataLoadedSuccessful(final BookEntity bookEntity) {
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                BookDetailsPresenter.this.loadBookView.showDetailsView(bookEntity);
+            }
+        });
+    }  
+}
+</code></pre><p>3、Model层：</p>
+<pre><code>/***
+* 整个应用程序需要的数据实体类
+*/
+public class BookEntity {
+    //一些set，get方法
+}
+
+/**
+ * 一个接口，用来从rest api api获得数据，它的实现在RestApiImpl中
+ */
+public interface RestApi {
+    String API_ISBN_BASE_URL = &quot;https://api.douban.com/v2/book/isbn/&quot;;
+    /***
+    * 更细小的接口，用来将获取到的数据，回调给它的调用者
+    */
+    interface BookDetailsCallback {
+        void onBookEntityLoaded(BookEntity bookEntity);
+        void onError(Exception e);
+    }
+    /**
+     * 从网络获取数据，然后通过bookDetailCallback回调给Presenter
+     * @param isbn
+     * @param bookDetailsCallback
+     */
+    void getBookDetailByIsbn(final String isbn, final BookDetailsCallback bookDetailsCallback);
+
+}
+</code></pre><p>参考文章：<a href="http://www.jianshu.com/p/95c9088eef4f" target="_blank" rel="external">http://www.jianshu.com/p/95c9088eef4f</a><br>                <a href="http://www.codeceo.com/article/mvp-android.html" target="_blank" rel="external">http://www.codeceo.com/article/mvp-android.html</a></p>
 
       
     </div>
@@ -421,8 +589,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/10/weChat-login/" rel="next" title="Android 微信sdk登录和分享">
-                <i class="fa fa-chevron-left"></i> Android 微信sdk登录和分享
+              <a href="/2017/04/12/hexo 博客优化/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -431,8 +599,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/09/React Native探索与设计(一)/" rel="prev" title="React Native探索与设计(一)">
-                React Native探索与设计(一) <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/11/Android观察者模式/" rel="prev" title="Android观察者模式">
+                Android观察者模式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -553,7 +721,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#MVC架构："><span class="nav-number">1.</span> <span class="nav-text">MVC架构：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MVC就是Model-View-Controller，它们的作用是："><span class="nav-number">1.1.</span> <span class="nav-text">MVC就是Model-View-Controller，它们的作用是：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#它们之间的关系如下图所示："><span class="nav-number">1.2.</span> <span class="nav-text">它们之间的关系如下图所示：</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#View传送指令到Controller-Controller完成业务逻辑后，改变Model的状态，Model将新的数据发送到View，这就是MVC模式的处理逻辑。"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">View传送指令到Controller,Controller完成业务逻辑后，改变Model的状态，Model将新的数据发送到View，这就是MVC模式的处理逻辑。</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MVP架构："><span class="nav-number">2.</span> <span class="nav-text">MVP架构：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MVP是Model-View-Presenter，它们的作用如下："><span class="nav-number">2.1.</span> <span class="nav-text">MVP是Model-View-Presenter，它们的作用如下：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MVP和MVC的对比："><span class="nav-number">2.2.</span> <span class="nav-text">MVP和MVC的对比：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#MVP架构：-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">MVP架构：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#MVC架构：-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">MVC架构：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#通过一个简单的例子来理解MVP模式："><span class="nav-number">2.2.3.</span> <span class="nav-text">通过一个简单的例子来理解MVP模式：</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

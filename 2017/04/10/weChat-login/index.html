@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="准备材料： 微信开发者账号 注册你的APP libammsdk.jar包 debug.keystore文件    准备工作 申请你的APPID 导入libammsdk.jar包 在AndroidManifest.xml中设置权限 &amp;lt;uses-permission android:name=&amp;quot;android.permission.INTERNET&amp;quot;&amp;gt;  &amp;lt;us">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/04/09/hello-world/index.html">
+<meta property="og:title" content="Android 微信sdk登录和分享">
+<meta property="og:url" content="http://yoursite.com/2017/04/10/weChat-login/index.html">
 <meta property="og:site_name" content="ibinbin">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2017-04-09T13:09:31.000Z">
+<meta property="og:description" content="准备材料： 微信开发者账号 注册你的APP libammsdk.jar包 debug.keystore文件    准备工作 申请你的APPID 导入libammsdk.jar包 在AndroidManifest.xml中设置权限 &amp;lt;uses-permission android:name=&amp;quot;android.permission.INTERNET&amp;quot;&amp;gt;  &amp;lt;us">
+<meta property="og:updated_time" content="2017-04-11T09:41:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Android 微信sdk登录和分享">
+<meta name="twitter:description" content="准备材料： 微信开发者账号 注册你的APP libammsdk.jar包 debug.keystore文件    准备工作 申请你的APPID 导入libammsdk.jar包 在AndroidManifest.xml中设置权限 &amp;lt;uses-permission android:name=&amp;quot;android.permission.INTERNET&amp;quot;&amp;gt;  &amp;lt;us">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/09/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/10/weChat-login/"/>
 
 
 
 
 
-  <title> Hello World | ibinbin </title>
+  <title> Android 微信sdk登录和分享 | ibinbin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -304,7 +304,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/09/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/10/weChat-login/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -325,7 +325,7 @@
             
             
               
-                Hello World
+                Android 微信sdk登录和分享
               
             
           </h1>
@@ -340,8 +340,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-09T21:09:31+08:00">
-                2017-04-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-10T17:00:03+08:00">
+                2017-04-10
               </time>
             
 
@@ -350,6 +350,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android技术分享/" itemprop="url" rel="index">
+                    <span itemprop="name">Android技术分享</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -376,15 +398,210 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <ul>
+<li>准备材料：<ul>
+<li><a href="https://open.weixin.qq.com" target="_blank" rel="external">微信开发者账号</a></li>
+<li>注册你的APP</li>
+<li>libammsdk.jar包</li>
+<li>debug.keystore文件</li>
+</ul>
+</li>
+</ul>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
+<li>申请你的APPID</li>
+<li>导入libammsdk.jar包</li>
+<li><p>在AndroidManifest.xml中设置权限</p>
+<pre><code>&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;&gt; 
+&lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot;/&gt; 
+&lt;uses-permission android:name=&quot;android.permission.ACCESS_WIFI_STATE&quot;/&gt; 
+&lt;uses-permission android:name=&quot;android.permission.READ_PHONE_STATE&quot;/&gt; 
+&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;/&gt;
+</code></pre></li>
+<li><p>注册APP到微信</p>
+<pre><code>private static final String App_Id = &quot;你注册的APP_ID&quot;;
+private IWXAPI api;
+public void registerToWX(){
+    api = WXAPIFactory.createWXAPI(this, App_Id, true);
+    api.registerApp(App_ID);
+}
+</code></pre></li>
+</ul>
+<h3 id="分享："><a href="#分享：" class="headerlink" title="分享："></a>分享：</h3><ul>
+<li><p>分享(以分享图片为例)<br>  直接触发分享图片按钮的点击事件</p>
+<pre><code>findViewById(R.id.send_img).setOnClickListener(new OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.send_img);
+        WXImageObject imgObj = new WXImageObject(bmp);
+
+        WXMediaMessage msg = new WXMediaMessage();
+        msg.mediaObject = imgObj;
+
+        Bitmap thumbBmp = Bitmap.createScaledBitmap(bmp, 150, 150, true);
+        bmp.recycle();
+        msg.thumbData = Util.bmpToByteArray(thumbBmp, true);
+
+        SendMessageToWX.Req req = new SendMessageToWX.Req();
+        req.transaction = buildTransaction(&quot;img&quot;);
+        req.message = msg;
+        req.scene = SendMessageToWX.Req.WXSceneTimeline;
+                      SendMessageToWX.Req.WXSceneSession;
+
+        api.sendReq(req);
+
+        finish();
+    }
+});
+</code></pre><blockquote>
+<p>其中req.scene表示分享选择分别代表分享到朋友圈和会话框</p>
+<p>Util是一个图片处理的类</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><ul>
+<li><p>登录需要重新APP到微信，需要触发回调,下面直接上代码：</p>
+<pre><code>package com.lht.pan_android.wxapi;
+
+import org.apache.http.Header;
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.alibaba.fastjson.JSON;
+import com.lht.pan_android.HttpUtil;
+import com.lht.pan_android.MainActivity;
+import com.lht.pan_android.R;
+import com.lht.pan_android.WeChatCodeBean;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.tencent.mm.sdk.modelbase.BaseReq;
+import com.tencent.mm.sdk.modelbase.BaseResp;
+import com.tencent.mm.sdk.modelmsg.SendAuth;
+import com.tencent.mm.sdk.openapi.IWXAPI;
+import com.tencent.mm.sdk.openapi.IWXAPIEventHandler;
+import com.tencent.mm.sdk.openapi.WXAPIFactory;
+
+public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
+
+    private static final String TAG = &quot;wechat&quot;;
+    private static final String APP_ID = &quot;你的APP_Id&quot;;
+    private static final String APP_SECRET = &quot;你的APP_secret&quot;;
+    private Button registerBtn;
+    private IWXAPI api;
+    private TextView tv;
+
+    @Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.entry);
+    registerBtn = (Button) findViewById(R.id.reg_btn);
+
+    tv = (TextView) findViewById(R.id.log);
+
+    api = WXAPIFactory.createWXAPI(this, APP_ID, true);
+    registerBtn.setOnClickListener(new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            loginWithWeixin();
+        }
+    });
+
+    api.handleIntent(getIntent(), this);
+}
+
+//登录信息
+private void loginWithWeixin() {
+    if (api == null) {
+        api = WXAPIFactory.createWXAPI(this, APP_ID, false);
+    }
+    if (!api.isWXAppInstalled()) {
+        Toast.makeText(this, &quot;没有安装微信&quot;, Toast.LENGTH_SHORT).show();
+        return;
+    }
+    api.registerApp(APP_ID);
+    SendAuth.Req req = new SendAuth.Req();
+    req.scope = &quot;snsapi_userinfo&quot;;
+    req.state = &quot;com.lht.bridge.session&quot;;
+    api.sendReq(req);
+}
+
+@Override
+protected void onNewIntent(Intent intent) {
+    super.onNewIntent(intent);
+    setIntent(intent);
+    api.handleIntent(intent, this);
+}
+
+//实现了IWXAPIEventHandler
+@Override
+public void onReq(BaseReq req) {
+
+}
+
+//实现了IWXAPIEventHandler
+@Override
+public void onResp(BaseResp resp) {
+
+    code_code = ((SendAuth.Resp) resp).code;
+    String result = null;
+    switch (resp.errCode) {
+    case BaseResp.ErrCode.ERR_OK:
+        result = &quot;发送成功&quot;;
+        //此处进行数据请求，请求用户信息
+        Toast.makeText(this, result, Toast.LENGTH_LONG).show();
+        finish();
+        break;
+    case BaseResp.ErrCode.ERR_USER_CANCEL:
+        result = &quot;发送取消&quot;;
+        Toast.makeText(this, result, Toast.LENGTH_LONG).show();
+        finish();
+        break;
+    case BaseResp.ErrCode.ERR_AUTH_DENIED:
+        result = &quot;发送被拒绝&quot;;
+        Toast.makeText(this, result, Toast.LENGTH_LONG).show();
+        finish();
+        break;
+    default:
+        result = &quot;发送返回&quot;;
+        Toast.makeText(this, result, Toast.LENGTH_LONG).show();
+        finish();
+        break;
+    }
+    Toast.makeText(this, result, Toast.LENGTH_LONG).show();
+}
+}
+</code></pre><blockquote>
+<p>实现IWXAPIEventHandler接口，微信发送的请求将回调到onReq方法，发送到微信请求的响应结果将回调到onResp方法</p>
+<p>在WXEntryActivity中将接收到的intent及实现了IWXAPIEventHandler接口的对象传递给IWXAPI接口的handleIntent方法</p>
+</blockquote>
+<ul>
+<li><p>在Androidmanifest.xml中注册：</p>
+<pre><code>&lt;activity
+    android:name = &quot;.wxapi.WXEntryActivity&quot;
+    android:exported = &quot;true&quot;/&gt;
+</code></pre></li>
+<li><p>请求用户信息：<br>  微信需要先获取到code，再根据code获取access_token，根据access_token获取openId，最后根据access_token和openId获取用户信息</p>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>到此微信登录和分享的流程基本走通了，但是还有许多需要注意的问题</p>
+</blockquote>
+<hr>
+<ul>
+<li>1、最最最重要的一点是登录需要单独写一个包,据说这样登录才能走微信自己的一套机制<br>  格式为：包名.wxapi 类名：WXEntryActivity.java</li>
+<li>2、导入的jar包问题，jar包导入的不对就可能导致获取code这一步出现问题，微信的jar包分为老版本和新版本，新版本的可以直接获取access_token，但是官网并没有说明怎么通过access_token获取用户信息，老版本的jar包是可以获取code的，然后自己根据code自己写网络请求(你没有看错，就是自己写网络请求)；</li>
+<li>3、程序运行时一定要保证你的签名正确，如果需要更换你的key，windows下需要更换sdk/.android/debug.keystore以正确替换你的key</li>
+</ul>
+<blockquote>
+<p>目前能想到的就这些了，有什么问题欢迎指出，最后吐槽一下微信登录竟然收费、微信的文档就呵呵了</p>
+</blockquote>
 
       
     </div>
@@ -421,8 +638,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/10/weChat-login/" rel="next" title="Android 微信sdk登录和分享">
-                <i class="fa fa-chevron-left"></i> Android 微信sdk登录和分享
+              <a href="/2017/04/10/getResourcesId/" rel="next" title="Cordova插件开发-Android获取资源Id">
+                <i class="fa fa-chevron-left"></i> Cordova插件开发-Android获取资源Id
               </a>
             
           </div>
@@ -431,8 +648,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/09/React Native探索与设计(一)/" rel="prev" title="React Native探索与设计(一)">
-                React Native探索与设计(一) <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/09/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -553,7 +770,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分享："><span class="nav-number">2.</span> <span class="nav-text">分享：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#登录"><span class="nav-number">3.</span> <span class="nav-text">登录</span></a></li></ol></div>
             
 
           </div>

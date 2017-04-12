@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="观察者模式理解观察者模式 Observer 观察者模式定义了一个一对多的依赖关系，让多个观察者对象同时监听一个主题对象 当这个主题对象改变时，会通知所有的观察者，让他们能够自动的更新自己  观察者模式的组成 抽象主题：把所有的对观察者对象的引用保存在一个集合中，抽象主题提供一个接口，可以注册和移除观察者； 抽象观察者：为所有的观察者定义一个接口，当主题的数据更新时给登记的观察者提供通知； 具体主题">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/04/09/hello-world/index.html">
+<meta property="og:title" content="Android观察者模式">
+<meta property="og:url" content="http://yoursite.com/2017/04/11/Android观察者模式/index.html">
 <meta property="og:site_name" content="ibinbin">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2017-04-09T13:09:31.000Z">
+<meta property="og:description" content="观察者模式理解观察者模式 Observer 观察者模式定义了一个一对多的依赖关系，让多个观察者对象同时监听一个主题对象 当这个主题对象改变时，会通知所有的观察者，让他们能够自动的更新自己  观察者模式的组成 抽象主题：把所有的对观察者对象的引用保存在一个集合中，抽象主题提供一个接口，可以注册和移除观察者； 抽象观察者：为所有的观察者定义一个接口，当主题的数据更新时给登记的观察者提供通知； 具体主题">
+<meta property="og:updated_time" content="2017-04-11T14:15:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Android观察者模式">
+<meta name="twitter:description" content="观察者模式理解观察者模式 Observer 观察者模式定义了一个一对多的依赖关系，让多个观察者对象同时监听一个主题对象 当这个主题对象改变时，会通知所有的观察者，让他们能够自动的更新自己  观察者模式的组成 抽象主题：把所有的对观察者对象的引用保存在一个集合中，抽象主题提供一个接口，可以注册和移除观察者； 抽象观察者：为所有的观察者定义一个接口，当主题的数据更新时给登记的观察者提供通知； 具体主题">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/09/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/11/Android观察者模式/"/>
 
 
 
 
 
-  <title> Hello World | ibinbin </title>
+  <title> Android观察者模式 | ibinbin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -304,7 +304,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/09/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/11/Android观察者模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -325,7 +325,7 @@
             
             
               
-                Hello World
+                Android观察者模式
               
             
           </h1>
@@ -340,8 +340,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-09T21:09:31+08:00">
-                2017-04-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-11T22:12:49+08:00">
+                2017-04-11
               </time>
             
 
@@ -350,6 +350,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android技术分享/" itemprop="url" rel="index">
+                    <span itemprop="name">Android技术分享</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -376,15 +398,145 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h2 id="观察者模式理解"><a href="#观察者模式理解" class="headerlink" title="观察者模式理解"></a>观察者模式理解</h2><h4 id="观察者模式-Observer"><a href="#观察者模式-Observer" class="headerlink" title="观察者模式 Observer"></a>观察者模式 Observer</h4><ul>
+<li>观察者模式定义了一个一对多的依赖关系，让多个观察者对象同时监听一个主题对象</li>
+<li>当这个主题对象改变时，会通知所有的观察者，让他们能够自动的更新自己</li>
+</ul>
+<h4 id="观察者模式的组成"><a href="#观察者模式的组成" class="headerlink" title="观察者模式的组成"></a>观察者模式的组成</h4><ul>
+<li>抽象主题：把所有的对观察者对象的引用保存在一个集合中，抽象主题提供一个接口，可以注册和移除观察者；</li>
+<li>抽象观察者：为所有的观察者定义一个接口，当主题的数据更新时给登记的观察者提供通知；</li>
+<li>具体主题：在具体主题内部状态改变时，给所有登记过的观察者发出通知；</li>
+<li>具体观察者：实现抽象观察者提供的更新接口，以便本身的状态能够及时更新；</li>
+</ul>
+<blockquote>
+<p>为便于理解可以把主题理解为被观察者</p>
+</blockquote>
+<h4 id="观察者模式的应用"><a href="#观察者模式的应用" class="headerlink" title="观察者模式的应用"></a>观察者模式的应用</h4><h6 id="抽象观察者"><a href="#抽象观察者" class="headerlink" title="抽象观察者"></a>抽象观察者</h6><pre><code>/**
+  * 观察者
+  */
+public interface Observer {
+       void update();
+}
+</code></pre><h6 id="抽象主题"><a href="#抽象主题" class="headerlink" title="抽象主题"></a>抽象主题</h6><pre><code>/**
+ * 主题（发布者、被观察者）
+  */
+public interface Subject {
+/**
+  * 注册观察者
+  */
+void registerObserver(Observer observer);
+
+/**
+ * 移除观察者
+  */
+void removeObserver(Observer observer);
+
+/**
+  * 通知观察者
+  */
+void notifyObservers(); 
+}
+</code></pre><h6 id="显示当前天气的公告牌的数据-具体观察者"><a href="#显示当前天气的公告牌的数据-具体观察者" class="headerlink" title="显示当前天气的公告牌的数据(具体观察者)"></a>显示当前天气的公告牌的数据(具体观察者)</h6><pre><code>public class CurrentConditionsDisplay implements Observer, DisplayElement {
+
+    private WeatherData weatherData;
+
+    private float temperature;//温度
+    private float humidity;//湿度
+    private float pressure;//气压
+
+    public CurrentConditionsDisplay(WeatherData weatherData) {
+        this.weatherData = weatherData;
+        this.weatherData.registerObserver(this);
+    }
+
+    @Override
+    public void display() {
+        System.out.println(&quot;当前温度为：&quot; + this.temperature + &quot;℃&quot;);
+        System.out.println(&quot;当前湿度为：&quot; + this.humidity);
+        System.out.println(&quot;当前气压为：&quot; + this.pressure);
+    }
+
+    @Override
+    public void update() {
+        this.temperature = this.weatherData.getTemperature();
+        this.humidity = this.weatherData.getHumidity();
+        this.pressure = this.weatherData.getPressure();
+        display();
+    }
+}
+</code></pre><h6 id="用于获取数据的具体主题-被观察者"><a href="#用于获取数据的具体主题-被观察者" class="headerlink" title="用于获取数据的具体主题(被观察者)"></a>用于获取数据的具体主题(被观察者)</h6><pre><code>public class WeatherData implements Subject {
+
+    private List&lt;Observer&gt; observers;
+
+    private float temperature;//温度
+    private float humidity;//湿度
+    private float pressure;//气压
+    private List&lt;Float&gt; forecastTemperatures;//未来几天的温度
+
+    public WeatherData() {
+        this.observers = new ArrayList&lt;Observer&gt;();
+    }
+
+    @Override
+    public void registerObserver(Observer observer) {
+        this.observers.add(observer);
+    }
+
+    @Override
+    public void removeObserver(Observer observer) {
+        this.observers.remove(observer);
+    }
+
+    @Override
+    public void notifyObservers() {
+        for (Observer observer : observers) {
+            observer.update();
+        }
+    }
+
+    public void measurementsChanged() {
+        notifyObservers();
+    }
+
+    public void setMeasurements(float temperature, float humidity, 
+    float pressure, List&lt;Float&gt; forecastTemperatures) {
+        this.temperature = temperature;
+        this.humidity = humidity;
+        this.pressure = pressure;
+        this.forecastTemperatures = forecastTemperatures;
+        measurementsChanged();
+    }
+
+    public float getTemperature() {
+        return temperature;
+    }
+
+    public float getHumidity() {
+        return humidity;
+    }
+
+    public float getPressure() {
+        return pressure;
+    }
+
+    public List&lt;Float&gt; getForecastTemperatures() {
+        return forecastTemperatures;
+    }
+}
+</code></pre><h6 id="用于公告牌显示的接口-观察者"><a href="#用于公告牌显示的接口-观察者" class="headerlink" title="用于公告牌显示的接口(观察者)"></a>用于公告牌显示的接口(观察者)</h6><pre><code>public interface DisplayElement {
+       void display();
+}
+</code></pre><blockquote>
+<p>公告牌CurrentConditionsDisplay实现了Observer和DisplayElement接口，在他们的构造方法中会调用WeatherData的registerObserver方法将自己注册成观察者，这样被观察者WeatherData就会持有观察者的应用，并将它们保存到一个集合中。当被观察者WeatherData状态发送变化时就会遍历这个集合，循环调用观察者公告牌更新数据的方法。后面如果我们需要增加或者删除公告牌就只需要新增或者删除实现了Observer和DisplayElement接口的公告牌就好了。</p>
+</blockquote>
+<ul>
+<li>参考链接：<ul>
+<li><a href="http://www.cnblogs.com/mengdd/archive/2013/02/07/2908929.html" target="_blank" rel="external">http://www.cnblogs.com/mengdd/archive/2013/02/07/2908929.html</a></li>
+<li><a href="http://www.jianshu.com/p/d55ee6e83d66" target="_blank" rel="external">http://www.jianshu.com/p/d55ee6e83d66</a></li>
+</ul>
+</li>
+</ul>
+<p></p>
 
       
     </div>
@@ -421,8 +573,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/10/weChat-login/" rel="next" title="Android 微信sdk登录和分享">
-                <i class="fa fa-chevron-left"></i> Android 微信sdk登录和分享
+              <a href="/2017/04/11/Android MVC与MVP的区别和理解/" rel="next" title="Android MVC和MVP的区别和理解">
+                <i class="fa fa-chevron-left"></i> Android MVC和MVP的区别和理解
               </a>
             
           </div>
@@ -431,8 +583,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/09/React Native探索与设计(一)/" rel="prev" title="React Native探索与设计(一)">
-                React Native探索与设计(一) <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/11/ionic监听Android返回/" rel="prev" title="ionic修改相册插件和监听Android返回">
+                ionic修改相册插件和监听Android返回 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -553,7 +705,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#观察者模式理解"><span class="nav-number">1.</span> <span class="nav-text">观察者模式理解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#观察者模式-Observer"><span class="nav-number">1.0.1.</span> <span class="nav-text">观察者模式 Observer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#观察者模式的组成"><span class="nav-number">1.0.2.</span> <span class="nav-text">观察者模式的组成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#观察者模式的应用"><span class="nav-number">1.0.3.</span> <span class="nav-text">观察者模式的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#抽象观察者"><span class="nav-number">1.0.3.0.1.</span> <span class="nav-text">抽象观察者</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#抽象主题"><span class="nav-number">1.0.3.0.2.</span> <span class="nav-text">抽象主题</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#显示当前天气的公告牌的数据-具体观察者"><span class="nav-number">1.0.3.0.3.</span> <span class="nav-text">显示当前天气的公告牌的数据(具体观察者)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#用于获取数据的具体主题-被观察者"><span class="nav-number">1.0.3.0.4.</span> <span class="nav-text">用于获取数据的具体主题(被观察者)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#用于公告牌显示的接口-观察者"><span class="nav-number">1.0.3.0.5.</span> <span class="nav-text">用于公告牌显示的接口(观察者)</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>

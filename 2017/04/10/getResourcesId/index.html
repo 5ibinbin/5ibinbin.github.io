@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="在制作Cordova插件时不能通过R文件来寻找资源Id，因为R文件是不断变化的，所以我们必须要通过资源名称来获取Id，下面就介绍一下资源id的获取: 使用Resources 类的 getIdentifier方法  通过资源名称虚招布局文件的id private int getResId(String resourceName){     Resources resources = getResou">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/04/09/hello-world/index.html">
+<meta property="og:title" content="Cordova插件开发-Android获取资源Id">
+<meta property="og:url" content="http://yoursite.com/2017/04/10/getResourcesId/index.html">
 <meta property="og:site_name" content="ibinbin">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2017-04-09T13:09:31.000Z">
+<meta property="og:description" content="在制作Cordova插件时不能通过R文件来寻找资源Id，因为R文件是不断变化的，所以我们必须要通过资源名称来获取Id，下面就介绍一下资源id的获取: 使用Resources 类的 getIdentifier方法  通过资源名称虚招布局文件的id private int getResId(String resourceName){     Resources resources = getResou">
+<meta property="og:updated_time" content="2017-04-11T09:41:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Cordova插件开发-Android获取资源Id">
+<meta name="twitter:description" content="在制作Cordova插件时不能通过R文件来寻找资源Id，因为R文件是不断变化的，所以我们必须要通过资源名称来获取Id，下面就介绍一下资源id的获取: 使用Resources 类的 getIdentifier方法  通过资源名称虚招布局文件的id private int getResId(String resourceName){     Resources resources = getResou">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/09/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/10/getResourcesId/"/>
 
 
 
 
 
-  <title> Hello World | ibinbin </title>
+  <title> Cordova插件开发-Android获取资源Id | ibinbin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -304,7 +304,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/09/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/10/getResourcesId/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -325,7 +325,7 @@
             
             
               
-                Hello World
+                Cordova插件开发-Android获取资源Id
               
             
           </h1>
@@ -340,8 +340,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-09T21:09:31+08:00">
-                2017-04-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-10T17:35:21+08:00">
+                2017-04-10
               </time>
             
 
@@ -350,6 +350,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ionic混合开发/" itemprop="url" rel="index">
+                    <span itemprop="name">ionic混合开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -376,16 +398,94 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
+        <h4 id="在制作Cordova插件时不能通过R文件来寻找资源Id，因为R文件是不断变化的，所以我们必须要通过资源名称来获取Id，下面就介绍一下资源id的获取"><a href="#在制作Cordova插件时不能通过R文件来寻找资源Id，因为R文件是不断变化的，所以我们必须要通过资源名称来获取Id，下面就介绍一下资源id的获取" class="headerlink" title="在制作Cordova插件时不能通过R文件来寻找资源Id，因为R文件是不断变化的，所以我们必须要通过资源名称来获取Id，下面就介绍一下资源id的获取:"></a>在制作Cordova插件时不能通过R文件来寻找资源Id，因为R文件是不断变化的，所以我们必须要通过资源名称来获取Id，下面就介绍一下资源id的获取:</h4><ul>
+<li><p>使用Resources 类的 getIdentifier方法</p>
+<ul>
+<li><p>通过资源名称虚招布局文件的id</p>
+<pre><code>private int getResId(String resourceName){
+    Resources resources = getResources();
+    int resId = resources.getIdentifier(resourceName,&quot;layout&quot;,getPackageName());
+    return resId;
+}
+</code></pre></li>
+<li><p>获取字符串id</p>
+<pre><code>private int getStringId(String stringName){
+    Resources resources = getResources();
+    int resId =resources.getIdentifier(stringName,&quot;string&quot;, getPackageName());
+    return resId;
+}
+</code></pre></li>
+<li><p>获取控件id</p>
+<pre><code>private int getId(String idName){
+    Resources resources = getResources();
+    int resId = resources.getIdentifier(idName, &quot;id&quot;, getPackageName());
+    return resId;
+}
+</code></pre></li>
+<li><p>获取动画id</p>
+<pre><code>private int getAnimId(String idName){
+    Resources resources = getResources();
+    int resId = resources.getIdentifier(idName, &quot;anim&quot;, getPackageName());
+    return resId;
+}
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<h4 id="作为一个Android开发者来说，也许你已经发现上面代码的不同点了，就是getIdentifier-里面的第二个参数的不同，我们可以通过替换这个参数来达到大部分的寻找资源id（example：id-string-anim-attr-drawable-layout-color-menu-styles…）"><a href="#作为一个Android开发者来说，也许你已经发现上面代码的不同点了，就是getIdentifier-里面的第二个参数的不同，我们可以通过替换这个参数来达到大部分的寻找资源id（example：id-string-anim-attr-drawable-layout-color-menu-styles…）" class="headerlink" title="作为一个Android开发者来说，也许你已经发现上面代码的不同点了，就是getIdentifier()里面的第二个参数的不同，我们可以通过替换这个参数来达到大部分的寻找资源id（example：id, string, anim, attr, drawable, layout, color, menu, styles…）"></a>作为一个Android开发者来说，也许你已经发现上面代码的不同点了，就是getIdentifier()里面的第二个参数的不同，我们可以通过替换这个参数来达到大部分的寻找资源id（example：id, string, anim, attr, drawable, layout, color, menu, styles…）</h4></blockquote>
+<ul>
+<li><p>通过Java的强大的反射机制获取资源id</p>
+<ul>
+<li><p>通过反射获取一个资源id</p>
+<pre><code>public int getAttrId(String attrName) {  
+    try {  
+      Class&lt;?&gt; loadClass = mContext.getClassLoader().loadClass(mContext.getPackageName() + &quot;.R&quot;);  
+      Class&lt;?&gt;[] classes = loadClass.getClasses();  
+      for (int i = 0; i &lt; classes.length; i++) {  
+        if (classes[i].getName().equals(mContext.getPackageName() + &quot;.R$attr&quot;)) {  
+          Field field = classes[i].getField(attrName);  
+          int attrId = field.getInt(null);  
+          return attrId;  
+        }  
+      }  
+    } catch (Exception e) {  
+       e.printStackTrace();  
+    }  
+    return 0;  
+ }   
+</code></pre></li>
+<li><p>首先使用反射能达到上面的获取一个id的情况，但是比较麻烦，当需要返回一个数组我们就不得不使用这种方法了</p>
+<pre><code>private int[] getStyleableArryId(String styleableName){
+    try {
+        Class&lt;?&gt; loadClass = getContext().getClassLoader().loadClass(getContext().getPackageName() + &quot;.R&quot;);
+        Class&lt;?&gt;[] classes = loadClass.getClasses();
+        for(int i=0 ;i&lt;classes.length ;i++){
+            Class&lt;?&gt; resClass = classes[i];
+               if(resClass.getName().equals(getContext().getPackageName() + &quot;.R$styleable&quot;)){
+                   Field[] fields = resClass.getFields();
+                for (int j = 0; j &lt; fields.length; j++) {
+                    if(fields[j].getName().equals(styleableName)){
+                        int[] styleable = (int[]) fields[j].get(null);
+                           return styleable;
+                    }
+                }
+            }
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    return null;
+}
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<h4 id="但是在设置styleable的资源id的时候，如果你是自定义的View，如果需要引入自定义的attr-比如这样："><a href="#但是在设置styleable的资源id的时候，如果你是自定义的View，如果需要引入自定义的attr-比如这样：" class="headerlink" title="但是在设置styleable的资源id的时候，如果你是自定义的View，如果需要引入自定义的attr,比如这样："></a>但是在设置styleable的资源id的时候，如果你是自定义的View，如果需要引入自定义的attr,比如这样：</h4><pre><code>public WheelVerticalView(Context context, final AttributeSet attrs) {
+   this(context, attrs, R.attr.abstractWheelViewStyle);
+   this(context, attrs, 0);
+}
+</code></pre><h4 id="那么你是不能通过上面的方法，来获取资源文件的，因为这是一个构造器，你只能另找它法了。"><a href="#那么你是不能通过上面的方法，来获取资源文件的，因为这是一个构造器，你只能另找它法了。" class="headerlink" title="那么你是不能通过上面的方法，来获取资源文件的，因为这是一个构造器，你只能另找它法了。"></a>那么你是不能通过上面的方法，来获取资源文件的，因为这是一个构造器，你只能另找它法了。</h4>
       
     </div>
 
@@ -421,8 +521,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/10/weChat-login/" rel="next" title="Android 微信sdk登录和分享">
-                <i class="fa fa-chevron-left"></i> Android 微信sdk登录和分享
+              <a href="/2017/04/11/imageCover/" rel="next" title="ionic固定大小的图片防止变形">
+                <i class="fa fa-chevron-left"></i> ionic固定大小的图片防止变形
               </a>
             
           </div>
@@ -431,8 +531,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/09/React Native探索与设计(一)/" rel="prev" title="React Native探索与设计(一)">
-                React Native探索与设计(一) <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/10/weChat-login/" rel="prev" title="Android 微信sdk登录和分享">
+                Android 微信sdk登录和分享 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -553,7 +653,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#在制作Cordova插件时不能通过R文件来寻找资源Id，因为R文件是不断变化的，所以我们必须要通过资源名称来获取Id，下面就介绍一下资源id的获取"><span class="nav-number">1.</span> <span class="nav-text">在制作Cordova插件时不能通过R文件来寻找资源Id，因为R文件是不断变化的，所以我们必须要通过资源名称来获取Id，下面就介绍一下资源id的获取:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作为一个Android开发者来说，也许你已经发现上面代码的不同点了，就是getIdentifier-里面的第二个参数的不同，我们可以通过替换这个参数来达到大部分的寻找资源id（example：id-string-anim-attr-drawable-layout-color-menu-styles…）"><span class="nav-number">2.</span> <span class="nav-text">作为一个Android开发者来说，也许你已经发现上面代码的不同点了，就是getIdentifier()里面的第二个参数的不同，我们可以通过替换这个参数来达到大部分的寻找资源id（example：id, string, anim, attr, drawable, layout, color, menu, styles…）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#但是在设置styleable的资源id的时候，如果你是自定义的View，如果需要引入自定义的attr-比如这样："><span class="nav-number">3.</span> <span class="nav-text">但是在设置styleable的资源id的时候，如果你是自定义的View，如果需要引入自定义的attr,比如这样：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#那么你是不能通过上面的方法，来获取资源文件的，因为这是一个构造器，你只能另找它法了。"><span class="nav-number">4.</span> <span class="nav-text">那么你是不能通过上面的方法，来获取资源文件的，因为这是一个构造器，你只能另找它法了。</span></a></li></ol></div>
             
 
           </div>
