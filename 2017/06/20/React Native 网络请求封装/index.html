@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="有时我们需要根据默认的文字来显示TextInput的高度，而且可以随着文字的输入自动增加TextInput的高度。下面我们就来看一下这个是如何实现的：  TextInput属性介绍代码伺候(去除无关代码)/**  * Created by Cral-Gates on 2017/5/11.  */ import React, {Component} from &amp;apos;react&amp;apos;;">
+<meta name="description" content="Serialization&amp;apos;use strict&amp;apos;; import React, {Component} from &amp;apos;react&amp;apos;;  class JsonUtil extends Component {     /*      * 字符转换为JSON      * */     static strToJson(data) {         return">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React Native TextInput 高度自适应">
-<meta property="og:url" content="http://5ibinbin.com/2017/05/29/React Native TextInput高度自适应/index.html">
+<meta property="og:title" content="React Native网络请求和Json-String封装">
+<meta property="og:url" content="http://5ibinbin.com/2017/06/20/React Native 网络请求封装/index.html">
 <meta property="og:site_name" content="ibinbin">
-<meta property="og:description" content="有时我们需要根据默认的文字来显示TextInput的高度，而且可以随着文字的输入自动增加TextInput的高度。下面我们就来看一下这个是如何实现的：  TextInput属性介绍代码伺候(去除无关代码)/**  * Created by Cral-Gates on 2017/5/11.  */ import React, {Component} from &amp;apos;react&amp;apos;;">
-<meta property="og:updated_time" content="2017-06-20T13:50:51.000Z">
+<meta property="og:description" content="Serialization&amp;apos;use strict&amp;apos;; import React, {Component} from &amp;apos;react&amp;apos;;  class JsonUtil extends Component {     /*      * 字符转换为JSON      * */     static strToJson(data) {         return">
+<meta property="og:updated_time" content="2017-06-20T13:53:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React Native TextInput 高度自适应">
-<meta name="twitter:description" content="有时我们需要根据默认的文字来显示TextInput的高度，而且可以随着文字的输入自动增加TextInput的高度。下面我们就来看一下这个是如何实现的：  TextInput属性介绍代码伺候(去除无关代码)/**  * Created by Cral-Gates on 2017/5/11.  */ import React, {Component} from &amp;apos;react&amp;apos;;">
+<meta name="twitter:title" content="React Native网络请求和Json-String封装">
+<meta name="twitter:description" content="Serialization&amp;apos;use strict&amp;apos;; import React, {Component} from &amp;apos;react&amp;apos;;  class JsonUtil extends Component {     /*      * 字符转换为JSON      * */     static strToJson(data) {         return">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://5ibinbin.com/2017/05/29/React Native TextInput高度自适应/"/>
+  <link rel="canonical" href="http://5ibinbin.com/2017/06/20/React Native 网络请求封装/"/>
 
 
 
 
 
-  <title> React Native TextInput 高度自适应 | ibinbin </title>
+  <title> React Native网络请求和Json-String封装 | ibinbin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -298,7 +298,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/05/29/React Native TextInput高度自适应/">
+    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/06/20/React Native 网络请求封装/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ibinbin">
@@ -319,7 +319,7 @@
             
             
               
-                React Native TextInput 高度自适应
+                React Native网络请求和Json-String封装
               
             
           </h1>
@@ -334,8 +334,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-29T09:49:15+08:00">
-                2017-05-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-20T00:00:00+08:00">
+                2017-06-20
               </time>
             
 
@@ -374,7 +374,7 @@
 
           
           
-             <span id="/2017/05/29/React Native TextInput高度自适应/" class="leancloud_visitors" data-flag-title="React Native TextInput 高度自适应">
+             <span id="/2017/06/20/React Native 网络请求封装/" class="leancloud_visitors" data-flag-title="React Native网络请求和Json-String封装">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -403,151 +403,171 @@
       
 
       
-        <blockquote>
-<p>有时我们需要根据默认的文字来显示TextInput的高度，而且可以随着文字的输入自动增加TextInput的高度。下面我们就来看一下这个是如何实现的：</p>
-</blockquote>
-<h4 id="TextInput属性介绍"><a href="#TextInput属性介绍" class="headerlink" title="TextInput属性介绍"></a><a href="http://www.jianshu.com/p/463aefd52687" target="_blank" rel="external">TextInput属性介绍</a></h4><h5 id="代码伺候-去除无关代码"><a href="#代码伺候-去除无关代码" class="headerlink" title="代码伺候(去除无关代码)"></a>代码伺候(去除无关代码)</h5><pre><code>/**
- * Created by Cral-Gates on 2017/5/11.
- */
+        <h5 id="Serialization"><a href="#Serialization" class="headerlink" title="Serialization"></a>Serialization</h5><pre><code>&apos;use strict&apos;;
 import React, {Component} from &apos;react&apos;;
-import {
-    StyleSheet,
-    Text,
-    View,
-    TextInput,
-    ScrollView
-} from &apos;react-native&apos;;
-import NavigationBar from &apos;../component/NavigationBar&apos;;
-import NetUtil from &apos;../utils/NetUtil&apos;;
-import Global from &apos;../utils/Global&apos;;
 
-class NoteDetail extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            noteContent: &apos;&apos;,
-            height: 50,
+class JsonUtil extends Component {
+    /*
+     * 字符转换为JSON
+     * */
+    static strToJson(data) {
+        return JSON.parse(data);
+    }
+    /*
+     * JSON转换为字符
+     * */
+    static jsonToStr(data) {
+        return JSON.stringify(data);
+    }
+    /*
+     * map转换为json
+     * */
+    static mapToJson(map) {
+        return JSON.stringify(JsonUtil.strMapToObj(map));
+    }
+    /*
+     * json转换为map
+     * */
+    static jsonToMap(jsonStr) {
+        return JsonUtil.objToStrMap(JSON.parse(jsonStr));
+    }
+    /*
+     * map转化为对象（map所有键都是字符串，可以将其转换为对象）
+     * */
+    static strMapToObj(strMap) {
+        let obj = Object.create(null);
+        for (let [k, v] of strMap) {
+            obj[k] = v;
         }
+        return obj;
     }
-
-    componentDidMount() {
-        this.setState({
-            noteContent: this.props.noteDetail.content,
-        });
+    /*
+     * 对象转换为Map
+     * */
+    static objToStrMap(obj) {
+        let strMap = new Map();
+        for (let k of Object.keys(obj)) {
+            strMap.set(k, obj[k]);
+        }
+        return strMap;
     }
+}
 
-    render() {
-        return (
-            &lt;View&gt;
-                &lt;ScrollView&gt;
-                    &lt;TextInput
-                        style={[styles.noteDetailContent, {height: this.state.height}]}
-                        multiline={true}
-                        secureTextEntry={false}
-                        underlineColorAndroid={&apos;transparent&apos;}
-                        value={this.state.noteContent}
-                        onChangeText={(noteContent) =&gt; this.setState({noteContent})}
-                        onChange={() =&gt; this.onChange.bind(this)}
-                        onContentSizeChange={(event) =&gt; this.onContentSizeChange(event)}/&gt;
-                &lt;/ScrollView&gt;
-            &lt;/View&gt;
-        )
-    }
+export default JsonUtil;
+</code></pre><h5 id="网络请求"><a href="#网络请求" class="headerlink" title="网络请求"></a>网络请求</h5><pre><code>&apos;use strict&apos;;
+import React, {Component} from &apos;react&apos;;
 
-    onChange = (event) =&gt; {
-        this.setState({
-            noteContent: event.nativeEvent.text,
-            height: event.nativeEvent.contentSize.height
-        });
+class NetUtil extends Component {
+
+static DouB_Api = &apos;https://api.douban.com/v2/movie/top250?start=0&amp;count=20&apos;;
+/**
+ * get请求
+ *url : 请求地址
+ *callback : 回调函数
+ */
+static get(url, callback) {
+    var fetchOptions = {
+        method: &apos;GET&apos;,
+        headers: {
+            &apos;X-LC-Id&apos;: &apos;M401fErHUPYhDKmgp0wjqVRX-gzGzoHsz&apos;,
+            &apos;X-LC-Key&apos;: &apos;Jqnvt1Lmt34vQh1JDRUpRAqq&apos;
+        }
+    };
+    fetch(url, fetchOptions)
+        .then((response) =&gt; response.text())
+        .then((responseText) =&gt; {
+            callback(JSON.parse(responseText));
+        }).done();
+}
+
+/**
+ * delete请求
+ *url : 请求地址
+ *callback : 回调函数
+ */
+static delete(url, callback) {
+    var fetchOptions = {
+        method: &apos;DELETE&apos;,
+        headers: {
+            &apos;X-LC-Id&apos;: &apos;M401fErHUPYhDKmgp0wjqVRX-gzGzoHsz&apos;,
+            &apos;X-LC-Key&apos;: &apos;Jqnvt1Lmt34vQh1JDRUpRAqq&apos;
+        }
+    };
+    fetch(url, fetchOptions)
+        .then((response) =&gt; response.text())
+        .then((responseText) =&gt; {
+            callback(JSON.parse(responseText));
+        }).done();
+}
+/**
+ * post请求
+ * url : 请求地址
+ * data : 参数(Json对象)
+ * callback : 回调函数
+ * */
+static postJson(url, data, callback) {
+    var fetchOption = {
+        method: &apos;POST&apos;,
+        headers: {
+            &apos;Content-Type&apos;: &apos;application/json&apos;,
+            &apos;X-LC-Id&apos;: &apos;M401fErHUPYhDKmgp0wjqVRX-gzGzoHsz&apos;,
+            &apos;X-LC-Key&apos;: &apos;Jqnvt1Lmt34vQh1JDRUpRAqq&apos;
+        },
+        body: JSON.stringify(data)
     };
 
-    onContentSizeChange = (event) =&gt; {
-        this.setState({
-            height: event.nativeEvent.contentSize.height
+    fetch(url, fetchOption)
+        .then((response) =&gt; response.text())
+        .then((responseText) =&gt; {
+            callback(JSON.parse(responseText))
+        })
+        .done();
+}
+/**
+ * put请求
+ * url : 请求地址
+ * data : 参数(Json对象)
+ * callback : 回调函数
+ * */
+static putJson(url, data, callback) {
+    var fetchOption = {
+        method: &apos;PUT&apos;,
+        headers: {
+            &apos;Content-Type&apos;: &apos;application/json&apos;,
+            &apos;X-LC-Id&apos;: &apos;M401fErHUPYhDKmgp0wjqVRX-gzGzoHsz&apos;,
+            &apos;X-LC-Key&apos;: &apos;Jqnvt1Lmt34vQh1JDRUpRAqq&apos;
+        },
+        body: JSON.stringify(data)
+    };
+
+    fetch(url, fetchOption)
+        .then((response) =&gt; response.text())
+        .then((responseText) =&gt; {
+            callback(JSON.parse(responseText))
+        })
+        .done();
+}
+
+export default NetUtil;
+</code></pre><h6 id="网络请求使用"><a href="#网络请求使用" class="headerlink" title="网络请求使用"></a>网络请求使用</h6><pre><code>import NetUtil from &apos;../utils/NetUtil&apos;;
+import JsonUtil from &apos;../utils/JsonUtil&apos;;
+
+_getMyNoteBook = () =&gt; {
+    let _this = this;
+    let username = this.state.username;
+    let params = {
+        &quot;author&quot;: username
+    };
+    let url = Global.NOTEBOOK + JsonUtil.jsonToStr(params);
+    NetUtil.get(url, function (response) {
+        console.log(response);
+        _this.setState({
+            notebooks: _this.state.notebooks.cloneWithRows(response.results),
+            noteArray: response.results
         });
-    }
-}
-
-const styles = StyleSheet.create({
-    container: {
-        backgroundColor: &apos;#f5f5f5&apos;
-    },
-    noteDetailTitle: {
-        backgroundColor: &apos;white&apos;,
-        marginTop: 10,
-        marginBottom: 2,
-        marginLeft: 20,
-        marginRight: 20,
-        height: 35,
-        fontSize: 18,
-        fontWeight: &apos;600&apos;
-    },
-    noteDetailContent: {
-        backgroundColor: &apos;white&apos;,
-        marginLeft: 20,
-        marginRight: 10,
-        lineHeight: 20,
-        fontSize: 16
-    }
-});
-
-export default NoteDetail;
-</code></pre><ul>
-<li><p>首先创建构造函数</p>
-<pre><code>constructor(props) {
-    super(props);
-    this.state = {
-        noteContent: &apos;&apos;,  //笔记内容
-        height: 50,       //默认高度
-    }
-}
-</code></pre></li>
-<li><p>然后设置默认的笔记内容</p>
-<pre><code>componentDidMount() {
-    this.setState({
-        noteContent: this.props.noteDetail.content  // 这是从上一个页面传递过来的值
-    });
-}
-</code></pre></li>
-<li><p>TextInput属性介绍</p>
-<pre><code>&lt;TextInput
-    style={[styles.noteDetailContent, {height: this.state.height}]}
-    multiline={true}
-    secureTextEntry={false}
-    underlineColorAndroid={&apos;transparent&apos;}
-    value={this.state.noteContent}
-    onChangeText={(noteContent) =&gt; this.setState({noteContent})}
-    onChange={() =&gt; this.onChange.bind(this)}
-    onContentSizeChange={(event) =&gt; this.onContentSizeChange(event)}/&gt;
-</code></pre><ul>
-<li><p>onChange function 监听方法,文本框内容发生改变回调方法  </p>
-<pre><code>onChangeText = (text) =&gt; {
-    this.setState({
-        noteContent: text
-    })
-}
-</code></pre></li>
-<li><p>onChangeText function监听方法，文本框内容发生改变回调方法，该方法主要是监听输入框文字的变化</p>
-<pre><code>onChange = (event) =&gt; {
-    this.setState({
-        noteContent: event.nativeEvent.text
     });
 };
-</code></pre></li>
-<li><p>onContentSizeChange function监听方法，当文本框的高度发生变化时回调该方法。当TextInput的高度可变时，调用onLayout方法并将宽高传递给它，并重新绘制该组件。</p>
-<pre><code>onContentSizeChange = (event) =&gt; {
-    this.setState({
-        height: event.nativeEvent.contentSize.height
-    });
-}
-</code></pre><blockquote>
-<p>至此就大功告成了！有什么问题可留言交流 </p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
-
+</code></pre>
       
     </div>
 
@@ -583,8 +603,8 @@ export default NoteDetail;
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/29/React Native TextInput属性介绍/" rel="next" title="React Native TextInput 属性介绍">
-                <i class="fa fa-chevron-left"></i> React Native TextInput 属性介绍
+              <a href="/2017/06/20/React Native AsyncStorage 封装/" rel="next" title="React Native AsyncStorage 封装">
+                <i class="fa fa-chevron-left"></i> React Native AsyncStorage 封装
               </a>
             
           </div>
@@ -593,8 +613,8 @@ export default NoteDetail;
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/05/React Native 网络请求封装/" rel="prev" title="React Native网络请求和Json-String封装">
-                React Native网络请求和Json-String封装 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/06/18/React Native TextInput高度自适应/" rel="prev" title="React Native TextInput 高度自适应">
+                React Native TextInput 高度自适应 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -737,7 +757,7 @@ export default NoteDetail;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#TextInput属性介绍"><span class="nav-number">1.</span> <span class="nav-text">TextInput属性介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#代码伺候-去除无关代码"><span class="nav-number">1.1.</span> <span class="nav-text">代码伺候(去除无关代码)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#Serialization"><span class="nav-number">1.</span> <span class="nav-text">Serialization</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#网络请求"><span class="nav-number">2.</span> <span class="nav-text">网络请求</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#网络请求使用"><span class="nav-number">2.1.</span> <span class="nav-text">网络请求使用</span></a></li></ol></li></ol></div>
             
 
           </div>

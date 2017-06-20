@@ -298,7 +298,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/05/29/React Native TextInput属性介绍/">
+    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/06/20/React Native AsyncStorage 封装/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ibinbin">
@@ -320,8 +320,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/05/29/React Native TextInput属性介绍/" itemprop="url">
-                  React Native TextInput 属性介绍
+                <a class="post-title-link" href="/2017/06/20/React Native AsyncStorage 封装/" itemprop="url">
+                  React Native AsyncStorage 封装
                 </a>
               
             
@@ -337,8 +337,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-29T09:49:15+08:00">
-                2017-05-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-20T08:22:16+08:00">
+                2017-06-20
               </time>
             
 
@@ -377,7 +377,7 @@
 
           
           
-             <span id="/2017/05/29/React Native TextInput属性介绍/" class="leancloud_visitors" data-flag-title="React Native TextInput 属性介绍">
+             <span id="/2017/06/20/React Native AsyncStorage 封装/" class="leancloud_visitors" data-flag-title="React Native AsyncStorage 封装">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -408,15 +408,15 @@
       
         
           
-          View 支持View的相关属性
-autoCapitalize  控制TextInput输入的字符进行切换成大写(可选择参数:’none’, ‘sentences’, ‘words’, ‘characters’)
-none:不自动切换任何字符成大写
-sentences:默认每个句子的首字母变成大写
+          
+在Android开发中有一个以key-value形式轻量级的数据存储方式—SharedPreferences, 类似的React Native中也有一个–AsyncStorage
+AsyncStorage是一个简单的、异步的、持久化的Key-Value存储系统，它对于App来说是全局性的
 
+API
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/05/29/React Native TextInput属性介绍/#more" rel="contents">
+            <a class="btn" href="/2017/06/20/React Native AsyncStorage 封装/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -462,7 +462,7 @@ sentences:默认每个句子的首字母变成大写
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/05/29/React Native TextInput高度自适应/">
+    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/06/20/React Native 网络请求封装/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ibinbin">
@@ -484,173 +484,7 @@ sentences:默认每个句子的首字母变成大写
             
               
                 
-                <a class="post-title-link" href="/2017/05/29/React Native TextInput高度自适应/" itemprop="url">
-                  React Native TextInput 高度自适应
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-29T09:49:15+08:00">
-                2017-05-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/React-Native学习总结/" itemprop="url" rel="index">
-                    <span itemprop="name">React Native学习总结</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/05/29/React Native TextInput高度自适应/" class="leancloud_visitors" data-flag-title="React Native TextInput 高度自适应">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          
-有时我们需要根据默认的文字来显示TextInput的高度，而且可以随着文字的输入自动增加TextInput的高度。下面我们就来看一下这个是如何实现的：
-
-TextInput属性介绍代码伺候(去除无关代码)/**
- * Created by Cral-Gates on 2017/5/11.
- */
-
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/29/React Native TextInput高度自适应/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/05/05/React Native 网络请求封装/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ibinbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ibinbin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/05/05/React Native 网络请求封装/" itemprop="url">
+                <a class="post-title-link" href="/2017/06/20/React Native 网络请求封装/" itemprop="url">
                   React Native网络请求和Json-String封装
                 </a>
               
@@ -667,8 +501,8 @@ TextInput属性介绍代码伺候(去除无关代码)/**
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-05T10:41:21+08:00">
-                2017-05-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-20T00:00:00+08:00">
+                2017-06-20
               </time>
             
 
@@ -707,7 +541,7 @@ TextInput属性介绍代码伺候(去除无关代码)/**
 
           
           
-             <span id="/2017/05/05/React Native 网络请求封装/" class="leancloud_visitors" data-flag-title="React Native网络请求和Json-String封装">
+             <span id="/2017/06/20/React Native 网络请求封装/" class="leancloud_visitors" data-flag-title="React Native网络请求和Json-String封装">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -748,7 +582,7 @@ class JsonUtil extends Component {
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/05/05/React Native 网络请求封装/#more" rel="contents">
+            <a class="btn" href="/2017/06/20/React Native 网络请求封装/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -794,7 +628,7 @@ class JsonUtil extends Component {
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/05/05/React Native AsyncStorage 封装/">
+    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/06/18/React Native TextInput高度自适应/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ibinbin">
@@ -816,8 +650,8 @@ class JsonUtil extends Component {
             
               
                 
-                <a class="post-title-link" href="/2017/05/05/React Native AsyncStorage 封装/" itemprop="url">
-                  React Native AsyncStorage 封装
+                <a class="post-title-link" href="/2017/06/18/React Native TextInput高度自适应/" itemprop="url">
+                  React Native TextInput 高度自适应
                 </a>
               
             
@@ -833,8 +667,8 @@ class JsonUtil extends Component {
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-05T10:40:44+08:00">
-                2017-05-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-18T08:42:16+08:00">
+                2017-06-18
               </time>
             
 
@@ -873,7 +707,7 @@ class JsonUtil extends Component {
 
           
           
-             <span id="/2017/05/05/React Native AsyncStorage 封装/" class="leancloud_visitors" data-flag-title="React Native AsyncStorage 封装">
+             <span id="/2017/06/18/React Native TextInput高度自适应/" class="leancloud_visitors" data-flag-title="React Native TextInput 高度自适应">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -905,14 +739,180 @@ class JsonUtil extends Component {
         
           
           
-在Android开发中有一个以key-value形式轻量级的数据存储方式—SharedPreferences, 类似的React Native中也有一个–AsyncStorage
-AsyncStorage是一个简单的、异步的、持久化的Key-Value存储系统，它对于App来说是全局性的
+有时我们需要根据默认的文字来显示TextInput的高度，而且可以随着文字的输入自动增加TextInput的高度。下面我们就来看一下这个是如何实现的：
 
-API
+TextInput属性介绍代码伺候(去除无关代码)/**
+ * Created by Cral-Gates on 2017/5/11.
+ */
+
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/05/05/React Native AsyncStorage 封装/#more" rel="contents">
+            <a class="btn" href="/2017/06/18/React Native TextInput高度自适应/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/06/18/React Native TextInput属性介绍/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ibinbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ibinbin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/06/18/React Native TextInput属性介绍/" itemprop="url">
+                  React Native TextInput 属性介绍
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-18T08:22:16+08:00">
+                2017-06-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/React-Native学习总结/" itemprop="url" rel="index">
+                    <span itemprop="name">React Native学习总结</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/06/18/React Native TextInput属性介绍/" class="leancloud_visitors" data-flag-title="React Native TextInput 属性介绍">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          View 支持View的相关属性
+autoCapitalize  控制TextInput输入的字符进行切换成大写(可选择参数:’none’, ‘sentences’, ‘words’, ‘characters’)
+none:不自动切换任何字符成大写
+sentences:默认每个句子的首字母变成大写
+
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/18/React Native TextInput属性介绍/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>

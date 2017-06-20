@@ -87,17 +87,15 @@
 
 
 
-<meta name="description" content="Serialization&amp;apos;use strict&amp;apos;; import React, {Component} from &amp;apos;react&amp;apos;;  class JsonUtil extends Component {     /*      * 字符转换为JSON      * */     static strToJson(data) {         return">
-<meta name="keywords">
-<meta property="og:type" content="article">
-<meta property="og:title" content="React Native网络请求和Json-String封装">
-<meta property="og:url" content="http://5ibinbin.com/2017/05/05/React Native 网络请求封装/index.html">
+<meta name="description" content="大道至简">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ibinbin">
+<meta property="og:url" content="http://5ibinbin.com/archives/2017/06/index.html">
 <meta property="og:site_name" content="ibinbin">
-<meta property="og:description" content="Serialization&amp;apos;use strict&amp;apos;; import React, {Component} from &amp;apos;react&amp;apos;;  class JsonUtil extends Component {     /*      * 字符转换为JSON      * */     static strToJson(data) {         return">
-<meta property="og:updated_time" content="2017-06-20T13:47:32.000Z">
+<meta property="og:description" content="大道至简">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React Native网络请求和Json-String封装">
-<meta name="twitter:description" content="Serialization&amp;apos;use strict&amp;apos;; import React, {Component} from &amp;apos;react&amp;apos;;  class JsonUtil extends Component {     /*      * 字符转换为JSON      * */     static strToJson(data) {         return">
+<meta name="twitter:title" content="ibinbin">
+<meta name="twitter:description" content="大道至简">
 
 
 
@@ -125,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://5ibinbin.com/2017/05/05/React Native 网络请求封装/"/>
+  <link rel="canonical" href="http://5ibinbin.com/archives/2017/06/"/>
 
 
 
 
 
-  <title> React Native网络请求和Json-String封装 | ibinbin </title>
+  <title> 归档 | ibinbin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -156,7 +154,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left  page-archive  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -288,350 +286,177 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  <section id="posts" class="posts-collapse">
+    <span class="archive-move-on"></span>
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/05/05/React Native 网络请求封装/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ibinbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ibinbin">
+    <span class="archive-page-counter">
+      
+      
+      
+        
+      
+      嗯..! 目前共计 13 篇日志。 继续努力。
     </span>
 
     
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                React Native网络请求和Json-String封装
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-05T10:41:21+08:00">
-                2017-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/React-Native学习总结/" itemprop="url" rel="index">
-                    <span itemprop="name">React Native学习总结</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/05/05/React Native 网络请求封装/" class="leancloud_visitors" data-flag-title="React Native网络请求和Json-String封装">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
 
       
       
-
-      
-        <h5 id="Serialization"><a href="#Serialization" class="headerlink" title="Serialization"></a>Serialization</h5><pre><code>&apos;use strict&apos;;
-import React, {Component} from &apos;react&apos;;
-
-class JsonUtil extends Component {
-    /*
-     * 字符转换为JSON
-     * */
-    static strToJson(data) {
-        return JSON.parse(data);
-    }
-    /*
-     * JSON转换为字符
-     * */
-    static jsonToStr(data) {
-        return JSON.stringify(data);
-    }
-    /*
-     * map转换为json
-     * */
-    static mapToJson(map) {
-        return JSON.stringify(JsonUtil.strMapToObj(map));
-    }
-    /*
-     * json转换为map
-     * */
-    static jsonToMap(jsonStr) {
-        return JsonUtil.objToStrMap(JSON.parse(jsonStr));
-    }
-    /*
-     * map转化为对象（map所有键都是字符串，可以将其转换为对象）
-     * */
-    static strMapToObj(strMap) {
-        let obj = Object.create(null);
-        for (let [k, v] of strMap) {
-            obj[k] = v;
-        }
-        return obj;
-    }
-    /*
-     * 对象转换为Map
-     * */
-    static objToStrMap(obj) {
-        let strMap = new Map();
-        for (let k of Object.keys(obj)) {
-            strMap.set(k, obj[k]);
-        }
-        return strMap;
-    }
-}
-
-export default JsonUtil;
-</code></pre><h5 id="网络请求"><a href="#网络请求" class="headerlink" title="网络请求"></a>网络请求</h5><pre><code>&apos;use strict&apos;;
-import React, {Component} from &apos;react&apos;;
-
-class NetUtil extends Component {
-
-static DouB_Api = &apos;https://api.douban.com/v2/movie/top250?start=0&amp;count=20&apos;;
-/**
- * get请求
- *url : 请求地址
- *callback : 回调函数
- */
-static get(url, callback) {
-    var fetchOptions = {
-        method: &apos;GET&apos;,
-        headers: {
-            &apos;X-LC-Id&apos;: &apos;M401fErHUPYhDKmgp0wjqVRX-gzGzoHsz&apos;,
-            &apos;X-LC-Key&apos;: &apos;Jqnvt1Lmt34vQh1JDRUpRAqq&apos;
-        }
-    };
-    fetch(url, fetchOptions)
-        .then((response) =&gt; response.text())
-        .then((responseText) =&gt; {
-            callback(JSON.parse(responseText));
-        }).done();
-}
-
-/**
- * delete请求
- *url : 请求地址
- *callback : 回调函数
- */
-static delete(url, callback) {
-    var fetchOptions = {
-        method: &apos;DELETE&apos;,
-        headers: {
-            &apos;X-LC-Id&apos;: &apos;M401fErHUPYhDKmgp0wjqVRX-gzGzoHsz&apos;,
-            &apos;X-LC-Key&apos;: &apos;Jqnvt1Lmt34vQh1JDRUpRAqq&apos;
-        }
-    };
-    fetch(url, fetchOptions)
-        .then((response) =&gt; response.text())
-        .then((responseText) =&gt; {
-            callback(JSON.parse(responseText));
-        }).done();
-}
-/**
- * post请求
- * url : 请求地址
- * data : 参数(Json对象)
- * callback : 回调函数
- * */
-static postJson(url, data, callback) {
-    var fetchOption = {
-        method: &apos;POST&apos;,
-        headers: {
-            &apos;Content-Type&apos;: &apos;application/json&apos;,
-            &apos;X-LC-Id&apos;: &apos;M401fErHUPYhDKmgp0wjqVRX-gzGzoHsz&apos;,
-            &apos;X-LC-Key&apos;: &apos;Jqnvt1Lmt34vQh1JDRUpRAqq&apos;
-        },
-        body: JSON.stringify(data)
-    };
-
-    fetch(url, fetchOption)
-        .then((response) =&gt; response.text())
-        .then((responseText) =&gt; {
-            callback(JSON.parse(responseText))
-        })
-        .done();
-}
-/**
- * put请求
- * url : 请求地址
- * data : 参数(Json对象)
- * callback : 回调函数
- * */
-static putJson(url, data, callback) {
-    var fetchOption = {
-        method: &apos;PUT&apos;,
-        headers: {
-            &apos;Content-Type&apos;: &apos;application/json&apos;,
-            &apos;X-LC-Id&apos;: &apos;M401fErHUPYhDKmgp0wjqVRX-gzGzoHsz&apos;,
-            &apos;X-LC-Key&apos;: &apos;Jqnvt1Lmt34vQh1JDRUpRAqq&apos;
-        },
-        body: JSON.stringify(data)
-    };
-
-    fetch(url, fetchOption)
-        .then((response) =&gt; response.text())
-        .then((responseText) =&gt; {
-            callback(JSON.parse(responseText))
-        })
-        .done();
-}
-
-export default NetUtil;
-</code></pre><h6 id="网络请求使用"><a href="#网络请求使用" class="headerlink" title="网络请求使用"></a>网络请求使用</h6><pre><code>import NetUtil from &apos;../utils/NetUtil&apos;;
-import JsonUtil from &apos;../utils/JsonUtil&apos;;
-
-_getMyNoteBook = () =&gt; {
-    let _this = this;
-    let username = this.state.username;
-    let params = {
-        &quot;author&quot;: username
-    };
-    let url = Global.NOTEBOOK + JsonUtil.jsonToStr(params);
-    NetUtil.get(url, function (response) {
-        console.log(response);
-        _this.setState({
-            notebooks: _this.state.notebooks.cloneWithRows(response.results),
-            noteArray: response.results
-        });
-    });
-};
-</code></pre>
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
       
 
       
         
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/05/29/React Native TextInput高度自适应/" rel="next" title="React Native TextInput 高度自适应">
-                <i class="fa fa-chevron-left"></i> React Native TextInput 高度自适应
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/05/React Native AsyncStorage 封装/" rel="prev" title="React Native AsyncStorage 封装">
-                React Native AsyncStorage 封装 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
+        <div class="collection-title">
+          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
         </div>
       
+      
 
       
-      
-    </footer>
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/2017/06/20/React Native AsyncStorage 封装/" itemprop="url">
+              
+                <span itemprop="name">React Native AsyncStorage 封装</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-06-20T08:22:16+08:00"
+              content="2017-06-20" >
+          06-20
+        </time>
+      </div>
+
+    </header>
   </article>
 
 
 
-    <div class="post-spread">
+    
+
       
-    </div>
-  </div>
+      
+      
+
+      
+      
+
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/2017/06/20/React Native 网络请求封装/" itemprop="url">
+              
+                <span itemprop="name">React Native网络请求和Json-String封装</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-06-20T00:00:00+08:00"
+              content="2017-06-20" >
+          06-20
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+    
+
+      
+      
+      
+
+      
+      
+
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/2017/06/18/React Native TextInput高度自适应/" itemprop="url">
+              
+                <span itemprop="name">React Native TextInput 高度自适应</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-06-18T08:42:16+08:00"
+              content="2017-06-18" >
+          06-18
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+    
+
+      
+      
+      
+
+      
+      
+
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/2017/06/18/React Native TextInput属性介绍/" itemprop="url">
+              
+                <span itemprop="name">React Native TextInput 属性介绍</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-06-18T08:22:16+08:00"
+              content="2017-06-18" >
+          06-18
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+    
+
+  </section>
+
+  
+
 
 
           </div>
@@ -639,12 +464,6 @@ _getMyNoteBook = () =&gt; {
 
 
           
-  <div class="comments" id="comments">
-    
-      <div id="uyan_frame"></div>
-    
-  </div>
-
 
         </div>
         
@@ -664,17 +483,8 @@ _getMyNoteBook = () =&gt; {
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -747,22 +557,6 @@ _getMyNoteBook = () =&gt; {
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#Serialization"><span class="nav-number">1.</span> <span class="nav-text">Serialization</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#网络请求"><span class="nav-number">2.</span> <span class="nav-text">网络请求</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#网络请求使用"><span class="nav-number">2.1.</span> <span class="nav-text">网络请求使用</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -869,9 +663,11 @@ _getMyNoteBook = () =&gt; {
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
+  
+    <script type="text/javascript" id="motion.page.archive">
+      $('.archive-year').velocity('transition.slideLeftIn');
+    </script>
+  
 
 
   
@@ -904,10 +700,6 @@ _getMyNoteBook = () =&gt; {
   
     
 
-    
-      <!-- UY BEGIN -->
-      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2130989"></script>
-      <!-- UY END -->
     
   
 
