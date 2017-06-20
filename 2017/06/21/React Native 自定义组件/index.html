@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="准备材料： 微信开发者账号 注册你的APP libammsdk.jar包 debug.keystore文件    准备工作 申请你的APPID 导入libammsdk.jar包 在AndroidManifest.xml中设置权限 &amp;lt;uses-permission android:name=&amp;quot;android.permission.INTERNET&amp;quot;&amp;gt;  &amp;lt;us">
+<meta name="description" content="通过继承Component来创建组件类 class TextButton extends Component { }  定义组件的propTypes(props类型)和defaultProps(props默认值) static propTypes = {     text: PropTypes.string.isRequired,     onPress: PropTypes.func,">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android 微信sdk登录和分享">
-<meta property="og:url" content="http://5ibinbin.com/2017/04/10/weChat-login/index.html">
+<meta property="og:title" content="React Native 自定义组件">
+<meta property="og:url" content="http://5ibinbin.com/2017/06/21/React Native 自定义组件/index.html">
 <meta property="og:site_name" content="ibinbin">
-<meta property="og:description" content="准备材料： 微信开发者账号 注册你的APP libammsdk.jar包 debug.keystore文件    准备工作 申请你的APPID 导入libammsdk.jar包 在AndroidManifest.xml中设置权限 &amp;lt;uses-permission android:name=&amp;quot;android.permission.INTERNET&amp;quot;&amp;gt;  &amp;lt;us">
-<meta property="og:updated_time" content="2017-04-11T09:41:49.000Z">
+<meta property="og:description" content="通过继承Component来创建组件类 class TextButton extends Component { }  定义组件的propTypes(props类型)和defaultProps(props默认值) static propTypes = {     text: PropTypes.string.isRequired,     onPress: PropTypes.func,">
+<meta property="og:updated_time" content="2017-06-20T13:56:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android 微信sdk登录和分享">
-<meta name="twitter:description" content="准备材料： 微信开发者账号 注册你的APP libammsdk.jar包 debug.keystore文件    准备工作 申请你的APPID 导入libammsdk.jar包 在AndroidManifest.xml中设置权限 &amp;lt;uses-permission android:name=&amp;quot;android.permission.INTERNET&amp;quot;&amp;gt;  &amp;lt;us">
+<meta name="twitter:title" content="React Native 自定义组件">
+<meta name="twitter:description" content="通过继承Component来创建组件类 class TextButton extends Component { }  定义组件的propTypes(props类型)和defaultProps(props默认值) static propTypes = {     text: PropTypes.string.isRequired,     onPress: PropTypes.func,">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://5ibinbin.com/2017/04/10/weChat-login/"/>
+  <link rel="canonical" href="http://5ibinbin.com/2017/06/21/React Native 自定义组件/"/>
 
 
 
 
 
-  <title> Android 微信sdk登录和分享 | ibinbin </title>
+  <title> React Native 自定义组件 | ibinbin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -298,7 +298,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/04/10/weChat-login/">
+    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/06/21/React Native 自定义组件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ibinbin">
@@ -319,7 +319,7 @@
             
             
               
-                Android 微信sdk登录和分享
+                React Native 自定义组件
               
             
           </h1>
@@ -334,8 +334,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-10T17:00:03+08:00">
-                2017-04-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-21T00:00:00+08:00">
+                2017-06-21
               </time>
             
 
@@ -357,8 +357,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android技术分享/" itemprop="url" rel="index">
-                    <span itemprop="name">Android技术分享</span>
+                  <a href="/categories/React-Native学习总结/" itemprop="url" rel="index">
+                    <span itemprop="name">React Native学习总结</span>
                   </a>
                 </span>
 
@@ -374,7 +374,7 @@
 
           
           
-             <span id="/2017/04/10/weChat-login/" class="leancloud_visitors" data-flag-title="Android 微信sdk登录和分享">
+             <span id="/2017/06/21/React Native 自定义组件/" class="leancloud_visitors" data-flag-title="React Native 自定义组件">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -404,210 +404,92 @@
 
       
         <ul>
-<li>准备材料：<ul>
-<li><a href="https://open.weixin.qq.com" target="_blank" rel="external">微信开发者账号</a></li>
-<li>注册你的APP</li>
-<li>libammsdk.jar包</li>
-<li>debug.keystore文件</li>
-</ul>
-</li>
-</ul>
-<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
-<li>申请你的APPID</li>
-<li>导入libammsdk.jar包</li>
-<li><p>在AndroidManifest.xml中设置权限</p>
-<pre><code>&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;&gt; 
-&lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot;/&gt; 
-&lt;uses-permission android:name=&quot;android.permission.ACCESS_WIFI_STATE&quot;/&gt; 
-&lt;uses-permission android:name=&quot;android.permission.READ_PHONE_STATE&quot;/&gt; 
-&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;/&gt;
-</code></pre></li>
-<li><p>注册APP到微信</p>
-<pre><code>private static final String App_Id = &quot;你注册的APP_ID&quot;;
-private IWXAPI api;
-public void registerToWX(){
-    api = WXAPIFactory.createWXAPI(this, App_Id, true);
-    api.registerApp(App_ID);
+<li><p>通过继承Component来创建组件类</p>
+<pre><code>class TextButton extends Component {
 }
 </code></pre></li>
-</ul>
-<h3 id="分享："><a href="#分享：" class="headerlink" title="分享："></a>分享：</h3><ul>
-<li><p>分享(以分享图片为例)<br>  直接触发分享图片按钮的点击事件</p>
-<pre><code>findViewById(R.id.send_img).setOnClickListener(new OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.send_img);
-        WXImageObject imgObj = new WXImageObject(bmp);
+<li><p>定义组件的propTypes(props类型)和defaultProps(props默认值)</p>
+<pre><code>static propTypes = {
+    text: PropTypes.string.isRequired,
+    onPress: PropTypes.func,
+    color: PropTypes.string,
+    backgroundColor:PropTypes.string,
+    fontSize: PropTypes.number
+};
 
-        WXMediaMessage msg = new WXMediaMessage();
-        msg.mediaObject = imgObj;
-
-        Bitmap thumbBmp = Bitmap.createScaledBitmap(bmp, 150, 150, true);
-        bmp.recycle();
-        msg.thumbData = Util.bmpToByteArray(thumbBmp, true);
-
-        SendMessageToWX.Req req = new SendMessageToWX.Req();
-        req.transaction = buildTransaction(&quot;img&quot;);
-        req.message = msg;
-        req.scene = SendMessageToWX.Req.WXSceneTimeline;
-                      SendMessageToWX.Req.WXSceneSession;
-
-        api.sendReq(req);
-
-        finish();
-    }
-});
-</code></pre><blockquote>
-<p>其中req.scene表示分享选择分别代表分享到朋友圈和会话框</p>
-<p>Util是一个图片处理的类</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><ul>
-<li><p>登录需要重新APP到微信，需要触发回调,下面直接上代码：</p>
-<pre><code>package com.lht.pan_android.wxapi;
-
-import org.apache.http.Header;
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.alibaba.fastjson.JSON;
-import com.lht.pan_android.HttpUtil;
-import com.lht.pan_android.MainActivity;
-import com.lht.pan_android.R;
-import com.lht.pan_android.WeChatCodeBean;
-import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.tencent.mm.sdk.modelbase.BaseReq;
-import com.tencent.mm.sdk.modelbase.BaseResp;
-import com.tencent.mm.sdk.modelmsg.SendAuth;
-import com.tencent.mm.sdk.openapi.IWXAPI;
-import com.tencent.mm.sdk.openapi.IWXAPIEventHandler;
-import com.tencent.mm.sdk.openapi.WXAPIFactory;
-
-public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
-
-    private static final String TAG = &quot;wechat&quot;;
-    private static final String APP_ID = &quot;你的APP_Id&quot;;
-    private static final String APP_SECRET = &quot;你的APP_secret&quot;;
-    private Button registerBtn;
-    private IWXAPI api;
-    private TextView tv;
-
-    @Override
-protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.entry);
-    registerBtn = (Button) findViewById(R.id.reg_btn);
-
-    tv = (TextView) findViewById(R.id.log);
-
-    api = WXAPIFactory.createWXAPI(this, APP_ID, true);
-    registerBtn.setOnClickListener(new OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            loginWithWeixin();
-        }
-    });
-
-    api.handleIntent(getIntent(), this);
-}
-
-//登录信息
-private void loginWithWeixin() {
-    if (api == null) {
-        api = WXAPIFactory.createWXAPI(this, APP_ID, false);
-    }
-    if (!api.isWXAppInstalled()) {
-        Toast.makeText(this, &quot;没有安装微信&quot;, Toast.LENGTH_SHORT).show();
-        return;
-    }
-    api.registerApp(APP_ID);
-    SendAuth.Req req = new SendAuth.Req();
-    req.scope = &quot;snsapi_userinfo&quot;;
-    req.state = &quot;com.lht.bridge.session&quot;;
-    api.sendReq(req);
-}
-
-@Override
-protected void onNewIntent(Intent intent) {
-    super.onNewIntent(intent);
-    setIntent(intent);
-    api.handleIntent(intent, this);
-}
-
-//实现了IWXAPIEventHandler
-@Override
-public void onReq(BaseReq req) {
-
-}
-
-//实现了IWXAPIEventHandler
-@Override
-public void onResp(BaseResp resp) {
-
-    code_code = ((SendAuth.Resp) resp).code;
-    String result = null;
-    switch (resp.errCode) {
-    case BaseResp.ErrCode.ERR_OK:
-        result = &quot;发送成功&quot;;
-        //此处进行数据请求，请求用户信息
-        Toast.makeText(this, result, Toast.LENGTH_LONG).show();
-        finish();
-        break;
-    case BaseResp.ErrCode.ERR_USER_CANCEL:
-        result = &quot;发送取消&quot;;
-        Toast.makeText(this, result, Toast.LENGTH_LONG).show();
-        finish();
-        break;
-    case BaseResp.ErrCode.ERR_AUTH_DENIED:
-        result = &quot;发送被拒绝&quot;;
-        Toast.makeText(this, result, Toast.LENGTH_LONG).show();
-        finish();
-        break;
-    default:
-        result = &quot;发送返回&quot;;
-        Toast.makeText(this, result, Toast.LENGTH_LONG).show();
-        finish();
-        break;
-    }
-    Toast.makeText(this, result, Toast.LENGTH_LONG).show();
-}
-}
-</code></pre><blockquote>
-<p>实现IWXAPIEventHandler接口，微信发送的请求将回调到onReq方法，发送到微信请求的响应结果将回调到onResp方法</p>
-<p>在WXEntryActivity中将接收到的intent及实现了IWXAPIEventHandler接口的对象传递给IWXAPI接口的handleIntent方法</p>
-</blockquote>
-<ul>
-<li><p>在Androidmanifest.xml中注册：</p>
-<pre><code>&lt;activity
-    android:name = &quot;.wxapi.WXEntryActivity&quot;
-    android:exported = &quot;true&quot;/&gt;
+static defaultProps = {
+    color: &apos;white&apos;,
+    backgroundColor: &apos;#FFDE00&apos;,
+    fontSize:14
+};
 </code></pre></li>
-<li><p>请求用户信息：<br>  微信需要先获取到code，再根据code获取access_token，根据access_token获取openId，最后根据access_token和openId获取用户信息</p>
-</li>
-</ul>
-</li>
 </ul>
 <blockquote>
-<p>到此微信登录和分享的流程基本走通了，但是还有许多需要注意的问题</p>
+<p>其中PropTypes的类型有：array，bool，func，number，object， string，symbol</p>
 </blockquote>
-<hr>
 <ul>
-<li>1、最最最重要的一点是登录需要单独写一个包,据说这样登录才能走微信自己的一套机制<br>  格式为：包名.wxapi 类名：WXEntryActivity.java</li>
-<li>2、导入的jar包问题，jar包导入的不对就可能导致获取code这一步出现问题，微信的jar包分为老版本和新版本，新版本的可以直接获取access_token，但是官网并没有说明怎么通过access_token获取用户信息，老版本的jar包是可以获取code的，然后自己根据code自己写网络请求(你没有看错，就是自己写网络请求)；</li>
-<li>3、程序运行时一定要保证你的签名正确，如果需要更换你的key，windows下需要更换sdk/.android/debug.keystore以正确替换你的key</li>
+<li><p>渲染界面，引用props值</p>
+<pre><code>render() {
+    return (
+        &lt;TouchableOpacity onPress={this.props.onPress}&gt;
+            &lt;View style={[{backgroundColor:this.props.backgroundColor}]}&gt;
+                &lt;Text style={{fontSize:this.props.fontSize, color:this.props.color}}&gt;{this.props.text}&lt;/Text&gt;
+            &lt;/View&gt;
+        &lt;/TouchableOpacity&gt;
+    )
+}
+</code></pre></li>
+<li><p>导出组件</p>
+<pre><code>export default TextButton;
+</code></pre></li>
 </ul>
-<blockquote>
-<p>目前能想到的就这些了，有什么问题欢迎指出，最后吐槽一下微信登录竟然收费、微信的文档就呵呵了</p>
-</blockquote>
+<h5 id="下面是完整代码："><a href="#下面是完整代码：" class="headerlink" title="下面是完整代码："></a>下面是完整代码：</h5><pre><code>&apos;use strict&apos;;
 
+import React, {Component, PropTypes} from &apos;react&apos;;
+import {
+    StyleSheet,
+    TouchableOpacity,
+    Text,
+    View
+} from &apos;react-native&apos;;
+
+class TextButton extends Component {
+    static propTypes = {
+        text: PropTypes.string.isRequired,
+        onPress: PropTypes.func,
+        color: PropTypes.string,
+        backgroundColor:PropTypes.string,
+        fontSize: PropTypes.number
+    };
+
+    static defaultProps = {
+        color: &apos;white&apos;,
+        backgroundColor: &apos;#FFDE00&apos;,
+        fontSize:14
+    };
+
+    render() {
+        return (
+            &lt;TouchableOpacity onPress={this.props.onPress}&gt;
+                &lt;View style={[{backgroundColor:this.props.backgroundColor}]}&gt;
+                    &lt;Text style={{fontSize:this.props.fontSize, color:this.props.color}}&gt;{this.props.text}&lt;/Text&gt;
+                &lt;/View&gt;
+            &lt;/TouchableOpacity&gt;
+        )
+    }
+}
+
+export default TextButton;
+</code></pre><h5 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h5><pre><code>//首先导入组件
+import TextButton from &apos;../component/TextButton&apos;;
+//然后在render渲染
+&lt;TextButton
+    style={styles.register}
+    text={&apos;测试文字&apos;}
+    onPress={() =&gt; this._test()}
+    color={&apos;#FFDE00&apos;}
+    backgroundColor={&apos;transparent&apos;}/&gt;
+</code></pre>
       
     </div>
 
@@ -643,18 +525,14 @@ public void onResp(BaseResp resp) {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/10/getResourcesId/" rel="next" title="Cordova插件开发-Android获取资源Id">
-                <i class="fa fa-chevron-left"></i> Cordova插件开发-Android获取资源Id
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/09/React Native探索与设计(一)/" rel="prev" title="React Native探索与设计(一)">
-                React Native探索与设计(一) <i class="fa fa-chevron-right"></i>
+              <a href="/2017/06/20/React Native AsyncStorage 封装/" rel="prev" title="React Native AsyncStorage 封装">
+                React Native AsyncStorage 封装 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -797,7 +675,7 @@ public void onResp(BaseResp resp) {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分享："><span class="nav-number">2.</span> <span class="nav-text">分享：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#登录"><span class="nav-number">3.</span> <span class="nav-text">登录</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#下面是完整代码："><span class="nav-number">1.</span> <span class="nav-text">下面是完整代码：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#引用"><span class="nav-number">2.</span> <span class="nav-text">引用</span></a></li></ol></div>
             
 
           </div>
