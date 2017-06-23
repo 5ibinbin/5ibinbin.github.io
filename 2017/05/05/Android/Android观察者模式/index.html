@@ -87,15 +87,17 @@
 
 
 
-<meta name="description" content="大道至简">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ibinbin">
-<meta property="og:url" content="http://5ibinbin.com/categories/Mac/index.html">
+<meta name="description" content="观察者模式理解观察者模式 Observer 观察者模式定义了一个一对多的依赖关系，让多个观察者对象同时监听一个主题对象 当这个主题对象改变时，会通知所有的观察者，让他们能够自动的更新自己  观察者模式的组成 抽象主题：把所有的对观察者对象的引用保存在一个集合中，抽象主题提供一个接口，可以注册和移除观察者； 抽象观察者：为所有的观察者定义一个接口，当主题的数据更新时给登记的观察者提供通知； 具体主题">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android观察者模式">
+<meta property="og:url" content="http://5ibinbin.com/2017/05/05/Android/Android观察者模式/index.html">
 <meta property="og:site_name" content="ibinbin">
-<meta property="og:description" content="大道至简">
+<meta property="og:description" content="观察者模式理解观察者模式 Observer 观察者模式定义了一个一对多的依赖关系，让多个观察者对象同时监听一个主题对象 当这个主题对象改变时，会通知所有的观察者，让他们能够自动的更新自己  观察者模式的组成 抽象主题：把所有的对观察者对象的引用保存在一个集合中，抽象主题提供一个接口，可以注册和移除观察者； 抽象观察者：为所有的观察者定义一个接口，当主题的数据更新时给登记的观察者提供通知； 具体主题">
+<meta property="og:updated_time" content="2017-06-23T09:17:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ibinbin">
-<meta name="twitter:description" content="大道至简">
+<meta name="twitter:title" content="Android观察者模式">
+<meta name="twitter:description" content="观察者模式理解观察者模式 Observer 观察者模式定义了一个一对多的依赖关系，让多个观察者对象同时监听一个主题对象 当这个主题对象改变时，会通知所有的观察者，让他们能够自动的更新自己  观察者模式的组成 抽象主题：把所有的对观察者对象的引用保存在一个集合中，抽象主题提供一个接口，可以注册和移除观察者； 抽象观察者：为所有的观察者定义一个接口，当主题的数据更新时给登记的观察者提供通知； 具体主题">
 
 
 
@@ -123,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://5ibinbin.com/categories/Mac/"/>
+  <link rel="canonical" href="http://5ibinbin.com/2017/05/05/Android/Android观察者模式/"/>
 
 
 
 
 
-  <title> 分类: Mac | ibinbin </title>
+  <title> Android观察者模式 | ibinbin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -154,7 +156,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -286,47 +288,335 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        Mac
-        <small>分类</small>
-      </h2>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/22/随手记/Mac跨域/" itemprop="url">
-              
-                <span itemprop="name">Mac跨域</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-22T00:00:00+08:00"
-              content="2017-04-22" >
-          04-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-  </section>
 
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/05/05/Android/Android观察者模式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ibinbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ibinbin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android观察者模式
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-05T00:00:00+08:00">
+                2017-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android技术分享/" itemprop="url" rel="index">
+                    <span itemprop="name">Android技术分享</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/05/05/Android/Android观察者模式/" class="leancloud_visitors" data-flag-title="Android观察者模式">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="观察者模式理解"><a href="#观察者模式理解" class="headerlink" title="观察者模式理解"></a>观察者模式理解</h2><h4 id="观察者模式-Observer"><a href="#观察者模式-Observer" class="headerlink" title="观察者模式 Observer"></a>观察者模式 Observer</h4><ul>
+<li>观察者模式定义了一个一对多的依赖关系，让多个观察者对象同时监听一个主题对象</li>
+<li>当这个主题对象改变时，会通知所有的观察者，让他们能够自动的更新自己</li>
+</ul>
+<h4 id="观察者模式的组成"><a href="#观察者模式的组成" class="headerlink" title="观察者模式的组成"></a>观察者模式的组成</h4><ul>
+<li>抽象主题：把所有的对观察者对象的引用保存在一个集合中，抽象主题提供一个接口，可以注册和移除观察者；</li>
+<li>抽象观察者：为所有的观察者定义一个接口，当主题的数据更新时给登记的观察者提供通知；</li>
+<li>具体主题：在具体主题内部状态改变时，给所有登记过的观察者发出通知；</li>
+<li>具体观察者：实现抽象观察者提供的更新接口，以便本身的状态能够及时更新；</li>
+</ul>
+<blockquote>
+<p>为便于理解可以把主题理解为被观察者</p>
+</blockquote>
+<h4 id="观察者模式的应用"><a href="#观察者模式的应用" class="headerlink" title="观察者模式的应用"></a>观察者模式的应用</h4><h6 id="抽象观察者"><a href="#抽象观察者" class="headerlink" title="抽象观察者"></a>抽象观察者</h6><pre><code>/**
+  * 观察者
+  */
+public interface Observer {
+       void update();
+}
+</code></pre><h6 id="抽象主题"><a href="#抽象主题" class="headerlink" title="抽象主题"></a>抽象主题</h6><pre><code>/**
+ * 主题（发布者、被观察者）
+  */
+public interface Subject {
+/**
+  * 注册观察者
+  */
+void registerObserver(Observer observer);
+
+/**
+ * 移除观察者
+  */
+void removeObserver(Observer observer);
+
+/**
+  * 通知观察者
+  */
+void notifyObservers(); 
+}
+</code></pre><h6 id="显示当前天气的公告牌的数据-具体观察者"><a href="#显示当前天气的公告牌的数据-具体观察者" class="headerlink" title="显示当前天气的公告牌的数据(具体观察者)"></a>显示当前天气的公告牌的数据(具体观察者)</h6><pre><code>public class CurrentConditionsDisplay implements Observer, DisplayElement {
+
+    private WeatherData weatherData;
+
+    private float temperature;//温度
+    private float humidity;//湿度
+    private float pressure;//气压
+
+    public CurrentConditionsDisplay(WeatherData weatherData) {
+        this.weatherData = weatherData;
+        this.weatherData.registerObserver(this);
+    }
+
+    @Override
+    public void display() {
+        System.out.println(&quot;当前温度为：&quot; + this.temperature + &quot;℃&quot;);
+        System.out.println(&quot;当前湿度为：&quot; + this.humidity);
+        System.out.println(&quot;当前气压为：&quot; + this.pressure);
+    }
+
+    @Override
+    public void update() {
+        this.temperature = this.weatherData.getTemperature();
+        this.humidity = this.weatherData.getHumidity();
+        this.pressure = this.weatherData.getPressure();
+        display();
+    }
+}
+</code></pre><h6 id="用于获取数据的具体主题-被观察者"><a href="#用于获取数据的具体主题-被观察者" class="headerlink" title="用于获取数据的具体主题(被观察者)"></a>用于获取数据的具体主题(被观察者)</h6><pre><code>public class WeatherData implements Subject {
+
+    private List&lt;Observer&gt; observers;
+
+    private float temperature;//温度
+    private float humidity;//湿度
+    private float pressure;//气压
+    private List&lt;Float&gt; forecastTemperatures;//未来几天的温度
+
+    public WeatherData() {
+        this.observers = new ArrayList&lt;Observer&gt;();
+    }
+
+    @Override
+    public void registerObserver(Observer observer) {
+        this.observers.add(observer);
+    }
+
+    @Override
+    public void removeObserver(Observer observer) {
+        this.observers.remove(observer);
+    }
+
+    @Override
+    public void notifyObservers() {
+        for (Observer observer : observers) {
+            observer.update();
+        }
+    }
+
+    public void measurementsChanged() {
+        notifyObservers();
+    }
+
+    public void setMeasurements(float temperature, float humidity, 
+    float pressure, List&lt;Float&gt; forecastTemperatures) {
+        this.temperature = temperature;
+        this.humidity = humidity;
+        this.pressure = pressure;
+        this.forecastTemperatures = forecastTemperatures;
+        measurementsChanged();
+    }
+
+    public float getTemperature() {
+        return temperature;
+    }
+
+    public float getHumidity() {
+        return humidity;
+    }
+
+    public float getPressure() {
+        return pressure;
+    }
+
+    public List&lt;Float&gt; getForecastTemperatures() {
+        return forecastTemperatures;
+    }
+}
+</code></pre><h6 id="用于公告牌显示的接口-观察者"><a href="#用于公告牌显示的接口-观察者" class="headerlink" title="用于公告牌显示的接口(观察者)"></a>用于公告牌显示的接口(观察者)</h6><pre><code>public interface DisplayElement {
+       void display();
+}
+</code></pre><blockquote>
+<p>公告牌CurrentConditionsDisplay实现了Observer和DisplayElement接口，在他们的构造方法中会调用WeatherData的registerObserver方法将自己注册成观察者，这样被观察者WeatherData就会持有观察者的应用，并将它们保存到一个集合中。当被观察者WeatherData状态发送变化时就会遍历这个集合，循环调用观察者公告牌更新数据的方法。后面如果我们需要增加或者删除公告牌就只需要新增或者删除实现了Observer和DisplayElement接口的公告牌就好了。</p>
+</blockquote>
+<ul>
+<li>参考链接：<ul>
+<li><a href="http://www.cnblogs.com/mengdd/archive/2013/02/07/2908929.html" target="_blank" rel="external">http://www.cnblogs.com/mengdd/archive/2013/02/07/2908929.html</a></li>
+<li><a href="http://www.jianshu.com/p/d55ee6e83d66" target="_blank" rel="external">http://www.jianshu.com/p/d55ee6e83d66</a></li>
+</ul>
+</li>
+</ul>
+<p></p>
+
+      
+    </div>
+
+    <div align="left">
+      
+        <div class="copyright">
+        <p><span>
+        <b>本文地址：</b><a href="/2017/05/05/Android/Android观察者模式/" title="Android观察者模式">http://5ibinbin.com/2017/05/05/Android/Android观察者模式/</a><br /><b>转载请注明出处！</b>
+        </span></p>
+        </div>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/10/ionic开发/ionic监听Android返回/" rel="next" title="ionic修改相册插件和监听Android返回">
+                <i class="fa fa-chevron-left"></i> ionic修改相册插件和监听Android返回
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/05/Android/Android MVC与MVP的区别和理解/" rel="prev" title="Android MVC和MVP的区别和理解">
+                Android MVC和MVP的区别和理解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -334,6 +624,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
 
         </div>
         
@@ -538,6 +834,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
@@ -569,6 +869,10 @@
   
     
 
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2130989"></script>
+      <!-- UY END -->
     
   
 
