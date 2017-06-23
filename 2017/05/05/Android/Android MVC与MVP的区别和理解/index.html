@@ -87,19 +87,19 @@
 
 
 
-<meta name="description" content="MVC架构：MVC就是Model-View-Controller，它们的作用是：(数据模型)Model：数据的封装和保存，业务逻辑和实体模型 (视图)View：视图界面，对应于布局文件 (控制器)Controller：业务逻辑，对应于Activity、Fragment等 它们之间的关系如下图所示：View传送指令到Controller,Controller完成业务逻辑后，改变Model的状态，Mo">
+<meta name="description" content="MVC架构：MVC就是Model-View-Controller，它们的作用是：(数据模型)Model：数据的封装和保存，业务逻辑和实体模型 (视图)View：视图界面，对应于布局文件 (控制器)Controller：业务逻辑，对应于Activity、Fragment等">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android MVC和MVP的区别和理解">
 <meta property="og:url" content="http://5ibinbin.com/2017/05/05/Android/Android MVC与MVP的区别和理解/index.html">
 <meta property="og:site_name" content="ibinbin">
-<meta property="og:description" content="MVC架构：MVC就是Model-View-Controller，它们的作用是：(数据模型)Model：数据的封装和保存，业务逻辑和实体模型 (视图)View：视图界面，对应于布局文件 (控制器)Controller：业务逻辑，对应于Activity、Fragment等 它们之间的关系如下图所示：View传送指令到Controller,Controller完成业务逻辑后，改变Model的状态，Mo">
+<meta property="og:description" content="MVC架构：MVC就是Model-View-Controller，它们的作用是：(数据模型)Model：数据的封装和保存，业务逻辑和实体模型 (视图)View：视图界面，对应于布局文件 (控制器)Controller：业务逻辑，对应于Activity、Fragment等">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1534031-9ae5ba8a11651f08.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1534031-8f4b6c89c33a6002.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-06-23T09:16:42.000Z">
+<meta property="og:updated_time" content="2017-06-23T09:50:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android MVC和MVP的区别和理解">
-<meta name="twitter:description" content="MVC架构：MVC就是Model-View-Controller，它们的作用是：(数据模型)Model：数据的封装和保存，业务逻辑和实体模型 (视图)View：视图界面，对应于布局文件 (控制器)Controller：业务逻辑，对应于Activity、Fragment等 它们之间的关系如下图所示：View传送指令到Controller,Controller完成业务逻辑后，改变Model的状态，Mo">
+<meta name="twitter:description" content="MVC架构：MVC就是Model-View-Controller，它们的作用是：(数据模型)Model：数据的封装和保存，业务逻辑和实体模型 (视图)View：视图界面，对应于布局文件 (控制器)Controller：业务逻辑，对应于Activity、Fragment等">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1534031-9ae5ba8a11651f08.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -409,7 +409,8 @@
         <h3 id="MVC架构："><a href="#MVC架构：" class="headerlink" title="MVC架构："></a>MVC架构：</h3><h4 id="MVC就是Model-View-Controller，它们的作用是："><a href="#MVC就是Model-View-Controller，它们的作用是：" class="headerlink" title="MVC就是Model-View-Controller，它们的作用是："></a>MVC就是Model-View-Controller，它们的作用是：</h4><pre><code>(数据模型)Model：数据的封装和保存，业务逻辑和实体模型
 (视图)View：视图界面，对应于布局文件
 (控制器)Controller：业务逻辑，对应于Activity、Fragment等
-</code></pre><h4 id="它们之间的关系如下图所示："><a href="#它们之间的关系如下图所示：" class="headerlink" title="它们之间的关系如下图所示："></a>它们之间的关系如下图所示：</h4><h6 id="View传送指令到Controller-Controller完成业务逻辑后，改变Model的状态，Model将新的数据发送到View，这就是MVC模式的处理逻辑。"><a href="#View传送指令到Controller-Controller完成业务逻辑后，改变Model的状态，Model将新的数据发送到View，这就是MVC模式的处理逻辑。" class="headerlink" title="View传送指令到Controller,Controller完成业务逻辑后，改变Model的状态，Model将新的数据发送到View，这就是MVC模式的处理逻辑。"></a>View传送指令到Controller,Controller完成业务逻辑后，改变Model的状态，Model将新的数据发送到View，这就是MVC模式的处理逻辑。</h6><p><img src="http://upload-images.jianshu.io/upload_images/1534031-9ae5ba8a11651f08.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</code></pre><a id="more"></a>
+<h4 id="它们之间的关系如下图所示："><a href="#它们之间的关系如下图所示：" class="headerlink" title="它们之间的关系如下图所示："></a>它们之间的关系如下图所示：</h4><h6 id="View传送指令到Controller-Controller完成业务逻辑后，改变Model的状态，Model将新的数据发送到View，这就是MVC模式的处理逻辑。"><a href="#View传送指令到Controller-Controller完成业务逻辑后，改变Model的状态，Model将新的数据发送到View，这就是MVC模式的处理逻辑。" class="headerlink" title="View传送指令到Controller,Controller完成业务逻辑后，改变Model的状态，Model将新的数据发送到View，这就是MVC模式的处理逻辑。"></a>View传送指令到Controller,Controller完成业务逻辑后，改变Model的状态，Model将新的数据发送到View，这就是MVC模式的处理逻辑。</h6><p><img src="http://upload-images.jianshu.io/upload_images/1534031-9ae5ba8a11651f08.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <h3 id="MVP架构："><a href="#MVP架构：" class="headerlink" title="MVP架构："></a>MVP架构：</h3><h4 id="MVP是Model-View-Presenter，它们的作用如下："><a href="#MVP是Model-View-Presenter，它们的作用如下：" class="headerlink" title="MVP是Model-View-Presenter，它们的作用如下："></a>MVP是Model-View-Presenter，它们的作用如下：</h4><p><img src="http://upload-images.jianshu.io/upload_images/1534031-8f4b6c89c33a6002.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <pre><code>Model：业务逻辑和实体模型，用来操作实际的数据，包含Bean和Model的抽象接口来降低耦合。
 View：就是Android中的视图，需要建立一个View的抽象接口View Interface。通过实现View的接口来实现View与Presenter的交互，从而降低耦合。对应于Activity，负责View的绘制与用户交互；

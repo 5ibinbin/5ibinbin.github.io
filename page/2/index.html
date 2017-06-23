@@ -407,15 +407,9 @@
 
       
         
-          
-          
-使用情景：当我们遇到需要固定大小的图片，而又不想让图片变形
-
-这个时候我要应该要想到的是css中的background相关属性
-.backImg{
-    &apos;background-image&apos;: &apos;url(&apos;&apos;)&apos;,
-    &apos;
-          ...
+          <blockquote>
+<p>使用情景：当我们遇到需要固定大小的图片，而又不想让图片变形</p>
+</blockquote>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/05/15/ionic开发/imageCover/#more" rel="contents">
@@ -577,16 +571,9 @@
 
       
         
-          
-          
-ionic混合开发调用Android系统相册，官方的cordova-image-picker插件在直接用的时候会在Android6.0以上的版本由于没有获得相应的存储权限而闪退。
-
-
-解决方法一：
-
-在原有的cordova插件上面改动，添加了动态授权，我放在了github 用法和原来的相同。
-fu
-          ...
+          <blockquote>
+<p>ionic混合开发调用Android系统相册，官方的<a href="http://ngcordova.com/docs/plugins/imagePicker/">cordova-image-picker</a>插件在直接用的时候会在Android6.0以上的版本由于没有获得相应的存储权限而闪退。</p>
+</blockquote>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/05/10/ionic开发/ionic监听Android返回/#more" rel="contents">
@@ -748,14 +735,10 @@ fu
 
       
         
-          
-          观察者模式理解观察者模式 Observer
-观察者模式定义了一个一对多的依赖关系，让多个观察者对象同时监听一个主题对象
-当这个主题对象改变时，会通知所有的观察者，让他们能够自动的更新自己
-
-观察者模式的组成
-抽象主题：把所有的对观察者对象的引用保存在一个集合中，抽象主题提供一个接口，可以注册和移除观
-          ...
+          <h2 id="观察者模式理解"><a href="#观察者模式理解" class="headerlink" title="观察者模式理解"></a>观察者模式理解</h2><h4 id="观察者模式-Observer"><a href="#观察者模式-Observer" class="headerlink" title="观察者模式 Observer"></a>观察者模式 Observer</h4><ul>
+<li>观察者模式定义了一个一对多的依赖关系，让多个观察者对象同时监听一个主题对象</li>
+<li>当这个主题对象改变时，会通知所有的观察者，让他们能够自动的更新自己</li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/05/05/Android/Android观察者模式/#more" rel="contents">
@@ -917,12 +900,10 @@ fu
 
       
         
-          
-          MVC架构：MVC就是Model-View-Controller，它们的作用是：(数据模型)Model：数据的封装和保存，业务逻辑和实体模型
+          <h3 id="MVC架构："><a href="#MVC架构：" class="headerlink" title="MVC架构："></a>MVC架构：</h3><h4 id="MVC就是Model-View-Controller，它们的作用是："><a href="#MVC就是Model-View-Controller，它们的作用是：" class="headerlink" title="MVC就是Model-View-Controller，它们的作用是："></a>MVC就是Model-View-Controller，它们的作用是：</h4><pre><code>(数据模型)Model：数据的封装和保存，业务逻辑和实体模型
 (视图)View：视图界面，对应于布局文件
 (控制器)Controller：业务逻辑，对应于Activity、Fragment等
-它们之间的关系如下图所示：V
-          ...
+</code></pre>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/05/05/Android/Android MVC与MVP的区别和理解/#more" rel="contents">
@@ -1084,12 +1065,14 @@ fu
 
       
         
-          
-          Mac：
-chrome49以前版本open -a &quot;Google Chrome&quot; --args --disable-web-security
-
-chrome49以后版本open -a /Applications/Google\ Chrome.app --args --disabl
-          ...
+          <h5 id="Mac："><a href="#Mac：" class="headerlink" title="Mac："></a>Mac：</h5><ul>
+<li>chrome49以前版本<pre><code>open -a &quot;Google Chrome&quot; --args --disable-web-security
+</code></pre></li>
+<li>chrome49以后版本<pre><code>open -a /Applications/Google\ Chrome.app --args --disable-web-security --user-data-dir
+</code></pre></li>
+<li>Safari<pre><code>open -a &apos;/Applications/Safari.app&apos; --args --disable-web-security
+</code></pre></li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/04/22/随手记/Mac跨域/#more" rel="contents">
@@ -1251,22 +1234,20 @@ chrome49以后版本open -a /Applications/Google\ Chrome.app --args --disabl
 
       
         
-          
-          
-准备材料：
-微信开发者账号
-注册你的APP
-libammsdk.jar包
-debug.keystore文件
-
-
-
-准备工作
-申请你的APPID
-导入libammsdk.jar包
-在AndroidManifest.xml中设置权限
-&lt;uses-permission android:name=&
-          ...
+          <ul>
+<li>准备材料：<ul>
+<li><a href="https://open.weixin.qq.com">微信开发者账号</a></li>
+<li>注册你的APP</li>
+<li>libammsdk.jar包</li>
+<li>debug.keystore文件</li>
+</ul>
+</li>
+</ul>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
+<li>申请你的APPID</li>
+<li>导入libammsdk.jar包</li>
+<li>在AndroidManifest.xml中设置权限</li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/04/20/Android/weChat-login/#more" rel="contents">

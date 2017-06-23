@@ -321,7 +321,7 @@
               
                 
                 <a class="post-title-link" href="/2017/06/26/React Native 探索与设计/React Native探索与设计(三)/" itemprop="url">
-                  React Native探索与设计(三)
+                  React Native探索与设计(三)-ES5和ES6语法
                 </a>
               
             
@@ -377,7 +377,7 @@
 
           
           
-             <span id="/2017/06/26/React Native 探索与设计/React Native探索与设计(三)/" class="leancloud_visitors" data-flag-title="React Native探索与设计(三)">
+             <span id="/2017/06/26/React Native 探索与设计/React Native探索与设计(三)/" class="leancloud_visitors" data-flag-title="React Native探索与设计(三)-ES5和ES6语法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -571,17 +571,13 @@
 
       
         
-          
-          React Native探索与设计(一)
-1. React Native有什么优点
-跨平台
-动态更新
-代码复用
-最大的优势就是既有Web的热更新优势，又有接近Native的性能
-
-2. React Native VS Hybrid
-性能： Hybrid 是基于 WebView 的，在 Android
-          ...
+          <p><strong>React Native探索与设计(一)</strong></p>
+<h5 id="1-React-Native有什么优点"><a href="#1-React-Native有什么优点" class="headerlink" title="1. React Native有什么优点"></a>1. React Native有什么优点</h5><ul>
+<li>跨平台</li>
+<li>动态更新</li>
+<li>代码复用</li>
+<li>最大的优势就是既有Web的热更新优势，又有接近Native的性能</li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/06/25/React Native 探索与设计/React Native探索与设计(一)/#more" rel="contents">
@@ -743,12 +739,10 @@
 
       
         
-          
-          JSX语法
-JSX: 即JavaScript XML 是一种在React组建内部构建标签的类XML语法。增强React程序组件的可读性
-
-React的核心机制之一就是虚拟DOM: 可以在内存中创建虚拟DOM元素。React利用虚拟DOM来减少对实际DOM的操作从而提升性能。1、示例render: f
-          ...
+          <h4 id="JSX语法"><a href="#JSX语法" class="headerlink" title="JSX语法"></a>JSX语法</h4><blockquote>
+<p>JSX: 即JavaScript XML 是一种在React组建内部构建标签的类XML语法。增强React程序组件的可读性</p>
+</blockquote>
+<h4 id="React的核心机制之一就是虚拟DOM-可以在内存中创建虚拟DOM元素。React利用虚拟DOM来减少对实际DOM的操作从而提升性能。"><a href="#React的核心机制之一就是虚拟DOM-可以在内存中创建虚拟DOM元素。React利用虚拟DOM来减少对实际DOM的操作从而提升性能。" class="headerlink" title="React的核心机制之一就是虚拟DOM: 可以在内存中创建虚拟DOM元素。React利用虚拟DOM来减少对实际DOM的操作从而提升性能。"></a>React的核心机制之一就是虚拟DOM: 可以在内存中创建虚拟DOM元素。React利用虚拟DOM来减少对实际DOM的操作从而提升性能。</h4>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/06/25/React Native 探索与设计/React Native探索与设计(二)/#more" rel="contents">
@@ -1078,15 +1072,10 @@ sentences:默认每个句子的首字母变成大写
 
       
         
-          
-          
-有时我们需要根据默认的文字来显示TextInput的高度，而且可以随着文字的输入自动增加TextInput的高度。下面我们就来看一下这个是如何实现的：
-
-TextInput属性介绍代码伺候(去除无关代码)/**
- * Created by Cral-Gates on 2017/5/11.
- */
-
-          ...
+          <blockquote>
+<p>有时我们需要根据默认的文字来显示TextInput的高度，而且可以随着文字的输入自动增加TextInput的高度。下面我们就来看一下这个是如何实现的：</p>
+</blockquote>
+<h4 id="TextInput属性介绍"><a href="#TextInput属性介绍" class="headerlink" title="TextInput属性介绍"></a><a href="http://www.jianshu.com/p/463aefd52687">TextInput属性介绍</a></h4>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/06/23/React Native 学习总结/React Native TextInput高度自适应/#more" rel="contents">
@@ -1248,13 +1237,10 @@ TextInput属性介绍代码伺候(去除无关代码)/**
 
       
         
-          
-          
-在Android开发中有一个以key-value形式轻量级的数据存储方式—SharedPreferences, 类似的React Native中也有一个–AsyncStorage
-AsyncStorage是一个简单的、异步的、持久化的Key-Value存储系统，它对于App来说是全局性的
-
-API
-          ...
+          <blockquote>
+<p>在Android开发中有一个以key-value形式轻量级的数据存储方式—SharedPreferences, 类似的React Native中也有一个–AsyncStorage</p>
+<p>AsyncStorage是一个简单的、异步的、持久化的Key-Value存储系统，它对于App来说是全局性的</p>
+</blockquote>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/06/22/React Native 学习总结/React Native AsyncStorage 封装/#more" rel="contents">
@@ -1757,13 +1743,9 @@ class JsonUtil extends Component {
 
       
         
-          
-          
-当你想实现一个高度自增长的文本框的时候，也许你首先想到的是textarea，但是使用它太麻烦而且还会有很多问题，下面我们来介绍一种简单有效的方式。
-
-div
-div中有个属性contenteditable，当把它设为true的时候，这个div就会变为可编辑状态，所以我们可以利用这个属性来使div变
-          ...
+          <blockquote>
+<p>当你想实现一个高度自增长的文本框的时候，也许你首先想到的是textarea，但是使用它太麻烦而且还会有很多问题，下面我们来介绍一种简单有效的方式。</p>
+</blockquote>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/06/18/ionic开发/AngularJs 输入框自动变化高度/#more" rel="contents">
@@ -1925,13 +1907,7 @@ div中有个属性contenteditable，当把它设为true的时候，这个div就�
 
       
         
-          
-          在制作Cordova插件时不能通过R文件来寻找资源Id，因为R文件是不断变化的，所以我们必须要通过资源名称来获取Id，下面就介绍一下资源id的获取:
-使用Resources 类的 getIdentifier方法
-
-通过资源名称虚招布局文件的id
-private int getResId(String
-          ...
+          <h4 id="在制作Cordova插件时不能通过R文件来寻找资源Id，因为R文件是不断变化的，所以我们必须要通过资源名称来获取Id，下面就介绍一下资源id的获取"><a href="#在制作Cordova插件时不能通过R文件来寻找资源Id，因为R文件是不断变化的，所以我们必须要通过资源名称来获取Id，下面就介绍一下资源id的获取" class="headerlink" title="在制作Cordova插件时不能通过R文件来寻找资源Id，因为R文件是不断变化的，所以我们必须要通过资源名称来获取Id，下面就介绍一下资源id的获取:"></a>在制作Cordova插件时不能通过R文件来寻找资源Id，因为R文件是不断变化的，所以我们必须要通过资源名称来获取Id，下面就介绍一下资源id的获取:</h4>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/06/10/ionic开发/getResourcesId/#more" rel="contents">

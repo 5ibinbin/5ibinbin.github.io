@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="准备材料： 微信开发者账号 注册你的APP libammsdk.jar包 debug.keystore文件    准备工作 申请你的APPID 导入libammsdk.jar包 在AndroidManifest.xml中设置权限 &amp;lt;uses-permission android:name=&amp;quot;android.permission.INTERNET&amp;quot;&amp;gt;  &amp;lt;us">
+<meta name="description" content="准备材料： 微信开发者账号 注册你的APP libammsdk.jar包 debug.keystore文件    准备工作 申请你的APPID 导入libammsdk.jar包 在AndroidManifest.xml中设置权限">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android 微信sdk登录和分享">
 <meta property="og:url" content="http://5ibinbin.com/2017/04/20/Android/weChat-login/index.html">
 <meta property="og:site_name" content="ibinbin">
-<meta property="og:description" content="准备材料： 微信开发者账号 注册你的APP libammsdk.jar包 debug.keystore文件    准备工作 申请你的APPID 导入libammsdk.jar包 在AndroidManifest.xml中设置权限 &amp;lt;uses-permission android:name=&amp;quot;android.permission.INTERNET&amp;quot;&amp;gt;  &amp;lt;us">
-<meta property="og:updated_time" content="2017-06-23T09:17:20.000Z">
+<meta property="og:description" content="准备材料： 微信开发者账号 注册你的APP libammsdk.jar包 debug.keystore文件    准备工作 申请你的APPID 导入libammsdk.jar包 在AndroidManifest.xml中设置权限">
+<meta property="og:updated_time" content="2017-06-23T09:50:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 微信sdk登录和分享">
-<meta name="twitter:description" content="准备材料： 微信开发者账号 注册你的APP libammsdk.jar包 debug.keystore文件    准备工作 申请你的APPID 导入libammsdk.jar包 在AndroidManifest.xml中设置权限 &amp;lt;uses-permission android:name=&amp;quot;android.permission.INTERNET&amp;quot;&amp;gt;  &amp;lt;us">
+<meta name="twitter:description" content="准备材料： 微信开发者账号 注册你的APP libammsdk.jar包 debug.keystore文件    准备工作 申请你的APPID 导入libammsdk.jar包 在AndroidManifest.xml中设置权限">
 
 
 
@@ -415,13 +415,15 @@
 <h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
 <li>申请你的APPID</li>
 <li>导入libammsdk.jar包</li>
-<li><p>在AndroidManifest.xml中设置权限</p>
+<li>在AndroidManifest.xml中设置权限</li>
+</ul>
+<a id="more"></a>
 <pre><code>&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;&gt; 
 &lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot;/&gt; 
 &lt;uses-permission android:name=&quot;android.permission.ACCESS_WIFI_STATE&quot;/&gt; 
 &lt;uses-permission android:name=&quot;android.permission.READ_PHONE_STATE&quot;/&gt; 
 &lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;/&gt;
-</code></pre></li>
+</code></pre><ul>
 <li><p>注册APP到微信</p>
 <pre><code>private static final String App_Id = &quot;你注册的APP_ID&quot;;
 private IWXAPI api;
