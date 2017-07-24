@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="Serialization&amp;apos;use strict&amp;apos;; import React, {Component} from &amp;apos;react&amp;apos;;  class JsonUtil extends Component {     /*      * 字符转换为JSON      * */     static strToJson(data) {         return">
+<meta name="description" content="前言：本文将着重梳理清 redux 使用中的各个关键词的概念，以加深对redux的理解本文地址项目地址  redux是什么 redux 是 JavaScript 状态容器，提供对 JavaScript 应用状态的管理  redux安装 安装 react-redux npm install --save react-redux  安装 redux npm install --save redux">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React Native网络请求和Json-String封装">
-<meta property="og:url" content="http://5ibinbin.com/2017/06/20/React Native 学习总结/React Native 网络请求封装/index.html">
+<meta property="og:title" content="ibinbin">
+<meta property="og:url" content="http://5ibinbin.com/2017/07/24/React Native Redux/React Native Redux(一) - Redux介绍/index.html">
 <meta property="og:site_name" content="ibinbin">
-<meta property="og:description" content="Serialization&amp;apos;use strict&amp;apos;; import React, {Component} from &amp;apos;react&amp;apos;;  class JsonUtil extends Component {     /*      * 字符转换为JSON      * */     static strToJson(data) {         return">
-<meta property="og:updated_time" content="2017-06-23T09:48:51.000Z">
+<meta property="og:description" content="前言：本文将着重梳理清 redux 使用中的各个关键词的概念，以加深对redux的理解本文地址项目地址  redux是什么 redux 是 JavaScript 状态容器，提供对 JavaScript 应用状态的管理  redux安装 安装 react-redux npm install --save react-redux  安装 redux npm install --save redux">
+<meta property="og:updated_time" content="2017-07-24T10:00:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React Native网络请求和Json-String封装">
-<meta name="twitter:description" content="Serialization&amp;apos;use strict&amp;apos;; import React, {Component} from &amp;apos;react&amp;apos;;  class JsonUtil extends Component {     /*      * 字符转换为JSON      * */     static strToJson(data) {         return">
+<meta name="twitter:title" content="ibinbin">
+<meta name="twitter:description" content="前言：本文将着重梳理清 redux 使用中的各个关键词的概念，以加深对redux的理解本文地址项目地址  redux是什么 redux 是 JavaScript 状态容器，提供对 JavaScript 应用状态的管理  redux安装 安装 react-redux npm install --save react-redux  安装 redux npm install --save redux">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://5ibinbin.com/2017/06/20/React Native 学习总结/React Native 网络请求封装/"/>
+  <link rel="canonical" href="http://5ibinbin.com/2017/07/24/React Native Redux/React Native Redux(一) - Redux介绍/"/>
 
 
 
 
 
-  <title> React Native网络请求和Json-String封装 | ibinbin </title>
+  <title>  | ibinbin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -298,7 +298,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/06/20/React Native 学习总结/React Native 网络请求封装/">
+    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/07/24/React Native Redux/React Native Redux(一) - Redux介绍/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ibinbin">
@@ -319,7 +319,7 @@
             
             
               
-                React Native网络请求和Json-String封装
+                
               
             
           </h1>
@@ -334,8 +334,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-20T00:00:00+08:00">
-                2017-06-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-24T18:00:31+08:00">
+                2017-07-24
               </time>
             
 
@@ -345,28 +345,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/React-Native学习总结/" itemprop="url" rel="index">
-                    <span itemprop="name">React Native学习总结</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -374,7 +352,7 @@
 
           
           
-             <span id="/2017/06/20/React Native 学习总结/React Native 网络请求封装/" class="leancloud_visitors" data-flag-title="React Native网络请求和Json-String封装">
+             <span id="/2017/07/24/React Native Redux/React Native Redux(一) - Redux介绍/" class="leancloud_visitors" data-flag-title="">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -403,171 +381,55 @@
       
 
       
-        <h5 id="Serialization"><a href="#Serialization" class="headerlink" title="Serialization"></a>Serialization</h5><pre><code>&apos;use strict&apos;;
-import React, {Component} from &apos;react&apos;;
+        <blockquote>
+<p>前言：本文将着重梳理清 redux 使用中的各个关键词的概念，以加深对redux的理解<br><a href="http://www.jianshu.com/p/972aebe266de" target="_blank" rel="external">本文地址</a><br><a href="https://github.com/5ibinbin/reduxLifeStyle" target="_blank" rel="external">项目地址</a></p>
+</blockquote>
+<h5 id="redux是什么"><a href="#redux是什么" class="headerlink" title="redux是什么"></a>redux是什么</h5><blockquote>
+<p>redux 是 JavaScript 状态容器，提供对 JavaScript 应用状态的管理</p>
+</blockquote>
+<h5 id="redux安装"><a href="#redux安装" class="headerlink" title="redux安装"></a>redux安装</h5><ul>
+<li><p>安装 react-redux</p>
+<pre><code>npm install --save react-redux
+</code></pre></li>
+<li><p>安装 redux</p>
+<pre><code>npm install --save redux
+</code></pre></li>
+<li><p>安装 redux-thunk</p>
+<pre><code>npm install --save redux-thunk
+</code></pre></li>
+</ul>
+<h5 id="redux介绍"><a href="#redux介绍" class="headerlink" title="redux介绍"></a>redux介绍</h5><h6 id="redux由三部分组成：Action、Reducer、Store"><a href="#redux由三部分组成：Action、Reducer、Store" class="headerlink" title="redux由三部分组成：Action、Reducer、Store"></a>redux由三部分组成：<code>Action</code>、<code>Reducer</code>、<code>Store</code></h6><ul>
+<li>Action：事件的发起者(动作)，由用户或程序触发</li>
+<li>Reducer：根据 Action 类型来做出不同的响应，返回新的 state</li>
+<li>Store：存储 state 的集合</li>
+</ul>
+<blockquote>
+<p>当由用户或者程序触发某一个具体的动作时，Reducer 将对 Action 进行识别, 并返回新的state，最终存储在 store 中的 state 发生改变，从而导致界面的变化。</p>
+</blockquote>
+<h6 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h6><ul>
+<li>单一数据源：数据只存在于 store 中，无论是开发还是调试都方便很多</li>
+<li>state 是只读的：只有通过触发 action 才能修改 state</li>
+</ul>
+<h5 id="Provider"><a href="#Provider" class="headerlink" title="Provider"></a>Provider</h5><blockquote>
+<p>Provider 这个模块是作为整个 App 的容器，在你原有的 App Container 的基础上再包上一层，它的工作很简单，就是接受 Redux 的 store 作为 props</p>
+</blockquote>
+<h5 id="dispatch"><a href="#dispatch" class="headerlink" title="dispatch"></a>dispatch</h5><blockquote>
+<p>dispatch 有分发之意。我们知道由用户或者程序触发的 Action 由 Reducer 做出响应从而引起 state 的改变。而 dispatch 就扮演了他们两者中的传播媒介。简单来说：首先 store 中维护了一个 state，我们 dispatch 一个 action 会触发 reducer 检测，接下来 reducer 根据这个 action 更新 state</p>
+</blockquote>
+<h5 id="connect"><a href="#connect" class="headerlink" title="connect"></a>connect</h5><blockquote>
+<p>connect方法的作用是连接 react 组件和 store，也就是说通过 connect 方法子组件可以获取 store 中的 state 和 dispatch。redux 的 connect 的含义是可以连接任意函数，这些函数的参数可以注入 store、state、dispatch。connect 可以将组件和 reducer 相关联。</p>
+</blockquote>
+<h5 id="combineReducers"><a href="#combineReducers" class="headerlink" title="combineReducers"></a>combineReducers</h5><blockquote>
+<p>我们知道 reducer 是一个纯函数，接收已有的的 state 和 action，返回新的 state。当state比较多或复杂时，我们想让每个 reducer 只管理一部分 state 数据。而combineReducers 可以将所有的部分state友好的合并成一个全局的 state。其实combineReducers()所做的只是生成一个函数，这个函数来调用你的一系列 reducer，每个 reducer 根据它们的 key 来筛选出 state 中的一部分数据并处理,然后这个生成的函数再将所有 reducer 的结果合并成一个大的对象</p>
+</blockquote>
+<h5 id="applyMiddleware"><a href="#applyMiddleware" class="headerlink" title="applyMiddleware"></a>applyMiddleware</h5><blockquote>
+<p>applyMiddleware是中间件，使用于 action 被发起之后，到达 reducer 之前的扩展点。 你可以利用 Redux middleware 来进行日志记录、创建崩溃报告、调用异步接口或者路由</p>
+</blockquote>
+<h5 id="异步Action"><a href="#异步Action" class="headerlink" title="异步Action"></a>异步Action</h5><blockquote>
+<p>当有网络请求的时候我们需要用到异步操作，这时候我们就需要使用到Thunk middleware 或者 redux-promise 中间件来</p>
+</blockquote>
+<h5 id="强烈建议"><a href="#强烈建议" class="headerlink" title="强烈建议"></a>强烈建议</h5><p><a href="http://cn.redux.js.org/index.html" target="_blank" rel="external">Redux 中文文档</a><br><a href="http://redux.js.org/docs/introduction/" target="_blank" rel="external">Redux 英文文档</a></p>
 
-class JsonUtil extends Component {
-    /*
-     * 字符转换为JSON
-     * */
-    static strToJson(data) {
-        return JSON.parse(data);
-    }
-    /*
-     * JSON转换为字符
-     * */
-    static jsonToStr(data) {
-        return JSON.stringify(data);
-    }
-    /*
-     * map转换为json
-     * */
-    static mapToJson(map) {
-        return JSON.stringify(JsonUtil.strMapToObj(map));
-    }
-    /*
-     * json转换为map
-     * */
-    static jsonToMap(jsonStr) {
-        return JsonUtil.objToStrMap(JSON.parse(jsonStr));
-    }
-    /*
-     * map转化为对象（map所有键都是字符串，可以将其转换为对象）
-     * */
-    static strMapToObj(strMap) {
-        let obj = Object.create(null);
-        for (let [k, v] of strMap) {
-            obj[k] = v;
-        }
-        return obj;
-    }
-    /*
-     * 对象转换为Map
-     * */
-    static objToStrMap(obj) {
-        let strMap = new Map();
-        for (let k of Object.keys(obj)) {
-            strMap.set(k, obj[k]);
-        }
-        return strMap;
-    }
-}
-
-export default JsonUtil;
-</code></pre><h5 id="网络请求"><a href="#网络请求" class="headerlink" title="网络请求"></a>网络请求</h5><pre><code>&apos;use strict&apos;;
-import React, {Component} from &apos;react&apos;;
-
-class NetUtil extends Component {
-
-static DouB_Api = &apos;https://api.douban.com/v2/movie/top250?start=0&amp;count=20&apos;;
-/**
- * get请求
- *url : 请求地址
- *callback : 回调函数
- */
-static get(url, callback) {
-    var fetchOptions = {
-        method: &apos;GET&apos;,
-        headers: {
-            &apos;X-LC-Id&apos;: &apos;M401fErHUPYhDKmgp0wjqVRX-gzGzoHsz&apos;,
-            &apos;X-LC-Key&apos;: &apos;Jqnvt1Lmt34vQh1JDRUpRAqq&apos;
-        }
-    };
-    fetch(url, fetchOptions)
-        .then((response) =&gt; response.text())
-        .then((responseText) =&gt; {
-            callback(JSON.parse(responseText));
-        }).done();
-}
-
-/**
- * delete请求
- *url : 请求地址
- *callback : 回调函数
- */
-static delete(url, callback) {
-    var fetchOptions = {
-        method: &apos;DELETE&apos;,
-        headers: {
-            &apos;X-LC-Id&apos;: &apos;M401fErHUPYhDKmgp0wjqVRX-gzGzoHsz&apos;,
-            &apos;X-LC-Key&apos;: &apos;Jqnvt1Lmt34vQh1JDRUpRAqq&apos;
-        }
-    };
-    fetch(url, fetchOptions)
-        .then((response) =&gt; response.text())
-        .then((responseText) =&gt; {
-            callback(JSON.parse(responseText));
-        }).done();
-}
-/**
- * post请求
- * url : 请求地址
- * data : 参数(Json对象)
- * callback : 回调函数
- * */
-static postJson(url, data, callback) {
-    var fetchOption = {
-        method: &apos;POST&apos;,
-        headers: {
-            &apos;Content-Type&apos;: &apos;application/json&apos;,
-            &apos;X-LC-Id&apos;: &apos;M401fErHUPYhDKmgp0wjqVRX-gzGzoHsz&apos;,
-            &apos;X-LC-Key&apos;: &apos;Jqnvt1Lmt34vQh1JDRUpRAqq&apos;
-        },
-        body: JSON.stringify(data)
-    };
-
-    fetch(url, fetchOption)
-        .then((response) =&gt; response.text())
-        .then((responseText) =&gt; {
-            callback(JSON.parse(responseText))
-        })
-        .done();
-}
-/**
- * put请求
- * url : 请求地址
- * data : 参数(Json对象)
- * callback : 回调函数
- * */
-static putJson(url, data, callback) {
-    var fetchOption = {
-        method: &apos;PUT&apos;,
-        headers: {
-            &apos;Content-Type&apos;: &apos;application/json&apos;,
-            &apos;X-LC-Id&apos;: &apos;M401fErHUPYhDKmgp0wjqVRX-gzGzoHsz&apos;,
-            &apos;X-LC-Key&apos;: &apos;Jqnvt1Lmt34vQh1JDRUpRAqq&apos;
-        },
-        body: JSON.stringify(data)
-    };
-
-    fetch(url, fetchOption)
-        .then((response) =&gt; response.text())
-        .then((responseText) =&gt; {
-            callback(JSON.parse(responseText))
-        })
-        .done();
-}
-
-export default NetUtil;
-</code></pre><h6 id="网络请求使用"><a href="#网络请求使用" class="headerlink" title="网络请求使用"></a>网络请求使用</h6><pre><code>import NetUtil from &apos;../utils/NetUtil&apos;;
-import JsonUtil from &apos;../utils/JsonUtil&apos;;
-
-_getMyNoteBook = () =&gt; {
-    let _this = this;
-    let username = this.state.username;
-    let params = {
-        &quot;author&quot;: username
-    };
-    let url = Global.NOTEBOOK + JsonUtil.jsonToStr(params);
-    NetUtil.get(url, function (response) {
-        console.log(response);
-        _this.setState({
-            notebooks: _this.state.notebooks.cloneWithRows(response.results),
-            noteArray: response.results
-        });
-    });
-};
-</code></pre>
       
     </div>
 
@@ -575,7 +437,7 @@ _getMyNoteBook = () =&gt; {
       
         <div class="copyright">
         <p><span>
-        <b>本文地址：</b><a href="/2017/06/20/React Native 学习总结/React Native 网络请求封装/" title="React Native网络请求和Json-String封装">http://5ibinbin.com/2017/06/20/React Native 学习总结/React Native 网络请求封装/</a><br /><b>转载请注明出处！</b>
+        <b>本文地址：</b><a href="/2017/07/24/React Native Redux/React Native Redux(一) - Redux介绍/" title="">http://5ibinbin.com/2017/07/24/React Native Redux/React Native Redux(一) - Redux介绍/</a><br /><b>转载请注明出处！</b>
         </span></p>
         </div>
       
@@ -613,8 +475,8 @@ _getMyNoteBook = () =&gt; {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/21/React Native 学习总结/React Native 自定义组件/" rel="next" title="React Native 自定义组件">
-                <i class="fa fa-chevron-left"></i> React Native 自定义组件
+              <a href="/2017/07/24/React Native Redux/React Native Redux(二) - Redux重构/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -623,8 +485,8 @@ _getMyNoteBook = () =&gt; {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/18/ionic开发/AngularJs 输入框自动变化高度/" rel="prev" title="AngularJs 输入框自动变化高度">
-                AngularJs 输入框自动变化高度 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/06/27/React Native 探索与设计/React Native探索与设计(三)/" rel="prev" title="React Native探索与设计(三)-ES5和ES6语法">
+                React Native探索与设计(三)-ES5和ES6语法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

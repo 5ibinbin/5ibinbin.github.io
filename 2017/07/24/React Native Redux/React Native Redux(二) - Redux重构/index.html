@@ -87,17 +87,19 @@
 
 
 
-<meta name="description" content="Serialization&amp;apos;use strict&amp;apos;; import React, {Component} from &amp;apos;react&amp;apos;;  class JsonUtil extends Component {     /*      * 字符转换为JSON      * */     static strToJson(data) {         return">
+<meta name="description" content="reduxLifeStyle使用redux重构(二) 前言：redux重构(一)的时候大概讲了redux的各个部分的定义，这一部分主要讲解一下redux的具体使用。 本文地址 项目地址 后端LeanCloud  redux 使用1.项目目录结构  redux能用到的结构都在图上提现出来了，下面将以Login为例介绍每部分的具体内容  2.ActionTypes - 统一定义了action供别处调用">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React Native网络请求和Json-String封装">
-<meta property="og:url" content="http://5ibinbin.com/2017/06/20/React Native 学习总结/React Native 网络请求封装/index.html">
+<meta property="og:title" content="ibinbin">
+<meta property="og:url" content="http://5ibinbin.com/2017/07/24/React Native Redux/React Native Redux(二) - Redux重构/index.html">
 <meta property="og:site_name" content="ibinbin">
-<meta property="og:description" content="Serialization&amp;apos;use strict&amp;apos;; import React, {Component} from &amp;apos;react&amp;apos;;  class JsonUtil extends Component {     /*      * 字符转换为JSON      * */     static strToJson(data) {         return">
-<meta property="og:updated_time" content="2017-06-23T09:48:51.000Z">
+<meta property="og:description" content="reduxLifeStyle使用redux重构(二) 前言：redux重构(一)的时候大概讲了redux的各个部分的定义，这一部分主要讲解一下redux的具体使用。 本文地址 项目地址 后端LeanCloud  redux 使用1.项目目录结构  redux能用到的结构都在图上提现出来了，下面将以Login为例介绍每部分的具体内容  2.ActionTypes - 统一定义了action供别处调用">
+<meta property="og:image" content="http://5ibinbin.com/Users/Cral-Gates/Desktop/屏幕快照%202017-07-24%2015.57.09.png">
+<meta property="og:updated_time" content="2017-07-24T10:02:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React Native网络请求和Json-String封装">
-<meta name="twitter:description" content="Serialization&amp;apos;use strict&amp;apos;; import React, {Component} from &amp;apos;react&amp;apos;;  class JsonUtil extends Component {     /*      * 字符转换为JSON      * */     static strToJson(data) {         return">
+<meta name="twitter:title" content="ibinbin">
+<meta name="twitter:description" content="reduxLifeStyle使用redux重构(二) 前言：redux重构(一)的时候大概讲了redux的各个部分的定义，这一部分主要讲解一下redux的具体使用。 本文地址 项目地址 后端LeanCloud  redux 使用1.项目目录结构  redux能用到的结构都在图上提现出来了，下面将以Login为例介绍每部分的具体内容  2.ActionTypes - 统一定义了action供别处调用">
+<meta name="twitter:image" content="http://5ibinbin.com/Users/Cral-Gates/Desktop/屏幕快照%202017-07-24%2015.57.09.png">
 
 
 
@@ -125,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://5ibinbin.com/2017/06/20/React Native 学习总结/React Native 网络请求封装/"/>
+  <link rel="canonical" href="http://5ibinbin.com/2017/07/24/React Native Redux/React Native Redux(二) - Redux重构/"/>
 
 
 
 
 
-  <title> React Native网络请求和Json-String封装 | ibinbin </title>
+  <title>  | ibinbin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -298,7 +300,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/06/20/React Native 学习总结/React Native 网络请求封装/">
+    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/07/24/React Native Redux/React Native Redux(二) - Redux重构/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ibinbin">
@@ -319,7 +321,7 @@
             
             
               
-                React Native网络请求和Json-String封装
+                
               
             
           </h1>
@@ -334,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-20T00:00:00+08:00">
-                2017-06-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-24T18:01:59+08:00">
+                2017-07-24
               </time>
             
 
@@ -345,28 +347,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/React-Native学习总结/" itemprop="url" rel="index">
-                    <span itemprop="name">React Native学习总结</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -374,7 +354,7 @@
 
           
           
-             <span id="/2017/06/20/React Native 学习总结/React Native 网络请求封装/" class="leancloud_visitors" data-flag-title="React Native网络请求和Json-String封装">
+             <span id="/2017/07/24/React Native Redux/React Native Redux(二) - Redux重构/" class="leancloud_visitors" data-flag-title="">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -403,171 +383,250 @@
       
 
       
-        <h5 id="Serialization"><a href="#Serialization" class="headerlink" title="Serialization"></a>Serialization</h5><pre><code>&apos;use strict&apos;;
-import React, {Component} from &apos;react&apos;;
+        <h3 id="reduxLifeStyle使用redux重构-二"><a href="#reduxLifeStyle使用redux重构-二" class="headerlink" title="reduxLifeStyle使用redux重构(二)"></a>reduxLifeStyle使用redux重构(二)</h3><blockquote>
+<p>前言：<a href="http://www.jianshu.com/p/972aebe266de" target="_blank" rel="external">redux重构(一)</a>的时候大概讲了redux的各个部分的定义，这一部分主要讲解一下redux的具体使用。</p>
+<p><a href="https://github.com/5ibinbin/reduxLifeStyle" target="_blank" rel="external">本文地址</a></p>
+<p><a href="https://github.com/5ibinbin/reduxLifeStyle" target="_blank" rel="external">项目地址</a></p>
+<p>后端<a href="https://leancloud.cn" target="_blank" rel="external">LeanCloud</a></p>
+</blockquote>
+<h5 id="redux-使用"><a href="#redux-使用" class="headerlink" title="redux 使用"></a>redux 使用</h5><h6 id="1-项目目录结构"><a href="#1-项目目录结构" class="headerlink" title="1.项目目录结构"></a>1.项目目录结构</h6><p><img src="/Users/Cral-Gates/Desktop/屏幕快照 2017-07-24 15.57.09.png" alt="construct"></p>
+<blockquote>
+<p>redux能用到的结构都在图上提现出来了，下面将以Login为例介绍每部分的具体内容</p>
+</blockquote>
+<h6 id="2-ActionTypes-统一定义了action供别处调用"><a href="#2-ActionTypes-统一定义了action供别处调用" class="headerlink" title="2.ActionTypes - 统一定义了action供别处调用"></a>2.<code>ActionTypes</code> - 统一定义了action供别处调用</h6><pre><code>export const ERROR_ACTION = &apos;ERROR_ACTION&apos;;
+export const LOGIN_PERFORM_ACTION = &apos;LOGIN_PERFORM_ACTION&apos;;
+export const LOGIN_ACTION = &apos;LOGIN_ACTION&apos;;
+</code></pre><h6 id="3-LoginAction-事件的发起者"><a href="#3-LoginAction-事件的发起者" class="headerlink" title="3.LoginAction - 事件的发起者"></a>3.<code>LoginAction</code> - 事件的发起者</h6><pre><code>import NetUtil from &apos;../utils/NetUtil&apos;;
+import * as types from &apos;../constants/ActionTypes&apos;;
+import Global from &apos;../constants/Global&apos;;
 
-class JsonUtil extends Component {
-    /*
-     * 字符转换为JSON
-     * */
-    static strToJson(data) {
-        return JSON.parse(data);
-    }
-    /*
-     * JSON转换为字符
-     * */
-    static jsonToStr(data) {
-        return JSON.stringify(data);
-    }
-    /*
-     * map转换为json
-     * */
-    static mapToJson(map) {
-        return JSON.stringify(JsonUtil.strMapToObj(map));
-    }
-    /*
-     * json转换为map
-     * */
-    static jsonToMap(jsonStr) {
-        return JsonUtil.objToStrMap(JSON.parse(jsonStr));
-    }
-    /*
-     * map转化为对象（map所有键都是字符串，可以将其转换为对象）
-     * */
-    static strMapToObj(strMap) {
-        let obj = Object.create(null);
-        for (let [k, v] of strMap) {
-            obj[k] = v;
-        }
-        return obj;
-    }
-    /*
-     * 对象转换为Map
-     * */
-    static objToStrMap(obj) {
-        let strMap = new Map();
-        for (let k of Object.keys(obj)) {
-            strMap.set(k, obj[k]);
-        }
-        return strMap;
-    }
-}
-
-export default JsonUtil;
-</code></pre><h5 id="网络请求"><a href="#网络请求" class="headerlink" title="网络请求"></a>网络请求</h5><pre><code>&apos;use strict&apos;;
-import React, {Component} from &apos;react&apos;;
-
-class NetUtil extends Component {
-
-static DouB_Api = &apos;https://api.douban.com/v2/movie/top250?start=0&amp;count=20&apos;;
-/**
- * get请求
- *url : 请求地址
- *callback : 回调函数
- */
-static get(url, callback) {
-    var fetchOptions = {
-        method: &apos;GET&apos;,
-        headers: {
-            &apos;X-LC-Id&apos;: &apos;M401fErHUPYhDKmgp0wjqVRX-gzGzoHsz&apos;,
-            &apos;X-LC-Key&apos;: &apos;Jqnvt1Lmt34vQh1JDRUpRAqq&apos;
-        }
-    };
-    fetch(url, fetchOptions)
-        .then((response) =&gt; response.text())
-        .then((responseText) =&gt; {
-            callback(JSON.parse(responseText));
-        }).done();
-}
-
-/**
- * delete请求
- *url : 请求地址
- *callback : 回调函数
- */
-static delete(url, callback) {
-    var fetchOptions = {
-        method: &apos;DELETE&apos;,
-        headers: {
-            &apos;X-LC-Id&apos;: &apos;M401fErHUPYhDKmgp0wjqVRX-gzGzoHsz&apos;,
-            &apos;X-LC-Key&apos;: &apos;Jqnvt1Lmt34vQh1JDRUpRAqq&apos;
-        }
-    };
-    fetch(url, fetchOptions)
-        .then((response) =&gt; response.text())
-        .then((responseText) =&gt; {
-            callback(JSON.parse(responseText));
-        }).done();
-}
-/**
- * post请求
- * url : 请求地址
- * data : 参数(Json对象)
- * callback : 回调函数
- * */
-static postJson(url, data, callback) {
-    var fetchOption = {
-        method: &apos;POST&apos;,
-        headers: {
-            &apos;Content-Type&apos;: &apos;application/json&apos;,
-            &apos;X-LC-Id&apos;: &apos;M401fErHUPYhDKmgp0wjqVRX-gzGzoHsz&apos;,
-            &apos;X-LC-Key&apos;: &apos;Jqnvt1Lmt34vQh1JDRUpRAqq&apos;
-        },
-        body: JSON.stringify(data)
-    };
-
-    fetch(url, fetchOption)
-        .then((response) =&gt; response.text())
-        .then((responseText) =&gt; {
-            callback(JSON.parse(responseText))
+export function performLoginAction(username, password) {
+    return (dispatch) =&gt; {
+        dispatch(performLogin());
+        let url = Global.LOGIN + &quot;username=&quot; + username + &quot;&amp;password=&quot; + password;
+        NetUtil.get(url, function (res) {
+            if (res.hasOwnProperty(&apos;code&apos;)) {
+                dispatch(errorAction(res));
+            } else {
+                dispatch(successLogin(res))
+            }
         })
-        .done();
-}
-/**
- * put请求
- * url : 请求地址
- * data : 参数(Json对象)
- * callback : 回调函数
- * */
-static putJson(url, data, callback) {
-    var fetchOption = {
-        method: &apos;PUT&apos;,
-        headers: {
-            &apos;Content-Type&apos;: &apos;application/json&apos;,
-            &apos;X-LC-Id&apos;: &apos;M401fErHUPYhDKmgp0wjqVRX-gzGzoHsz&apos;,
-            &apos;X-LC-Key&apos;: &apos;Jqnvt1Lmt34vQh1JDRUpRAqq&apos;
-        },
-        body: JSON.stringify(data)
-    };
-
-    fetch(url, fetchOption)
-        .then((response) =&gt; response.text())
-        .then((responseText) =&gt; {
-            callback(JSON.parse(responseText))
-        })
-        .done();
+    }
 }
 
-export default NetUtil;
-</code></pre><h6 id="网络请求使用"><a href="#网络请求使用" class="headerlink" title="网络请求使用"></a>网络请求使用</h6><pre><code>import NetUtil from &apos;../utils/NetUtil&apos;;
-import JsonUtil from &apos;../utils/JsonUtil&apos;;
+function performLogin() {
+    return {
+        type: types.LOGIN_PERFORM_ACTION
+    }
+}
 
-_getMyNoteBook = () =&gt; {
-    let _this = this;
-    let username = this.state.username;
-    let params = {
-        &quot;author&quot;: username
-    };
-    let url = Global.NOTEBOOK + JsonUtil.jsonToStr(params);
-    NetUtil.get(url, function (response) {
-        console.log(response);
-        _this.setState({
-            notebooks: _this.state.notebooks.cloneWithRows(response.results),
-            noteArray: response.results
-        });
-    });
+function successLogin(result) {
+    return {
+        type: types.LOGIN_ACTION,
+        data: result
+    }
+}
+
+function errorAction(result) {
+    return {
+        type: types.ERROR_ACTION,
+        data: result
+    }
+}
+</code></pre><ul>
+<li>首先<code>import</code>我们前面定义的<code>ActionType</code>、<code>Global</code>(全局常量)、<code>NetUtil</code>(封装的网络请求)</li>
+<li>然后我们<code>dispatch</code>(分发)各个动作，此处我们<code>dispatch</code>了<code>performLogin</code>这一动作，然后进行网络请求，根据请求成功与否我们<code>dispatch</code>了<code>successLogin</code>和<code>errorAction</code>这两个动作。</li>
+<li>这里的主要区别就是动作的不同，这里仅仅是触发了不同的动作，之后我们会根据不同的动作来处理不同的数据。</li>
+</ul>
+<blockquote>
+<p>在这里我们根据不同的<code>action</code>来选择是否传递数据以供<code>reducer</code>使用</p>
+</blockquote>
+<h6 id="4-LoginReducer-根据Action的不同来改变state-数据"><a href="#4-LoginReducer-根据Action的不同来改变state-数据" class="headerlink" title="4.LoginReducer - 根据Action的不同来改变state(数据)"></a>4.<code>LoginReducer</code> - 根据Action的不同来改变state(数据)</h6><pre><code>import * as types from &apos;../constants/ActionTypes&apos;;
+
+const initialState = {
+    loading : false,
+    data:{},
+    status: null
 };
-</code></pre>
+
+export default function login(state = initialState, action){
+    switch (action.type) {
+        case types.LOGIN_PERFORM_ACTION:
+            return Object.assign({}, state, {
+                loading: true,
+                status: &apos;doing&apos;
+            });
+        case types.LOGIN_ACTION:
+            return Object.assign({}, state, {
+                loading: false,
+                status: &apos;success&apos;,
+                data: action.data
+            });
+        case types.ERROR_ACTION:
+            return Object.assign({}, state, {
+                loading: false,
+                status: &apos;failed&apos;,
+                data: action.data
+            });
+        default:
+            return state;
+    }
+}
+</code></pre><ul>
+<li>引入<code>ActionType</code></li>
+<li>定义默认<code>state</code>的数据结构</li>
+<li>根据不同的<code>action</code>修改<code>state</code>，这里使用了ES6中的<code>Object.assign()</code></li>
+</ul>
+<blockquote>
+<p>这里的action.data是<code>LoginAction</code>传递过来的</p>
+</blockquote>
+<h6 id="5-页面-action的触发和state的改变"><a href="#5-页面-action的触发和state的改变" class="headerlink" title="5. 页面 -action的触发和state的改变"></a>5. 页面 -<code>action</code>的触发和<code>state</code>的改变</h6><pre><code>import React, {Component} from &apos;react&apos;;
+import {
+    StyleSheet,
+    View
+} from &apos;react-native&apos;;
+import Util from &apos;../utils/Util&apos;;
+import Tabs from &apos;../containers/Tabs&apos;;
+import LoadingView from &apos;../components/LoadingView&apos;;
+
+import {connect} from &apos;react-redux&apos;;
+import TextButton from &apos;../components/TextButton&apos;;
+import {performLoginAction} from &apos;../actions/LoginAction&apos;;
+import Register from &apos;../containers/Register&apos;;
+class Login extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            username: &apos;&apos;,
+            password: &apos;&apos;
+        };
+    }
+
+    render() {
+        const {loginReducer} = this.props;
+        console.log(loginReducer);
+        return (
+            &lt;View style={styles.container}&gt;
+
+            &lt;/View&gt;
+        )
+    }
+
+    componentDidUpdate() {
+        const {loginReducer} = this.props;
+        if (loginReducer.status === &apos;success&apos;) {
+            const {navigator} = this.props;
+            navigator.push({
+                name: &apos;Tabs&apos;,
+                component: Tabs
+            })
+        }
+        if (loginReducer.status === &apos;failed&apos;){
+            Util.showToastCenter(loginReducer.data.error);
+        }
+    }
+
+    _login = () =&gt; {
+        const {navigator, dispatch} = this.props;
+        let username = this.state.username;
+        let password = this.state.password;
+        if (Util.isEmpty(username)) {
+            Util.showToastCenter(&apos;用户名为空&apos;);
+            return;
+        }
+        if (Util.isEmpty(password)) {
+            Util.showToastCenter(&apos;密码为空&apos;);
+            return;
+        }
+        dispatch(performLoginAction(username, password));
+    };
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: &apos;#f5f5f5&apos;
+    }
+});
+
+function mapStateToProps(state) {
+    const {loginReducer} = state;
+    return {
+        loginReducer
+    }
+}
+
+export default connect(mapStateToProps)(Login);
+</code></pre><blockquote>
+<p>说明：这里防止篇幅过长(tou lan)特意把<code>Login</code>界面和样式给删了.</p>
+</blockquote>
+<ul>
+<li>首先我们导入<code>LoginAction</code>里面的方法<code>performLoginAction</code>，在我们登录的时候调用</li>
+<li>当触发登录动作的时候调用<code>performLoginAction()</code></li>
+</ul>
+<blockquote>
+<p>这样我们的整个流程就走通了，但是还差最后一步，当<code>LoginReducer</code>改变了<code>state</code>时，页面是怎么接受数据的呢？这就是下面要介绍的<code>connect</code></p>
+</blockquote>
+<h6 id="6-connect-连接-react-组件和-store"><a href="#6-connect-连接-react-组件和-store" class="headerlink" title="6. connect: 连接 react 组件和 store"></a>6. connect: 连接 react 组件和 store</h6><pre><code>function mapStateToProps(state) {
+    const {loginReducer} = state;
+    return {
+           loginReducer
+    }
+}
+
+export default connect(mapStateToProps)(Login);
+</code></pre><blockquote>
+<p><code>mapStateToProps</code>: 组件将会监听<code>store</code>的数据变化，只要<code>store</code>发生变化，就会回调该方法。然后我们就可以在componentWillReceiveProps() 方法中接收state的改变。</p>
+</blockquote>
+<p><strong>到目前为止还差<code>store</code>中的<code>state</code>管理、<code>reducer</code>的管理</strong></p>
+<h6 id="7-rootReducers"><a href="#7-rootReducers" class="headerlink" title="7.rootReducers"></a>7.<code>rootReducers</code></h6><pre><code>import {combineReducers} from &apos;redux&apos;;
+import loginReducer from &apos;./LoginReducer&apos;;
+import registerReducer from &apos;./RegisterReducer&apos;;
+import homeReducer from &apos;./HomeReducer&apos;;
+
+const rootReducers = combineReducers({
+    loginReducer,
+    registerReducer,
+    homeReducer
+});
+export default rootReducers;
+</code></pre><blockquote>
+<p>将不同的reducer导入，并使用<code>combineReducers</code> 将他们统一管理</p>
+</blockquote>
+<h6 id="8-store"><a href="#8-store" class="headerlink" title="8.store"></a>8.<code>store</code></h6><pre><code>import {createStore, applyMiddleware} from &apos;redux&apos;;
+import thunkMiddleware from &apos;redux-thunk&apos;;
+import rootReducers from &apos;../reducers/rootReducers&apos;;
+const createStoreWithMiddleware = applyMiddleware(thunkMiddleware)(createStore);
+export default function configureStore(initialState) {
+    const store = createStoreWithMiddleware(rootReducers, initialState);
+    return store;
+}
+</code></pre><blockquote>
+<p>所有的<code>state</code>都存储在这里</p>
+</blockquote>
+<h6 id="9-Provider"><a href="#9-Provider" class="headerlink" title="9. Provider"></a>9. <code>Provider</code></h6><pre><code>import React, {Component} from &apos;react&apos;;
+import App from &apos;../lifeStyle/App&apos;;
+
+import configureStore from &apos;../lifeStyle/store/configureStore&apos;;
+import {Provider} from &apos;react-redux&apos;;
+
+const store = configureStore();
+
+class root extends Component{
+    render(){
+        return(
+            &lt;Provider store={store}&gt;
+                &lt;App/&gt;
+            &lt;/Provider&gt;
+        )
+    }
+}
+
+export default root;
+</code></pre><blockquote>
+<p>Provider 这个模块是作为整个 App 的容器，在你原有的 App Container 的基础上再包上一层，它的工作很简单，就是接受 Redux 的 store 作为 props</p>
+</blockquote>
+<h5 id="梳理流程：首先是用户行为或者程序触发来生成不同的Action，此时根据不同的Action来生成不同的数据，之后在Reducer中根据action-type的不同将生成不同的state-store-中的state集合发生改变，并最终作用到界面上。整个过程可以理解为：UI-–-gt-Action-–-gt-Reducer-–-gt-Store-–-gt-UI-完美的体现了单向数据流。这有点类似于Android中的MVP模式，将业务逻辑和页面的变化分割开来，各司其职互不干扰。"><a href="#梳理流程：首先是用户行为或者程序触发来生成不同的Action，此时根据不同的Action来生成不同的数据，之后在Reducer中根据action-type的不同将生成不同的state-store-中的state集合发生改变，并最终作用到界面上。整个过程可以理解为：UI-–-gt-Action-–-gt-Reducer-–-gt-Store-–-gt-UI-完美的体现了单向数据流。这有点类似于Android中的MVP模式，将业务逻辑和页面的变化分割开来，各司其职互不干扰。" class="headerlink" title="梳理流程：首先是用户行为或者程序触发来生成不同的Action，此时根据不同的Action来生成不同的数据，之后在Reducer中根据action type的不同将生成不同的state, store 中的state集合发生改变，并最终作用到界面上。整个过程可以理解为：UI – &gt; Action – &gt; Reducer – &gt; Store – &gt; UI, 完美的体现了单向数据流。这有点类似于Android中的MVP模式，将业务逻辑和页面的变化分割开来，各司其职互不干扰。"></a>梳理流程：首先是用户行为或者程序触发来生成不同的<code>Action</code>，此时根据不同的<code>Action</code>来生成不同的数据，之后在<code>Reducer</code>中根据<code>action type</code>的不同将生成不同的<code>state</code>, <code>store</code> 中的state集合发生改变，并最终作用到界面上。整个过程可以理解为：UI – &gt; Action – &gt; Reducer – &gt; Store – &gt; UI, 完美的体现了单向数据流。这有点类似于Android中的MVP模式，将业务逻辑和页面的变化分割开来，各司其职互不干扰。</h5>
       
     </div>
 
@@ -575,7 +634,7 @@ _getMyNoteBook = () =&gt; {
       
         <div class="copyright">
         <p><span>
-        <b>本文地址：</b><a href="/2017/06/20/React Native 学习总结/React Native 网络请求封装/" title="React Native网络请求和Json-String封装">http://5ibinbin.com/2017/06/20/React Native 学习总结/React Native 网络请求封装/</a><br /><b>转载请注明出处！</b>
+        <b>本文地址：</b><a href="/2017/07/24/React Native Redux/React Native Redux(二) - Redux重构/" title="">http://5ibinbin.com/2017/07/24/React Native Redux/React Native Redux(二) - Redux重构/</a><br /><b>转载请注明出处！</b>
         </span></p>
         </div>
       
@@ -613,18 +672,14 @@ _getMyNoteBook = () =&gt; {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/21/React Native 学习总结/React Native 自定义组件/" rel="next" title="React Native 自定义组件">
-                <i class="fa fa-chevron-left"></i> React Native 自定义组件
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/18/ionic开发/AngularJs 输入框自动变化高度/" rel="prev" title="AngularJs 输入框自动变化高度">
-                AngularJs 输入框自动变化高度 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/24/React Native Redux/React Native Redux(一) - Redux介绍/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
