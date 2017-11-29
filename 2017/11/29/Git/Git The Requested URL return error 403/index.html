@@ -87,21 +87,21 @@
 
 
 
-<meta name="description" content="####一、 问题描述git在 pull/push 代码的时候提示：The Requested URL return error 403，这表示我们没有权限来pull/push相关代码">
+<meta name="description" content="一、 问题描述git在 pull/push 代码的时候提示：The Requested URL return error 403，这表示我们没有权限来pull/push相关代码">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git The Requested URL return error 403">
 <meta property="og:url" content="http://5ibinbin.com/2017/11/29/Git/Git The Requested URL return error 403/index.html">
 <meta property="og:site_name" content="ibinbin">
-<meta property="og:description" content="####一、 问题描述git在 pull/push 代码的时候提示：The Requested URL return error 403，这表示我们没有权限来pull/push相关代码">
+<meta property="og:description" content="一、 问题描述git在 pull/push 代码的时候提示：The Requested URL return error 403，这表示我们没有权限来pull/push相关代码">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1534031-298bb8cdacc3cd91.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1534031-205131d14782a42a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1534031-d1fb39f104dd6b38.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1534031-1d8f0c98643f715e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-11-29T15:35:27.000Z">
+<meta property="og:updated_time" content="2017-11-29T15:44:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git The Requested URL return error 403">
-<meta name="twitter:description" content="####一、 问题描述git在 pull/push 代码的时候提示：The Requested URL return error 403，这表示我们没有权限来pull/push相关代码">
+<meta name="twitter:description" content="一、 问题描述git在 pull/push 代码的时候提示：The Requested URL return error 403，这表示我们没有权限来pull/push相关代码">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1534031-298bb8cdacc3cd91.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -408,29 +408,26 @@
       
 
       
-        <p>####一、 问题描述<br><code>git</code>在 <code>pull/push</code> 代码的时候提示：<code>The Requested URL return error 403</code>，这表示我们没有权限来<code>pull/push</code>相关代码</p>
+        <h4 id="一、-问题描述"><a href="#一、-问题描述" class="headerlink" title="一、 问题描述"></a>一、 问题描述</h4><p><code>git</code>在 <code>pull/push</code> 代码的时候提示：<code>The Requested URL return error 403</code>，这表示我们没有权限来<code>pull/push</code>相关代码</p>
 <a id="more"></a>
-<p>####二、 问题分析</p>
-<ul>
+<h4 id="二、-问题分析"><a href="#二、-问题分析" class="headerlink" title="二、 问题分析"></a>二、 问题分析</h4><ul>
 <li>有可能你是真的没有权限(认真脸)</li>
 <li>你修改了<code>git</code>仓库的用户名和密码，导致你内存和硬盘中缓存的账号密码不能使用</li>
 </ul>
-<h4 id="三、问题处理"><a href="#三、问题处理" class="headerlink" title="三、问题处理"></a>三、问题处理</h4><p>#####1、执行<code>git config --list</code>，查看<code>git</code>的配置信息<br><img src="http://upload-images.jianshu.io/upload_images/1534031-298bb8cdacc3cd91.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="gitconfig.png"></p>
+<h4 id="三、问题处理"><a href="#三、问题处理" class="headerlink" title="三、问题处理"></a>三、问题处理</h4><h5 id="1、执行git-config-list，查看git的配置信息"><a href="#1、执行git-config-list，查看git的配置信息" class="headerlink" title="1、执行git config --list，查看git的配置信息"></a>1、执行<code>git config --list</code>，查看<code>git</code>的配置信息</h5><p><img src="http://upload-images.jianshu.io/upload_images/1534031-298bb8cdacc3cd91.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="gitconfig.png"></p>
 <blockquote>
-<p>图中红色部分内容<code>[user]</code> 为你的<code>git</code>账号配置信息，<code>[credential]</code>为你的这些信息存储位置</p>
+<p> 图中红色部分内容<code>[user]</code> 为你的<code>git</code>账号配置信息，<code>[credential]</code>为你的这些信息存储位置</p>
 </blockquote>
-<p>#####2、执行<code>vim .git-credentials</code>，查看<code>credential</code>中缓存的账户<br><img src="http://upload-images.jianshu.io/upload_images/1534031-205131d14782a42a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="credential.png"></p>
-<p>#####2、 执行<code>git help -a | grep credential</code>，查看<code>git</code>的信息存储位置<br><img src="http://upload-images.jianshu.io/upload_images/1534031-d1fb39f104dd6b38.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="cache.png"></p>
+<h5 id="2、执行vim-git-credentials，查看credential中缓存的账户"><a href="#2、执行vim-git-credentials，查看credential中缓存的账户" class="headerlink" title="2、执行vim .git-credentials，查看credential中缓存的账户"></a>2、执行<code>vim .git-credentials</code>，查看<code>credential</code>中缓存的账户</h5><p><img src="http://upload-images.jianshu.io/upload_images/1534031-205131d14782a42a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="credential.png"></p>
+<h5 id="2、-执行git-help-a-grep-credential，查看git的信息存储位置"><a href="#2、-执行git-help-a-grep-credential，查看git的信息存储位置" class="headerlink" title="2、 执行git help -a | grep credential，查看git的信息存储位置"></a>2、 执行<code>git help -a | grep credential</code>，查看<code>git</code>的信息存储位置</h5><p><img src="http://upload-images.jianshu.io/upload_images/1534031-d1fb39f104dd6b38.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="cache.png"></p>
 <blockquote>
 <p><code>git help -a | grep credential</code>命令查看自己系统支持的<code>crendential</code>, <code>cache</code> 代表内存中的缓存，<code>store</code> 代表磁盘。<br><code>git config credential.helper</code>命令可以看到 <code>cache</code>、<code>store</code>、<code>osxkeychain(钥匙串)</code>中是否还有<code>git</code>的配置信息。由图中我们可以得出<code>git config</code>还存储在<code>store</code>中</p>
 </blockquote>
-<p>#####3、一般配置方法：</p>
-<ul>
+<h5 id="3、一般配置方法："><a href="#3、一般配置方法：" class="headerlink" title="3、一般配置方法："></a>3、一般配置方法：</h5><ul>
 <li><code>git config --global (--replace-all) user.name &quot;你的用户名&quot;</code></li>
 <li><code>git config --global (--replace-all) user.email &quot;你的邮箱&quot;</code></li>
 </ul>
-<p>#####4、如果上述步骤没有效果，我们就需要清除缓存(.gitconfig)</p>
-<ul>
+<h5 id="4、如果上述步骤没有效果，我们就需要清除缓存-gitconfig"><a href="#4、如果上述步骤没有效果，我们就需要清除缓存-gitconfig" class="headerlink" title="4、如果上述步骤没有效果，我们就需要清除缓存(.gitconfig)"></a>4、如果上述步骤没有效果，我们就需要清除缓存(.gitconfig)</h5><ul>
 <li><code>git config --local --unset credential.helper</code></li>
 <li><code>git config --global --unset credential.helper</code></li>
 <li><code>git config --system --unset credential.helper</code></li>
@@ -438,12 +435,10 @@
 <blockquote>
 <p>具体介绍可以查看<a href="https://stackoverflow.com/questions/16052602/disable-git-credential-osxkeychain" target="_blank" rel="external">这里</a>, 可能有多处<code>.gitconfig</code>文件</p>
 </blockquote>
-<p>####四、 重复输入用户名密码</p>
-<h5 id="清除缓存之后我们每次提交代码的时候都需要输入用户名和密码"><a href="#清除缓存之后我们每次提交代码的时候都需要输入用户名和密码" class="headerlink" title="清除缓存之后我们每次提交代码的时候都需要输入用户名和密码"></a>清除缓存之后我们每次提交代码的时候都需要输入用户名和密码</h5><ul>
+<h4 id="四、-重复输入用户名密码"><a href="#四、-重复输入用户名密码" class="headerlink" title="四、 重复输入用户名密码"></a>四、 重复输入用户名密码</h4><h5 id="清除缓存之后我们每次提交代码的时候都需要输入用户名和密码"><a href="#清除缓存之后我们每次提交代码的时候都需要输入用户名和密码" class="headerlink" title="清除缓存之后我们每次提交代码的时候都需要输入用户名和密码"></a>清除缓存之后我们每次提交代码的时候都需要输入用户名和密码</h5><ul>
 <li><code>git config --global credential.helper store</code></li>
 </ul>
-<p>######或者</p>
-<ul>
+<h6 id="或者"><a href="#或者" class="headerlink" title="或者"></a>或者</h6><ul>
 <li><p>执行修改<code>.gitconfig</code>配置文件，把以下内容放置到最后</p>
 <pre><code>[credential]
         helper = store     
@@ -453,8 +448,7 @@
 <blockquote>
 <p>本次问题到此结束，如有问题请留言</p>
 </blockquote>
-<p>######友情链接</p>
-<h6 id="关于credential的介绍可以点击这里"><a href="#关于credential的介绍可以点击这里" class="headerlink" title="关于credential的介绍可以点击这里"></a>关于<code>credential</code>的介绍可以点击<a href="http://blog.csdn.net/u012163684/article/details/52433645" target="_blank" rel="external">这里</a></h6><h6 id="关于-gitconfig清除缓存可以点击这里"><a href="#关于-gitconfig清除缓存可以点击这里" class="headerlink" title="关于.gitconfig清除缓存可以点击这里"></a>关于<code>.gitconfig</code>清除缓存可以点击<a href="https://stackoverflow.com/questions/16052602/disable-git-credential-osxkeychain" target="_blank" rel="external">这里</a></h6>
+<h6 id="友情链接"><a href="#友情链接" class="headerlink" title="友情链接"></a>友情链接</h6><h6 id="关于credential的介绍可以点击这里"><a href="#关于credential的介绍可以点击这里" class="headerlink" title="关于credential的介绍可以点击这里"></a>关于<code>credential</code>的介绍可以点击<a href="http://blog.csdn.net/u012163684/article/details/52433645" target="_blank" rel="external">这里</a></h6><h6 id="关于-gitconfig清除缓存可以点击这里"><a href="#关于-gitconfig清除缓存可以点击这里" class="headerlink" title="关于.gitconfig清除缓存可以点击这里"></a>关于<code>.gitconfig</code>清除缓存可以点击<a href="https://stackoverflow.com/questions/16052602/disable-git-credential-osxkeychain" target="_blank" rel="external">这里</a></h6>
       
     </div>
 
@@ -506,8 +500,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/24/React Native Redux/React Native Redux(一) - Redux介绍/" rel="prev" title="React Native Redux(一)-Redux介绍">
-                React Native Redux(一)-Redux介绍 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/24/React Native Redux/React Native Redux(二) - Redux使用/" rel="prev" title="React Native Redux(二)-Redux使用">
+                React Native Redux(二)-Redux使用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
