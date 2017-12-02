@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="在制作Cordova插件时不能通过R文件来寻找资源Id，因为R文件是不断变化的，所以我们必须要通过资源名称来获取Id，下面就介绍一下资源id的获取:">
+<meta name="description" content="移动端实现图片高度不固定的照片墙效果  流式布局照片墙一、 HTML&amp;lt;div class=&amp;apos;box&amp;apos; ng-repeat=&amp;quot;img in imgs track by $index&amp;quot; on-finish-render-filters&amp;gt;     &amp;lt;img class=&amp;apos;item&amp;apos; ng-src=&amp;apos;{{img}}&amp;">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Cordova插件开发-Android获取资源Id">
-<meta property="og:url" content="http://5ibinbin.com/2017/06/10/ionic开发/getResourcesId/index.html">
+<meta property="og:title" content="AngularJs 流式布局">
+<meta property="og:url" content="http://5ibinbin.com/2017/08/18/ionic开发/AngularJs 流式布局/index.html">
 <meta property="og:site_name" content="ibinbin">
-<meta property="og:description" content="在制作Cordova插件时不能通过R文件来寻找资源Id，因为R文件是不断变化的，所以我们必须要通过资源名称来获取Id，下面就介绍一下资源id的获取:">
-<meta property="og:updated_time" content="2017-06-23T09:49:55.000Z">
+<meta property="og:description" content="移动端实现图片高度不固定的照片墙效果  流式布局照片墙一、 HTML&amp;lt;div class=&amp;apos;box&amp;apos; ng-repeat=&amp;quot;img in imgs track by $index&amp;quot; on-finish-render-filters&amp;gt;     &amp;lt;img class=&amp;apos;item&amp;apos; ng-src=&amp;apos;{{img}}&amp;">
+<meta property="og:updated_time" content="2017-12-02T05:45:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cordova插件开发-Android获取资源Id">
-<meta name="twitter:description" content="在制作Cordova插件时不能通过R文件来寻找资源Id，因为R文件是不断变化的，所以我们必须要通过资源名称来获取Id，下面就介绍一下资源id的获取:">
+<meta name="twitter:title" content="AngularJs 流式布局">
+<meta name="twitter:description" content="移动端实现图片高度不固定的照片墙效果  流式布局照片墙一、 HTML&amp;lt;div class=&amp;apos;box&amp;apos; ng-repeat=&amp;quot;img in imgs track by $index&amp;quot; on-finish-render-filters&amp;gt;     &amp;lt;img class=&amp;apos;item&amp;apos; ng-src=&amp;apos;{{img}}&amp;">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://5ibinbin.com/2017/06/10/ionic开发/getResourcesId/"/>
+  <link rel="canonical" href="http://5ibinbin.com/2017/08/18/ionic开发/AngularJs 流式布局/"/>
 
 
 
 
 
-  <title> Cordova插件开发-Android获取资源Id | ibinbin </title>
+  <title> AngularJs 流式布局 | ibinbin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -298,7 +298,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/06/10/ionic开发/getResourcesId/">
+    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/08/18/ionic开发/AngularJs 流式布局/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ibinbin">
@@ -319,7 +319,7 @@
             
             
               
-                Cordova插件开发-Android获取资源Id
+                AngularJs 流式布局
               
             
           </h1>
@@ -334,8 +334,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-10T00:00:00+08:00">
-                2017-06-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-18T00:00:00+08:00">
+                2017-08-18
               </time>
             
 
@@ -357,8 +357,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ionic混合开发/" itemprop="url" rel="index">
-                    <span itemprop="name">ionic混合开发</span>
+                  <a href="/categories/AngularJs/" itemprop="url" rel="index">
+                    <span itemprop="name">AngularJs</span>
                   </a>
                 </span>
 
@@ -374,7 +374,7 @@
 
           
           
-             <span id="/2017/06/10/ionic开发/getResourcesId/" class="leancloud_visitors" data-flag-title="Cordova插件开发-Android获取资源Id">
+             <span id="/2017/08/18/ionic开发/AngularJs 流式布局/" class="leancloud_visitors" data-flag-title="AngularJs 流式布局">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -403,95 +403,114 @@
       
 
       
-        <h4 id="在制作Cordova插件时不能通过R文件来寻找资源Id，因为R文件是不断变化的，所以我们必须要通过资源名称来获取Id，下面就介绍一下资源id的获取"><a href="#在制作Cordova插件时不能通过R文件来寻找资源Id，因为R文件是不断变化的，所以我们必须要通过资源名称来获取Id，下面就介绍一下资源id的获取" class="headerlink" title="在制作Cordova插件时不能通过R文件来寻找资源Id，因为R文件是不断变化的，所以我们必须要通过资源名称来获取Id，下面就介绍一下资源id的获取:"></a>在制作Cordova插件时不能通过R文件来寻找资源Id，因为R文件是不断变化的，所以我们必须要通过资源名称来获取Id，下面就介绍一下资源id的获取:</h4><a id="more"></a>
-<ul>
-<li><p>使用Resources 类的 getIdentifier方法</p>
-<ul>
-<li><p>通过资源名称虚招布局文件的id</p>
-<pre><code>private int getResId(String resourceName){
-    Resources resources = getResources();
-    int resId = resources.getIdentifier(resourceName,&quot;layout&quot;,getPackageName());
-    return resId;
+        <blockquote>
+<p>移动端实现图片高度不固定的照片墙效果</p>
+</blockquote>
+<h3 id="流式布局照片墙"><a href="#流式布局照片墙" class="headerlink" title="流式布局照片墙"></a>流式布局照片墙</h3><h5 id="一、-HTML"><a href="#一、-HTML" class="headerlink" title="一、 HTML"></a>一、 HTML</h5><pre><code>&lt;div class=&apos;box&apos; ng-repeat=&quot;img in imgs track by $index&quot; on-finish-render-filters&gt;
+    &lt;img class=&apos;item&apos; ng-src=&apos;{{img}}&apos;&gt;
+&lt;/div&gt;
+</code></pre><a id="more"></a>
+<h5 id="二、JS"><a href="#二、JS" class="headerlink" title="二、JS"></a>二、JS</h5><ul>
+<li><p>获取所有布局元素</p>
+<pre><code>function getAllChild(parent, className) {
+    vm.childName = parent.getElementsByTagName(&quot;*&quot;);
+    vm.tempArray = [];
+    for (var i in vm.childName) {
+        if (vm.childName[i].className === className) {
+            vm.tempArray.push(vm.childName[i]);
+        }
+    }
+    return vm.tempArray;
 }
 </code></pre></li>
-<li><p>获取字符串id</p>
-<pre><code>private int getStringId(String stringName){
-    Resources resources = getResources();
-    int resId =resources.getIdentifier(stringName,&quot;string&quot;, getPackageName());
-    return resId;
-}
-</code></pre></li>
-<li><p>获取控件id</p>
-<pre><code>private int getId(String idName){
-    Resources resources = getResources();
-    int resId = resources.getIdentifier(idName, &quot;id&quot;, getPackageName());
-    return resId;
-}
-</code></pre></li>
-<li><p>获取动画id</p>
-<pre><code>private int getAnimId(String idName){
-    Resources resources = getResources();
-    int resId = resources.getIdentifier(idName, &quot;anim&quot;, getPackageName());
-    return resId;
-}
-</code></pre></li>
-</ul>
-</li>
 </ul>
 <blockquote>
-<h4 id="作为一个Android开发者来说，也许你已经发现上面代码的不同点了，就是getIdentifier-里面的第二个参数的不同，我们可以通过替换这个参数来达到大部分的寻找资源id（example：id-string-anim-attr-drawable-layout-color-menu-styles…）"><a href="#作为一个Android开发者来说，也许你已经发现上面代码的不同点了，就是getIdentifier-里面的第二个参数的不同，我们可以通过替换这个参数来达到大部分的寻找资源id（example：id-string-anim-attr-drawable-layout-color-menu-styles…）" class="headerlink" title="作为一个Android开发者来说，也许你已经发现上面代码的不同点了，就是getIdentifier()里面的第二个参数的不同，我们可以通过替换这个参数来达到大部分的寻找资源id（example：id, string, anim, attr, drawable, layout, color, menu, styles…）"></a>作为一个Android开发者来说，也许你已经发现上面代码的不同点了，就是getIdentifier()里面的第二个参数的不同，我们可以通过替换这个参数来达到大部分的寻找资源id（example：id, string, anim, attr, drawable, layout, color, menu, styles…）</h4></blockquote>
+<p>获取类选择器中<code>class=&#39;box&#39;</code>中的所有<code>class=‘item’</code>的元素，并放到数组；</p>
+</blockquote>
 <ul>
-<li><p>通过Java的强大的反射机制获取资源id</p>
-<ul>
-<li><p>通过反射获取一个资源id</p>
-<pre><code>public int getAttrId(String attrName) {  
-    try {  
-      Class&lt;?&gt; loadClass = mContext.getClassLoader().loadClass(mContext.getPackageName() + &quot;.R&quot;);  
-      Class&lt;?&gt;[] classes = loadClass.getClasses();  
-      for (int i = 0; i &lt; classes.length; i++) {  
-        if (classes[i].getName().equals(mContext.getPackageName() + &quot;.R$attr&quot;)) {  
-          Field field = classes[i].getField(attrName);  
-          int attrId = field.getInt(null);  
-          return attrId;  
-        }  
-      }  
-    } catch (Exception e) {  
-       e.printStackTrace();  
-    }  
-    return 0;  
- }   
-</code></pre></li>
-<li><p>首先使用反射能达到上面的获取一个id的情况，但是比较麻烦，当需要返回一个数组我们就不得不使用这种方法了</p>
-<pre><code>private int[] getStyleableArryId(String styleableName){
-    try {
-        Class&lt;?&gt; loadClass = getContext().getClassLoader().loadClass(getContext().getPackageName() + &quot;.R&quot;);
-        Class&lt;?&gt;[] classes = loadClass.getClasses();
-        for(int i=0 ;i&lt;classes.length ;i++){
-            Class&lt;?&gt; resClass = classes[i];
-               if(resClass.getName().equals(getContext().getPackageName() + &quot;.R$styleable&quot;)){
-                   Field[] fields = resClass.getFields();
-                for (int j = 0; j &lt; fields.length; j++) {
-                    if(fields[j].getName().equals(styleableName)){
-                        int[] styleable = (int[]) fields[j].get(null);
-                           return styleable;
-                    }
-                }
-            }
+<li><p>获取每列中高度的最小值所对应的列号</p>
+<pre><code>function getMinIndex(onlyOneColsArr, minHeight) {
+    for (var i in onlyOneColsArr) {
+        if (onlyOneColsArr[i] === minHeight) {
+            return i;
         }
-    } catch (Exception e) {
-        e.printStackTrace();
     }
-    return null;
+} 
+</code></pre></li>
+<li><p>重新排列子元素的位置</p>
+<pre><code>/*
+ * 排列子元素的位置，并获取每列的高度
+ * @param {Array} childArr 子元素
+ * @param {Number} num 列数
+ * */
+function getMinHeightOfCols(childArr, num) {
+    for (var i = 0; i &lt; childArr.length; i++) {
+        if (i &lt; num) {
+            //获取每列的高度
+            vm.colsHeightArray[i] = childArr[i].offsetHeight;
+         } else {
+             // 获取每列中高度的最小值
+            var minHeightOfCols = Math.min.apply(null, vm.colsHeightArray);
+            // 获取列高度最小值所对应的index
+            var minHeightOfIndex = getMinIndex(vm.colsHeightArray, minHeightOfCols);
+            // 设置子元素的位置
+            childArr[i].style.position = &quot;absolute&quot;;
+            childArr[i].style.top = minHeightOfCols + &apos;px&apos;;
+            childArr[i].style.left = childArr[minHeightOfIndex].offsetLeft + &quot;px&quot;;
+            //重置高度最小的列的高度
+            vm.colsHeightArray[minHeightOfIndex] += childArr[i].offsetHeight;
+        }
+    }
+}
+</code></pre></li>
+<li><p>方法主体</p>
+<pre><code>function photoWall(parent, child) {
+  /*
+   * 获取class为parent的元素
+   * */
+  vm.parent = document.getElementsByClassName(parent);
+  //获取class为child的div
+  var childArray = vm.getAllChild(vm.parent, child);
+  vm.getMinHeightOfCols(childArray, 2);
 }
 </code></pre></li>
 </ul>
-</li>
+<ul>
+<li><p>方法调用</p>
+<pre><code>vm.photoWall(&apos;box&apos;, &apos;item&apos;);
+</code></pre></li>
 </ul>
-<h4 id="但是在设置styleable的资源id的时候，如果你是自定义的View，如果需要引入自定义的attr-比如这样："><a href="#但是在设置styleable的资源id的时候，如果你是自定义的View，如果需要引入自定义的attr-比如这样：" class="headerlink" title="但是在设置styleable的资源id的时候，如果你是自定义的View，如果需要引入自定义的attr,比如这样："></a>但是在设置styleable的资源id的时候，如果你是自定义的View，如果需要引入自定义的attr,比如这样：</h4><pre><code>public WheelVerticalView(Context context, final AttributeSet attrs) {
-   this(context, attrs, R.attr.abstractWheelViewStyle);
-   this(context, attrs, 0);
-}
-</code></pre><h4 id="那么你是不能通过上面的方法，来获取资源文件的，因为这是一个构造器，你只能另找它法了。"><a href="#那么你是不能通过上面的方法，来获取资源文件的，因为这是一个构造器，你只能另找它法了。" class="headerlink" title="那么你是不能通过上面的方法，来获取资源文件的，因为这是一个构造器，你只能另找它法了。"></a>那么你是不能通过上面的方法，来获取资源文件的，因为这是一个构造器，你只能另找它法了。</h4>
+<blockquote>
+<p>以上就是我们页面重新布局的所有代码，细心的小伙伴可能已经发现html上面多了<code>on-finish-render-filters</code>，这个是干什么用的呢，请看下文</p>
+</blockquote>
+<h5 id="三、自定义指令"><a href="#三、自定义指令" class="headerlink" title="三、自定义指令"></a>三、自定义指令</h5><ul>
+<li><p>定义指令    </p>
+<pre><code>angular.module(&apos;onFinishRenderFilterModule&apos;, [])
+  .directive(&apos;onFinishRenderFilters&apos;, function ($timeout) {
+    return {
+      restrict: &apos;A&apos;,
+      link: function (scope, element, attr) {
+        if (scope.$last === true) {
+          $timeout(function () {
+            scope.$emit(&apos;ngRepeatFinished&apos;);
+          }, 200);
+        }
+      }
+    };
+  });
+</code></pre></li>
+<li><p>调用</p>
+<pre><code>$scope.$on(&apos;ngRepeatFinished&apos;, function (ngRepeatFinishedEvent) {
+    $timeout(function () {
+        vm.photoWall(&apos;box&apos;, &apos;item&apos;);
+    }, 200);
+});
+</code></pre></li>
+</ul>
+<blockquote>
+<p>指令类型：属性(restrict:’A’), 在界面渲染时调用<code>on-finish-render-filters</code> 属性，然后再通过 <code>$emit</code> 向 controller 发送广播，最后再使用 <code>$on</code> 来接收广播，绘制流式布局。</p>
+</blockquote>
+
       
     </div>
 
@@ -499,7 +518,7 @@
       
         <div class="copyright">
         <p><span>
-        <b>本文地址：</b><a href="/2017/06/10/ionic开发/getResourcesId/" title="Cordova插件开发-Android获取资源Id">http://5ibinbin.com/2017/06/10/ionic开发/getResourcesId/</a><br /><b>转载请注明出处！</b>
+        <b>本文地址：</b><a href="/2017/08/18/ionic开发/AngularJs 流式布局/" title="AngularJs 流式布局">http://5ibinbin.com/2017/08/18/ionic开发/AngularJs 流式布局/</a><br /><b>转载请注明出处！</b>
         </span></p>
         </div>
       
@@ -537,8 +556,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/20/React Native 学习总结/React Native 网络请求封装/" rel="next" title="React Native网络请求和Json-String封装">
-                <i class="fa fa-chevron-left"></i> React Native网络请求和Json-String封装
+              <a href="/2017/08/19/Gulp/Gulp/" rel="next" title="gulp 介绍">
+                <i class="fa fa-chevron-left"></i> gulp 介绍
               </a>
             
           </div>
@@ -547,8 +566,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/15/ionic开发/imageCover/" rel="prev" title="ionic固定大小的图片防止变形">
-                ionic固定大小的图片防止变形 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/18/ionic开发/AngularJs 输入框自动变化高度/" rel="prev" title="AngularJs 流式布局">
+                AngularJs 流式布局 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
