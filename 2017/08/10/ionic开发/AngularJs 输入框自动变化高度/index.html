@@ -90,13 +90,13 @@
 <meta name="description" content="移动端实现图片高度不固定的照片墙效果">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AngularJs 流式布局">
-<meta property="og:url" content="http://5ibinbin.com/2017/08/18/ionic开发/AngularJs 输入框自动变化高度/index.html">
+<meta property="og:title" content="AngularJs 输入框自动变化高度">
+<meta property="og:url" content="http://5ibinbin.com/2017/08/10/ionic开发/AngularJs 输入框自动变化高度/index.html">
 <meta property="og:site_name" content="ibinbin">
 <meta property="og:description" content="移动端实现图片高度不固定的照片墙效果">
-<meta property="og:updated_time" content="2017-12-02T05:43:57.000Z">
+<meta property="og:updated_time" content="2017-12-02T06:02:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AngularJs 流式布局">
+<meta name="twitter:title" content="AngularJs 输入框自动变化高度">
 <meta name="twitter:description" content="移动端实现图片高度不固定的照片墙效果">
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://5ibinbin.com/2017/08/18/ionic开发/AngularJs 输入框自动变化高度/"/>
+  <link rel="canonical" href="http://5ibinbin.com/2017/08/10/ionic开发/AngularJs 输入框自动变化高度/"/>
 
 
 
 
 
-  <title> AngularJs 流式布局 | ibinbin </title>
+  <title> AngularJs 输入框自动变化高度 | ibinbin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -298,7 +298,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/08/18/ionic开发/AngularJs 输入框自动变化高度/">
+    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/08/10/ionic开发/AngularJs 输入框自动变化高度/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ibinbin">
@@ -319,7 +319,7 @@
             
             
               
-                AngularJs 流式布局
+                AngularJs 输入框自动变化高度
               
             
           </h1>
@@ -334,8 +334,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-18T00:00:00+08:00">
-                2017-08-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-10T00:00:00+08:00">
+                2017-08-10
               </time>
             
 
@@ -374,7 +374,7 @@
 
           
           
-             <span id="/2017/08/18/ionic开发/AngularJs 输入框自动变化高度/" class="leancloud_visitors" data-flag-title="AngularJs 流式布局">
+             <span id="/2017/08/10/ionic开发/AngularJs 输入框自动变化高度/" class="leancloud_visitors" data-flag-title="AngularJs 输入框自动变化高度">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -407,109 +407,74 @@
 <p>移动端实现图片高度不固定的照片墙效果</p>
 </blockquote>
 <a id="more"></a>
-<h3 id="流式布局照片墙"><a href="#流式布局照片墙" class="headerlink" title="流式布局照片墙"></a>流式布局照片墙</h3><h5 id="一、-HTML"><a href="#一、-HTML" class="headerlink" title="一、 HTML"></a>一、 HTML</h5><pre><code>&lt;div class=&apos;box&apos; ng-repeat=&quot;img in imgs track by $index&quot; on-finish-render-filters&gt;
-    &lt;img class=&apos;item&apos; ng-src=&apos;{{img}}&apos;&gt;
-&lt;/div&gt;
-</code></pre><h5 id="二、JS"><a href="#二、JS" class="headerlink" title="二、JS"></a>二、JS</h5><ul>
-<li><p>获取所有布局元素</p>
-<pre><code>function getAllChild(parent, className) {
-    vm.childName = parent.getElementsByTagName(&quot;*&quot;);
-    vm.tempArray = [];
-    for (var i in vm.childName) {
-        if (vm.childName[i].className === className) {
-            vm.tempArray.push(vm.childName[i]);
-        }
-    }
-    return vm.tempArray;
-}
-</code></pre></li>
-</ul>
-<blockquote>
-<p>获取类选择器中<code>class=&#39;box&#39;</code>中的所有<code>class=‘item’</code>的元素，并放到数组；</p>
+<h3 id="AngularJs-输入框自动变化高度"><a href="#AngularJs-输入框自动变化高度" class="headerlink" title="AngularJs 输入框自动变化高度"></a>AngularJs 输入框自动变化高度</h3><blockquote>
+<p>当你想实现一个高度自增长的文本框的时候，也许你首先想到的是textarea，但是使用它太麻烦而且还会有很多问题，下面我们来介绍一种简单有效的方式。</p>
 </blockquote>
-<ul>
-<li><p>获取每列中高度的最小值所对应的列号</p>
-<pre><code>function getMinIndex(onlyOneColsArr, minHeight) {
-    for (var i in onlyOneColsArr) {
-        if (onlyOneColsArr[i] === minHeight) {
-            return i;
-        }
-    }
-} 
+<p><strong><em>div</em></strong></p>
+<h6 id="div中有个属性contenteditable，当把它设为true的时候，这个div就会变为可编辑状态，所以我们可以利用这个属性来使div变为文本域，下面看代码"><a href="#div中有个属性contenteditable，当把它设为true的时候，这个div就会变为可编辑状态，所以我们可以利用这个属性来使div变为文本域，下面看代码" class="headerlink" title="div中有个属性contenteditable，当把它设为true的时候，这个div就会变为可编辑状态，所以我们可以利用这个属性来使div变为文本域，下面看代码"></a>div中有个属性contenteditable，当把它设为true的时候，这个div就会变为可编辑状态，所以我们可以利用这个属性来使div变为文本域，下面看代码</h6><ul>
+<li><p>html</p>
+<pre><code>&lt;div contenteditable=&quot;true&quot; id=&quot;article-comment-content&quot; class=&quot;article-comment-content&quot; onblur=&quot;contentBlur()&quot; ng-model=&quot;vm.articleComment.content&quot;&gt;&lt;/div&gt;
 </code></pre></li>
-<li><p>重新排列子元素的位置</p>
-<pre><code>/*
- * 排列子元素的位置，并获取每列的高度
- * @param {Array} childArr 子元素
- * @param {Number} num 列数
- * */
-function getMinHeightOfCols(childArr, num) {
-    for (var i = 0; i &lt; childArr.length; i++) {
-        if (i &lt; num) {
-            //获取每列的高度
-            vm.colsHeightArray[i] = childArr[i].offsetHeight;
-         } else {
-             // 获取每列中高度的最小值
-            var minHeightOfCols = Math.min.apply(null, vm.colsHeightArray);
-            // 获取列高度最小值所对应的index
-            var minHeightOfIndex = getMinIndex(vm.colsHeightArray, minHeightOfCols);
-            // 设置子元素的位置
-            childArr[i].style.position = &quot;absolute&quot;;
-            childArr[i].style.top = minHeightOfCols + &apos;px&apos;;
-            childArr[i].style.left = childArr[minHeightOfIndex].offsetLeft + &quot;px&quot;;
-            //重置高度最小的列的高度
-            vm.colsHeightArray[minHeightOfIndex] += childArr[i].offsetHeight;
-        }
-    }
+<li><p>css</p>
+<pre><code>.article-comment-content{
+    padding: 10px;
+    line-height: 20px;
+    font-size: 14px;
+    background: white;
+    -webkit-user-select: text;
 }
-</code></pre></li>
-<li><p>方法主体</p>
-<pre><code>function photoWall(parent, child) {
-  /*
-   * 获取class为parent的元素
-   * */
-  vm.parent = document.getElementsByClassName(parent);
-  //获取class为child的div
-  var childArray = vm.getAllChild(vm.parent, child);
-  vm.getMinHeightOfCols(childArray, 2);
+.article-comment-content:empty:before {
+    content: &apos;请输入回帖内容&apos;;
+    color: #999;
 }
-</code></pre></li>
-</ul>
-<ul>
-<li><p>方法调用</p>
-<pre><code>vm.photoWall(&apos;box&apos;, &apos;item&apos;);
-</code></pre></li>
-</ul>
-<blockquote>
-<p>以上就是我们页面重新布局的所有代码，细心的小伙伴可能已经发现html上面多了<code>on-finish-render-filters</code>，这个是干什么用的呢，请看下文</p>
+.article-comment-content:focus:before {
+    content: none;
+}
+</code></pre><blockquote>
+<p>以上我们实现了文本输入框并自动增加文本框的高度，并设置了文本框的placeholder。但是细心的你可能要问了，应该怎么实现数据绑定呢？下面我们接着来看这个问题：</p>
 </blockquote>
-<h5 id="三、自定义指令"><a href="#三、自定义指令" class="headerlink" title="三、自定义指令"></a>三、自定义指令</h5><ul>
-<li><p>定义指令    </p>
-<pre><code>angular.module(&apos;onFinishRenderFilterModule&apos;, [])
-  .directive(&apos;onFinishRenderFilters&apos;, function ($timeout) {
+</li>
+</ul>
+<h5 id="其实我们可以通过-var-content-‘-article-comment-content’-eq-0-0-textContent-来获取输入框的值，但是这样是不能进行双向数据绑定的。对于这个问题我们可以使用自定义指令的方式"><a href="#其实我们可以通过-var-content-‘-article-comment-content’-eq-0-0-textContent-来获取输入框的值，但是这样是不能进行双向数据绑定的。对于这个问题我们可以使用自定义指令的方式" class="headerlink" title="其实我们可以通过 var content = $(‘#article-comment-content’).eq(0)[0].textContent 来获取输入框的值，但是这样是不能进行双向数据绑定的。对于这个问题我们可以使用自定义指令的方式"></a>其实我们可以通过 var content = $(‘#article-comment-content’).eq(0)[0].textContent 来获取输入框的值，但是这样是不能进行双向数据绑定的。对于这个问题我们可以使用自定义指令的方式</h5><pre><code>.directive(&apos;contenteditable&apos;, function () {
     return {
-      restrict: &apos;A&apos;,
-      link: function (scope, element, attr) {
-        if (scope.$last === true) {
-          $timeout(function () {
-            scope.$emit(&apos;ngRepeatFinished&apos;);
-          }, 200);
+        require: &apos;ngModel&apos;,
+        link: function (scope, element, attrs, ctrl) {
+            element.bind(&apos;input&apos;, function () {
+                scope.$apply(function () {
+                    ctrl.$setViewValue(element.html());
+                });
+            });
+            ctrl.$render = function () {
+                element.html(ctrl.$viewValue);
+            };
         }
-      }
     };
-  });
-</code></pre></li>
-<li><p>调用</p>
-<pre><code>$scope.$on(&apos;ngRepeatFinished&apos;, function (ngRepeatFinishedEvent) {
-    $timeout(function () {
-        vm.photoWall(&apos;box&apos;, &apos;item&apos;);
-    }, 200);
 });
-</code></pre></li>
-</ul>
-<blockquote>
-<p>指令类型：属性(restrict:’A’), 在界面渲染时调用<code>on-finish-render-filters</code> 属性，然后再通过 <code>$emit</code> 向 controller 发送广播，最后再使用 <code>$on</code> 来接收广播，绘制流式布局。</p>
-</blockquote>
+</code></pre><p>或者 </p>
+<pre><code>app.directive(&apos;contenteditable&apos;, function() {
+　　return {
+　　　　restrict: &apos;A&apos;, // 只用于属性
+　　　　require: &apos;?ngModel&apos;, 
+　　link: function(scope, element, attrs, ngModel) {
+　　　　if (!ngModel) {
+　　　　　　return;
+　　　　} 
+　　　　ngModel.$render = function() {
+　　　　　　element.html(ngModel.$viewValue || &apos;&apos;);
+　　　　};    　　　　
+　　　　element.on(&apos;blur keyup change input&apos;, function() {
+　　　　　　scope.$apply(readViewText);
+　　　　});
+　　　　function readViewText() {
+　　　　　　var html = element.html();
+　　　　　　if (attrs.stripBr &amp;&amp; html === &apos;&lt;br&gt;&apos;) {
+　　　　　　　　html = &apos;&apos;;
+　　　　　　}
+　　　　　　ngModel.$setViewValue(html);
+　　　　}
+　　}
+};
+</code></pre><p>这样我们就可以实现数据的双向绑定了。</p>
 
       
     </div>
@@ -518,7 +483,7 @@ function getMinHeightOfCols(childArr, num) {
       
         <div class="copyright">
         <p><span>
-        <b>本文地址：</b><a href="/2017/08/18/ionic开发/AngularJs 输入框自动变化高度/" title="AngularJs 流式布局">http://5ibinbin.com/2017/08/18/ionic开发/AngularJs 输入框自动变化高度/</a><br /><b>转载请注明出处！</b>
+        <b>本文地址：</b><a href="/2017/08/10/ionic开发/AngularJs 输入框自动变化高度/" title="AngularJs 输入框自动变化高度">http://5ibinbin.com/2017/08/10/ionic开发/AngularJs 输入框自动变化高度/</a><br /><b>转载请注明出处！</b>
         </span></p>
         </div>
       
