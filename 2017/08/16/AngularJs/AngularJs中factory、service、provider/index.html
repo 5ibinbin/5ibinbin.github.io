@@ -94,7 +94,7 @@
 <meta property="og:url" content="http://5ibinbin.com/2017/08/16/AngularJs/AngularJs中factory、service、provider/index.html">
 <meta property="og:site_name" content="ibinbin">
 <meta property="og:description" content="factory、service、provider 我们先通过一段代码来认识一下factory、service、provider">
-<meta property="og:updated_time" content="2017-12-03T04:09:52.000Z">
+<meta property="og:updated_time" content="2017-12-03T05:48:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AngularJs之factory、service、provider">
 <meta name="twitter:description" content="factory、service、provider 我们先通过一段代码来认识一下factory、service、provider">
@@ -459,7 +459,8 @@ function MyCtrl($scope, Provider, Factory, Service) {
         Factory.sayHello(),
         Service.sayHello()];
 }
-</code></pre><h6 id="factory-factory是以个可注入的function。当使用factory来创建服务的时候，相当于新创建了一个对象，然后在这个对象上新添属性，最后返回这个对象。"><a href="#factory-factory是以个可注入的function。当使用factory来创建服务的时候，相当于新创建了一个对象，然后在这个对象上新添属性，最后返回这个对象。" class="headerlink" title="factory: factory是以个可注入的function。当使用factory来创建服务的时候，相当于新创建了一个对象，然后在这个对象上新添属性，最后返回这个对象。"></a><code>factory</code>: <code>factory</code>是以个可注入的<code>function</code>。当使用<code>factory</code>来创建服务的时候，相当于新创建了一个对象，然后在这个对象上新添属性，最后返回这个对象。</h6><h6 id="service-service是一个可注入的构造函数。service是单例模式的。当使用service创建服务的时候，相当于使用new关键词进行了实例化。因此，你只需要在this上添加属性和方法，服务就会自动的返回this。"><a href="#service-service是一个可注入的构造函数。service是单例模式的。当使用service创建服务的时候，相当于使用new关键词进行了实例化。因此，你只需要在this上添加属性和方法，服务就会自动的返回this。" class="headerlink" title="service: service是一个可注入的构造函数。service是单例模式的。当使用service创建服务的时候，相当于使用new关键词进行了实例化。因此，你只需要在this上添加属性和方法，服务就会自动的返回this。"></a><code>service</code>: <code>service</code>是一个可注入的构造函数。<code>service</code>是单例模式的。当使用<code>service</code>创建服务的时候，相当于使用new关键词进行了实例化。因此，你只需要在<code>this</code>上添加属性和方法，服务就会自动的返回<code>this</code>。</h6><h6 id="provider是一个可配置的factory。provider是唯一一种可以创建用来注入到config-函数的服务的方式。想在你的服务启动之前，进行一些模块化的配置的话，就使用provider。"><a href="#provider是一个可配置的factory。provider是唯一一种可以创建用来注入到config-函数的服务的方式。想在你的服务启动之前，进行一些模块化的配置的话，就使用provider。" class="headerlink" title="provider是一个可配置的factory。provider是唯一一种可以创建用来注入到config()函数的服务的方式。想在你的服务启动之前，进行一些模块化的配置的话，就使用provider。"></a><code>provider</code>是一个可配置的<code>factory</code>。<code>provider</code>是唯一一种可以创建用来注入到<code>config()</code>函数的服务的方式。想在你的服务启动之前，进行一些模块化的配置的话，就使用<code>provider</code>。</h6>
+</code></pre><h6 id="factory-factory是以个可注入的function。当使用factory来创建服务的时候，相当于新创建了一个对象，然后在这个对象上新添属性，最后返回这个对象。"><a href="#factory-factory是以个可注入的function。当使用factory来创建服务的时候，相当于新创建了一个对象，然后在这个对象上新添属性，最后返回这个对象。" class="headerlink" title="factory: factory是以个可注入的function。当使用factory来创建服务的时候，相当于新创建了一个对象，然后在这个对象上新添属性，最后返回这个对象。"></a><code>factory</code>: <code>factory</code>是以个可注入的<code>function</code>。当使用<code>factory</code>来创建服务的时候，相当于新创建了一个对象，然后在这个对象上新添属性，最后返回这个对象。</h6><h6 id="service-service是一个可注入的构造函数。service是单例模式的。当使用service创建服务的时候，相当于使用new关键词进行了实例化。因此，你只需要在this上添加属性和方法，服务就会自动的返回this。"><a href="#service-service是一个可注入的构造函数。service是单例模式的。当使用service创建服务的时候，相当于使用new关键词进行了实例化。因此，你只需要在this上添加属性和方法，服务就会自动的返回this。" class="headerlink" title="service: service是一个可注入的构造函数。service是单例模式的。当使用service创建服务的时候，相当于使用new关键词进行了实例化。因此，你只需要在this上添加属性和方法，服务就会自动的返回this。"></a><code>service</code>: <code>service</code>是一个可注入的构造函数。<code>service</code>是单例模式的。当使用<code>service</code>创建服务的时候，相当于使用new关键词进行了实例化。因此，你只需要在<code>this</code>上添加属性和方法，服务就会自动的返回<code>this</code>。</h6><p>######<code>provider</code>是一个可配置的<code>factory</code>。<code>provider</code>是唯一一种可以创建用来注入到<code>config()</code>函数的服务的方式。<code>$get</code> 中返回的，就是用 <code>factory</code> 创建 <code>service</code> 的内容. 想在你的服务启动之前，进行一些模块化的配置的话，就使用<code>provider</code>。</p>
+
       
     </div>
 
@@ -582,7 +583,7 @@ function MyCtrl($scope, Provider, Factory, Service) {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
