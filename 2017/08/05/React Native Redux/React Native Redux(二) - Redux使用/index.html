@@ -107,7 +107,7 @@
 <meta property="og:site_name" content="ibinbin">
 <meta property="og:description" content="前言：redux重构(一)的时候大概讲了redux的各个部分的定义，这一部分主要讲解一下redux的具体使用。本文地址%20-%20Redux%E4%BD%BF%E7%94%A8/)项目地址后端LeanCloud">
 <meta property="og:image" content="http://5ibinbin.com/img/construct.png">
-<meta property="og:updated_time" content="2017-12-02T06:29:29.000Z">
+<meta property="og:updated_time" content="2017-12-28T13:35:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React Native Redux(二)-Redux使用">
 <meta name="twitter:description" content="前言：redux重构(一)的时候大概讲了redux的各个部分的定义，这一部分主要讲解一下redux的具体使用。本文地址%20-%20Redux%E4%BD%BF%E7%94%A8/)项目地址后端LeanCloud">
@@ -425,10 +425,8 @@
 <blockquote>
 <p>redux能用到的结构都在图上提现出来了，下面将以Login为例介绍每部分的具体内容</p>
 </blockquote>
-<h6 id="2-ActionTypes-统一定义了action供别处调用"><a href="#2-ActionTypes-统一定义了action供别处调用" class="headerlink" title="2.ActionTypes - 统一定义了action供别处调用"></a>2.<code>ActionTypes</code> - 统一定义了action供别处调用</h6><pre><code>export const ERROR_ACTION = &apos;ERROR_ACTION&apos;;
-export const LOGIN_PERFORM_ACTION = &apos;LOGIN_PERFORM_ACTION&apos;;
-export const LOGIN_ACTION = &apos;LOGIN_ACTION&apos;;
-</code></pre><h6 id="3-LoginAction-事件的发起者"><a href="#3-LoginAction-事件的发起者" class="headerlink" title="3.LoginAction - 事件的发起者"></a>3.<code>LoginAction</code> - 事件的发起者</h6><pre><code>import NetUtil from &apos;../utils/NetUtil&apos;;
+<h6 id="2-ActionTypes-统一定义了action供别处调用"><a href="#2-ActionTypes-统一定义了action供别处调用" class="headerlink" title="2.ActionTypes - 统一定义了action供别处调用"></a>2.<code>ActionTypes</code> - 统一定义了action供别处调用</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> ERROR_ACTION = <span class="string">'ERROR_ACTION'</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> LOGIN_PERFORM_ACTION = <span class="string">'LOGIN_PERFORM_ACTION'</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> LOGIN_ACTION = <span class="string">'LOGIN_ACTION'</span>;</div></pre></td></tr></table></figure>
+<h6 id="3-LoginAction-事件的发起者"><a href="#3-LoginAction-事件的发起者" class="headerlink" title="3.LoginAction - 事件的发起者"></a>3.<code>LoginAction</code> - 事件的发起者</h6><pre><code>import NetUtil from &apos;../utils/NetUtil&apos;;
 import * as types from &apos;../constants/ActionTypes&apos;;
 import Global from &apos;../constants/Global&apos;;
 
