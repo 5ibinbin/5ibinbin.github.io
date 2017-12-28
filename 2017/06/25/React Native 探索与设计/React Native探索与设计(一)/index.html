@@ -108,7 +108,7 @@
 <meta property="og:description" content="React Native探索与设计(一) 1. React Native有什么优点 跨平台 动态更新 代码复用 最大的优势就是既有Web的热更新优势，又有接近Native的性能">
 <meta property="og:image" content="http://5ibinbin.com/Users/Cral-Gates/Documents/React%20Native/img/weex.png">
 <meta property="og:image" content="http://5ibinbin.com/Users/Cral-Gates/Documents/React%20Native/img/react%20native.png">
-<meta property="og:updated_time" content="2017-06-23T09:48:28.000Z">
+<meta property="og:updated_time" content="2017-12-28T14:59:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React Native探索与设计(一)">
 <meta name="twitter:description" content="React Native探索与设计(一) 1. React Native有什么优点 跨平台 动态更新 代码复用 最大的优势就是既有Web的热更新优势，又有接近Native的性能">
@@ -427,55 +427,51 @@
 </ul>
 <a id="more"></a>
 <h5 id="2-React-Native-VS-Hybrid"><a href="#2-React-Native-VS-Hybrid" class="headerlink" title="2. React Native VS Hybrid"></a>2. React Native VS Hybrid</h5><ul>
-<li>性能： Hybrid 是基于 WebView 的，在 Android 上的性能缺陷非常明显；而 RN 是利用 JSCore 转化成 Native 运行的，性能相对而言好不少。</li>
-<li>用户体验：React Native 的体验和原生的几乎没有差别，而 Webview 的实现是网页开发思路，体验会相差很大。</li>
+<li>性能： <code>Hybrid</code> 是基于 <code>WebView</code> 的，在 <code>Android</code> 上的性能缺陷非常明显；而 <code>RN</code> 是利用 <code>JSCore</code> 转化成 <code>Native</code> 运行的，性能相对而言好不少。</li>
+<li>用户体验：<code>React Native</code> 的体验和原生的几乎没有差别，而 <code>Webview</code> 的实现是网页开发思路，体验会相差很大。</li>
 </ul>
 <h5 id="3-React-Native-VS-Weex"><a href="#3-React-Native-VS-Weex" class="headerlink" title="3. React Native VS Weex"></a>3. React Native VS Weex</h5><ul>
-<li>Weex bug比较多</li>
-<li>社区、文档弱，GitHub Issue 基本是中文:这就意味着Weex并没有国际化，Weex还有很长的路要走<br><img src="/Users/Cral-Gates/Documents/React Native/img/weex.png" alt="weex"></li>
+<li><code>Weex bug</code>比较多</li>
+<li>社区、文档弱，<code>GitHub Issue</code> 基本是中文:这就意味着<code>Weex</code>并没有国际化，<code>Weex</code>还有很长的路要走<br><img src="/Users/Cral-Gates/Documents/React Native/img/weex.png" alt="weex"></li>
 </ul>
 <p><img src="/Users/Cral-Gates/Documents/React Native/img/react native.png" alt="react native"></p>
 <h5 id="4-React-Native-劣势"><a href="#4-React-Native-劣势" class="headerlink" title="4. React Native 劣势"></a>4. React Native 劣势</h5><ul>
-<li>学习成本：而 React Native 是在 React.js 上进行改进形成的一套语法，和常规前端差别较大(ES6的箭头函数、展开运算符)</li>
-<li>首次加载耗时：React Native 需要从服务器下载 JS bundle，然后在本地转化成 Native code 运行的，所以在第一次打开 App 时需要花费一些时间进行下载和刷新(在发布 client 时内置一个写好的 js 文件在本地作缓存用)</li>
+<li>学习成本：而 <code>React Native</code> 是在 <code>React.js</code> 上进行改进形成的一套语法，和常规前端差别较大(<code>ES6</code>的箭头函数、展开运算符)</li>
+<li>首次加载耗时：<code>React Native</code> 需要从服务器下载 <code>JS bundle</code>，然后在本地转化成 <code>Native code</code> 运行的，所以在第一次打开 <code>App</code> 时需要花费一些时间进行下载和刷新(在发布 <code>client</code> 时内置一个写好的 <code>js</code> 文件在本地作缓存用)</li>
 </ul>
 <h5 id="5-React-Native-运行机制"><a href="#5-React-Native-运行机制" class="headerlink" title="5. React Native 运行机制"></a>5. React Native 运行机制</h5><blockquote>
-<p>在启动后会从服务器下载最新的 JS Bundle 文件，然后由本地 JavascriptCore 引擎对 JS 文件进行解析，并利用 Bridge 映射到对应的 Native 方法和 UI 控件</p>
+<p>在启动后会从服务器下载最新的 <code>JS Bundle</code> 文件，然后由本地 <code>JavascriptCore</code> 引擎对 <code>JS</code> 文件进行解析，并利用 <code>Bridge</code> 映射到对应的 Native 方法和 UI 控件</p>
 </blockquote>
 <ul>
-<li>读取 JavaScript 源码。JavaScript 加载进内存, JSX 代码已经被转化成原生的 JavaScript 代码</li>
-<li>初始化模块信息。通过initModulesWithDispatchGroup()找到所有需要暴露给JavaScript的类</li>
-<li>初始化 JavaScript 代码的执行器，即 RCTJSCExecutor 对象</li>
-<li>生成模块列表并写入 JavaScript 端</li>
-<li>执行 JavaScript 源码</li>
+<li>读取 <code>JavaScript</code> 源码。<code>JavaScript</code> 加载进内存, <code>JSX</code> 代码已经被转化成原生的 <code>JavaScript</code> 代码</li>
+<li>初始化模块信息。通过<code>initModulesWithDispatchGroup()</code>找到所有需要暴露给<code>JavaScript</code>的类</li>
+<li>初始化 <code>JavaScript</code> 代码的执行器，即 <code>RCTJSCExecutor</code>对象</li>
+<li>生成模块列表并写入 <code>JavaScript</code> 端</li>
+<li>执行 <code>JavaScript</code> 源码</li>
 </ul>
 <p><strong><a href="http://www.jianshu.com/p/978c4bd3a759" target="_blank" rel="external">React Native运行机制详解</a></strong></p>
 <h5 id="6-React-Native-开发环境搭建"><a href="#6-React-Native-开发环境搭建" class="headerlink" title="6. React Native 开发环境搭建"></a>6. React Native 开发环境搭建</h5><ul>
-<li>IDE：Nuclide、Deco、Webstorm、Sublime Text</li>
+<li>IDE：<code>Nuclide、Deco、Webstorm、Sublime Text</code></li>
 <li><a href="http://reactnative.cn/docs/0.43/getting-started.html#content" target="_blank" rel="external">环境搭建</a></li>
 </ul>
 <blockquote>
-<p>一、安装Homebrew。Homebrew是Mac OSX的包管理器，我们需要通过Homebrew安装开发React Native的相关软件包。</p>
+<p>一、安装<code>Homebrew</code>。<code>Homebrew</code>是<code>Mac OSX</code>的包管理器，我们需要通过<code>Homebrew</code>安装开发<code>React Native</code>的相关软件包。</p>
 <p>二、安装Node.js。</p>
 </blockquote>
-<pre><code>$brew install node
-</code></pre><blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$brew install node</div></pre></td></tr></table></figure>
+<blockquote>
 <p>三、安装watchman。watchman是Facebook用于监视JavaScript文件改动的开源项目。</p>
 </blockquote>
-<pre><code>$brew install watchman
-</code></pre><blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$brew install watchman</div></pre></td></tr></table></figure>
+<blockquote>
 <p>四、安装flow。flow是Facebook开源的一个JavaScript静态类型检查器，用于发现JavaScript程序中的类型错误。</p>
 </blockquote>
-<pre><code>$brew install flow
-</code></pre><blockquote>
-<p>五、安装react-native-cli。react-native-cli是React Native的命令行工具，安装react-native-cli后我们就能够通过react-native相关命令管理ReactNative工程。</p>
-</blockquote>
-<pre><code>$npm install -g react-native-cli
-</code></pre><ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$brew install flow</div><div class="line"><span class="string">``</span><span class="string">`	</span></div><div class="line"></div><div class="line">&gt; 五、安装react-native-cli。react-native-cli是React Native的命令行工具，安装react-native-cli后我们就能够通过react-native相关命令管理ReactNative工程。</div><div class="line"></div><div class="line">`<span class="string">``</span>javascript</div><div class="line">$npm install -g react-native-cli</div></pre></td></tr></table></figure>
+<ul>
 <li>目录结构 <ul>
-<li>android / ios：各自存放了一个相关平台的工程 project，可以直接下拉 JS Bundle 并运行</li>
-<li>node_modules：里面是自动生成的 node 依赖之类的文件，通过读取 package.json 里的配置来生成；</li>
-<li>js：这个文件夹最为重要，我们的开发都在这个文件夹里，把写好的 js 文件打包下发给 client 就会自动生效。</li>
+<li><code>android / ios</code>：各自存放了一个相关平台的工程 <code>project</code>，可以直接下拉 JS Bundle 并运行</li>
+<li><code>node_modules</code>：里面是自动生成的 <code>node</code> 依赖之类的文件，通过读取 <code>package.json</code> 里的配置来生成；</li>
+<li><code>js</code>：这个文件夹最为重要，我们的开发都在这个文件夹里，把写好的 <code>js</code> 文件打包下发给 <code>client</code> 就会自动生效。</li>
 </ul>
 </li>
 </ul>

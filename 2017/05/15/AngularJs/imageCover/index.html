@@ -99,17 +99,17 @@
 
 
 
-<meta name="description" content="使用情景：当我们遇到需要固定大小的图片，而又不想让图片变形">
+<meta name="description" content="使用情景：当我们遇到需要固定大小的图片，而又不想让图片变形  这个时候我要应该要想到的是css中的background相关属性 123456789101112131415161718192021222324252627282930.backImg&amp;#123;	&apos;background-image&apos;: &apos;url(&apos;&apos;)&apos;,	&apos;background-size&apos;: &apos;cover&apos;,  	&apos;backgro">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AngularJs固定大小的图片防止变形">
 <meta property="og:url" content="http://5ibinbin.com/2017/05/15/AngularJs/imageCover/index.html">
 <meta property="og:site_name" content="ibinbin">
-<meta property="og:description" content="使用情景：当我们遇到需要固定大小的图片，而又不想让图片变形">
-<meta property="og:updated_time" content="2017-12-02T06:39:08.000Z">
+<meta property="og:description" content="使用情景：当我们遇到需要固定大小的图片，而又不想让图片变形  这个时候我要应该要想到的是css中的background相关属性 123456789101112131415161718192021222324252627282930.backImg&amp;#123;	&apos;background-image&apos;: &apos;url(&apos;&apos;)&apos;,	&apos;background-size&apos;: &apos;cover&apos;,  	&apos;backgro">
+<meta property="og:updated_time" content="2017-12-28T14:37:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AngularJs固定大小的图片防止变形">
-<meta name="twitter:description" content="使用情景：当我们遇到需要固定大小的图片，而又不想让图片变形">
+<meta name="twitter:description" content="使用情景：当我们遇到需要固定大小的图片，而又不想让图片变形  这个时候我要应该要想到的是css中的background相关属性 123456789101112131415161718192021222324252627282930.backImg&amp;#123;	&apos;background-image&apos;: &apos;url(&apos;&apos;)&apos;,	&apos;background-size&apos;: &apos;cover&apos;,  	&apos;backgro">
 
 
 
@@ -418,37 +418,10 @@
         <blockquote>
 <p>使用情景：当我们遇到需要固定大小的图片，而又不想让图片变形</p>
 </blockquote>
-<a id="more"></a>
-<p><strong>这个时候我要应该要想到的是css中的background相关属性</strong></p>
-<pre><code>.backImg{
-    &apos;background-image&apos;: &apos;url(&apos;&apos;)&apos;,
-    &apos;background-size&apos;: &apos;cover&apos;,
-      &apos;background-position&apos;: &apos;center&apos;
-}
-
-//background-size
-把背景图像扩展至足够大，以使背景图像完全覆盖背景区域。
-背景图像的某些部分也许无法显示在背景定位区域中。
-</code></pre><p><strong>这样我们就做到了可以让图片局部显示并达到了图片没有变形的效果</strong></p>
-<blockquote>
-<p>下面是AngularJs把它封装为相应的指令</p>
-</blockquote>
-<pre><code>angular.module(&apos;imgTransformModule&apos;, [])
-  .directive(&apos;imgTransform&apos;, function () {
-    return function (scope, element, attrs) {
-      attrs.$observe(&apos;imgTransform&apos;, function (value) {
-        element.css({
-          &apos;background-image&apos;: &apos;url(&apos; + value + &apos;)&apos;,
-          &apos;background-size&apos;: &apos;cover&apos;,
-          &apos;background-position&apos;: &apos;center&apos;
-          &apos;display&apos;:&apos;inline-block&apos;;
-        });
-      });
-    };
-  });
-</code></pre><p><strong>调用</strong></p>
-<pre><code>&lt;div class=&quot;img-Transform&quot; img-transform=&quot;{{url}}&quot;&gt;&lt;/div&gt;
-</code></pre>
+<p><strong>这个时候我要应该要想到的是<code>css</code>中的<code>background</code>相关属性</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">.backImg&#123;</div><div class="line">	<span class="string">'background-image'</span>: <span class="string">'url('</span><span class="string">')'</span>,</div><div class="line">	<span class="string">'background-size'</span>: <span class="string">'cover'</span>,</div><div class="line">  	<span class="string">'background-position'</span>: <span class="string">'center'</span></div><div class="line">&#125;</div><div class="line"><span class="comment">//background-size</span></div><div class="line">把背景图像扩展至足够大，以使背景图像完全覆盖背景区域。</div><div class="line">背景图像的某些部分也许无法显示在背景定位区域中。</div><div class="line"><span class="string">``</span><span class="string">`	</span></div><div class="line"></div><div class="line">&lt;!--more--&gt;</div><div class="line"></div><div class="line">**这样我们就做到了可以让图片局部显示并达到了图片没有变形的效果**</div><div class="line"></div><div class="line">&gt; 下面是AngularJs把它封装为相应的指令</div><div class="line"></div><div class="line">`<span class="string">``</span>javascript</div><div class="line">angular.module(<span class="string">'imgTransformModule'</span>, [])</div><div class="line">  .directive(<span class="string">'imgTransform'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">scope, element, attrs</span>) </span>&#123;</div><div class="line">      attrs.$observe(<span class="string">'imgTransform'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">        element.css(&#123;</div><div class="line">          <span class="string">'background-image'</span>: <span class="string">'url('</span> + value + <span class="string">')'</span>,</div><div class="line">          <span class="string">'background-size'</span>: <span class="string">'cover'</span>,</div><div class="line">          <span class="string">'background-position'</span>: <span class="string">'center'</span></div><div class="line">          <span class="string">'display'</span>:<span class="string">'inline-block'</span>;</div><div class="line">        &#125;);</div><div class="line">      &#125;);</div><div class="line">    &#125;;</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
+<p><strong>调用</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"img-Transform"</span> img-transform=<span class="string">"&#123;&#123;url&#125;&#125;"</span>&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
       
     </div>
 

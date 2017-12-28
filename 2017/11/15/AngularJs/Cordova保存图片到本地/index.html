@@ -99,17 +99,17 @@
 
 
 
-<meta name="description" content="我们将介绍两种方式将照片保存到本地   官方下载插件FileTransfer   这种方式会有一个弊端就是图片在相册里面找不到需要刷新一下系统目录或者重启一下手机才能在相册里面查看到图片但是可以下载动图">
+<meta name="description" content="我们将介绍两种方式将照片保存到本地   官方下载插件FileTransfer  这种方式会有一个弊端就是图片在相册里面找不到需要刷新一下系统目录或者重启一下手机才能在相册里面查看到图片但是可以下载动图">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cordova 保存图片到本地">
 <meta property="og:url" content="http://5ibinbin.com/2017/11/15/AngularJs/Cordova保存图片到本地/index.html">
 <meta property="og:site_name" content="ibinbin">
-<meta property="og:description" content="我们将介绍两种方式将照片保存到本地   官方下载插件FileTransfer   这种方式会有一个弊端就是图片在相册里面找不到需要刷新一下系统目录或者重启一下手机才能在相册里面查看到图片但是可以下载动图">
-<meta property="og:updated_time" content="2017-12-02T06:41:50.000Z">
+<meta property="og:description" content="我们将介绍两种方式将照片保存到本地   官方下载插件FileTransfer  这种方式会有一个弊端就是图片在相册里面找不到需要刷新一下系统目录或者重启一下手机才能在相册里面查看到图片但是可以下载动图">
+<meta property="og:updated_time" content="2017-12-28T14:28:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cordova 保存图片到本地">
-<meta name="twitter:description" content="我们将介绍两种方式将照片保存到本地   官方下载插件FileTransfer   这种方式会有一个弊端就是图片在相册里面找不到需要刷新一下系统目录或者重启一下手机才能在相册里面查看到图片但是可以下载动图">
+<meta name="twitter:description" content="我们将介绍两种方式将照片保存到本地   官方下载插件FileTransfer  这种方式会有一个弊端就是图片在相册里面找不到需要刷新一下系统目录或者重启一下手机才能在相册里面查看到图片但是可以下载动图">
 
 
 
@@ -419,113 +419,16 @@
 <p>我们将介绍两种方式将照片保存到本地</p>
 </blockquote>
 <ul>
-<li><p><a href="https://github.com/apache/cordova-plugin-file-transfer/" target="_blank" rel="external">官方下载插件FileTransfer</a></p>
-<p>  <strong>这种方式会有一个弊端就是图片在相册里面找不到需要刷新一下系统目录或者重启一下手机才能在相册里面查看到图片但是可以下载动图</strong></p>
-</li>
+<li><a href="https://github.com/apache/cordova-plugin-file-transfer/" target="_blank" rel="external">官方下载插件FileTransfer</a></li>
 </ul>
+<p><strong>这种方式会有一个弊端就是图片在相册里面找不到需要刷新一下系统目录或者重启一下手机才能在相册里面查看到图片但是可以下载动图</strong></p>
 <a id="more"></a>
-<pre><code>vm.url = encodeURI(baseConfig.imgPath + vm.nowImgs[vm.nowImgIndex]);
-vm.fileName = vm.nowImgs[vm.nowImgIndex].split(&quot;/&quot;).pop();
-var fileTransfer = new FileTransfer();
-var trustHosts = true;
-var options = {
-    headers: {
-      &quot;Authorization&quot;: &apos;access_token&apos;
-    }
- };
-//Android：
-vm.fileURL = cordova.file.externalRootDirectory;
-window.resolveLocalFileSystemURL(vm.fileURL, function (fileEntry) {
-  fileEntry.getDirectory(&quot;Giti&quot;, {create: true, exclusive: false}, function (fileEntry) {
-    fileEntry.getDirectory(&quot;img&quot;, {create: true, exclusive: false}, function (fileEntry) {
-      fileTransfer.download(
-        vm.url,
-        fileEntry.toURL() + vm.fileName,
-        function (success) {
-
-        },
-        function (error) {
-
-        },
-        options,
-        trustHosts
-      );
-    }, function () {
-      publicMethod.showLoadingNoBackdrop(&apos;img文件夹创建失败&apos;);
-    });
-  }, function () {
-    publicMethod.showLoadingNoBackdrop(&apos;Giti文件夹创建失败&apos;);
-  });
-});
-// iOS
-vm.fileURL = cordova.file.documentsDirectory + vm.fileName;
-window.requestFileSystem(LocalFileSystem.PERSISTENT, 5 * 1024 * 1024, function (fs) {
-  fs.root.getDirectory(&apos;Giti&apos;, {create: true, exclusive: false}, function (directory) {
-    fileTransfer.download(
-      vm.url,
-      directory.nativeURL + vm.fileName,
-      function (success) {
-
-      },
-      function (error) {
-
-      },
-      trustHosts,
-      options
-    );
-  });
-});
-</code></pre><ul>
-<li><p><a href="https://github.com/devgeeks/Canvas2ImagePlugin" target="_blank" rel="external">Canvas2ImagePlugin插件</a></p>
-<p>  <strong>这种方法可以直接在相册里面看到图片但是动图看不到，下面是参考代码</strong></p>
-<pre><code>function keepImg(){
-    var success = function (msg) {
-
-    };
-     var error = function (err) {
-
-     };
-       saveImageToPhone(vm.url, success, error);
-}
-
-function saveImageToPhone(url, success, error) {
-  var canvas, context, imageDataUrl, imageData;
-  var img = new Image();
-  img.src = url;
-  img.onload = function () {
-    console.log(&apos;Img size: &apos; + img.naturalWidth + &apos;x&apos; + img.naturalHeight);
-    canvas = document.createElement(&apos;canvas&apos;);
-    canvas.width = img.width;
-    canvas.height = img.height;
-    context = canvas.getContext(&apos;2d&apos;);
-    context.drawImage(img, 0, 0);
-    try {
-      imageDataUrl = canvas.toDataURL(&apos;image/jpeg&apos;, 1.0);
-      imageData = imageDataUrl.replace(/data:image\/jpeg;base64,/, &apos;&apos;);
-      cordova.exec(
-        success,
-        error,
-        &apos;Canvas2ImagePlugin&apos;,
-        &apos;saveImageDataToLibrary&apos;,
-        [imageData]
-      );
-    }
-    catch (e) {
-      error(e.message);
-    }
-  };
-  try {
-    img.src = url;
-    console.log(&quot;153&quot; + img.src);
-  }
-  catch (e) {
-    console.log(&quot;156&quot; + img.src);
-    error(e.message);
-  }
-}
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">vm.url = <span class="built_in">encodeURI</span>(baseConfig.imgPath + vm.nowImgs[vm.nowImgIndex]);</div><div class="line">vm.fileName = vm.nowImgs[vm.nowImgIndex].split(<span class="string">"/"</span>).pop();</div><div class="line"><span class="keyword">var</span> fileTransfer = <span class="keyword">new</span> FileTransfer();</div><div class="line"><span class="keyword">var</span> trustHosts = <span class="literal">true</span>;</div><div class="line"><span class="keyword">var</span> options = &#123;</div><div class="line">    <span class="attr">headers</span>: &#123;</div><div class="line">      <span class="string">"Authorization"</span>: <span class="string">'access_token'</span></div><div class="line">    &#125;</div><div class="line"> &#125;;</div><div class="line"><span class="comment">//Android：</span></div><div class="line">vm.fileURL = cordova.file.externalRootDirectory;</div><div class="line"><span class="built_in">window</span>.resolveLocalFileSystemURL(vm.fileURL, <span class="function"><span class="keyword">function</span> (<span class="params">fileEntry</span>) </span>&#123;</div><div class="line">  fileEntry.getDirectory(<span class="string">"Giti"</span>, &#123;<span class="attr">create</span>: <span class="literal">true</span>, <span class="attr">exclusive</span>: <span class="literal">false</span>&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">fileEntry</span>) </span>&#123;</div><div class="line">    fileEntry.getDirectory(<span class="string">"img"</span>, &#123;<span class="attr">create</span>: <span class="literal">true</span>, <span class="attr">exclusive</span>: <span class="literal">false</span>&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">fileEntry</span>) </span>&#123;</div><div class="line">      fileTransfer.download(</div><div class="line">        vm.url,</div><div class="line">        fileEntry.toURL() + vm.fileName,</div><div class="line">        <span class="function"><span class="keyword">function</span> (<span class="params">success</span>) </span>&#123;</div><div class="line">          </div><div class="line">        &#125;,</div><div class="line">        <span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</div><div class="line">        </div><div class="line">        &#125;,</div><div class="line">        options,</div><div class="line">        trustHosts</div><div class="line">      );</div><div class="line">    &#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      publicMethod.showLoadingNoBackdrop(<span class="string">'img文件夹创建失败'</span>);</div><div class="line">    &#125;);</div><div class="line">  &#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    publicMethod.showLoadingNoBackdrop(<span class="string">'Giti文件夹创建失败'</span>);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div><div class="line"><span class="comment">// iOS</span></div><div class="line">vm.fileURL = cordova.file.documentsDirectory + vm.fileName;</div><div class="line"><span class="built_in">window</span>.requestFileSystem(LocalFileSystem.PERSISTENT, <span class="number">5</span> * <span class="number">1024</span> * <span class="number">1024</span>, <span class="function"><span class="keyword">function</span> (<span class="params">fs</span>) </span>&#123;</div><div class="line">  fs.root.getDirectory(<span class="string">'Giti'</span>, &#123;<span class="attr">create</span>: <span class="literal">true</span>, <span class="attr">exclusive</span>: <span class="literal">false</span>&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">directory</span>) </span>&#123;</div><div class="line">    fileTransfer.download(</div><div class="line">      vm.url,</div><div class="line">      directory.nativeURL + vm.fileName,</div><div class="line">      <span class="function"><span class="keyword">function</span> (<span class="params">success</span>) </span>&#123;</div><div class="line">       </div><div class="line">      &#125;,</div><div class="line">      <span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</div><div class="line">        </div><div class="line">      &#125;,</div><div class="line">      trustHosts,</div><div class="line">      options</div><div class="line">    );</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li><a href="https://github.com/devgeeks/Canvas2ImagePlugin" target="_blank" rel="external">Canvas2ImagePlugin插件</a></li>
 </ul>
-
+<p><strong>这种方法可以直接在相册里面看到图片但是动图看不到，下面是参考代码</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">keepImg</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> success = <span class="function"><span class="keyword">function</span> (<span class="params">msg</span>) </span>&#123;</div><div class="line">	</div><div class="line">	&#125;;</div><div class="line"> 	<span class="keyword">var</span> error = <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</div><div class="line">    </div><div class="line"> 	&#125;;</div><div class="line">   	saveImageToPhone(vm.url, success, error);</div><div class="line">&#125;</div><div class="line">	   	</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">saveImageToPhone</span>(<span class="params">url, success, error</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> canvas, context, imageDataUrl, imageData;</div><div class="line">  <span class="keyword">var</span> img = <span class="keyword">new</span> Image();</div><div class="line">  img.src = url;</div><div class="line">  img.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Img size: '</span> + img.naturalWidth + <span class="string">'x'</span> + img.naturalHeight);</div><div class="line">    canvas = <span class="built_in">document</span>.createElement(<span class="string">'canvas'</span>);</div><div class="line">    canvas.width = img.width;</div><div class="line">    canvas.height = img.height;</div><div class="line">    context = canvas.getContext(<span class="string">'2d'</span>);</div><div class="line">    context.drawImage(img, <span class="number">0</span>, <span class="number">0</span>);</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">      imageDataUrl = canvas.toDataURL(<span class="string">'image/jpeg'</span>, <span class="number">1.0</span>);</div><div class="line">      imageData = imageDataUrl.replace(<span class="regexp">/data:image\/jpeg;base64,/</span>, <span class="string">''</span>);</div><div class="line">      cordova.exec(</div><div class="line">        success,</div><div class="line">        error,</div><div class="line">        <span class="string">'Canvas2ImagePlugin'</span>,</div><div class="line">        <span class="string">'saveImageDataToLibrary'</span>,</div><div class="line">        [imageData]</div><div class="line">      );</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">catch</span> (e) &#123;</div><div class="line">      error(e.message);</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">try</span> &#123;</div><div class="line">    img.src = url;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"153"</span> + img.src);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">catch</span> (e) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"156"</span> + img.src);</div><div class="line">    error(e.message);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 

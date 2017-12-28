@@ -99,17 +99,17 @@
 
 
 
-<meta name="description" content="$rootScope每个AngularJs应用默认有一个根作用域–$rootScope， 根作用域位于最顶层，作为其他作用域的父作用域，可作用于整个应用中。">
+<meta name="description" content="$rootScope每个AngularJs应用默认有一个根作用域–$rootScope， 根作用域位于最顶层，作为其他作用域的父作用域，可作用于整个应用中。$scope scope(作用域)对应MVC模式的Model，是应用在HTML(视图)和JavaScript(控制器)之间的纽带，可应用在视图和控制器上。  scope是表达式执行的上下文，同时作用域也是一个对象，有可用的方法和属性。">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AngularJs scope(作用域)">
 <meta property="og:url" content="http://5ibinbin.com/2017/12/07/AngularJs/AngularJs 作用域/index.html">
 <meta property="og:site_name" content="ibinbin">
-<meta property="og:description" content="$rootScope每个AngularJs应用默认有一个根作用域–$rootScope， 根作用域位于最顶层，作为其他作用域的父作用域，可作用于整个应用中。">
-<meta property="og:updated_time" content="2017-12-07T08:05:11.000Z">
+<meta property="og:description" content="$rootScope每个AngularJs应用默认有一个根作用域–$rootScope， 根作用域位于最顶层，作为其他作用域的父作用域，可作用于整个应用中。$scope scope(作用域)对应MVC模式的Model，是应用在HTML(视图)和JavaScript(控制器)之间的纽带，可应用在视图和控制器上。  scope是表达式执行的上下文，同时作用域也是一个对象，有可用的方法和属性。">
+<meta property="og:updated_time" content="2017-12-28T14:22:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AngularJs scope(作用域)">
-<meta name="twitter:description" content="$rootScope每个AngularJs应用默认有一个根作用域–$rootScope， 根作用域位于最顶层，作为其他作用域的父作用域，可作用于整个应用中。">
+<meta name="twitter:description" content="$rootScope每个AngularJs应用默认有一个根作用域–$rootScope， 根作用域位于最顶层，作为其他作用域的父作用域，可作用于整个应用中。$scope scope(作用域)对应MVC模式的Model，是应用在HTML(视图)和JavaScript(控制器)之间的纽带，可应用在视图和控制器上。  scope是表达式执行的上下文，同时作用域也是一个对象，有可用的方法和属性。">
 
 
 
@@ -415,28 +415,15 @@
       
 
       
-        <h4 id="rootScope"><a href="#rootScope" class="headerlink" title="$rootScope"></a>$rootScope</h4><h6 id="每个AngularJs应用默认有一个根作用域–-rootScope，-根作用域位于最顶层，作为其他作用域的父作用域，可作用于整个应用中。"><a href="#每个AngularJs应用默认有一个根作用域–-rootScope，-根作用域位于最顶层，作为其他作用域的父作用域，可作用于整个应用中。" class="headerlink" title="每个AngularJs应用默认有一个根作用域–$rootScope， 根作用域位于最顶层，作为其他作用域的父作用域，可作用于整个应用中。"></a>每个AngularJs应用默认有一个根作用域–<code>$rootScope</code>， 根作用域位于最顶层，作为其他作用域的父作用域，可作用于整个应用中。</h6><a id="more"></a>
-<h4 id="scope"><a href="#scope" class="headerlink" title="$scope"></a>$scope</h4><ul>
+        <h4 id="rootScope"><a href="#rootScope" class="headerlink" title="$rootScope"></a>$rootScope</h4><h6 id="每个AngularJs应用默认有一个根作用域–-rootScope，-根作用域位于最顶层，作为其他作用域的父作用域，可作用于整个应用中。"><a href="#每个AngularJs应用默认有一个根作用域–-rootScope，-根作用域位于最顶层，作为其他作用域的父作用域，可作用于整个应用中。" class="headerlink" title="每个AngularJs应用默认有一个根作用域–$rootScope， 根作用域位于最顶层，作为其他作用域的父作用域，可作用于整个应用中。"></a>每个AngularJs应用默认有一个根作用域–<code>$rootScope</code>， 根作用域位于最顶层，作为其他作用域的父作用域，可作用于整个应用中。</h6><h4 id="scope"><a href="#scope" class="headerlink" title="$scope"></a>$scope</h4><ul>
 <li><p><code>scope(作用域)</code>对应<code>MVC</code>模式的<code>Model</code>，是应用在<code>HTML(视图)</code>和<code>JavaScript(控制器)</code>之间的纽带，可应用在视图和控制器上。</p>
 </li>
 <li><p><code>scope</code>是表达式执行的上下文，同时作用域也是一个对象，有可用的方法和属性。</p>
 </li>
 </ul>
-<h5 id="一、变量的取值和赋值"><a href="#一、变量的取值和赋值" class="headerlink" title="一、变量的取值和赋值"></a>一、变量的取值和赋值</h5><pre><code>&lt;div ng-controller=&quot;parentCtrl&quot;&gt;
-    &lt;span&gt;{{number}}&lt;/span&gt;
-    &lt;div ng-controller=&quot;childCtrl&quot;&gt;
-        &lt;span&gt;{{number}}&lt;/span&gt;
-        &lt;button ng-click=&quot;number = number +1&quot;&gt;增加&lt;/button&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-function parentCtrl($scope){
-    $scope.number = 1;
-}
-function childCtrl($scope){
-
-}
-</code></pre><h6 id="效果："><a href="#效果：" class="headerlink" title="效果："></a>效果：</h6><ul>
+<a id="more"></a>
+<h5 id="一、变量的取值和赋值"><a href="#一、变量的取值和赋值" class="headerlink" title="一、变量的取值和赋值"></a>一、变量的取值和赋值</h5><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-controller="parentCtrl"&gt;</div><div class="line">    &lt;span&gt;&#123;&#123;number&#125;&#125;&lt;/span&gt;</div><div class="line">    &lt;div ng-controller="childCtrl"&gt;</div><div class="line">        &lt;span&gt;&#123;&#123;number&#125;&#125;&lt;/span&gt;</div><div class="line">        &lt;button ng-click="number = number +1"&gt;增加&lt;/button&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">	</div><div class="line">function parentCtrl($scope)&#123;</div><div class="line">    $scope.number = 1;</div><div class="line">&#125;</div><div class="line">function childCtrl($scope)&#123;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h6 id="效果："><a href="#效果：" class="headerlink" title="效果："></a>效果：</h6><ul>
 <li>界面上显示了两个<code>1</code>，但当我们点击按钮之后，<code>childCtrl</code>作用域内的数据改变了，<code>parentCtrl</code>作用域内的数据没有改变</li>
 </ul>
 <h6 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h6><ul>
@@ -444,53 +431,18 @@ function childCtrl($scope){
 <li>②点击按钮后<code>childCtrl</code>作用域就会创建一个<code>number</code>基础类型变量，当<code>childCtrl</code>已有某个基础类型变量就不会访问原型链。</li>
 </ul>
 <h6 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h6><ul>
-<li><p>①可以使用<code>$parent</code>来指定上级作用域改变</p>
-<pre><code>&lt;div ng-controller=&quot;parentCtrl&quot;&gt;
-    &lt;span&gt;{{number}}&lt;/span&gt;
-    &lt;div ng-controller=&quot;childCtrl&quot;&gt;
-        &lt;span&gt;{{number}}&lt;/span&gt;
-        &lt;button ng-click=&quot;$parent.number = number +1&quot;&gt;增加&lt;/button&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-</code></pre></li>
-<li><p>②使用引用类型变量，内外层作用域均是<code>data</code>对象的引用，修改对象的属性，引用的还是同一个变量。</p>
-<pre><code>&lt;div ng-controller=&quot;parentCtrl&quot;&gt;
-    &lt;span&gt;{{data.number}}&lt;/span&gt;
-      &lt;div ng-controller=&quot;childCtrl&quot;&gt;
-          &lt;span&gt;{{data.number}}&lt;/span&gt;
-          &lt;button ng-click=&quot;data.number = data.number +1&quot;&gt;增加&lt;/button&gt;
-      &lt;/div&gt;
-&lt;/div&gt;
-
-function parentCtrl($scope){
-    $scope.data.number = 123&apos;;
-}
-function childCtrl($scope){
-
-} 
-</code></pre></li>
+<li>①可以使用<code>$parent</code>来指定上级作用域改变</li>
 </ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-controller="parentCtrl"&gt;</div><div class="line">    &lt;span&gt;&#123;&#123;number&#125;&#125;&lt;/span&gt;</div><div class="line">    &lt;div ng-controller="childCtrl"&gt;</div><div class="line">        &lt;span&gt;&#123;&#123;number&#125;&#125;&lt;/span&gt;</div><div class="line">        &lt;button ng-click="$parent.number = number +1"&gt;增加&lt;/button&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>②使用引用类型变量，内外层作用域均是<code>data</code>对象的引用，修改对象的属性，引用的还是同一个变量。</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-controller="parentCtrl"&gt;</div><div class="line">	&lt;span&gt;&#123;&#123;data.number&#125;&#125;&lt;/span&gt;</div><div class="line">  	&lt;div ng-controller="childCtrl"&gt;</div><div class="line">  		&lt;span&gt;&#123;&#123;data.number&#125;&#125;&lt;/span&gt;</div><div class="line">      	&lt;button ng-click="data.number = data.number +1"&gt;增加&lt;/button&gt;</div><div class="line">  	&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">	</div><div class="line">function parentCtrl($scope)&#123;</div><div class="line">    $scope.data.number = 123';</div><div class="line">&#125;</div><div class="line">function childCtrl($scope)&#123;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <blockquote>
 <p><code>ng-if</code>、<code>ng-repeat</code>、<code>ng-switch</code>、<code>ng-include</code>等指令也会产生新作用域</p>
 </blockquote>
-<h5 id="二、Directive中的作用域"><a href="#二、Directive中的作用域" class="headerlink" title="二、Directive中的作用域"></a>二、Directive中的作用域</h5><pre><code>.directive(&quot;myDirective&quot;, function () 
-    return {
-        restrict: &quot;AE&quot;,
-        scope: {
-            name: &apos;@myName&apos;,
-            age: &apos;=&apos;,
-            changeAge: &apos;&amp;changeMyAge&apos;
-        },
-        replace: true,
-        template: &quot;&lt;div class=&apos;my-directive&apos;&gt;&quot; +
-            &quot;名字：&lt;span ng-bind=&apos;name&apos;&gt;&lt;/span&gt;&lt;br/&gt;&quot; +
-            &quot;年龄：&lt;span ng-bind=&apos;age&apos;&gt;&lt;/span&gt;&lt;br/&gt;&quot; +
-            &quot;修改名字：&lt;input type=&apos;text&apos; ng-model=&apos;name&apos;&gt;&lt;br/&gt;&quot; +
-            &quot;&lt;button ng-click=&apos;changeAge()&apos;&gt;修改年龄&lt;/button&gt;&quot; +
-            &quot; &lt;/div&gt;&quot;
-   }
-}
-</code></pre><h5 id="①scope：false"><a href="#①scope：false" class="headerlink" title="①scope：false"></a>①<code>scope：false</code></h5><blockquote>
+<h5 id="二、Directive中的作用域"><a href="#二、Directive中的作用域" class="headerlink" title="二、Directive中的作用域"></a>二、Directive中的作用域</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">.directive(<span class="string">"myDirective"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span></div><div class="line">    <span class="title">return</span> &#123;</div><div class="line">        restrict: <span class="string">"AE"</span>,</div><div class="line">        <span class="attr">scope</span>: &#123;</div><div class="line">            <span class="attr">name</span>: <span class="string">'@myName'</span>,</div><div class="line">            <span class="attr">age</span>: <span class="string">'='</span>,</div><div class="line">            <span class="attr">changeAge</span>: <span class="string">'&amp;changeMyAge'</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">replace</span>: <span class="literal">true</span>,</div><div class="line">        <span class="attr">template</span>: <span class="string">"&lt;div class='my-directive'&gt;"</span> +</div><div class="line">            <span class="string">"名字：&lt;span ng-bind='name'&gt;&lt;/span&gt;&lt;br/&gt;"</span> +</div><div class="line">            <span class="string">"年龄：&lt;span ng-bind='age'&gt;&lt;/span&gt;&lt;br/&gt;"</span> +</div><div class="line">            <span class="string">"修改名字：&lt;input type='text' ng-model='name'&gt;&lt;br/&gt;"</span> +</div><div class="line">            <span class="string">"&lt;button ng-click='changeAge()'&gt;修改年龄&lt;/button&gt;"</span> +</div><div class="line">            <span class="string">" &lt;/div&gt;"</span></div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="①scope：false"><a href="#①scope：false" class="headerlink" title="①scope：false"></a>①<code>scope：false</code></h5><blockquote>
 <p>当<code>scope</code>设置为<code>false</code>的时候,我们创建的指令和父作用域<code>（其实是同一个作用域）</code>共享同一个<code>model</code>模型，所以在指令中修改模型数据，它会反映到父作用域的模型中。</p>
 </blockquote>
 <h5 id="②scope：true"><a href="#②scope：true" class="headerlink" title="②scope：true"></a>②<code>scope：true</code></h5><blockquote>

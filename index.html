@@ -419,7 +419,12 @@
 
       
         
-          <h4 id="rootScope"><a href="#rootScope" class="headerlink" title="$rootScope"></a>$rootScope</h4><h6 id="每个AngularJs应用默认有一个根作用域–-rootScope，-根作用域位于最顶层，作为其他作用域的父作用域，可作用于整个应用中。"><a href="#每个AngularJs应用默认有一个根作用域–-rootScope，-根作用域位于最顶层，作为其他作用域的父作用域，可作用于整个应用中。" class="headerlink" title="每个AngularJs应用默认有一个根作用域–$rootScope， 根作用域位于最顶层，作为其他作用域的父作用域，可作用于整个应用中。"></a>每个AngularJs应用默认有一个根作用域–<code>$rootScope</code>， 根作用域位于最顶层，作为其他作用域的父作用域，可作用于整个应用中。</h6>
+          <h4 id="rootScope"><a href="#rootScope" class="headerlink" title="$rootScope"></a>$rootScope</h4><h6 id="每个AngularJs应用默认有一个根作用域–-rootScope，-根作用域位于最顶层，作为其他作用域的父作用域，可作用于整个应用中。"><a href="#每个AngularJs应用默认有一个根作用域–-rootScope，-根作用域位于最顶层，作为其他作用域的父作用域，可作用于整个应用中。" class="headerlink" title="每个AngularJs应用默认有一个根作用域–$rootScope， 根作用域位于最顶层，作为其他作用域的父作用域，可作用于整个应用中。"></a>每个AngularJs应用默认有一个根作用域–<code>$rootScope</code>， 根作用域位于最顶层，作为其他作用域的父作用域，可作用于整个应用中。</h6><h4 id="scope"><a href="#scope" class="headerlink" title="$scope"></a>$scope</h4><ul>
+<li><p><code>scope(作用域)</code>对应<code>MVC</code>模式的<code>Model</code>，是应用在<code>HTML(视图)</code>和<code>JavaScript(控制器)</code>之间的纽带，可应用在视图和控制器上。</p>
+</li>
+<li><p><code>scope</code>是表达式执行的上下文，同时作用域也是一个对象，有可用的方法和属性。</p>
+</li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/12/07/AngularJs/AngularJs 作用域/#more" rel="contents">
@@ -584,6 +589,9 @@
           <p>AngularJs 问题总结</p>
 <h4 id="一、ng-if-ng-show"><a href="#一、ng-if-ng-show" class="headerlink" title="一、ng-if/ng-show"></a>一、ng-if/ng-show</h4><blockquote>
 <p>最根本的区别是页面是否会生成此DOM元素</p>
+</blockquote>
+<h4 id="二、ng-repeat迭代数组的时候，如果数组中有相同值，会有什么问题，如何解决？"><a href="#二、ng-repeat迭代数组的时候，如果数组中有相同值，会有什么问题，如何解决？" class="headerlink" title="二、ng-repeat迭代数组的时候，如果数组中有相同值，会有什么问题，如何解决？"></a>二、ng-repeat迭代数组的时候，如果数组中有相同值，会有什么问题，如何解决？</h4><blockquote>
+<p>会提示 <code>Duplicates in a repeater are not allowed.</code>，数据与DOM之间一对一的关系在数据相同的情况下不成立。通过 <code>track by key</code> <code>key</code> 为数组的唯一标识，目的是建立数组与DOM的关联。</p>
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">
@@ -912,10 +920,9 @@
 <p>我们将介绍两种方式将照片保存到本地</p>
 </blockquote>
 <ul>
-<li><p><a href="https://github.com/apache/cordova-plugin-file-transfer/">官方下载插件FileTransfer</a></p>
-<p>  <strong>这种方式会有一个弊端就是图片在相册里面找不到需要刷新一下系统目录或者重启一下手机才能在相册里面查看到图片但是可以下载动图</strong></p>
-</li>
+<li><a href="https://github.com/apache/cordova-plugin-file-transfer/">官方下载插件FileTransfer</a></li>
 </ul>
+<p><strong>这种方式会有一个弊端就是图片在相册里面找不到需要刷新一下系统目录或者重启一下手机才能在相册里面查看到图片但是可以下载动图</strong></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/11/15/AngularJs/Cordova保存图片到本地/#more" rel="contents">

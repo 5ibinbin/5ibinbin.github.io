@@ -419,9 +419,13 @@
 
       
         
-          <blockquote>
-<p>使用情景：当我们遇到需要固定大小的图片，而又不想让图片变形</p>
-</blockquote>
+          
+          
+使用情景：当我们遇到需要固定大小的图片，而又不想让图片变形
+
+这个时候我要应该要想到的是css中的background相关属性
+123456789101112131415161718192021222324252627282930.backImg&#123;	'background-image':
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/05/15/AngularJs/imageCover/#more" rel="contents">
@@ -584,11 +588,174 @@
       
         
           <blockquote>
-<p>ionic混合开发调用Android系统相册，官方的<a href="http://ngcordova.com/docs/plugins/imagePicker/">cordova-image-picker</a>插件在直接用的时候会在Android6.0以上的版本由于没有获得相应的存储权限而闪退。</p>
+<p><code>ionic</code>混合开发调用<code>Android</code>系统相册，官方的<a href="http://ngcordova.com/docs/plugins/imagePicker/">cordova-image-picker</a>插件在直接用的时候会在<code>Android6.0</code>以上的版本由于没有获得相应的存储权限而闪退。</p>
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/05/10/AngularJs/ionic监听Android返回/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div align="left">
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/05/05/Android/Android MVC与MVP的区别和理解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ibinbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ibinbin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/05/05/Android/Android MVC与MVP的区别和理解/" itemprop="url">
+                  Android MVC和MVP的区别和理解
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-05T00:00:00+08:00">
+                2017-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android技术分享/" itemprop="url" rel="index">
+                    <span itemprop="name">Android技术分享</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/05/05/Android/Android MVC与MVP的区别和理解/" class="leancloud_visitors" data-flag-title="Android MVC和MVP的区别和理解">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="MVC架构："><a href="#MVC架构：" class="headerlink" title="MVC架构："></a>MVC架构：</h3><h4 id="MVC就是Model-View-Controller，它们的作用是："><a href="#MVC就是Model-View-Controller，它们的作用是：" class="headerlink" title="MVC就是Model-View-Controller，它们的作用是："></a>MVC就是Model-View-Controller，它们的作用是：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(数据模型)Model：数据的封装和保存，业务逻辑和实体模型</div><div class="line">(视图)View：视图界面，对应于布局文件</div><div class="line">(控制器)Controller：业务逻辑，对应于Activity、Fragment等</div></pre></td></tr></table></figure>
+<h4 id="它们之间的关系如下图所示："><a href="#它们之间的关系如下图所示：" class="headerlink" title="它们之间的关系如下图所示："></a>它们之间的关系如下图所示：</h4><h6 id="View传送指令到Controller-Controller完成业务逻辑后，改变Model的状态，Model将新的数据发送到View，这就是MVC模式的处理逻辑。"><a href="#View传送指令到Controller-Controller完成业务逻辑后，改变Model的状态，Model将新的数据发送到View，这就是MVC模式的处理逻辑。" class="headerlink" title="View传送指令到Controller,Controller完成业务逻辑后，改变Model的状态，Model将新的数据发送到View，这就是MVC模式的处理逻辑。"></a>View传送指令到Controller,Controller完成业务逻辑后，改变Model的状态，Model将新的数据发送到View，这就是MVC模式的处理逻辑。</h6>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/05/Android/Android MVC与MVP的区别和理解/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -760,169 +927,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/05/05/Android/Android观察者模式/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div align="left">
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/05/05/Android/Android MVC与MVP的区别和理解/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ibinbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ibinbin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/05/05/Android/Android MVC与MVP的区别和理解/" itemprop="url">
-                  Android MVC和MVP的区别和理解
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-05T00:00:00+08:00">
-                2017-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android技术分享/" itemprop="url" rel="index">
-                    <span itemprop="name">Android技术分享</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/05/05/Android/Android MVC与MVP的区别和理解/" class="leancloud_visitors" data-flag-title="Android MVC和MVP的区别和理解">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="MVC架构："><a href="#MVC架构：" class="headerlink" title="MVC架构："></a>MVC架构：</h3><h4 id="MVC就是Model-View-Controller，它们的作用是："><a href="#MVC就是Model-View-Controller，它们的作用是：" class="headerlink" title="MVC就是Model-View-Controller，它们的作用是："></a>MVC就是Model-View-Controller，它们的作用是：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(数据模型)Model：数据的封装和保存，业务逻辑和实体模型</div><div class="line">(视图)View：视图界面，对应于布局文件</div><div class="line">(控制器)Controller：业务逻辑，对应于Activity、Fragment等</div></pre></td></tr></table></figure>
-<h4 id="它们之间的关系如下图所示："><a href="#它们之间的关系如下图所示：" class="headerlink" title="它们之间的关系如下图所示："></a>它们之间的关系如下图所示：</h4><h6 id="View传送指令到Controller-Controller完成业务逻辑后，改变Model的状态，Model将新的数据发送到View，这就是MVC模式的处理逻辑。"><a href="#View传送指令到Controller-Controller完成业务逻辑后，改变Model的状态，Model将新的数据发送到View，这就是MVC模式的处理逻辑。" class="headerlink" title="View传送指令到Controller,Controller完成业务逻辑后，改变Model的状态，Model将新的数据发送到View，这就是MVC模式的处理逻辑。"></a>View传送指令到Controller,Controller完成业务逻辑后，改变Model的状态，Model将新的数据发送到View，这就是MVC模式的处理逻辑。</h6>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/05/Android/Android MVC与MVP的区别和理解/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
