@@ -106,7 +106,7 @@
 <meta property="og:url" content="http://5ibinbin.com/2017/06/23/React Native 学习总结/React Native TextInput高度自适应/index.html">
 <meta property="og:site_name" content="ibinbin">
 <meta property="og:description" content="有时我们需要根据默认的文字来显示TextInput的高度，而且可以随着文字的输入自动增加TextInput的高度。下面我们就来看一下这个是如何实现的：  TextInput属性介绍">
-<meta property="og:updated_time" content="2017-12-28T15:31:59.000Z">
+<meta property="og:updated_time" content="2017-12-28T16:06:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React Native TextInput 高度自适应">
 <meta name="twitter:description" content="有时我们需要根据默认的文字来显示TextInput的高度，而且可以随着文字的输入自动增加TextInput的高度。下面我们就来看一下这个是如何实现的：  TextInput属性介绍">
@@ -440,10 +440,12 @@
 
 - `onChangeText` `function`监听方法，文本框内容发生改变回调方法，该方法主要是监听输入框文字的变化
 
+
    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">onChange = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</div><div class="line">	<span class="keyword">this</span>.setState(&#123;</div><div class="line">   		<span class="attr">noteContent</span>: event.nativeEvent.text</div><div class="line">	&#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 
 
 - `onContentSizeChange` `function`监听方法，当文本框的高度发生变化时回调该方法。当`TextInput`的高度可变时，调用`onLayout`方法并将宽高传递给它，并重新绘制该组件。
+
 
     <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">onContentSizeChange = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</div><div class="line">  		<span class="keyword">this</span>.setState(&#123;</div><div class="line">      		<span class="attr">height</span>: event.nativeEvent.contentSize.height</div><div class="line">  		&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </code></pre><blockquote>

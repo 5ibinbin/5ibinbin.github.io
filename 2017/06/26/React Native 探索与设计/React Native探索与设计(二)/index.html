@@ -106,7 +106,7 @@
 <meta property="og:url" content="http://5ibinbin.com/2017/06/26/React Native 探索与设计/React Native探索与设计(二)/index.html">
 <meta property="og:site_name" content="ibinbin">
 <meta property="og:description" content="JSX语法 JSX: 即JavaScript XML 是一种在React组建内部构建标签的类XML语法。增强React程序组件的可读性  React的核心机制之一就是虚拟DOM: 可以在内存中创建虚拟DOM元素。React利用虚拟DOM来减少对实际DOM的操作从而提升性能。1、示例123456789render: function() &amp;#123;	return (		&amp;lt;View style">
-<meta property="og:updated_time" content="2017-12-28T15:17:52.000Z">
+<meta property="og:updated_time" content="2017-12-28T15:58:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React Native探索与设计(二)-JSX语法和ES6语法">
 <meta name="twitter:description" content="JSX语法 JSX: 即JavaScript XML 是一种在React组建内部构建标签的类XML语法。增强React程序组件的可读性  React的核心机制之一就是虚拟DOM: 可以在内存中创建虚拟DOM元素。React利用虚拟DOM来减少对实际DOM的操作从而提升性能。1、示例123456789render: function() &amp;#123;	return (		&amp;lt;View style">
@@ -433,8 +433,10 @@
  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;View style=&#123;styles.container&#125;&gt;&lt;/View&gt;</div></pre></td></tr></table></figure>
 </li>
 <li><p>样式表和内联样式共存:{[]}</p>
-<p> ``javascript<br> <view style="{[styles.container," {fontsize:40,="" width:80}]}=""></view></p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">4. 多个样式表:&#123;[样式类1， 样式类2]&#125;</div><div class="line"></div><div class="line">	```javascript</div><div class="line">	&lt;View style=&#123;[styles.container, styles.color]&#125;&gt;</div></pre></td></tr></table></figure>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;View style=&#123;[styles.container, &#123;<span class="attr">fontSize</span>:<span class="number">40</span>, <span class="attr">width</span>:<span class="number">80</span>&#125;]&#125;&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>多个样式表:{[样式类1， 样式类2]}</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;View style=&#123;[styles.container, styles.color]&#125;&gt;</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h3 id="ES6语法"><a href="#ES6语法" class="headerlink" title="ES6语法"></a>ES6语法</h3><blockquote>
