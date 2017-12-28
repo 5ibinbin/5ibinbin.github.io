@@ -99,17 +99,17 @@
 
 
 
-<meta name="description" content="通过继承Component来创建组件类 class TextButton extends Component { }  定义组件的propTypes(props类型)和defaultProps(props默认值) static propTypes = {     text: PropTypes.string.isRequired,     onPress: PropTypes.func,">
+<meta name="description" content="通过继承Component来创建组件类   123class TextButton extends Component &amp;#123;&amp;#125;    定义组件的propTypes(props类型)和defaultProps(props默认值)   12345678910111213static propTypes = &amp;#123;       text: PropTypes.string.is">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React Native 自定义组件">
 <meta property="og:url" content="http://5ibinbin.com/2017/06/21/React Native 学习总结/React Native 自定义组件/index.html">
 <meta property="og:site_name" content="ibinbin">
-<meta property="og:description" content="通过继承Component来创建组件类 class TextButton extends Component { }  定义组件的propTypes(props类型)和defaultProps(props默认值) static propTypes = {     text: PropTypes.string.isRequired,     onPress: PropTypes.func,">
-<meta property="og:updated_time" content="2017-06-23T09:49:02.000Z">
+<meta property="og:description" content="通过继承Component来创建组件类   123class TextButton extends Component &amp;#123;&amp;#125;    定义组件的propTypes(props类型)和defaultProps(props默认值)   12345678910111213static propTypes = &amp;#123;       text: PropTypes.string.is">
+<meta property="og:updated_time" content="2017-12-28T15:24:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React Native 自定义组件">
-<meta name="twitter:description" content="通过继承Component来创建组件类 class TextButton extends Component { }  定义组件的propTypes(props类型)和defaultProps(props默认值) static propTypes = {     text: PropTypes.string.isRequired,     onPress: PropTypes.func,">
+<meta name="twitter:description" content="通过继承Component来创建组件类   123class TextButton extends Component &amp;#123;&amp;#125;    定义组件的propTypes(props类型)和defaultProps(props默认值)   12345678910111213static propTypes = &amp;#123;       text: PropTypes.string.is">
 
 
 
@@ -417,91 +417,30 @@
       
         <ul>
 <li><p>通过继承Component来创建组件类</p>
-<pre><code>class TextButton extends Component {
-}
-</code></pre></li>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TextButton</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
 <li><p>定义组件的propTypes(props类型)和defaultProps(props默认值)</p>
-<pre><code>static propTypes = {
-    text: PropTypes.string.isRequired,
-    onPress: PropTypes.func,
-    color: PropTypes.string,
-    backgroundColor:PropTypes.string,
-    fontSize: PropTypes.number
-};
-
-static defaultProps = {
-    color: &apos;white&apos;,
-    backgroundColor: &apos;#FFDE00&apos;,
-    fontSize:14
-};
-</code></pre></li>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">static</span> propTypes = &#123;</div><div class="line">       <span class="attr">text</span>: PropTypes.string.isRequired,</div><div class="line">       <span class="attr">onPress</span>: PropTypes.func,</div><div class="line">       <span class="attr">color</span>: PropTypes.string,</div><div class="line">       <span class="attr">backgroundColor</span>:PropTypes.string,</div><div class="line">       <span class="attr">fontSize</span>: PropTypes.number</div><div class="line">   &#125;;</div><div class="line"></div><div class="line">   <span class="keyword">static</span> defaultProps = &#123;</div><div class="line">       <span class="attr">color</span>: <span class="string">'white'</span>,</div><div class="line">       <span class="attr">backgroundColor</span>: <span class="string">'#FFDE00'</span>,</div><div class="line">       <span class="attr">fontSize</span>:<span class="number">14</span></div><div class="line">   &#125;;</div></pre></td></tr></table></figure>
+</li>
 </ul>
 <blockquote>
-<p>其中PropTypes的类型有：array，bool，func，number，object， string，symbol</p>
+<p>其中<code>PropTypes</code>的类型有：<code>array</code>，<code>bool</code>，<code>func</code>，<code>number</code>，<code>object</code>， <code>string</code>，<code>symbol</code></p>
 </blockquote>
 <ul>
-<li><p>渲染界面，引用props值</p>
-<pre><code>render() {
-    return (
-        &lt;TouchableOpacity onPress={this.props.onPress}&gt;
-            &lt;View style={[{backgroundColor:this.props.backgroundColor}]}&gt;
-                &lt;Text style={{fontSize:this.props.fontSize, color:this.props.color}}&gt;{this.props.text}&lt;/Text&gt;
-            &lt;/View&gt;
-        &lt;/TouchableOpacity&gt;
-    )
-}
-</code></pre></li>
-<li><p>导出组件</p>
-<pre><code>export default TextButton;
-</code></pre></li>
+<li><p>渲染界面，引用<code>props</code>值</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">render() &#123;</div><div class="line">       <span class="keyword">return</span> (</div><div class="line">           &lt;TouchableOpacity onPress=&#123;this.props.onPress&#125;&gt;</div><div class="line">               &lt;View style=&#123;[&#123;backgroundColor:this.props.backgroundColor&#125;]&#125;&gt;</div><div class="line">                   &lt;Text style=&#123;&#123;fontSize:this.props.fontSize, color:this.props.color&#125;&#125;&gt;&#123;this.props.text&#125;&lt;/Text&gt;</div><div class="line">               &lt;/View&gt;</div><div class="line">           &lt;/TouchableOpacity&gt;</div><div class="line">       )</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<h5 id="下面是完整代码："><a href="#下面是完整代码：" class="headerlink" title="下面是完整代码："></a>下面是完整代码：</h5><pre><code>&apos;use strict&apos;;
+<ul>
+<li><p>导出组件</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> TextButton;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="下面是完整代码："><a href="#下面是完整代码：" class="headerlink" title="下面是完整代码："></a>下面是完整代码：</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="meta">'use strict'</span>;</div><div class="line">	</div><div class="line"><span class="keyword">import</span> React, &#123;Component, PropTypes&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> &#123;</div><div class="line">    StyleSheet,</div><div class="line">    TouchableOpacity,</div><div class="line">    Text,</div><div class="line">    View</div><div class="line">&#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</div><div class="line">	</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TextButton</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">    <span class="keyword">static</span> propTypes = &#123;</div><div class="line">        <span class="attr">text</span>: PropTypes.string.isRequired,</div><div class="line">        <span class="attr">onPress</span>: PropTypes.func,</div><div class="line">        <span class="attr">color</span>: PropTypes.string,</div><div class="line">        <span class="attr">backgroundColor</span>:PropTypes.string,</div><div class="line">        <span class="attr">fontSize</span>: PropTypes.number</div><div class="line">    &#125;;</div><div class="line">	</div><div class="line">    <span class="keyword">static</span> defaultProps = &#123;</div><div class="line">        <span class="attr">color</span>: <span class="string">'white'</span>,</div><div class="line">        <span class="attr">backgroundColor</span>: <span class="string">'#FFDE00'</span>,</div><div class="line">        <span class="attr">fontSize</span>:<span class="number">14</span></div><div class="line">    &#125;;</div><div class="line">	</div><div class="line">    render() &#123;</div><div class="line">        <span class="keyword">return</span> (</div><div class="line">            &lt;TouchableOpacity onPress=&#123;this.props.onPress&#125;&gt;</div><div class="line">                &lt;View style=&#123;[&#123;backgroundColor:this.props.backgroundColor&#125;]&#125;&gt;</div><div class="line">                    &lt;Text style=&#123;&#123;fontSize:this.props.fontSize, color:this.props.color&#125;&#125;&gt;&#123;this.props.text&#125;&lt;/Text&gt;</div><div class="line">                &lt;/View&gt;</div><div class="line">            &lt;/TouchableOpacity&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">	</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> TextButton;</div></pre></td></tr></table></figure>
+<h5 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//首先导入组件</span></div><div class="line"><span class="keyword">import</span> TextButton <span class="keyword">from</span> <span class="string">'../component/TextButton'</span>;</div><div class="line"><span class="comment">//然后在render渲染</span></div><div class="line">&lt;TextButton</div><div class="line">    style=&#123;styles.register&#125;</div><div class="line">    text=&#123;<span class="string">'测试文字'</span>&#125;</div><div class="line">    onPress=&#123;() =&gt; <span class="keyword">this</span>._test()&#125;</div><div class="line">    color=&#123;<span class="string">'#FFDE00'</span>&#125;</div><div class="line">    backgroundColor=&#123;<span class="string">'transparent'</span>&#125;/&gt;</div></pre></td></tr></table></figure>
 
-import React, {Component, PropTypes} from &apos;react&apos;;
-import {
-    StyleSheet,
-    TouchableOpacity,
-    Text,
-    View
-} from &apos;react-native&apos;;
-
-class TextButton extends Component {
-    static propTypes = {
-        text: PropTypes.string.isRequired,
-        onPress: PropTypes.func,
-        color: PropTypes.string,
-        backgroundColor:PropTypes.string,
-        fontSize: PropTypes.number
-    };
-
-    static defaultProps = {
-        color: &apos;white&apos;,
-        backgroundColor: &apos;#FFDE00&apos;,
-        fontSize:14
-    };
-
-    render() {
-        return (
-            &lt;TouchableOpacity onPress={this.props.onPress}&gt;
-                &lt;View style={[{backgroundColor:this.props.backgroundColor}]}&gt;
-                    &lt;Text style={{fontSize:this.props.fontSize, color:this.props.color}}&gt;{this.props.text}&lt;/Text&gt;
-                &lt;/View&gt;
-            &lt;/TouchableOpacity&gt;
-        )
-    }
-}
-
-export default TextButton;
-</code></pre><h5 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h5><pre><code>//首先导入组件
-import TextButton from &apos;../component/TextButton&apos;;
-//然后在render渲染
-&lt;TextButton
-    style={styles.register}
-    text={&apos;测试文字&apos;}
-    onPress={() =&gt; this._test()}
-    color={&apos;#FFDE00&apos;}
-    backgroundColor={&apos;transparent&apos;}/&gt;
-</code></pre>
       
     </div>
 
