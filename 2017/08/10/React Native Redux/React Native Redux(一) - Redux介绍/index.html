@@ -106,7 +106,7 @@
 <meta property="og:url" content="http://5ibinbin.com/2017/08/10/React Native Redux/React Native Redux(一) - Redux介绍/index.html">
 <meta property="og:site_name" content="ibinbin">
 <meta property="og:description" content="前言：本文将着重梳理清 redux 使用中的各个关键词的概念，以加深对redux的理解本文地址 - Redux介绍)项目地址">
-<meta property="og:updated_time" content="2017-12-28T13:35:28.000Z">
+<meta property="og:updated_time" content="2017-12-28T15:48:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React Native Redux(一)-Redux介绍">
 <meta name="twitter:description" content="前言：本文将着重梳理清 redux 使用中的各个关键词的概念，以加深对redux的理解本文地址 - Redux介绍)项目地址">
@@ -416,52 +416,52 @@
 
       
         <blockquote>
-<p>前言：本文将着重梳理清 redux 使用中的各个关键词的概念，以加深对redux的理解<br><a href="http://5ibinbin.com/2017/08/10/React Native Redux/React Native Redux(一">本文地址</a> - Redux介绍)<br><a href="https://github.com/5ibinbin/reduxLifeStyle" target="_blank" rel="external">项目地址</a></p>
+<p>前言：本文将着重梳理清 <code>redux</code> 使用中的各个关键词的概念，以加深对<code>redux</code>的理解<br><a href="http://5ibinbin.com/2017/08/10/React Native Redux/React Native Redux(一">本文地址</a> - Redux介绍)<br><a href="https://github.com/5ibinbin/reduxLifeStyle" target="_blank" rel="external">项目地址</a></p>
 </blockquote>
 <a id="more"></a>
-<h5 id="redux是什么"><a href="#redux是什么" class="headerlink" title="redux是什么"></a>redux是什么</h5><blockquote>
+<h5 id="redux是什么"><a href="#redux是什么" class="headerlink" title="redux是什么"></a><code>redux</code>是什么</h5><blockquote>
 <p>redux 是 JavaScript 状态容器，提供对 JavaScript 应用状态的管理</p>
 </blockquote>
-<h5 id="redux安装"><a href="#redux安装" class="headerlink" title="redux安装"></a>redux安装</h5><ul>
-<li><p>安装 react-redux</p>
+<h5 id="redux安装"><a href="#redux安装" class="headerlink" title="redux安装"></a><code>redux</code>安装</h5><ul>
+<li><p>安装 <code>react-redux</code></p>
   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save react-redux</div></pre></td></tr></table></figure>
 </li>
-<li><p>安装 redux</p>
-<pre><code>npm install --save redux
-</code></pre></li>
-<li><p>安装 redux-thunk</p>
-<pre><code>npm install --save redux-thunk
-</code></pre></li>
+<li><p>安装 <code>redux</code></p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save redux</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装 <code>redux-thunk</code></p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save redux-thunk</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<h5 id="redux介绍"><a href="#redux介绍" class="headerlink" title="redux介绍"></a>redux介绍</h5><h6 id="redux由三部分组成：Action、Reducer、Store"><a href="#redux由三部分组成：Action、Reducer、Store" class="headerlink" title="redux由三部分组成：Action、Reducer、Store"></a>redux由三部分组成：<code>Action</code>、<code>Reducer</code>、<code>Store</code></h6><ul>
-<li>Action：事件的发起者(动作)，由用户或程序触发</li>
-<li>Reducer：根据 Action 类型来做出不同的响应，返回新的 state</li>
-<li>Store：存储 state 的集合</li>
+<h5 id="redux介绍"><a href="#redux介绍" class="headerlink" title="redux介绍"></a><code>redux</code>介绍</h5><h6 id="redux由三部分组成：Action、Reducer、Store"><a href="#redux由三部分组成：Action、Reducer、Store" class="headerlink" title="redux由三部分组成：Action、Reducer、Store"></a>redux由三部分组成：<code>Action</code>、<code>Reducer</code>、<code>Store</code></h6><ul>
+<li><code>Action</code>：事件的发起者(动作)，由用户或程序触发</li>
+<li><code>Reducer</code>：根据<code>Action</code> 类型来做出不同的响应，返回新的 <code>state</code></li>
+<li><code>Store</code>：存储 <code>state</code> 的集合</li>
 </ul>
 <blockquote>
-<p>当由用户或者程序触发某一个具体的动作时，Reducer 将对 Action 进行识别, 并返回新的state，最终存储在 store 中的 state 发生改变，从而导致界面的变化。</p>
+<p>当由用户或者程序触发某一个具体的动作时，<code>Reducer</code> 将对 <code>Action</code> 进行识别, 并返回新的<code>state</code>，最终存储在 <code>store</code> 中的 <code>state</code> 发生改变，从而导致界面的变化。</p>
 </blockquote>
 <h6 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h6><ul>
-<li>单一数据源：数据只存在于 store 中，无论是开发还是调试都方便很多</li>
-<li>state 是只读的：只有通过触发 action 才能修改 state</li>
+<li>单一数据源：数据只存在于 <code>store</code> 中，无论是开发还是调试都方便很多</li>
+<li><code>state</code> 是只读的：只有通过触发 <code>action</code> 才能修改 <code>state</code></li>
 </ul>
-<h5 id="Provider"><a href="#Provider" class="headerlink" title="Provider"></a>Provider</h5><blockquote>
-<p>Provider 这个模块是作为整个 App 的容器，在你原有的 App Container 的基础上再包上一层，它的工作很简单，就是接受 Redux 的 store 作为 props</p>
+<h5 id="Provider"><a href="#Provider" class="headerlink" title="Provider"></a><code>Provider</code></h5><blockquote>
+<p><code>Provider</code> 这个模块是作为整个 <code>App</code> 的容器，在你原有的 <code>App Container</code> 的基础上再包上一层，它的工作很简单，就是接受 <code>Redux</code> 的 <code>store</code> 作为 <code>props</code></p>
 </blockquote>
-<h5 id="dispatch"><a href="#dispatch" class="headerlink" title="dispatch"></a>dispatch</h5><blockquote>
-<p>dispatch 有分发之意。我们知道由用户或者程序触发的 Action 由 Reducer 做出响应从而引起 state 的改变。而 dispatch 就扮演了他们两者中的传播媒介。简单来说：首先 store 中维护了一个 state，我们 dispatch 一个 action 会触发 reducer 检测，接下来 reducer 根据这个 action 更新 state</p>
+<h5 id="dispatch"><a href="#dispatch" class="headerlink" title="dispatch"></a><code>dispatch</code></h5><blockquote>
+<p><code>dispatch</code> 有分发之意。我们知道由用户或者程序触发的 <code>Action</code> 由 <code>Reducer</code> 做出响应从而引起 <code>state</code> 的改变。而 <code>dispatch</code> 就扮演了他们两者中的传播媒介。简单来说：首先 <code>store</code> 中维护了一个 <code>state</code>，我们 <code>dispatch</code> 一个 <code>action</code> 会触发 <code>reducer</code> 检测，接下来 <code>reducer</code> 根据这个 <code>action</code> 更新 <code>state</code></p>
 </blockquote>
-<h5 id="connect"><a href="#connect" class="headerlink" title="connect"></a>connect</h5><blockquote>
-<p>connect方法的作用是连接 react 组件和 store，也就是说通过 connect 方法子组件可以获取 store 中的 state 和 dispatch。redux 的 connect 的含义是可以连接任意函数，这些函数的参数可以注入 store、state、dispatch。connect 可以将组件和 reducer 相关联。</p>
+<h5 id="connect"><a href="#connect" class="headerlink" title="connect"></a><code>connect</code></h5><blockquote>
+<p><code>connect</code>方法的作用是连接 <code>react</code> 组件和 <code>store</code>，也就是说通过 <code>connect</code> 方法子组件可以获取 <code>store</code> 中的 <code>state</code> 和 <code>dispatch</code>。<code>redux</code> 的 <code>connect</code> 的含义是可以连接任意函数，这些函数的参数可以注入 <code>store</code>、<code>state</code>、<code>dispatch</code>。<code>connect</code> 可以将组件和 <code>reducer</code> 相关联。</p>
 </blockquote>
-<h5 id="combineReducers"><a href="#combineReducers" class="headerlink" title="combineReducers"></a>combineReducers</h5><blockquote>
-<p>我们知道 reducer 是一个纯函数，接收已有的的 state 和 action，返回新的 state。当state比较多或复杂时，我们想让每个 reducer 只管理一部分 state 数据。而combineReducers 可以将所有的部分state友好的合并成一个全局的 state。其实combineReducers()所做的只是生成一个函数，这个函数来调用你的一系列 reducer，每个 reducer 根据它们的 key 来筛选出 state 中的一部分数据并处理,然后这个生成的函数再将所有 reducer 的结果合并成一个大的对象</p>
+<h5 id="combineReducers"><a href="#combineReducers" class="headerlink" title="combineReducers"></a><code>combineReducers</code></h5><blockquote>
+<p>我们知道 <code>reducer</code> 是一个纯函数，接收已有的的 <code>state</code> 和 <code>action</code>，返回新的 <code>state</code>。当<code>state</code>比较多或复杂时，我们想让每个 <code>reducer</code> 只管理一部分 <code>state</code> 数据。而<code>combineReducers</code> 可以将所有的部分<code>state</code>友好的合并成一个全局的 <code>state</code>。其实<code>combineReducers()</code>所做的只是生成一个函数，这个函数来调用你的一系列 <code>reducer</code>，每个 <code>reducer</code> 根据它们的 <code>key</code> 来筛选出 <code>state</code> 中的一部分数据并处理,然后这个生成的函数再将所有 <code>reducer</code> 的结果合并成一个大的对象</p>
 </blockquote>
-<h5 id="applyMiddleware"><a href="#applyMiddleware" class="headerlink" title="applyMiddleware"></a>applyMiddleware</h5><blockquote>
-<p>applyMiddleware是中间件，使用于 action 被发起之后，到达 reducer 之前的扩展点。 你可以利用 Redux middleware 来进行日志记录、创建崩溃报告、调用异步接口或者路由</p>
+<h5 id="applyMiddleware"><a href="#applyMiddleware" class="headerlink" title="applyMiddleware"></a><code>applyMiddleware</code></h5><blockquote>
+<p><code>applyMiddleware</code>是中间件，使用于 <code>action</code> 被发起之后，到达 <code>reducer</code> 之前的扩展点。 你可以利用 <code>Redux middleware</code> 来进行日志记录、创建崩溃报告、调用异步接口或者路由</p>
 </blockquote>
-<h5 id="异步Action"><a href="#异步Action" class="headerlink" title="异步Action"></a>异步Action</h5><blockquote>
-<p>当有网络请求的时候我们需要用到异步操作，这时候我们就需要使用到Thunk middleware 或者 redux-promise 中间件来</p>
+<h5 id="异步Action"><a href="#异步Action" class="headerlink" title="异步Action"></a>异步<code>Action</code></h5><blockquote>
+<p>当有网络请求的时候我们需要用到异步操作，这时候我们就需要使用到<code>Thunk ``middleware</code> 或者 <code>redux-promise</code> 中间件来</p>
 </blockquote>
 <h5 id="强烈建议"><a href="#强烈建议" class="headerlink" title="强烈建议"></a>强烈建议</h5><p><a href="http://cn.redux.js.org/index.html" target="_blank" rel="external">Redux 中文文档</a><br><a href="http://redux.js.org/docs/introduction/" target="_blank" rel="external">Redux 英文文档</a></p>
 

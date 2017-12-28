@@ -107,7 +107,7 @@
 <meta property="og:site_name" content="ibinbin">
 <meta property="og:description" content="很多React/React Native的初学者都被ES6的问题迷惑：各路大神都建议我们直接学习ES6的语法，然而网上搜到的很多教程和例子都是ES5版本的，所以很多人在学习的时候连照猫画虎都不知道怎么做。今天在此整理了一些ES5和ES6的写法对照表，希望大家以后读到ES5的代码，也能通过对照，在ES6下实现相同的功能。">
 <meta property="og:image" content="https://gitijsappstorage.blob.core.chinacloudapi.cn/jsapp/1498198778693v_photo_001.jpg">
-<meta property="og:updated_time" content="2017-12-28T15:08:45.000Z">
+<meta property="og:updated_time" content="2017-12-28T15:56:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React Native探索与设计(三)-ES5和ES6语法">
 <meta name="twitter:description" content="很多React/React Native的初学者都被ES6的问题迷惑：各路大神都建议我们直接学习ES6的语法，然而网上搜到的很多教程和例子都是ES5版本的，所以很多人在学习的时候连照猫画虎都不知道怎么做。今天在此整理了一些ES5和ES6的写法对照表，希望大家以后读到ES5的代码，也能通过对照，在ES6下实现相同的功能。">
@@ -424,21 +424,10 @@
 <p><img src="https://gitijsappstorage.blob.core.chinacloudapi.cn/jsapp/1498198778693v_photo_001.jpg" alt="ceshitupian"></p>
 <p><strong>引用</strong></p>
 <p>在<code>ES5</code>里，如果使用<code>CommonJS</code>标准，引入<code>React</code>包基本通过<code>require</code>进行，代码类似这样：</p>
-<pre><code>//ES5
-var React = require(&quot;react-native&quot;);
-var {
-    Image,
-    Text,
-    PropTypes
-} = React;  //引用不同的React Native组件
-</code></pre><p> 在ES6里，import写法更为标准</p>
-<pre><code>//ES6
-import React, {
-    Image, 
-    Text,
-    PropTypes
-} from &apos;react-native&apos;;
-</code></pre><blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ES5</span></div><div class="line"><span class="keyword">var</span> React = <span class="built_in">require</span>(<span class="string">"react-native"</span>);</div><div class="line"><span class="keyword">var</span> &#123;</div><div class="line">    Image,</div><div class="line">    Text,</div><div class="line">    PropTypes</div><div class="line">&#125; = React;  <span class="comment">//引用不同的React Native组件</span></div></pre></td></tr></table></figure>
+<p> 在ES6里，import写法更为标准</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ES6</span></div><div class="line"><span class="keyword">import</span> React, &#123;</div><div class="line">    Image, </div><div class="line">    Text,</div><div class="line">    PropTypes</div><div class="line">&#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</div></pre></td></tr></table></figure>
+<blockquote>
 <p>注意在React Native里，import直到0.12+才能正常运作。</p>
 </blockquote>
 <p><strong>导出单个类</strong></p>
