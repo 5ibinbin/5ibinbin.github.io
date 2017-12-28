@@ -108,7 +108,7 @@
 <meta property="og:description" content="MVC架构：MVC就是Model-View-Controller，它们的作用是：(数据模型)Model：数据的封装和保存，业务逻辑和实体模型 (视图)View：视图界面，对应于布局文件 (控制器)Controller：业务逻辑，对应于Activity、Fragment等">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1534031-9ae5ba8a11651f08.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1534031-8f4b6c89c33a6002.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-06-23T09:50:21.000Z">
+<meta property="og:updated_time" content="2017-12-28T13:45:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android MVC和MVP的区别和理解">
 <meta name="twitter:description" content="MVC架构：MVC就是Model-View-Controller，它们的作用是：(数据模型)Model：数据的封装和保存，业务逻辑和实体模型 (视图)View：视图界面，对应于布局文件 (控制器)Controller：业务逻辑，对应于Activity、Fragment等">
@@ -434,143 +434,12 @@ Presenter与View的交互是通过接口来进行的。
 Controller是基于行为的，并且可以被多个View共享。
 可以负责决定显示哪个View。
 </code></pre><h5 id="通过一个简单的例子来理解MVP模式："><a href="#通过一个简单的例子来理解MVP模式：" class="headerlink" title="通过一个简单的例子来理解MVP模式："></a>通过一个简单的例子来理解MVP模式：</h5><p>View层：</p>
-<pre><code>/**
-  * ViewInterface
-  * 定义一些通用的view接口
- */
-public interface LoadDataView {
-    /***
-     * 耗时操作，加载数据，显示Progress
-     */
-    void showLoading();
-    /***
-     * 隐藏Progress
-     */
-    void hideLoading();
-}
-
-/**
- * 更细小的，用来显示图书细节的View接口
-  */
-public interface LoadBookView extends LoadDataView {
-        void showDetailsView(BookEntity entity);
-}
-
-/***
- * Fragment,属于View层，实现了ViewInterface（LoadBookView）
- */
-public class BookDetailFragment extends Fragment implements LoadBookView{
-    /**图书条形码ISBN号*/
-    public static final String ISBN = &quot;9787121060748&quot;;
-    /**持Presenter对象*/
-    private BookDetailsPresenter presenter;
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        initWidget();
-        presenter = new BookDetailsPresenter(getActivity(), ISBN); // 实例化一个presenter对象
-        presenter.setView(this); //让Presenter持一个ViewInterface实例（LoadBookView）
-        presenter.loadData(); //告诉Presenter快给我加载Data
-    }    
-
-     @Override
-    public void showDetailsView(BookEntity entity) {
-        //更新UI等操作
-    }
-
-    @Override
-    public void showLoading() {
-        rlProgress.setVisibility(View.VISIBLE);
-    }
-
-    @Override
-    public void hideLoading() {
-        rlProgress.setVisibility(View.GONE);
-    }
-}
-</code></pre><p>2、Presenter层：</p>
-<pre><code>public class BookDetailsPresenter {
-    /**持一个Model层的对象，用来从网页接口Rest Api中提取数据*/
-    private RestApi restApi = null;
-    /**一个ViewInterface对象，用来回调Data给View*/
-    private LoadBookView loadBookView;
-    private String isbn;
-
-    public BookDetailsPresenter(Context context, String isbn) {
-        restApi = new RestApiImpl(context);
-        this.isbn =isbn;
-    }
-    public void setView(LoadBookView loadBookView) {
-        this.loadBookView = loadBookView;
-    }
-    public void loadData() {
-        loadBookView.showLoading();
-        //耗时操作，开个线程异步的加载数据
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                restApi.getBookDetailByIsbn(isbn, bookDetailsCallback);
-            }
-        });
-        thread.start();
-    }
-    //匿名内部类，接收bookDetailCallback的回调数据
-    private RestApi.BookDetailsCallback bookDetailsCallback = new RestApi.BookDetailsCallback() {
-        @Override
-        public void onBookEntityLoaded(BookEntity bookEntity) {
-            notifyDataLoadedSuccessful(bookEntity);
-            BookDetailsPresenter.this.loadBookView.hideLoading();
-        }
-
-        @Override
-        public void onError(Exception e) {
-            //异常后的相关处理
-        }
-    };
-
-    /***
-    * 通知获取数据成功了，赶快通知UI更新吧
-    */
-    private void notifyDataLoadedSuccessful(final BookEntity bookEntity) {
-        Handler handler = new Handler(Looper.getMainLooper());
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                BookDetailsPresenter.this.loadBookView.showDetailsView(bookEntity);
-            }
-        });
-    }  
-}
-</code></pre><p>3、Model层：</p>
-<pre><code>/***
-* 整个应用程序需要的数据实体类
-*/
-public class BookEntity {
-    //一些set，get方法
-}
-
-/**
- * 一个接口，用来从rest api api获得数据，它的实现在RestApiImpl中
- */
-public interface RestApi {
-    String API_ISBN_BASE_URL = &quot;https://api.douban.com/v2/book/isbn/&quot;;
-    /***
-    * 更细小的接口，用来将获取到的数据，回调给它的调用者
-    */
-    interface BookDetailsCallback {
-        void onBookEntityLoaded(BookEntity bookEntity);
-        void onError(Exception e);
-    }
-    /**
-     * 从网络获取数据，然后通过bookDetailCallback回调给Presenter
-     * @param isbn
-     * @param bookDetailsCallback
-     */
-    void getBookDetailByIsbn(final String isbn, final BookDetailsCallback bookDetailsCallback);
-
-}
-</code></pre><p>参考文章：<a href="http://www.jianshu.com/p/95c9088eef4f" target="_blank" rel="external">http://www.jianshu.com/p/95c9088eef4f</a><br>                <a href="http://www.codeceo.com/article/mvp-android.html" target="_blank" rel="external">http://www.codeceo.com/article/mvp-android.html</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">  * ViewInterface</div><div class="line">  * 定义一些通用的view接口</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">LoadDataView</span> </span>&#123;</div><div class="line">    <span class="comment">/***</span></div><div class="line">     * 耗时操作，加载数据，显示Progress</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">showLoading</span><span class="params">()</span></span>;</div><div class="line">    <span class="comment">/***</span></div><div class="line">     * 隐藏Progress</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">hideLoading</span><span class="params">()</span></span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 更细小的，用来显示图书细节的View接口</div><div class="line">  */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">LoadBookView</span> <span class="keyword">extends</span> <span class="title">LoadDataView</span> </span>&#123;</div><div class="line">        <span class="function"><span class="keyword">void</span> <span class="title">showDetailsView</span><span class="params">(BookEntity entity)</span></span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/***</span></div><div class="line"> * Fragment,属于View层，实现了ViewInterface（LoadBookView）</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BookDetailFragment</span> <span class="keyword">extends</span> <span class="title">Fragment</span> <span class="keyword">implements</span> <span class="title">LoadBookView</span></span>&#123;</div><div class="line">    <span class="comment">/**图书条形码ISBN号*/</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String ISBN = <span class="string">"9787121060748"</span>;</div><div class="line">    <span class="comment">/**持Presenter对象*/</span></div><div class="line">    <span class="keyword">private</span> BookDetailsPresenter presenter;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onActivityCreated</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onActivityCreated(savedInstanceState);</div><div class="line">        initWidget();</div><div class="line">        presenter = <span class="keyword">new</span> BookDetailsPresenter(getActivity(), ISBN); <span class="comment">// 实例化一个presenter对象</span></div><div class="line">        presenter.setView(<span class="keyword">this</span>); <span class="comment">//让Presenter持一个ViewInterface实例（LoadBookView）</span></div><div class="line">        presenter.loadData(); <span class="comment">//告诉Presenter快给我加载Data</span></div><div class="line">    &#125;    </div><div class="line"></div><div class="line">     <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showDetailsView</span><span class="params">(BookEntity entity)</span> </span>&#123;</div><div class="line">        <span class="comment">//更新UI等操作</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showLoading</span><span class="params">()</span> </span>&#123;</div><div class="line">        rlProgress.setVisibility(View.VISIBLE);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hideLoading</span><span class="params">()</span> </span>&#123;</div><div class="line">        rlProgress.setVisibility(View.GONE);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>2、Presenter层：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BookDetailsPresenter</span> </span>&#123;</div><div class="line">    <span class="comment">/**持一个Model层的对象，用来从网页接口Rest Api中提取数据*/</span></div><div class="line">    <span class="keyword">private</span> RestApi restApi = <span class="keyword">null</span>;</div><div class="line">    <span class="comment">/**一个ViewInterface对象，用来回调Data给View*/</span></div><div class="line">    <span class="keyword">private</span> LoadBookView loadBookView;</div><div class="line">    <span class="keyword">private</span> String isbn;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">BookDetailsPresenter</span><span class="params">(Context context, String isbn)</span> </span>&#123;</div><div class="line">        restApi = <span class="keyword">new</span> RestApiImpl(context);</div><div class="line">        <span class="keyword">this</span>.isbn =isbn;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setView</span><span class="params">(LoadBookView loadBookView)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.loadBookView = loadBookView;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">loadData</span><span class="params">()</span> </span>&#123;</div><div class="line">        loadBookView.showLoading();</div><div class="line">        <span class="comment">//耗时操作，开个线程异步的加载数据</span></div><div class="line">        Thread thread = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                restApi.getBookDetailByIsbn(isbn, bookDetailsCallback);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        thread.start();</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//匿名内部类，接收bookDetailCallback的回调数据</span></div><div class="line">    <span class="keyword">private</span> RestApi.BookDetailsCallback bookDetailsCallback = <span class="keyword">new</span> RestApi.BookDetailsCallback() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBookEntityLoaded</span><span class="params">(BookEntity bookEntity)</span> </span>&#123;</div><div class="line">            notifyDataLoadedSuccessful(bookEntity);</div><div class="line">            BookDetailsPresenter.<span class="keyword">this</span>.loadBookView.hideLoading();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">(Exception e)</span> </span>&#123;</div><div class="line">            <span class="comment">//异常后的相关处理</span></div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="comment">/***</span></div><div class="line">    * 通知获取数据成功了，赶快通知UI更新吧</div><div class="line">    */</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">notifyDataLoadedSuccessful</span><span class="params">(<span class="keyword">final</span> BookEntity bookEntity)</span> </span>&#123;</div><div class="line">        Handler handler = <span class="keyword">new</span> Handler(Looper.getMainLooper());</div><div class="line">        handler.post(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                BookDetailsPresenter.<span class="keyword">this</span>.loadBookView.showDetailsView(bookEntity);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>3、Model层：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/***</span></div><div class="line">* 整个应用程序需要的数据实体类</div><div class="line">*/</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BookEntity</span> </span>&#123;</div><div class="line">    <span class="comment">//一些set，get方法</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 一个接口，用来从rest api api获得数据，它的实现在RestApiImpl中</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">RestApi</span> </span>&#123;</div><div class="line">    String API_ISBN_BASE_URL = <span class="string">"https://api.douban.com/v2/book/isbn/"</span>;</div><div class="line">    <span class="comment">/***</span></div><div class="line">    * 更细小的接口，用来将获取到的数据，回调给它的调用者</div><div class="line">    */</div><div class="line">    <span class="class"><span class="keyword">interface</span> <span class="title">BookDetailsCallback</span> </span>&#123;</div><div class="line">        <span class="function"><span class="keyword">void</span> <span class="title">onBookEntityLoaded</span><span class="params">(BookEntity bookEntity)</span></span>;</div><div class="line">        <span class="function"><span class="keyword">void</span> <span class="title">onError</span><span class="params">(Exception e)</span></span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 从网络获取数据，然后通过bookDetailCallback回调给Presenter</div><div class="line">     * <span class="doctag">@param</span> isbn</div><div class="line">     * <span class="doctag">@param</span> bookDetailsCallback</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">getBookDetailByIsbn</span><span class="params">(<span class="keyword">final</span> String isbn, <span class="keyword">final</span> BookDetailsCallback bookDetailsCallback)</span></span>;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>参考文章：<br><a href="http://www.jianshu.com/p/95c9088eef4f" target="_blank" rel="external">简书</a><br><a href="http://www.codeceo.com/article/mvp-android.html" target="_blank" rel="external">code</a></p>
 
       
     </div>
