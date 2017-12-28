@@ -106,7 +106,7 @@
 <meta property="og:url" content="http://5ibinbin.com/2017/06/23/React Native 学习总结/React Native TextInput高度自适应/index.html">
 <meta property="og:site_name" content="ibinbin">
 <meta property="og:description" content="有时我们需要根据默认的文字来显示TextInput的高度，而且可以随着文字的输入自动增加TextInput的高度。下面我们就来看一下这个是如何实现的：  TextInput属性介绍">
-<meta property="og:updated_time" content="2017-12-28T16:06:04.000Z">
+<meta property="og:updated_time" content="2017-12-28T16:09:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React Native TextInput 高度自适应">
 <meta name="twitter:description" content="有时我们需要根据默认的文字来显示TextInput的高度，而且可以随着文字的输入自动增加TextInput的高度。下面我们就来看一下这个是如何实现的：  TextInput属性介绍">
@@ -429,26 +429,24 @@
 <li><p>然后设置默认的笔记内容</p>
   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">componentDidMount() &#123;</div><div class="line">    <span class="keyword">this</span>.setState(&#123;</div><div class="line">        <span class="attr">noteContent</span>: <span class="keyword">this</span>.props.noteDetail.content  <span class="comment">// 这是从上一个页面传递过来的值</span></div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
-<li><p><code>TextInput</code>属性介绍</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;TextInput</div><div class="line">       style=&#123;[styles.noteDetailContent, &#123;<span class="attr">height</span>: <span class="keyword">this</span>.state.height&#125;]&#125;</div><div class="line">       multiline=&#123;<span class="literal">true</span>&#125;</div><div class="line">       secureTextEntry=&#123;<span class="literal">false</span>&#125;</div><div class="line">       underlineColorAndroid=&#123;<span class="string">'transparent'</span>&#125;</div><div class="line">       value=&#123;<span class="keyword">this</span>.state.noteContent&#125;</div><div class="line">       onChangeText=&#123;(noteContent) =&gt; <span class="keyword">this</span>.setState(&#123;noteContent&#125;)&#125;</div><div class="line">       onChange=&#123;() =&gt; <span class="keyword">this</span>.onChange.bind(<span class="keyword">this</span>)&#125;</div><div class="line">       onContentSizeChange=&#123;(event) =&gt; <span class="keyword">this</span>.onContentSizeChange(event)&#125;/&gt;</div></pre></td></tr></table></figure>
+</ul>
+<h4 id="TextInput属性介绍-1"><a href="#TextInput属性介绍-1" class="headerlink" title="TextInput属性介绍"></a><code>TextInput</code>属性介绍</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;TextInput</div><div class="line">    style=&#123;[styles.noteDetailContent, &#123;<span class="attr">height</span>: <span class="keyword">this</span>.state.height&#125;]&#125;</div><div class="line">    multiline=&#123;<span class="literal">true</span>&#125;</div><div class="line">    secureTextEntry=&#123;<span class="literal">false</span>&#125;</div><div class="line">    underlineColorAndroid=&#123;<span class="string">'transparent'</span>&#125;</div><div class="line">    value=&#123;<span class="keyword">this</span>.state.noteContent&#125;</div><div class="line">    onChangeText=&#123;(noteContent) =&gt; <span class="keyword">this</span>.setState(&#123;noteContent&#125;)&#125;</div><div class="line">    onChange=&#123;() =&gt; <span class="keyword">this</span>.onChange.bind(<span class="keyword">this</span>)&#125;</div><div class="line">    onContentSizeChange=&#123;(event) =&gt; <span class="keyword">this</span>.onContentSizeChange(event)&#125;/&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li><p><code>onChange</code> <code>function</code> 监听方法,文本框内容发生改变回调方法  </p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">onChangeText = <span class="function">(<span class="params">text</span>) =&gt;</span> &#123;</div><div class="line">	<span class="keyword">this</span>.setState(&#123;</div><div class="line">		<span class="attr">noteContent</span>: text</div><div class="line">	&#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<pre><code>- `onChange` `function` 监听方法,文本框内容发生改变回调方法  
-
-    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">onChangeText = <span class="function">(<span class="params">text</span>) =&gt;</span> &#123;</div><div class="line">	<span class="keyword">this</span>.setState(&#123;</div><div class="line">		<span class="attr">noteContent</span>: text</div><div class="line">	&#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-
-- `onChangeText` `function`监听方法，文本框内容发生改变回调方法，该方法主要是监听输入框文字的变化
-
-
-   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">onChange = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</div><div class="line">	<span class="keyword">this</span>.setState(&#123;</div><div class="line">   		<span class="attr">noteContent</span>: event.nativeEvent.text</div><div class="line">	&#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-
-
-- `onContentSizeChange` `function`监听方法，当文本框的高度发生变化时回调该方法。当`TextInput`的高度可变时，调用`onLayout`方法并将宽高传递给它，并重新绘制该组件。
-
-
-    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">onContentSizeChange = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</div><div class="line">  		<span class="keyword">this</span>.setState(&#123;</div><div class="line">      		<span class="attr">height</span>: event.nativeEvent.contentSize.height</div><div class="line">  		&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</code></pre><blockquote>
+<ul>
+<li><p><code>onChangeText</code> <code>function</code>监听方法，文本框内容发生改变回调方法，该方法主要是监听输入框文字的变化</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">onChange = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</div><div class="line">	<span class="keyword">this</span>.setState(&#123;</div><div class="line">   		<span class="attr">noteContent</span>: event.nativeEvent.text</div><div class="line">	&#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p><code>onContentSizeChange</code> <code>function</code>监听方法，当文本框的高度发生变化时回调该方法。当<code>TextInput</code>的高度可变时，调用<code>onLayout</code>方法并将宽高传递给它，并重新绘制该组件。</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">onContentSizeChange = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</div><div class="line">	<span class="keyword">this</span>.setState(&#123;</div><div class="line">   		<span class="attr">height</span>: event.nativeEvent.contentSize.height</div><div class="line">	&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
 <p>至此就大功告成了！有什么问题可留言交流 </p>
 </blockquote>
 
