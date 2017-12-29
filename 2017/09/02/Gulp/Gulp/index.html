@@ -117,6 +117,7 @@
 <meta property="og:url" content="http://5ibinbin.com/2017/09/02/Gulp/Gulp/index.html">
 <meta property="og:site_name" content="ibinbin">
 <meta property="og:description" content="gulp: 是一个自动化构建工具, 开发者可以使用它在项目开发过程中自动执行常见任务, 是基于node.js构建的。借鉴了Unix操作系统的管道(pipe)思想。">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-12-29T14:01:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="gulp 介绍">
@@ -480,7 +481,7 @@
 <li><code>options.buffer</code>：  类型：<code>Boolean</code>  默认：<code>true</code> 设置为<code>false</code>，将返回<code>file.content</code>的流并且不缓冲文件，处理大文件时非常有用；</li>
 <li><code>options.read</code>：  类型：<code>Boolean</code>  默认：<code>true</code> 设置<code>false</code>，将不执行读取文件操作，返回<code>null</code>；</li>
 <li><p><code>options.base</code>：  类型：<code>String</code>  设置输出路径以某个路径的某个组成部分为基础向后拼接</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> scssPath = [<span class="string">"app/css/*.scss"</span>,<span class="string">"app/css/**/*.scss"</span>];</div><div class="line">gulp.task(<span class="string">'sass'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'app/theme/*.scss'</span>) <span class="comment">//该任务针对的文件</span></div><div class="line">        .pipe(sass())  <span class="comment">//该任务调用的模块</span></div><div class="line">        .pipe(gulp.dest(<span class="string">'www/build/css'</span>));  <span class="comment">// 文件输出路径</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> scssPath = [<span class="string">"app/css/*.scss"</span>,<span class="string">"app/css/**/*.scss"</span>];</span><br><span class="line">gulp.task(<span class="string">'sass'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'app/theme/*.scss'</span>) <span class="comment">//该任务针对的文件</span></span><br><span class="line">        .pipe(sass())  <span class="comment">//该任务调用的模块</span></span><br><span class="line">        .pipe(gulp.dest(<span class="string">'www/build/css'</span>));  <span class="comment">// 文件输出路径</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -501,16 +502,16 @@
 <li><code>deps</code>: 类型(选填) <code>StringArray</code> 该任务所依赖的任务(依赖的任务先于该任务执行)</li>
 <li><code>fn</code>: 回调函数</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">gulp.task(<span class="string">'testLess'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> gulp.src([<span class="string">'less/style.less'</span>])</div><div class="line">        .pipe(less())</div><div class="line">        .pipe(gulp.dest(<span class="string">'./css'</span>));</div><div class="line">&#125;);</div><div class="line"> </div><div class="line">gulp.task(<span class="string">'minicss'</span>, [<span class="string">'testLess'</span>], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">//执行完testLess任务后再执行minicss任务</span></div><div class="line">    gulp.src([<span class="string">'css/*.css'</span>])</div><div class="line">        .pipe(minifyCss())</div><div class="line">        .pipe(gulp.dest(<span class="string">'./dist/css'</span>));</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'testLess'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src([<span class="string">'less/style.less'</span>])</span><br><span class="line">        .pipe(less())</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'./css'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line">gulp.task(<span class="string">'minicss'</span>, [<span class="string">'testLess'</span>], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">//执行完testLess任务后再执行minicss任务</span></span><br><span class="line">    gulp.src([<span class="string">'css/*.css'</span>])</span><br><span class="line">        .pipe(minifyCss())</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'./dist/css'</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h5 id="4、gulp-watch-glob-opts-tasks-or-gulp-watch-glob-opts-cb-：watch方法是用于监听文件变化，文件一修改就会执行指定的任务"><a href="#4、gulp-watch-glob-opts-tasks-or-gulp-watch-glob-opts-cb-：watch方法是用于监听文件变化，文件一修改就会执行指定的任务" class="headerlink" title="4、gulp.watch(glob [, opts], tasks) or gulp.watch(glob [, opts, cb])：watch方法是用于监听文件变化，文件一修改就会执行指定的任务"></a>4、<code>gulp.watch(glob [, opts], tasks) or gulp.watch(glob [, opts, cb])：watch</code>方法是用于监听文件变化，文件一修改就会执行指定的任务</h5><ul>
 <li><code>glob:</code> 需要处理的<code>源文件</code>匹配符路径</li>
 <li><code>opts:</code> <code>Object</code> 传给 <code>gaze(实际监听者)</code> 的参数</li>
 <li><code>task(必填)</code>: <code>StringArray</code> 需要执行的任务</li>
 <li><code>cb(可选)</code>: <code>function</code> 每个文件变化执行的回调函数</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    gulp.watch([<span class="string">'app/**/*'</span>], [<span class="string">"build-dev"</span>]);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    gulp.watch([<span class="string">'app/**/*'</span>], [<span class="string">"build-dev"</span>]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <ol>
-<li><a href="http://www.cnblogs.com/Darren_code/p/gulp.html" target="_blank" rel="external">Gulp 插件集</a></li>
+<li><a href="http://www.cnblogs.com/Darren_code/p/gulp.html" target="_blank" rel="noopener">Gulp 插件集</a></li>
 </ol>
 
       
@@ -575,8 +576,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/15/AngularJs/Cordova保存图片到本地/" rel="next" title="Cordova 保存图片到本地">
-                <i class="fa fa-chevron-left"></i> Cordova 保存图片到本地
+              <a href="/2017/08/26/AngularJs/AngularJs 双向绑定原理(数据绑定机制)/" rel="next" title="AngularJs 双向绑定原理(数据绑定机制)">
+                <i class="fa fa-chevron-left"></i> AngularJs 双向绑定原理(数据绑定机制)
               </a>
             
           </div>
@@ -585,8 +586,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/26/AngularJs/AngularJs 双向绑定原理(数据绑定机制)/" rel="prev" title="AngularJs 双向绑定原理(数据绑定机制)">
-                AngularJs 双向绑定原理(数据绑定机制) <i class="fa fa-chevron-right"></i>
+              <a href="/2017/11/15/AngularJs/Cordova保存图片到本地/" rel="prev" title="Cordova 保存图片到本地">
+                Cordova 保存图片到本地 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

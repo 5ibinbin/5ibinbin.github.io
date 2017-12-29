@@ -116,6 +116,7 @@
 <meta property="og:url" content="http://5ibinbin.com/page/2/index.html">
 <meta property="og:site_name" content="ibinbin">
 <meta property="og:description" content="大道至简">
+<meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ibinbin">
 <meta name="twitter:description" content="大道至简">
@@ -463,7 +464,7 @@
       
         
           <blockquote>
-<p>前言：<a href="http://www.jianshu.com/p/972aebe266de">redux重构(一)</a>的时候大概讲了<code>redux</code>的各个部分的定义，这一部分主要讲解一下<code>redux</code>的具体使用。<br><a href="https://github.com/5ibinbin/reduxLifeStyle">项目地址</a><br>后端<a href="https://leancloud.cn">LeanCloud</a></p>
+<p>前言：<a href="http://www.jianshu.com/p/972aebe266de" target="_blank" rel="noopener">redux重构(一)</a>的时候大概讲了<code>redux</code>的各个部分的定义，这一部分主要讲解一下<code>redux</code>的具体使用。<br><a href="https://github.com/5ibinbin/reduxLifeStyle" target="_blank" rel="noopener">项目地址</a><br>后端<a href="https://leancloud.cn" target="_blank" rel="noopener">LeanCloud</a></p>
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">
@@ -801,7 +802,7 @@
           <h4 id="JSX语法"><a href="#JSX语法" class="headerlink" title="JSX语法"></a>JSX语法</h4><blockquote>
 <p>JSX: 即JavaScript XML 是一种在React组建内部构建标签的类XML语法。增强React程序组件的可读性</p>
 </blockquote>
-<h4 id="React的核心机制之一就是虚拟DOM-可以在内存中创建虚拟DOM元素。React利用虚拟DOM来减少对实际DOM的操作从而提升性能。"><a href="#React的核心机制之一就是虚拟DOM-可以在内存中创建虚拟DOM元素。React利用虚拟DOM来减少对实际DOM的操作从而提升性能。" class="headerlink" title="React的核心机制之一就是虚拟DOM: 可以在内存中创建虚拟DOM元素。React利用虚拟DOM来减少对实际DOM的操作从而提升性能。"></a>React的核心机制之一就是虚拟DOM: 可以在内存中创建虚拟DOM元素。React利用虚拟DOM来减少对实际DOM的操作从而提升性能。</h4><h6 id="1、示例"><a href="#1、示例" class="headerlink" title="1、示例"></a>1、示例</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">return</span> (</div><div class="line">		&lt;View style=&#123;styles.container&#125;&gt;</div><div class="line">			&lt;Text style=&#123;styles.welcome&#125;&gt;</div><div class="line">				Welcome to React Native!</div><div class="line">			&lt;/Text&gt;</div><div class="line">		&lt;/View&gt;</div><div class="line">	);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="React的核心机制之一就是虚拟DOM-可以在内存中创建虚拟DOM元素。React利用虚拟DOM来减少对实际DOM的操作从而提升性能。"><a href="#React的核心机制之一就是虚拟DOM-可以在内存中创建虚拟DOM元素。React利用虚拟DOM来减少对实际DOM的操作从而提升性能。" class="headerlink" title="React的核心机制之一就是虚拟DOM: 可以在内存中创建虚拟DOM元素。React利用虚拟DOM来减少对实际DOM的操作从而提升性能。"></a>React的核心机制之一就是虚拟DOM: 可以在内存中创建虚拟DOM元素。React利用虚拟DOM来减少对实际DOM的操作从而提升性能。</h4><h6 id="1、示例"><a href="#1、示例" class="headerlink" title="1、示例"></a>1、示例</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (</span><br><span class="line">		&lt;View style=&#123;styles.container&#125;&gt;</span><br><span class="line">			&lt;Text style=&#123;styles.welcome&#125;&gt;</span><br><span class="line">				Welcome to React Native!</span><br><span class="line">			&lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">		&lt;/</span>View&gt;</span><br><span class="line">	);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h6 id="2、JS表达式"><a href="#2、JS表达式" class="headerlink" title="2、JS表达式"></a>2、JS表达式</h6>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1143,7 +1144,7 @@
           <blockquote>
 <p>有时我们需要根据默认的文字来显示<code>TextInput</code>的高度，而且可以随着文字的输入自动增加<code>TextInput</code>的高度。下面我们就来看一下这个是如何实现的：</p>
 </blockquote>
-<h4 id="TextInput属性介绍"><a href="#TextInput属性介绍" class="headerlink" title="TextInput属性介绍"></a><a href="http://www.jianshu.com/p/463aefd52687">TextInput属性介绍</a></h4>
+<h4 id="TextInput属性介绍"><a href="#TextInput属性介绍" class="headerlink" title="TextInput属性介绍"></a><a href="http://www.jianshu.com/p/463aefd52687" target="_blank" rel="noopener">TextInput属性介绍</a></h4>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/06/23/React Native 学习总结/React Native TextInput高度自适应/#more" rel="contents">
@@ -1313,7 +1314,7 @@
 <p>在<code>Android</code>开发中有一个以<code>key-value</code>形式轻量级的数据存储方式—<code>SharedPreferences</code>, 类似的<code>React Native</code>中也有一个–<code>AsyncStorage</code></p>
 <p><code>AsyncStorage</code>是一个简单的、异步的、持久化的<code>Key-Value</code>存储系统，它对于<code>App</code>来说是全局性的</p>
 </blockquote>
-<h4 id="API"><a href="#API" class="headerlink" title="API"></a>API</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">static</span> getItem(key: string, callback?: ?<span class="function">(<span class="params">error: ?<span class="built_in">Error</span>, result: ?string</span>) =&gt;</span> <span class="keyword">void</span>)</div></pre></td></tr></table></figure>
+<h4 id="API"><a href="#API" class="headerlink" title="API"></a>API</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> getItem(key: string, callback?: ?<span class="function">(<span class="params">error: ?<span class="built_in">Error</span>, result: ?string</span>) =&gt;</span> <span class="keyword">void</span>)</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/06/22/React Native 学习总结/React Native AsyncStorage 封装/#more" rel="contents">

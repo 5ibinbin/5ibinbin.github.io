@@ -117,6 +117,7 @@
 <meta property="og:url" content="http://5ibinbin.com/2017/12/01/AngularJs/AngularJs问题总结/index.html">
 <meta property="og:site_name" content="ibinbin">
 <meta property="og:description" content="AngularJs 问题总结 一、ng-if/ng-show 最根本的区别是页面是否会生成此DOM元素  二、ng-repeat迭代数组的时候，如果数组中有相同值，会有什么问题，如何解决？ 会提示 Duplicates in a repeater are not allowed.，数据与DOM之间一对一的关系在数据相同的情况下不成立。通过 track by key key 为数组的唯一标识，目的是">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-12-29T13:51:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AngularJs 问题总结">
@@ -467,7 +468,7 @@
 </blockquote>
 <a id="more"></a>
 <h4 id="三、ionic-ion-slide-box-bug"><a href="#三、ionic-ion-slide-box-bug" class="headerlink" title="三、ionic ion-slide-box bug"></a>三、ionic ion-slide-box bug</h4><h5 id="ion-slide-box在数量为两个的情况下会造成-ion-slide的数量由2个变成4个"><a href="#ion-slide-box在数量为两个的情况下会造成-ion-slide的数量由2个变成4个" class="headerlink" title="ion-slide-box在数量为两个的情况下会造成 ion-slide的数量由2个变成4个"></a><code>ion-slide-box</code>在数量为两个的情况下会造成 <code>ion-slide</code>的数量由2个变成4个</h5><p>①修改<code>slideChanged</code>方法</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$scope.slideChanged = <span class="function"><span class="keyword">function</span>(<span class="params">index</span>) </span>&#123;  </div><div class="line">    $scope.slideIndex = index;  </div><div class="line">    <span class="keyword">if</span> ( ($ionicSlideBoxDelegate.count() <span class="number">-1</span> ) == index ) &#123;  </div><div class="line">        $timeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </div><div class="line">            $ionicSlideBoxDelegate.slide(<span class="number">0</span>);  </div><div class="line">        &#125;,<span class="number">3000</span>);  </div><div class="line">    &#125;  </div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$scope.slideChanged = <span class="function"><span class="keyword">function</span>(<span class="params">index</span>) </span>&#123;  </span><br><span class="line">    $scope.slideIndex = index;  </span><br><span class="line">    <span class="keyword">if</span> ( ($ionicSlideBoxDelegate.count() <span class="number">-1</span> ) == index ) &#123;  </span><br><span class="line">        $timeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line">            $ionicSlideBoxDelegate.slide(<span class="number">0</span>);  </span><br><span class="line">        &#125;,<span class="number">3000</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>在数据为2的时候手动调用 <code>$ionicSlideBoxDelegate.slide(0)</code> 跳转到第一个</p>
 </blockquote>
@@ -551,8 +552,8 @@ $scope.$watch(<span class="string">'currentSlide'</span>, <span class="function"
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/07/AngularJs/AngularJs 作用域/" rel="next" title="AngularJs scope(作用域)">
-                <i class="fa fa-chevron-left"></i> AngularJs scope(作用域)
+              <a href="/2017/11/29/Git/Git The Requested URL return error 403/" rel="next" title="Git The Requested URL return error 403">
+                <i class="fa fa-chevron-left"></i> Git The Requested URL return error 403
               </a>
             
           </div>
@@ -561,8 +562,8 @@ $scope.$watch(<span class="string">'currentSlide'</span>, <span class="function"
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/29/Git/Git The Requested URL return error 403/" rel="prev" title="Git The Requested URL return error 403">
-                Git The Requested URL return error 403 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/12/07/AngularJs/AngularJs 作用域/" rel="prev" title="AngularJs scope(作用域)">
+                AngularJs scope(作用域) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
