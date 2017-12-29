@@ -1,0 +1,1150 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/5dd8f52f.js","daovoice")
+  daovoice('init', {
+      app_id: "5dd8f52f"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="React Native 工程师" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="AngularJs 为 scope 模型上设置了一个 监听队列，用来监听数据变化并更新 view 。每次绑定一个东西到 view(html) 上时 AngularJs 就会往 $watch 队列里插入一条 $watch，用来检测它监视的 model 里是否有变化的东西。当浏览器接收到可以被 angular context 处理的事件时，$digest 循环就会触发。$digest 会遍历所有的 $">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AngularJs 双向绑定原理(数据绑定机制)">
+<meta property="og:url" content="http://5ibinbin.com/2017/08/26/AngularJs/AngularJs 双向绑定原理(数据绑定机制)/index.html">
+<meta property="og:site_name" content="ibinbin">
+<meta property="og:description" content="AngularJs 为 scope 模型上设置了一个 监听队列，用来监听数据变化并更新 view 。每次绑定一个东西到 view(html) 上时 AngularJs 就会往 $watch 队列里插入一条 $watch，用来检测它监视的 model 里是否有变化的东西。当浏览器接收到可以被 angular context 处理的事件时，$digest 循环就会触发。$digest 会遍历所有的 $">
+<meta property="og:updated_time" content="2017-12-28T15:40:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AngularJs 双向绑定原理(数据绑定机制)">
+<meta name="twitter:description" content="AngularJs 为 scope 模型上设置了一个 监听队列，用来监听数据变化并更新 view 。每次绑定一个东西到 view(html) 上时 AngularJs 就会往 $watch 队列里插入一条 $watch，用来检测它监视的 model 里是否有变化的东西。当浏览器接收到可以被 angular context 处理的事件时，$digest 循环就会触发。$digest 会遍历所有的 $">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'K4NJ5NB3MG',
+      apiKey: 'e1e30fb0b0b74037a43a11697e95c2be',
+      indexName: 'my-blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"输入关键字","hits_empty":"没有找到与【${query}】相关的内容","hits_stats":"${hits}条相关记录，共耗时 ${time} ms"}
+    }
+  };
+  (function(){
+      if(''){
+          if (prompt('请输入文章密码') !== ''){
+              alert('密码错误！');
+              history.back();
+          }
+      }
+  })();
+</script>
+
+<style>
+    .pace .pace-progress {
+        background: #346cf4; /*进度条颜色*/
+        height: 1px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 6px #346cf4, 0 0 2px #346cf4; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #346cf4;    /*上边框颜色*/
+        border-left-color: #346cf4;    /*左边框颜色*/
+    }
+</style>
+
+
+
+  <link rel="canonical" href="http://5ibinbin.com/2017/08/26/AngularJs/AngularJs 双向绑定原理(数据绑定机制)/"/>
+
+
+
+
+
+  <title> AngularJs 双向绑定原理(数据绑定机制) | ibinbin </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ibinbin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/08/26/AngularJs/AngularJs 双向绑定原理(数据绑定机制)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ibinbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ibinbin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                AngularJs 双向绑定原理(数据绑定机制)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-26T00:00:00+08:00">
+                2017-08-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AngularJs/" itemprop="url" rel="index">
+                    <span itemprop="name">AngularJs</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/08/26/AngularJs/AngularJs 双向绑定原理(数据绑定机制)/" class="leancloud_visitors" data-flag-title="AngularJs 双向绑定原理(数据绑定机制)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h6 id="AngularJs-为-scope-模型上设置了一个-监听队列，用来监听数据变化并更新-view-。每次绑定一个东西到-view-html-上时-AngularJs-就会往-watch-队列里插入一条-watch，用来检测它监视的-model-里是否有变化的东西。当浏览器接收到可以被-angular-context-处理的事件时，-digest-循环就会触发。-digest-会遍历所有的-watch。从而更新DOM。"><a href="#AngularJs-为-scope-模型上设置了一个-监听队列，用来监听数据变化并更新-view-。每次绑定一个东西到-view-html-上时-AngularJs-就会往-watch-队列里插入一条-watch，用来检测它监视的-model-里是否有变化的东西。当浏览器接收到可以被-angular-context-处理的事件时，-digest-循环就会触发。-digest-会遍历所有的-watch。从而更新DOM。" class="headerlink" title="AngularJs 为 scope 模型上设置了一个 监听队列，用来监听数据变化并更新 view 。每次绑定一个东西到 view(html) 上时 AngularJs 就会往 $watch 队列里插入一条 $watch，用来检测它监视的 model 里是否有变化的东西。当浏览器接收到可以被 angular context 处理的事件时，$digest 循环就会触发。$digest 会遍历所有的 $watch。从而更新DOM。"></a><code>AngularJs</code> 为 <code>scope</code> 模型上设置了一个 监听队列，用来监听数据变化并更新 <code>view</code> 。每次绑定一个东西到 <code>view(html)</code> 上时 <code>AngularJs</code> 就会往 <code>$watch</code> 队列里插入一条 <code>$watch</code>，用来检测它监视的 <code>model</code> 里是否有变化的东西。当浏览器接收到可以被 <code>angular context</code> 处理的事件时，<code>$digest</code> 循环就会触发。<code>$digest</code> 会遍历所有的 <code>$watch</code>。从而更新<code>DOM</code>。</h6><a id="more"></a>
+<h4 id="watch"><a href="#watch" class="headerlink" title="$watch"></a>$watch</h4><p>这有点类似于我们的观察者模式，在当前作用域<code>$scope</code>下，我们创建一个监控器<code>$watchers</code>和一个监听器<code>$watch</code>，<code>$watchers</code> 负责管理所有的 <code>$watch</code>，当我们每次绑定到<code>UI</code>上的时候就<font color="red">自动</font>创建一个<code>$watch</code>，并把它放到 <code>$watchers</code>。</p>
+<p><code>controller.js</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">app.controller(<span class="string">'MainCtrl'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>) </span>&#123;</div><div class="line">  $scope.Hello = <span class="string">"Hello"</span>;</div><div class="line">  $scope.world = <span class="string">"World"</span>;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p><code>index.html</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;&#123;&#123;Hello&#125;&#125;&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>这里，即便我们在<code>$scope</code>上添加了两个变量，<font color="red">但是只有一个绑定在了<code>UI</code>上，因此在这里只生成了一个<code>$watch</code></font></p>
+</blockquote>
+<h4 id="digest"><a href="#digest" class="headerlink" title="$digest"></a>$digest</h4><h6 id="当浏览器接收到可以被angular-context处理的事件时，-digest循环就会触发。-digest将会遍历我们的-watch，如果-watch没有变化，这个循环检测就将停止，如果有至少一个更新过，这个循环就会再次触发，直到所有的-watch都没有变化。这样就能够保证每个model都已经不会再变化。这就是脏检查-Dirty-Checking-机制"><a href="#当浏览器接收到可以被angular-context处理的事件时，-digest循环就会触发。-digest将会遍历我们的-watch，如果-watch没有变化，这个循环检测就将停止，如果有至少一个更新过，这个循环就会再次触发，直到所有的-watch都没有变化。这样就能够保证每个model都已经不会再变化。这就是脏检查-Dirty-Checking-机制" class="headerlink" title="当浏览器接收到可以被angular context处理的事件时，$digest循环就会触发。$digest将会遍历我们的$watch，如果$watch没有变化，这个循环检测就将停止，如果有至少一个更新过，这个循环就会再次触发，直到所有的$watch都没有变化。这样就能够保证每个model都已经不会再变化。这就是脏检查(Dirty Checking)机制"></a>当浏览器接收到可以被<code>angular context</code>处理的事件时，<code>$digest</code>循环就会触发。<code>$digest</code>将会遍历我们的<code>$watch</code>，如果<code>$watch</code>没有变化，这个循环检测就将停止，如果有至少一个更新过，这个循环就会再次触发，直到所有的<code>$watch</code>都没有变化。这样就能够保证每个<code>model</code>都已经不会再变化。这就是脏检查(<code>Dirty Checking</code>)机制</h6><p><code>controller.js</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">app.controller(<span class="string">'MainCtrl'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  $scope.name = <span class="string">"Foo"</span>;</div><div class="line">	</div><div class="line">  $scope.changeFoo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      $scope.name = <span class="string">"Bar"</span>;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p><code>index.js</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;&#123;&#123; name &#125;&#125;&lt;/div&gt;</div><div class="line">&lt;button ng-click="changeFoo()"&gt;Change the name&lt;/button&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>当我们按下按钮</li>
+<li>浏览器接收到一个事件，进入<code>angular context</code>。</li>
+<li><code>$digest</code>循环开始执行，查询每个<code>$watch</code>是否变化。</li>
+<li>由于监视<code>$scope.name</code>的<code>$watch</code>报告了变化，它会强制再执行一次<code>$digest</code>循环。</li>
+<li>新的<code>$digest</code>循环没有检测到变化。</li>
+<li>更新与<code>$scope.name</code>新值相应部分的<code>DOM</code>。</li>
+</ul>
+<h3 id="apply"><a href="#apply" class="headerlink" title="$apply"></a>$apply</h3><h6 id="apply-我们可以直接理解为刷新UI。如果当事件触发时，你调用-apply，它会进入angular-context，如果没有调用就不会进入，之后的-digest检测机制就不会触发"><a href="#apply-我们可以直接理解为刷新UI。如果当事件触发时，你调用-apply，它会进入angular-context，如果没有调用就不会进入，之后的-digest检测机制就不会触发" class="headerlink" title="$apply 我们可以直接理解为刷新UI。如果当事件触发时，你调用$apply，它会进入angular context，如果没有调用就不会进入，之后的$digest检测机制就不会触发"></a><code>$apply</code> 我们可以直接理解为刷新<code>UI</code>。<font color="red">如果当事件触发时，你调用<code>$apply</code>，它会进入<code>angular context</code>，如果没有调用就不会进入，之后的<code>$digest</code>检测机制就不会触发</font></h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">app.directive(<span class="string">'clickable'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">return</span> &#123;</div><div class="line">	  <span class="attr">restrict</span>: <span class="string">"E"</span>,</div><div class="line">	  <span class="attr">scope</span>: &#123;</div><div class="line">	    <span class="attr">foo</span>: <span class="string">'='</span></div><div class="line">	  &#125;,</div><div class="line">	  <span class="attr">template</span>: <span class="string">'&lt;ul style="background-color: lightblue"&gt;&lt;li&gt;&#123;&#123;foo&#125;&#125;&lt;/li&gt;&lt;/ul&gt;'</span>,</div><div class="line">	  <span class="attr">link</span>: <span class="function"><span class="keyword">function</span>(<span class="params">scope, element, attrs</span>) </span>&#123;</div><div class="line">	    element.bind(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	      scope.foo++;</div><div class="line">	      <span class="built_in">console</span>.log(scope.foo);</div><div class="line">	    &#125;);</div><div class="line">	  &#125;</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>当我们调用<code>clickable</code>指令的时候，我们可以看到<code>foo</code>的值增加了，但是界面上显示的内容并没有改变。<code>$digest</code>脏检测机制没有触发，检测<code>foo</code>的<code>$watch</code>就没有执行。</p>
+</blockquote>
+<h4 id="apply-方法的两种形式"><a href="#apply-方法的两种形式" class="headerlink" title="$apply()方法的两种形式"></a>$apply()方法的两种形式</h4><h5 id="1-无参"><a href="#1-无参" class="headerlink" title="1) 无参"></a>1) 无参</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$scope.$apply();</div></pre></td></tr></table></figure>
+<h5 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">element.bind(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  scope.foo++;</div><div class="line">  <span class="comment">//if error</span></div><div class="line">  scope.$apply();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>当我们使用这种形式的时候，如果在scope.$apply之前程序发生异常，那scope.$apply没有执行，界面就不会更新</p>
+</blockquote>
+<h5 id="2-有参"><a href="#2-有参" class="headerlink" title="2) 有参"></a>2) 有参</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$scope.$apply(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	...</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h5 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">element.bind(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  scope.$apply(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      scope.foo++;</div><div class="line">  &#125;);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<blockquote>
+<p>如果用这种形式，即使后面的发生异常，数据还是会更新。</p>
+</blockquote>
+<h4 id="在-AngularJS-中使用-watch"><a href="#在-AngularJS-中使用-watch" class="headerlink" title="在 AngularJS 中使用 $watch"></a>在 AngularJS 中使用 $watch</h4><p>常用的使用方式：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$scope.name = <span class="string">'Hello'</span>;</div><div class="line">$scope.$watch(<span class="string">'name'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">newValue, oldValue</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (newValue === oldValue) &#123; <span class="keyword">return</span>; &#125; </div><div class="line">    $scope.updated++;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>传入到<code>$watch()</code>中的第二个参数是一个回调函数，该函数在<code>name</code>的值发生变化的时候会被调用。</p>
+</blockquote>
+<p>如果要监听的是一个对象，那还需要第三个参数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$scope.data.name = <span class="string">'Hello'</span>;</div><div class="line">$scope.$watch(<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">newValue, oldValue</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (newValue === oldValue) &#123; <span class="keyword">return</span>; &#125; </div><div class="line">    $scope.updated++;</div><div class="line">&#125;, <span class="literal">true</span>);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>表示比较的是对象的值而不是引用，如果不加第三个参数<code>true</code>，在 <code>data.name</code> 变化时，不会触发相应操作，因为引用的是同一引用。</p>
+</blockquote>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><h5 id="1-只有在-scope变量绑定到页面上，才会创建-watch"><a href="#1-只有在-scope变量绑定到页面上，才会创建-watch" class="headerlink" title="1) 只有在$scope变量绑定到页面上，才会创建 $watch"></a>1) 只有在<code>$scope</code>变量绑定到页面上，才会创建 <code>$watch</code></h5><h5 id="2-apply决定事件是否可以进入angular-context"><a href="#2-apply决定事件是否可以进入angular-context" class="headerlink" title="2) $apply决定事件是否可以进入angular context"></a>2) <code>$apply</code>决定事件是否可以进入<code>angular context</code></h5><h5 id="3-digest-循环检查model时最少两次，最多10次-多于10次抛出异常，防止无限检查"><a href="#3-digest-循环检查model时最少两次，最多10次-多于10次抛出异常，防止无限检查" class="headerlink" title="3) $digest 循环检查model时最少两次，最多10次(多于10次抛出异常，防止无限检查)"></a>3) <code>$digest</code> 循环检查<code>model</code>时最少两次，最多10次(多于10次抛出异常，防止无限检查)</h5><h5 id="4-AngularJs自带的指令已经实现了-apply，所以不需要我们额外的编写"><a href="#4-AngularJs自带的指令已经实现了-apply，所以不需要我们额外的编写" class="headerlink" title="4) AngularJs自带的指令已经实现了$apply，所以不需要我们额外的编写"></a>4) <code>AngularJs</code>自带的指令已经实现了<code>$apply</code>，所以不需要我们额外的编写</h5><h5 id="5-在自定义指令时，建议使用带function参数的-apply"><a href="#5-在自定义指令时，建议使用带function参数的-apply" class="headerlink" title="5) 在自定义指令时，建议使用带function参数的$apply"></a>5) 在自定义指令时，建议使用带<code>function</code>参数的<code>$apply</code></h5>
+      
+    </div>
+
+    <div align="left">
+      
+        <div class="copyright">
+        <p><span>
+        <b>本文地址：</b><a href="/2017/08/26/AngularJs/AngularJs 双向绑定原理(数据绑定机制)/" title="AngularJs 双向绑定原理(数据绑定机制)">http://5ibinbin.com/2017/08/26/AngularJs/AngularJs 双向绑定原理(数据绑定机制)/</a><br /><b>转载请注明出处！</b>
+        </span></p>
+        </div>
+      
+    </div>
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/02/Gulp/Gulp/" rel="next" title="gulp 介绍">
+                <i class="fa fa-chevron-left"></i> gulp 介绍
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/22/AngularJs/AngularJs 流式布局/" rel="prev" title="AngularJs 流式布局">
+                AngularJs 流式布局 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="ibinbin" />
+          <p class="site-author-name" itemprop="name">ibinbin</p>
+           
+              <p class="site-description motion-element" itemprop="description">大道至简</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/5ibinbin" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/u/1ebbb641030a" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  简书
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/CralGates" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.polayoutu.com/collections" title="泼辣有图" target="_blank">泼辣有图</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://stocksnap.io" title="stocksnap" target="_blank">stocksnap</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.pexels.com" title="pexels" target="_blank">pexels</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://unsplash.com" title="unsplash" target="_blank">unsplash</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.designerspics.com" title="designerspics" target="_blank">designerspics</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ibinbin</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  我努力奔跑，只为追上曾经那个被寄予厚望的自己！
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2130989"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("ffMvVF0ARjs6JgGJhYKUERh1-gzGzoHsz", "EW4XF2eM90lRxdRqaPEIz6L8");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
