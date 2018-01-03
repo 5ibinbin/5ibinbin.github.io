@@ -110,18 +110,20 @@
 
 
 
-<meta name="description" content="算法思想  依次选择一个待排序的数据，插入到前边已排好序的序列中。  性能  时间复杂度为O(N^2)，空间复杂度为O(1)。排序是稳定的，比较次数与初始序列有关。  代码实现 123456789101112function insertSort(arr)&amp;#123;	let length = arr.length;	for (let i = 1; i &amp;lt; length - 1; i++)&amp;">
+<meta name="description" content="算法思想  依次选择一个待排序的数据，插入到前边已排好序的序列中。  性能  时间复杂度为O(N^2)，空间复杂度为O(1)。排序是稳定的，比较次数与初始序列有关。">
 <meta name="keywords" content="排序,算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="插入排序">
 <meta property="og:url" content="http://5ibinbin.com/2018/01/05/Algorithm/插入排序/index.html">
 <meta property="og:site_name" content="ibinbin">
-<meta property="og:description" content="算法思想  依次选择一个待排序的数据，插入到前边已排好序的序列中。  性能  时间复杂度为O(N^2)，空间复杂度为O(1)。排序是稳定的，比较次数与初始序列有关。  代码实现 123456789101112function insertSort(arr)&amp;#123;	let length = arr.length;	for (let i = 1; i &amp;lt; length - 1; i++)&amp;">
+<meta property="og:description" content="算法思想  依次选择一个待排序的数据，插入到前边已排好序的序列中。  性能  时间复杂度为O(N^2)，空间复杂度为O(1)。排序是稳定的，比较次数与初始序列有关。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-03T14:11:18.000Z">
+<meta property="og:image" content="http://5ibinbin.com/Users/Cral-Gates/myBlog/source/img/timg.gif">
+<meta property="og:updated_time" content="2018-01-03T14:22:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="插入排序">
-<meta name="twitter:description" content="算法思想  依次选择一个待排序的数据，插入到前边已排好序的序列中。  性能  时间复杂度为O(N^2)，空间复杂度为O(1)。排序是稳定的，比较次数与初始序列有关。  代码实现 123456789101112function insertSort(arr)&amp;#123;	let length = arr.length;	for (let i = 1; i &amp;lt; length - 1; i++)&amp;">
+<meta name="twitter:description" content="算法思想  依次选择一个待排序的数据，插入到前边已排好序的序列中。  性能  时间复杂度为O(N^2)，空间复杂度为O(1)。排序是稳定的，比较次数与初始序列有关。">
+<meta name="twitter:image" content="http://5ibinbin.com/Users/Cral-Gates/myBlog/source/img/timg.gif">
 
 
 
@@ -459,7 +461,8 @@
       
 
       
-        <p><strong>算法思想</strong></p>
+        <p><img src="/Users/Cral-Gates/myBlog/source/img/timg.gif" alt="insert"></p>
+<p><strong>算法思想</strong></p>
 <blockquote>
 <p>依次选择一个待排序的数据，插入到前边已排好序的序列中。</p>
 </blockquote>
@@ -467,6 +470,7 @@
 <blockquote>
 <p>时间复杂度为<code>O(N^2)</code>，空间复杂度为<code>O(1)</code>。排序是稳定的，比较次数与初始序列有关。</p>
 </blockquote>
+<a id="more"></a>
 <p><strong>代码实现</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">insertSort</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> length = arr.length;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt; length - <span class="number">1</span>; i++)&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">let</span> j = i; j &gt; <span class="number">0</span>; j--)&#123;</span><br><span class="line">			<span class="keyword">if</span> (arr[j] &lt; arr[i])&#123;</span><br><span class="line">				[arr[i], arr[j]] = [arr[j], arr[i]]</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
