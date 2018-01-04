@@ -967,13 +967,14 @@
 
       
         
-          
-          
-使用情景：当我们遇到需要固定大小的图片，而又不想让图片变形
-
-这个时候我要应该要想到的是css中的background相关属性
-123456789101112131415161718192021222324252627backImg &#123;	'background-image': 'url(
-          ...
+          <blockquote>
+<p>使用情景：当我们遇到需要固定大小的图片，而又不想让图片变形  </p>
+</blockquote>
+<p><strong>这个时候我要应该要想到的是<code>css</code>中的<code>background</code>相关属性</strong>  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.backImg &#123;</span><br><span class="line">	<span class="string">'background-image'</span>: <span class="string">'url('</span><span class="string">')'</span>,</span><br><span class="line">	<span class="string">'background-size'</span>: <span class="string">'cover'</span>,</span><br><span class="line">  	<span class="string">'background-position'</span>: <span class="string">'center'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>把背景图像扩展至足够大，以使背景图像完全覆盖背景区域。背景图像的某些部分可能无法显示在背景定位区域中。这样我们就可以让图片局部显示并达到了图片没有变形的效果</p>
+</blockquote>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/05/15/AngularJs/imageCover/#more" rel="contents">
