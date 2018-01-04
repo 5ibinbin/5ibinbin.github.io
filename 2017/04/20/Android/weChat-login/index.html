@@ -110,18 +110,18 @@
 
 
 
-<meta name="description" content="准备材料： 微信开发者账号 注册你的APP libammsdk.jar包 debug.keystore文件    准备工作 申请你的APPID 导入libammsdk.jar包 在AndroidManifest.xml中设置权限  1234567891011121314151617&amp;lt;uses-permission android:name=&quot;android.permission.INTER">
+<meta name="description" content="准备材料： 微信开发者账号 注册你的APP libammsdk.jar包 debug.keystore文件    准备工作 申请你的APPID 导入libammsdk.jar包 在AndroidManifest.xml中设置权限">
 <meta name="keywords" content="Android,微信登录分享">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android 微信sdk登录和分享">
 <meta property="og:url" content="http://5ibinbin.com/2017/04/20/Android/weChat-login/index.html">
 <meta property="og:site_name" content="ibinbin">
-<meta property="og:description" content="准备材料： 微信开发者账号 注册你的APP libammsdk.jar包 debug.keystore文件    准备工作 申请你的APPID 导入libammsdk.jar包 在AndroidManifest.xml中设置权限  1234567891011121314151617&amp;lt;uses-permission android:name=&quot;android.permission.INTER">
+<meta property="og:description" content="准备材料： 微信开发者账号 注册你的APP libammsdk.jar包 debug.keystore文件    准备工作 申请你的APPID 导入libammsdk.jar包 在AndroidManifest.xml中设置权限">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-29T13:50:18.000Z">
+<meta property="og:updated_time" content="2018-01-04T13:17:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 微信sdk登录和分享">
-<meta name="twitter:description" content="准备材料： 微信开发者账号 注册你的APP libammsdk.jar包 debug.keystore文件    准备工作 申请你的APPID 导入libammsdk.jar包 在AndroidManifest.xml中设置权限  1234567891011121314151617&amp;lt;uses-permission android:name=&quot;android.permission.INTER">
+<meta name="twitter:description" content="准备材料： 微信开发者账号 注册你的APP libammsdk.jar包 debug.keystore文件    准备工作 申请你的APPID 导入libammsdk.jar包 在AndroidManifest.xml中设置权限">
 
 
 
@@ -473,7 +473,8 @@
 <li>导入<code>libammsdk.jar</code>包</li>
 <li>在<code>AndroidManifest.xml</code>中设置权限</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-permission android:name=<span class="string">"android.permission.INTERNET"</span>&gt; </span><br><span class="line">&lt;uses-permission android:name=<span class="string">"android.permission.ACCESS_NETWORK_STATE"</span>/&gt; 	&lt;uses-permission android:name=<span class="string">"android.permission.ACCESS_WIFI_STATE"</span>/&gt; </span><br><span class="line">&lt;uses-permission android:name=<span class="string">"android.permission.READ_PHONE_STATE"</span>/&gt; </span><br><span class="line">&lt;uses-permission android:name=<span class="string">"android.permission.WRITE_EXTERNAL_STORAGE"</span>/&gt;</span><br><span class="line">```		</span><br><span class="line">		</span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line"></span><br><span class="line">- 注册APP到微信</span><br><span class="line"></span><br><span class="line">```java		</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String App_Id = <span class="string">"你注册的APP_ID"</span>;</span><br><span class="line"><span class="keyword">private</span> IWXAPI api;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">registerToWX</span><span class="params">()</span></span>&#123;</span><br><span class="line">	api = WXAPIFactory.createWXAPI(<span class="keyword">this</span>, App_Id, <span class="keyword">true</span>);</span><br><span class="line">	api.registerApp(App_ID);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-permission android:name=<span class="string">"android.permission.INTERNET"</span>&gt; </span><br><span class="line">&lt;uses-permission android:name=<span class="string">"android.permission.ACCESS_NETWORK_STATE"</span>/&gt; 	&lt;uses-permission android:name=<span class="string">"android.permission.ACCESS_WIFI_STATE"</span>/&gt; </span><br><span class="line">&lt;uses-permission android:name=<span class="string">"android.permission.READ_PHONE_STATE"</span>/&gt; </span><br><span class="line">&lt;uses-permission android:name=<span class="string">"android.permission.WRITE_EXTERNAL_STORAGE"</span>/&gt;</span><br><span class="line">```	</span><br><span class="line"></span><br><span class="line">- 注册APP到微信</span><br><span class="line"></span><br><span class="line">```java		</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String App_Id = <span class="string">"你注册的APP_ID"</span>;</span><br><span class="line"><span class="keyword">private</span> IWXAPI api;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">registerToWX</span><span class="params">()</span></span>&#123;</span><br><span class="line">	api = WXAPIFactory.createWXAPI(<span class="keyword">this</span>, App_Id, <span class="keyword">true</span>);</span><br><span class="line">	api.registerApp(App_ID);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="分享："><a href="#分享：" class="headerlink" title="分享："></a>分享：</h3><ul>
 <li>分享(以分享图片为例)<br>  直接触发分享图片按钮的点击事件</li>
 </ul>
