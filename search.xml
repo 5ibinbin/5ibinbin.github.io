@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[顺序查找和二分查找]]></title>
+    <url>%2F2018%2F01%2F08%2FAlgorithm%2F%E9%A1%BA%E5%BA%8F%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%2F</url>
+    <content type="text"><![CDATA[顺序查找 说明：顺序查找适用于数据存储形式为顺序存储或链接存储的线性表 算法思想 顺序查找也是线性查找，从数据的一端开始依次查找每一条数据元素并与目标值进行比较。如果相等则找到目标值，否则继续向下查找。 复杂度分析 算法平均执行次数为n/2，则算法的复杂度为O(n) 代码实现 12345678function sequenceSearch(arr, targetValue)&#123; for (let i = 0; i &lt; arr.length; i++)&#123; if (arr[i] === targetValue)&#123; return i; &#125; &#125; return -1;&#125; 二分查找 说明：二分查找适用于已排序的数据 算法思想 二分查找也成为折半查找，将目标值与已排序数据中间值比较，若等于中间值则查找成功；若小于/大于中间值则对左/右侧数据再进行二分查找，依次类推，直到找到目标值。 复杂度分析 最坏情况需要执行log(n+1)，则算法的复杂度为O(logn) 代码实现 1234567891011121314151617function BinarySearch(arr, targetValue)&#123; let low = 0; let high = arr.length - 1; while(low &lt; high)&#123; let middle = Math.floor((low+high)/2); if (arr[middle] &lt; targetValue)&#123; low = middle + 1; &#125; if (arr[middle] === targetValue)&#123; return middle; &#125; if (arr[middle] &gt; targetValue)&#123; high = middle - 1; &#125; &#125; return -1;&#125;]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>查找</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[快速排序]]></title>
     <url>%2F2018%2F01%2F07%2FAlgorithm%2F%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%2F</url>
     <content type="text"><![CDATA[算法思想 和归并排序一样，快速排序也采用分治的思想 ① 先从数组中取出一个数作为基准数② 分区过程 – 将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边③ 再对左右区间重复第二步，直到各区间只有一个数 复杂度 快排的平均时间复杂度为O(nlogn)，空间复杂度为O(logn)，快速排序是不稳定的，但每次都能确定一个元素所在序列中的最终位置，复杂度与初始序列(基准值)有关 代码实现 12345678function quickSort(arr, indexLeft, indexRight)&#123; if (indexLeft &gt;= indexRight)&#123; return; &#125; let index = position(arr, indexLeft, indexRight); quickSort(arr, indexLeft, index - 1); quickSort(arr, index + 1, indexRight);&#125; ① 第2行为递归的终止条件② 可能有人对第6、7行有疑问，为什么递归的时候少了index，因为index就数组的基准值 1234567891011121314151617function position (arr, indexLeft, indexRight)&#123; let key = arr[indexLeft]; let low = indexLeft; let high = indexRight; while (low &lt; high)&#123; while (arr[high] &gt; key)&#123; high--; &#125; arr[low] = arr[high]; while (arr[low] &lt; key)&#123; low++; &#125; arr[high] = arr[low]; &#125; arr[low] = key; return low;&#125; ① 第5行判断数组长度大于1② 第6~9行从数组末端开始和基准值key比较，如果大于key则往前移，否则和第low个值交换③ 第10~13从数组头部开始和基准值key比较，如果小于key则往后移，否则和第high个值交换直到low不小于high，while循环结束，此时将基准值赋予角标为low处。 可以看下面的例子，增加以下理解 5 5 4 8 3 2 6 7 9 首先用5当作基准，使用i j两个指针分别从两边进行扫描，首先比较9和5，9比5大，j左移。继续比较，7&gt;5, 6&gt;5, j左移两次，接着比较2和5，2&lt;5,交换 5 2 4 8 3 _ 6 7 9 将2移至i原来所在的位置，同时把2原来所在的位置空出来(相当于空出来，其实2还留在原地)，并开始从左侧比较。4和5比较 5 2 4 8 3 _ 6 7 9 4&lt;5，不交换，i继续右移 5 2 4 _ 3 8 6 7 9 8&gt;5，将8与j所在的位置交换，j左移，将3与5比较 5 2 4 3 _ 8 6 7 9 3&lt;5，3移至i所在的位置，i继续右移，此时i=j，循环结束。 5 2 4 3 5 8 6 7 9 循环结束将基准值5移至空位。此时一轮排序到此结束，之后将以同样的方式继续比较，直到数据排列完成]]></content>
