@@ -94,7 +94,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="React Native 工程师" />
+  <meta name="keywords" content="查找,算法," />
 
 
 
@@ -110,16 +110,20 @@
 
 
 
-<meta name="description" content="大道至简">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ibinbin">
-<meta property="og:url" content="http://5ibinbin.com/page/4/index.html">
+<meta name="description" content="序言：本文将带你掌握二叉树、二叉搜索树以及他们的构建、元素的查找和删除  二叉树  满足树中的节点最多只能有两个的就称为二叉树  二叉搜索树(BTS)   在满足二叉树的基础上且满足左侧节点的值比父节点小，右侧节点的值比左侧节点大的称为二叉搜索树。  二叉树特性    由于这种树形的数据结构使得其无论是增删还是查找，算法的时间复杂度都为O(h)，h为数的高度。因此二叉树应尽可能的使左右平衡。">
+<meta name="keywords" content="查找,算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二叉搜索树">
+<meta property="og:url" content="http://5ibinbin.com/2018/01/09/Algorithm/二叉搜索树/index.html">
 <meta property="og:site_name" content="ibinbin">
-<meta property="og:description" content="大道至简">
+<meta property="og:description" content="序言：本文将带你掌握二叉树、二叉搜索树以及他们的构建、元素的查找和删除  二叉树  满足树中的节点最多只能有两个的就称为二叉树  二叉搜索树(BTS)   在满足二叉树的基础上且满足左侧节点的值比父节点小，右侧节点的值比左侧节点大的称为二叉搜索树。  二叉树特性    由于这种树形的数据结构使得其无论是增删还是查找，算法的时间复杂度都为O(h)，h为数的高度。因此二叉树应尽可能的使左右平衡。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://5ibinbin.com/2018/01/09/Algorithm/二叉搜索树/delete_node.png">
+<meta property="og:updated_time" content="2018-01-07T14:23:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ibinbin">
-<meta name="twitter:description" content="大道至简">
+<meta name="twitter:title" content="二叉搜索树">
+<meta name="twitter:description" content="序言：本文将带你掌握二叉树、二叉搜索树以及他们的构建、元素的查找和删除  二叉树  满足树中的节点最多只能有两个的就称为二叉树  二叉搜索树(BTS)   在满足二叉树的基础上且满足左侧节点的值比父节点小，右侧节点的值比左侧节点大的称为二叉搜索树。  二叉树特性    由于这种树形的数据结构使得其无论是增删还是查找，算法的时间复杂度都为O(h)，h为数的高度。因此二叉树应尽可能的使左右平衡。">
+<meta name="twitter:image" content="http://5ibinbin.com/2018/01/09/Algorithm/二叉搜索树/delete_node.png">
 
 
 
@@ -169,13 +173,13 @@
 
 
 
-  <link rel="canonical" href="http://5ibinbin.com/page/4/"/>
+  <link rel="canonical" href="http://5ibinbin.com/2018/01/09/Algorithm/二叉搜索树/"/>
 
 
 
 
 
-  <title> ibinbin </title>
+  <title> 二叉搜索树 | ibinbin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -200,9 +204,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -343,9 +345,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -354,7 +356,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/04/22/Tech/Mac跨域/">
+    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2018/01/09/Algorithm/二叉搜索树/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ibinbin">
@@ -375,10 +377,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/04/22/Tech/Mac跨域/" itemprop="url">
-                  Mac跨域
-                </a>
+                二叉搜索树
               
             
           </h1>
@@ -393,8 +392,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-22T00:00:00+08:00">
-                2017-04-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-09T00:00:00+08:00">
+                2018-01-09
               </time>
             
 
@@ -416,8 +415,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Mac/" itemprop="url" rel="index">
-                    <span itemprop="name">Mac</span>
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -433,7 +432,7 @@
 
           
           
-             <span id="/2017/04/22/Tech/Mac跨域/" class="leancloud_visitors" data-flag-title="Mac跨域">
+             <span id="/2018/01/09/Algorithm/二叉搜索树/" class="leancloud_visitors" data-flag-title="二叉搜索树">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -462,430 +461,133 @@
       
 
       
-        
-          <h5 id="Mac："><a href="#Mac：" class="headerlink" title="Mac："></a>Mac：</h5><ul>
-<li><p>chrome49以前版本</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open -a <span class="string">"Google Chrome"</span> --args --disable-web-security</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>chrome49以后版本</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open -a /Applications/Google\ Chrome.app --args --disable-web-security --user-data-dir</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Safari</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open -a <span class="string">'/Applications/Safari.app'</span> --args --disable-web-security</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/22/Tech/Mac跨域/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div align="left">
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/04/20/Android/weChat-login/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ibinbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ibinbin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/20/Android/weChat-login/" itemprop="url">
-                  Android 微信sdk登录和分享
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-20T00:00:00+08:00">
-                2017-04-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/04/20/Android/weChat-login/" class="leancloud_visitors" data-flag-title="Android 微信sdk登录和分享">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <ul>
-<li>准备材料：<ul>
-<li><a href="https://open.weixin.qq.com" target="_blank" rel="noopener">微信开发者账号</a></li>
-<li>注册你的<code>APP</code></li>
-<li><code>libammsdk.jar</code>包</li>
-<li><code>debug.keystore</code>文件</li>
-</ul>
-</li>
-</ul>
-<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
-<li>申请你的<code>APPID</code></li>
-<li>导入<code>libammsdk.jar</code>包</li>
-<li>在<code>AndroidManifest.xml</code>中设置权限</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/20/Android/weChat-login/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div align="left">
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/04/01/Tech/Hexo博客优化/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ibinbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ibinbin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/01/Tech/Hexo博客优化/" itemprop="url">
-                  Hexo Next 博客搭建资源整理
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-01T00:00:00+08:00">
-                2017-04-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/资源/" itemprop="url" rel="index">
-                    <span itemprop="name">资源</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/04/01/Tech/Hexo博客优化/" class="leancloud_visitors" data-flag-title="Hexo Next 博客搭建资源整理">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p> Next Theme版本5.1.0</p>
+        <blockquote>
+<p>序言：本文将带你掌握二叉树、二叉搜索树以及他们的构建、元素的查找和删除</p>
 </blockquote>
-<p><strong>hexo博客搭建遇到的问题处理和优化所需的资源</strong></p>
-<ol>
-<li><a href="http://www.jianshu.com/p/99665608d295" target="_blank" rel="noopener">hexo开始搭建</a></li>
-<li><a href="http://www.jianshu.com/p/4fbc57269f1b" target="_blank" rel="noopener">底部Powered By</a></li>
-<li><a href="https://github.com/iissnan/hexo-theme-next/issues/1084" target="_blank" rel="noopener">algolia问题</a></li>
-<li><a href="http://theme-next.iissnan.com/third-party-services.html" target="_blank" rel="noopener">三方服务</a></li>
-<li><a href="http://blog.lisanlai.cn/" target="_blank" rel="noopener">Cannot find module ‘hexo-util’</a></li>
-<li><a href="http://blog.csdn.net/willxue123/article/details/50994852" target="_blank" rel="noopener">配置文件属性说明</a> </li>
-<li><a href="http://zhuweisheng.com.cn/technology/leancloud-counter/" target="_blank" rel="noopener">集成LeanCloud记录次数</a></li>
-<li><a href="http://www.jianshu.com/p/4fbc57269f1b" target="_blank" rel="noopener">hexo next 底部Logo栏(powered by)</a></li>
-</ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/01/Tech/Hexo博客优化/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+<p><strong>二叉树</strong></p>
+<blockquote>
+<p>满足树中的节点最多只能有两个的就称为二叉树</p>
+</blockquote>
+<p><strong>二叉搜索树<code>(BTS)</code></strong> </p>
+<blockquote>
+<p>在满足二叉树的基础上且满足左侧节点的值比父节点小，右侧节点的值比左侧节点大的称为二叉搜索树。</p>
+</blockquote>
+<p><strong>二叉树特性</strong>  </p>
+<blockquote>
+<p>由于这种树形的数据结构使得其无论是增删还是查找，算法的时间复杂度都为<code>O(h)</code>，<code>h</code>为数的高度。因此二叉树应尽可能的使左右平衡。  </p>
+</blockquote>
+<p><strong>二叉搜索树的构建</strong>  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">BinarySearchTree</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> Node = <span class="function"><span class="keyword">function</span>(<span class="params">key</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.key = key;</span><br><span class="line">		<span class="keyword">this</span>.left = <span class="literal">null</span>;</span><br><span class="line">		<span class="keyword">this</span>.right = <span class="literal">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">let</span> root = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>创建<code>BinarySearchTree</code>类，声明每一个节点的数据结构，并将初始的根节点置为<code>null(行7)</code>  </p>
+</blockquote>
+<p><strong>二叉搜索树的插入<code>(insert)</code></strong>  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.insert = <span class="function"><span class="keyword">function</span>(<span class="params">key</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> newNode = <span class="keyword">new</span> Node(key);  </span><br><span class="line">	<span class="keyword">if</span> (root === <span class="literal">null</span>)&#123;</span><br><span class="line">		root = newNode;   </span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		insertNode(root, newNode);  </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>① 创建<code>Node</code>实例来生成一个新的节点<code>行2</code><br>② 判断根节点是否为<code>null</code>，若是则新建节点为根节点，否则插入节点  </p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> insertNode = <span class="function"><span class="keyword">function</span>(<span class="params">node, newNode</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (newNode.key &lt; node.key)&#123;</span><br><span class="line">		<span class="keyword">if</span> (node.left === <span class="literal">null</span>)&#123;</span><br><span class="line">			node.left = newNode;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			insertNode(node.left, newNode);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> (node.right === <span class="literal">null</span>)&#123;</span><br><span class="line">			node.right = newNode</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			insertNode(node.right, newNode);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&gt; 树非空情况下，先判断新节点是否小于当前节点(局部根节点)，若小于需要判断当前节点的左节点是否为空，若为空则将当前节点的左节点赋值为新节点，否则继续递归调用`</span>insertNode<span class="string">`方法。若新节点大于当前节点的情况和小于的类似。  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">**搜索最大值最小值**</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&gt; 我们知道二叉搜索树的左节点小于根节点小于右节点，我们可以根据这个特性来求得最大值最小值，方法如下：</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br><span class="line"><span class="keyword">this</span>.minNode = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (root)&#123;</span><br><span class="line">		<span class="keyword">while</span>(root &amp;&amp; root.left !== <span class="literal">null</span>)&#123;</span><br><span class="line">			root = root.left;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> root.key;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.maxNode = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (root)&#123;</span><br><span class="line">		<span class="keyword">while</span>(root &amp;&amp; root.right !== <span class="literal">null</span>)&#123;</span><br><span class="line">			root = root.right;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> root.key;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">**查找特定的值**</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br><span class="line"><span class="keyword">this</span>.search = <span class="function"><span class="keyword">function</span>(<span class="params">root, key</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (root === <span class="literal">null</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (key &lt; root.key)&#123;</span><br><span class="line">		<span class="keyword">return</span> search(root.left, key);</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (key &gt; root.key)&#123;</span><br><span class="line">		<span class="keyword">return</span> search(root.right, key);</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> ()&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>依然使用了递归的思想。如果目标值比当前节点小则继续在左侧子树上搜索，比当前节点大则在右侧子树搜索直到找到目标值。</p>
+</blockquote>
+<p><strong>删除节点</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.remove = <span class="function"><span class="keyword">function</span>(<span class="params">key</span>)</span>&#123;</span><br><span class="line">	root = removeNode(root, key);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> removeNode = <span class="function"><span class="keyword">function</span>(<span class="params">node, key</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (node === <span class="literal">null</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (key &lt; node.key)&#123;</span><br><span class="line">		node.left = removeNode(node.left, key);</span><br><span class="line">		<span class="keyword">return</span> node;</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (key &gt; node.key)&#123;</span><br><span class="line">		node.right = removeNode(node.right, key);</span><br><span class="line">		<span class="keyword">return</span> node;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="comment">// 第一种情况--一个叶子节点</span></span><br><span class="line">		<span class="keyword">if</span> (node.left === <span class="literal">null</span> &amp;&amp; node.right === <span class="literal">null</span>)&#123;</span><br><span class="line">			node = <span class="literal">null</span>;</span><br><span class="line">			<span class="keyword">return</span> node;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 第二种情况--一个只有一个子节点的节点</span></span><br><span class="line">		<span class="keyword">if</span> (node.left === <span class="literal">null</span>)&#123;</span><br><span class="line">			node = node.right;</span><br><span class="line">			<span class="keyword">return</span> node;</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (node.right === <span class="literal">null</span>)&#123;</span><br><span class="line">			node = node.left;</span><br><span class="line">			<span class="keyword">return</span> node;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 第三种情况--一个有两个子节点的节点</span></span><br><span class="line">		<span class="keyword">let</span> minNode = findMinNode(node.right);</span><br><span class="line">		node.key = minNode.key;</span><br><span class="line">		node.right = removeNode(node.right, minNode);</span><br><span class="line">		<span class="keyword">return</span> node;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> findMinNode = <span class="function"><span class="keyword">function</span>(<span class="params">node</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (node)&#123;</span><br><span class="line">		<span class="keyword">while</span>(node &amp;&amp; node.left !== <span class="literal">null</span>)&#123;</span><br><span class="line">			node = node.left;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> node;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>要想移除节点，首先需要找到节点<code>node.key === key</code>，移除节点分三种情况：<br>① 只有一个叶子节点，我们只需要把节点置空就可以了<br>② 只有一个子节点的节点，需要把它的子节点覆盖当前节点<br>③ 有两个子节点，首先调用<code>findMinNode</code>找到当前节点的右子节点内的最小节点，然后将这个最小节点赋值给当前节点(把要删除的节点给覆盖删除)，最后再把之前找到的最小节点从原来的位置删除。  </p>
+</blockquote>
+<p><strong>关于第三种情况看一看下图以加深理解</strong></p>
+<p><img src="delete_node.png" alt="双子节点"></p>
+
       
     </div>
 
     <div align="left">
       
-    </div>
-
-    <div>
+        <div class="copyright">
+        <p><span>
+        <b>本文地址：</b><a href="/2018/01/09/Algorithm/二叉搜索树/" title="二叉搜索树">http://5ibinbin.com/2018/01/09/Algorithm/二叉搜索树/</a><br /><b>转载请注明出处！</b>
+        </span></p>
+        </div>
       
     </div>
 
     <div>
       
-    </div>
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
 
-    <div>
       
     </div>
 
     <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
       
     </div>
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/查找/" rel="tag"><i class="fa fa-tag"></i> 查找</a>
+          
+            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+          
+        </div>
       
 
       
+        
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/08/Algorithm/顺序二分查找/" rel="next" title="顺序查找和二分查找">
+                <i class="fa fa-chevron-left"></i> 顺序查找和二分查找
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -893,6 +595,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
 
         </div>
         
@@ -1156,6 +864,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
@@ -1187,6 +899,10 @@
   
     
 
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2130989"></script>
+      <!-- UY END -->
     
   
 

@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[二叉搜索树]]></title>
+    <url>%2F2018%2F01%2F09%2FAlgorithm%2F%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%2F</url>
+    <content type="text"><![CDATA[序言：本文将带你掌握二叉树、二叉搜索树以及他们的构建、元素的查找和删除 二叉树 满足树中的节点最多只能有两个的就称为二叉树 二叉搜索树(BTS) 在满足二叉树的基础上且满足左侧节点的值比父节点小，右侧节点的值比左侧节点大的称为二叉搜索树。 二叉树特性 由于这种树形的数据结构使得其无论是增删还是查找，算法的时间复杂度都为O(h)，h为数的高度。因此二叉树应尽可能的使左右平衡。 二叉搜索树的构建 12345678function BinarySearchTree() &#123; let Node = function(key)&#123; this.key = key; this.left = null; this.right = null; &#125; let root = null;&#125; 创建BinarySearchTree类，声明每一个节点的数据结构，并将初始的根节点置为null(行7) 二叉搜索树的插入(insert) 12345678this.insert = function(key)&#123; let newNode = new Node(key); if (root === null)&#123; root = newNode; &#125; else &#123; insertNode(root, newNode); &#125;&#125; ① 创建Node实例来生成一个新的节点行2② 判断根节点是否为null，若是则新建节点为根节点，否则插入节点 123456789101112131415161718192021222324252627282930313233let insertNode = function(node, newNode)&#123; if (newNode.key &lt; node.key)&#123; if (node.left === null)&#123; node.left = newNode; &#125; else &#123; insertNode(node.left, newNode); &#125; &#125; else &#123; if (node.right === null)&#123; node.right = newNode &#125; else &#123; insertNode(node.right, newNode); &#125; &#125;&#125;``` &gt; 树非空情况下，先判断新节点是否小于当前节点(局部根节点)，若小于需要判断当前节点的左节点是否为空，若为空则将当前节点的左节点赋值为新节点，否则继续递归调用`insertNode`方法。若新节点大于当前节点的情况和小于的类似。 **搜索最大值最小值**&gt; 我们知道二叉搜索树的左节点小于根节点小于右节点，我们可以根据这个特性来求得最大值最小值，方法如下：```javascriptthis.minNode = function()&#123; if (root)&#123; while(root &amp;&amp; root.left !== null)&#123; root = root.left; &#125; return root.key; &#125; return null;&#125; 1234567891011121314151617181920212223242526this.maxNode = function()&#123; if (root)&#123; while(root &amp;&amp; root.right !== null)&#123; root = root.right; &#125; return root.key; &#125; return null;&#125;``` **查找特定的值**```javascriptthis.search = function(root, key)&#123; if (root === null)&#123; return false; &#125; if (key &lt; root.key)&#123; return search(root.left, key); &#125; else if (key &gt; root.key)&#123; return search(root.right, key); &#125; else if ()&#123; return true; &#125;&#125; 依然使用了递归的思想。如果目标值比当前节点小则继续在左侧子树上搜索，比当前节点大则在右侧子树搜索直到找到目标值。 删除节点 1234567891011121314151617181920212223242526272829303132333435363738394041424344this.remove = function(key)&#123; root = removeNode(root, key);&#125;let removeNode = function(node, key)&#123; if (node === null)&#123; return null; &#125; if (key &lt; node.key)&#123; node.left = removeNode(node.left, key); return node; &#125; else if (key &gt; node.key)&#123; node.right = removeNode(node.right, key); return node; &#125; else &#123; // 第一种情况--一个叶子节点 if (node.left === null &amp;&amp; node.right === null)&#123; node = null; return node; &#125; // 第二种情况--一个只有一个子节点的节点 if (node.left === null)&#123; node = node.right; return node; &#125; else if (node.right === null)&#123; node = node.left; return node; &#125; // 第三种情况--一个有两个子节点的节点 let minNode = findMinNode(node.right); node.key = minNode.key; node.right = removeNode(node.right, minNode); return node; &#125;&#125;let findMinNode = function(node)&#123; if (node)&#123; while(node &amp;&amp; node.left !== null)&#123; node = node.left; &#125; return node; &#125;&#125; 要想移除节点，首先需要找到节点node.key === key，移除节点分三种情况：① 只有一个叶子节点，我们只需要把节点置空就可以了② 只有一个子节点的节点，需要把它的子节点覆盖当前节点③ 有两个子节点，首先调用findMinNode找到当前节点的右子节点内的最小节点，然后将这个最小节点赋值给当前节点(把要删除的节点给覆盖删除)，最后再把之前找到的最小节点从原来的位置删除。 关于第三种情况看一看下图以加深理解]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>查找</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[顺序查找和二分查找]]></title>
     <url>%2F2018%2F01%2F08%2FAlgorithm%2F%E9%A1%BA%E5%BA%8F%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%2F</url>
     <content type="text"><![CDATA[顺序查找 说明：顺序查找适用于数据存储形式为顺序存储或链接存储的线性表 算法思想 顺序查找也是线性查找，从数据的一端开始依次查找每一条数据元素并与目标值进行比较。如果相等则找到目标值，否则继续向下查找。 复杂度分析 算法平均执行次数为n/2，则算法的复杂度为O(n) 代码实现 12345678function sequenceSearch(arr, targetValue)&#123; for (let i = 0; i &lt; arr.length; i++)&#123; if (arr[i] === targetValue)&#123; return i; &#125; &#125; return -1;&#125; 二分查找 说明：二分查找适用于已排序的数据 算法思想 二分查找也成为折半查找，将目标值与已排序数据中间值比较，若等于中间值则查找成功；若小于/大于中间值则对左/右侧数据再进行二分查找，依次类推，直到找到目标值。 复杂度分析 最坏情况需要执行log(n+1)，则算法的复杂度为O(logn) 代码实现 1234567891011121314151617function BinarySearch(arr, targetValue)&#123; let low = 0; let high = arr.length - 1; while(low &lt; high)&#123; let middle = Math.floor((low+high)/2); if (arr[middle] &lt; targetValue)&#123; low = middle + 1; &#125; if (arr[middle] === targetValue)&#123; return middle; &#125; if (arr[middle] &gt; targetValue)&#123; high = middle - 1; &#125; &#125; return -1;&#125;]]></content>
@@ -8,8 +20,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>查找</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -20,8 +32,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>排序</tag>
         <tag>算法</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -32,8 +44,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>排序</tag>
         <tag>算法</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -44,8 +56,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>排序</tag>
         <tag>算法</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -56,8 +68,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>排序</tag>
         <tag>算法</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -68,8 +80,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>排序</tag>
         <tag>算法</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
