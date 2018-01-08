@@ -3,13 +3,13 @@
   <entry>
     <title><![CDATA[二叉搜索树]]></title>
     <url>%2F2018%2F01%2F09%2FAlgorithm%2F%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%2F</url>
-    <content type="text"><![CDATA[序言：本文将带你掌握二叉树、二叉搜索树以及他们的构建、元素的查找和删除 二叉树 满足树中的节点最多只能有两个的就称为二叉树 二叉搜索树(BTS) 在满足二叉树的基础上且满足左侧节点的值比父节点小，右侧节点的值比左侧节点大的称为二叉搜索树。 二叉树特性 由于这种树形的数据结构使得其无论是增删还是查找，算法的时间复杂度都为O(h)，h为数的高度。因此二叉树应尽可能的使左右平衡。 二叉搜索树的构建 12345678function BinarySearchTree() &#123; let Node = function(key)&#123; this.key = key; this.left = null; this.right = null; &#125; let root = null;&#125; 创建BinarySearchTree类，声明每一个节点的数据结构，并将初始的根节点置为null(行7) 二叉搜索树的插入(insert) 12345678this.insert = function(key)&#123; let newNode = new Node(key); if (root === null)&#123; root = newNode; &#125; else &#123; insertNode(root, newNode); &#125;&#125; ① 创建Node实例来生成一个新的节点行2② 判断根节点是否为null，若是则新建节点为根节点，否则插入节点 123456789101112131415let insertNode = function(node, newNode)&#123; if (newNode.key &lt; node.key)&#123; if (node.left === null)&#123; node.left = newNode; &#125; else &#123; insertNode(node.left, newNode); &#125; &#125; else &#123; if (node.right === null)&#123; node.right = newNode &#125; else &#123; insertNode(node.right, newNode); &#125; &#125;&#125; 树非空情况下，先判断新节点是否小于当前节点(局部根节点)，若小于需要判断当前节点的左节点是否为空，若为空则将当前节点的左节点赋值为新节点，否则继续递归调用insertNode方法。若新节点大于当前节点的情况和小于的类似。 搜索最大值最小值 我们知道二叉搜索树的左节点小于根节点小于右节点，我们可以根据这个特性来求得最大值最小值，方法如下： 123456789this.minNode = function()&#123; if (root)&#123; while(root &amp;&amp; root.left !== null)&#123; root = root.left; &#125; return root.key; &#125; return null;&#125; 123456789this.maxNode = function()&#123; if (root)&#123; while(root &amp;&amp; root.right !== null)&#123; root = root.right; &#125; return root.key; &#125; return null;&#125; 查找特定的值 123456789101112this.search = function(root, key)&#123; if (root === null)&#123; return false; &#125; if (key &lt; root.key)&#123; return search(root.left, key); &#125; else if (key &gt; root.key)&#123; return search(root.right, key); &#125; else if ()&#123; return true; &#125;&#125; 依然使用了递归的思想。如果目标值比当前节点小则继续在左侧子树上搜索，比当前节点大则在右侧子树搜索直到找到目标值。 删除节点 1234567891011121314151617181920212223242526272829303132333435363738394041424344this.remove = function(key)&#123; root = removeNode(root, key);&#125;let removeNode = function(node, key)&#123; if (node === null)&#123; return null; &#125; if (key &lt; node.key)&#123; node.left = removeNode(node.left, key); return node; &#125; else if (key &gt; node.key)&#123; node.right = removeNode(node.right, key); return node; &#125; else &#123; // 第一种情况--一个叶子节点 if (node.left === null &amp;&amp; node.right === null)&#123; node = null; return node; &#125; // 第二种情况--一个只有一个子节点的节点 if (node.left === null)&#123; node = node.right; return node; &#125; else if (node.right === null)&#123; node = node.left; return node; &#125; // 第三种情况--一个有两个子节点的节点 let minNode = findMinNode(node.right); node.key = minNode.key; node.right = removeNode(node.right, minNode); return node; &#125;&#125;let findMinNode = function(node)&#123; if (node)&#123; while(node &amp;&amp; node.left !== null)&#123; node = node.left; &#125; return node; &#125;&#125; 要想移除节点，首先需要找到节点node.key === key，移除节点分三种情况：① 只有一个叶子节点，我们只需要把节点置空就可以了② 只有一个子节点的节点，需要把它的子节点覆盖当前节点③ 有两个子节点，首先调用findMinNode找到当前节点的右子节点内的最小节点，然后将这个最小节点赋值给当前节点(把要删除的节点给覆盖删除)，最后再把之前找到的最小节点从原来的位置删除。 关于第三种情况看一看下图以加深理解]]></content>
+    <content type="text"><![CDATA[序言：本文将带你掌握二叉树、二叉搜索树以及他们的构建、元素的查找和删除 二叉树 满足树中的节点最多只能有两个的就称为二叉树 二叉搜索树(BTS) 在满足二叉树的基础上且满足左侧节点的值比父节点小，右侧节点的值比左侧节点大的称为二叉搜索树。 二叉树特性 由于这种树形的数据结构使得其无论是增删还是查找，算法的时间复杂度都为O(h)，h为数的高度。因此二叉树应尽可能的使左右平衡。 二叉搜索树的构建 12345678function BinarySearchTree() &#123; let Node = function(key)&#123; this.key = key; this.left = null; this.right = null; &#125; let root = null;&#125; 创建BinarySearchTree类，声明每一个节点的数据结构，并将初始的根节点置为null(行7) 二叉搜索树的插入(insert) 12345678this.insert = function(key)&#123; let newNode = new Node(key); if (root === null)&#123; root = newNode; &#125; else &#123; insertNode(root, newNode); &#125;&#125; ① 创建Node实例来生成一个新的节点行2② 判断根节点是否为null，若是则新建节点为根节点，否则插入节点 123456789101112131415let insertNode = function(node, newNode)&#123; if (newNode.key &lt; node.key)&#123; if (node.left === null)&#123; node.left = newNode; &#125; else &#123; insertNode(node.left, newNode); &#125; &#125; else &#123; if (node.right === null)&#123; node.right = newNode &#125; else &#123; insertNode(node.right, newNode); &#125; &#125;&#125; 树非空情况下，先判断新节点是否小于当前节点(局部根节点)，若小于需要判断当前节点的左节点是否为空，若为空则将当前节点的左节点赋值为新节点，否则继续递归调用insertNode方法。若新节点大于当前节点的情况和小于的类似。 搜索最大值最小值 我们知道二叉搜索树的左节点小于根节点小于右节点，我们可以根据这个特性来求得最大值最小值，方法如下： 123456789this.minNode = function()&#123; if (root)&#123; while(root &amp;&amp; root.left !== null)&#123; root = root.left; &#125; return root.key; &#125; return null;&#125; 123456789this.maxNode = function()&#123; if (root)&#123; while(root &amp;&amp; root.right !== null)&#123; root = root.right; &#125; return root.key; &#125; return null;&#125; 查找特定的值 123456789101112this.search = function(root, key)&#123; if (root === null)&#123; return false; &#125; if (key &lt; root.key)&#123; return search(root.left, key); &#125; else if (key &gt; root.key)&#123; return search(root.right, key); &#125; else if ()&#123; return true; &#125;&#125; 依然使用了递归的思想。如果目标值比当前节点小则继续在左侧子树上搜索，比当前节点大则在右侧子树搜索直到找到目标值。 遍历二叉树 中序遍历(第二个遍历父节点) 123456789101112this.inOrderTraverse = function(callback)&#123; inOrderTraverseNode(root, callback); &#125;;let inOrderTraverse = function(node, callback)&#123; if (node !== null)&#123; inOrderTraverse(node.left, callback); callback(node.key); inOrderTraverse(node.right, callback); &#125;&#125;// 回调函数function printNode(key)&#123; console.log(key);&#125; 中序遍历顾名思义就是先遍历左侧节点然后是中间父节点最后右侧节点。采用递归的思路对二叉树进行遍历。 先序遍历(先遍历父节点) 123456789101112this.preOrderTraverse = function(callback)&#123; preOrderTraverseNode(root, callback);&#125;let preOrderTraverseNode = function(node, callback)&#123; callback(node.key); preOrderTraverseNode(node.left, callback); preOrderTraverseNode(node.right, callback);&#125;// 回调函数function printNode(key)&#123; console.log(key);&#125; 先序遍历就是先遍历父节点然后是左侧节点最后是右侧节点，同样采用的是递归思路对二叉树进行遍历。 后序遍历(最后遍历父节点) 123456789101112this.postOrderTraverse = function(callback)&#123; postOrderTraverseNode(root, callback);&#125;let postOrderTraverseNode = function(node, callback)&#123; postOrderTraverseNode(node.left, callback); postOrderTraverseNode(node.right, callback); callback(node.key);&#125;// 回调函数function printNode(key)&#123; console.log(key);&#125; 后序遍历就是先遍历左节点然后是右节点最后遍历父节点，同样采用递归思路对二叉树进行遍历。 删除节点 1234567891011121314151617181920212223242526272829303132333435363738394041424344this.remove = function(key)&#123; root = removeNode(root, key);&#125;let removeNode = function(node, key)&#123; if (node === null)&#123; return null; &#125; if (key &lt; node.key)&#123; node.left = removeNode(node.left, key); return node; &#125; else if (key &gt; node.key)&#123; node.right = removeNode(node.right, key); return node; &#125; else &#123; // 第一种情况--一个叶子节点 if (node.left === null &amp;&amp; node.right === null)&#123; node = null; return node; &#125; // 第二种情况--一个只有一个子节点的节点 if (node.left === null)&#123; node = node.right; return node; &#125; else if (node.right === null)&#123; node = node.left; return node; &#125; // 第三种情况--一个有两个子节点的节点 let minNode = findMinNode(node.right); node.key = minNode.key; node.right = removeNode(node.right, minNode); return node; &#125;&#125;let findMinNode = function(node)&#123; if (node)&#123; while(node &amp;&amp; node.left !== null)&#123; node = node.left; &#125; return node; &#125;&#125; 要想移除节点，首先需要找到节点node.key === key，移除节点分三种情况：① 只有一个叶子节点，我们只需要把节点置空就可以了② 只有一个子节点的节点，需要把它的子节点覆盖当前节点③ 有两个子节点，首先调用findMinNode找到当前节点的右子节点内的最小节点，然后将这个最小节点赋值给当前节点(把要删除的节点给覆盖删除)，最后再把之前找到的最小节点从原来的位置删除。 关于第三种情况看一看下图以加深理解]]></content>
       <categories>
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>查找</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -20,8 +20,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>查找</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -32,8 +32,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>排序</tag>
         <tag>算法</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -44,8 +44,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>排序</tag>
         <tag>算法</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -56,8 +56,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>排序</tag>
         <tag>算法</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -68,8 +68,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>排序</tag>
         <tag>算法</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -80,8 +80,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>排序</tag>
         <tag>算法</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
