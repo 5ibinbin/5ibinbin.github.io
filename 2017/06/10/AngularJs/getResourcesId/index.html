@@ -118,7 +118,7 @@
 <meta property="og:site_name" content="ibinbin">
 <meta property="og:description" content="在制作Cordova插件时不能通过R文件来寻找资源Id，因为R文件是不断变化的，所以我们必须要通过资源名称来获取Id，下面就介绍一下资源id的获取:">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-29T13:51:49.000Z">
+<meta property="og:updated_time" content="2018-01-08T14:31:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cordova插件开发-Android获取资源Id">
 <meta name="twitter:description" content="在制作Cordova插件时不能通过R文件来寻找资源Id，因为R文件是不断变化的，所以我们必须要通过资源名称来获取Id，下面就介绍一下资源id的获取:">
@@ -464,67 +464,37 @@
 <li><p>使用Resources 类的 getIdentifier方法</p>
 <ul>
 <li><p>通过资源名称虚招布局文件的id</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">private int getResId(<span class="built_in">String</span> resourceName)&#123;</span><br><span class="line">	Resources resources = getResources();</span><br><span class="line">	int resId = resources.getIdentifier(resourceName,<span class="string">"layout"</span>,getPackageName());</span><br><span class="line">	<span class="keyword">return</span> resId;</span><br><span class="line">&#125;</span><br><span class="line">  <span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">  - 获取字符串id</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br><span class="line">private int getStringId(<span class="built_in">String</span> stringName)&#123;</span><br><span class="line">	Resources resources = getResources();</span><br><span class="line">	int resId =resources.getIdentifier(stringName,<span class="string">"string"</span>, getPackageName());</span><br><span class="line">	<span class="keyword">return</span> resId;</span><br><span class="line">&#125;</span><br><span class="line">   <span class="string">``</span><span class="string">`		</span></span><br><span class="line"><span class="string">   </span></span><br><span class="line"><span class="string">  - 获取控件id</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br><span class="line">private int getId(<span class="built_in">String</span> idName)&#123;</span><br><span class="line">	Resources resources = getResources();</span><br><span class="line">	int resId = resources.getIdentifier(idName, <span class="string">"id"</span>, getPackageName());</span><br><span class="line">	<span class="keyword">return</span> resId;</span><br><span class="line">&#125;</span><br><span class="line"><span class="string">``</span><span class="string">`    	</span></span><br><span class="line"><span class="string">	</span></span><br><span class="line"><span class="string">  - 获取动画id</span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br><span class="line">private int getAnimId(<span class="built_in">String</span> idName)&#123;</span><br><span class="line">	Resources resources = getResources();</span><br><span class="line">	int resId = resources.getIdentifier(idName, <span class="string">"anim"</span>, getPackageName());</span><br><span class="line">	<span class="keyword">return</span> resId;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">private int getResId(<span class="built_in">String</span> resourceName)&#123;</span><br><span class="line">	Resources resources = getResources();</span><br><span class="line">	int resId = resources.getIdentifier(resourceName,<span class="string">"layout"</span>,getPackageName());</span><br><span class="line">	<span class="keyword">return</span> resId;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
-<blockquote>
-<h4 id="作为一个Android开发者来说，也许你已经发现上面代码的不同点了，就是getIdentifier-里面的第二个参数的不同，我们可以通过替换这个参数来达到大部分的寻找资源id-（example：id-string-anim-attr-drawable-layout-color-menu-styles-）"><a href="#作为一个Android开发者来说，也许你已经发现上面代码的不同点了，就是getIdentifier-里面的第二个参数的不同，我们可以通过替换这个参数来达到大部分的寻找资源id-（example：id-string-anim-attr-drawable-layout-color-menu-styles-）" class="headerlink" title="作为一个Android开发者来说，也许你已经发现上面代码的不同点了，就是getIdentifier()里面的第二个参数的不同，我们可以通过替换这个参数来达到大部分的寻找资源id``（example：id, string, anim, attr, drawable, layout, color, menu, styles...）"></a>作为一个<code>Android</code>开发者来说，也许你已经发现上面代码的不同点了，就是<code>getIdentifier()</code>里面的第二个参数的不同，我们可以通过替换这个参数来达到大部分的寻找资源<code>id``（example：id, string, anim, attr, drawable, layout, color, menu, styles...）</code></h4></blockquote>
+<pre><code>- 获取字符串id
+
+    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">private int getStringId(<span class="built_in">String</span> stringName)&#123;</span><br><span class="line">	Resources resources = getResources();</span><br><span class="line">	int resId =resources.getIdentifier(stringName,<span class="string">"string"</span>, getPackageName());</span><br><span class="line">	<span class="keyword">return</span> resId;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+- 获取控件id
+
+    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">private int getId(<span class="built_in">String</span> idName)&#123;</span><br><span class="line">	Resources resources = getResources();</span><br><span class="line">	int resId = resources.getIdentifier(idName, <span class="string">"id"</span>, getPackageName());</span><br><span class="line">	<span class="keyword">return</span> resId;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+- 获取动画id
+
+    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">private int getAnimId(<span class="built_in">String</span> idName)&#123;</span><br><span class="line">	Resources resources = getResources();</span><br><span class="line">	int resId = resources.getIdentifier(idName, <span class="string">"anim"</span>, getPackageName());</span><br><span class="line">	<span class="keyword">return</span> resId;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>作为一个<code>Android</code>开发者来说，也许你已经发现上面代码的不同点了，就是<code>getIdentifier()</code>里面的第二个参数的不同，我们可以通过替换这个参数来达到大部分的寻找资源<code>id``（example：id, string, anim, attr, drawable, layout, color, menu, styles...）</code></p>
+</blockquote>
 <ul>
 <li><p>通过Java的强大的反射机制获取资源id</p>
 <ul>
 <li><p>通过反射获取一个资源id</p>
-<pre><code class="javascript">public int getAttrId(<span class="built_in">String</span> attrName) {  
-    <span class="keyword">try</span> {  
-      Class&lt;?&gt; loadClass = mContext.getClassLoader().loadClass(mContext.getPackageName() + <span class="string">".R"</span>);  
-      Class&lt;?&gt;[] classes = loadClass.getClasses();  
-      <span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; classes.length; i++) {  
-        <span class="keyword">if</span> (classes[i].getName().equals(mContext.getPackageName() + <span class="string">".R$attr"</span>)) {  
-          Field field = classes[i].getField(attrName);  
-          int attrId = field.getInt(<span class="literal">null</span>);  
-          <span class="keyword">return</span> attrId;  
-        }  
-      }  
-    } <span class="keyword">catch</span> (Exception e) {  
-       e.printStackTrace();  
-    }  
-    <span class="keyword">return</span> <span class="number">0</span>;  
- }
-</code></pre>
-</li>
-<li><p>首先使用反射能达到上面的获取一个id的情况，但是比较麻烦，当需要返回一个数组我们就不得不使用这种方法了</p>
-<pre><code class="javascript">private int[] getStyleableArryId(<span class="built_in">String</span> styleableName){
-    <span class="keyword">try</span> {
-        Class&lt;?&gt; loadClass = getContext().getClassLoader().loadClass(getContext().getPackageName() + <span class="string">".R"</span>);
-        Class&lt;?&gt;[] classes = loadClass.getClasses();
-        <span class="keyword">for</span>(int i=<span class="number">0</span> ;i&lt;classes.length ;i++){
-            Class&lt;?&gt; resClass = classes[i];
-            <span class="keyword">if</span>(resClass.getName().equals(getContext().getPackageName() + <span class="string">".R$styleable"</span>)){
-                   Field[] fields = resClass.getFields();
-                <span class="keyword">for</span> (int j = <span class="number">0</span>; j &lt; fields.length; j++) {
-                    <span class="keyword">if</span>(fields[j].getName().equals(styleableName)){
-                        int[] styleable = (int[]) fields[j].get(<span class="literal">null</span>);
-                           <span class="keyword">return</span> styleable;
-                    }
-                }
-            }
-        }
-    } <span class="keyword">catch</span> (Exception e) {
-        e.printStackTrace();
-    }
-    <span class="keyword">return</span> <span class="literal">null</span>;
-}
-</code></pre>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">	public int getAttrId(<span class="built_in">String</span> attrName) &#123;  </span><br><span class="line">	    <span class="keyword">try</span> &#123;  </span><br><span class="line">	      Class&lt;?&gt; loadClass = mContext.getClassLoader().loadClass(mContext.getPackageName() + <span class="string">".R"</span>);  </span><br><span class="line">	      Class&lt;?&gt;[] classes = loadClass.getClasses();  </span><br><span class="line">	      <span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; classes.length; i++) &#123;  </span><br><span class="line">	        <span class="keyword">if</span> (classes[i].getName().equals(mContext.getPackageName() + <span class="string">".R$attr"</span>)) &#123;  </span><br><span class="line">	          Field field = classes[i].getField(attrName);  </span><br><span class="line">	          int attrId = field.getInt(<span class="literal">null</span>);  </span><br><span class="line">	          <span class="keyword">return</span> attrId;  </span><br><span class="line">	        &#125;  </span><br><span class="line">	      &#125;  </span><br><span class="line">	    &#125; <span class="keyword">catch</span> (Exception e) &#123;  </span><br><span class="line">	       e.printStackTrace();  </span><br><span class="line">	    &#125;  </span><br><span class="line">	    <span class="keyword">return</span> <span class="number">0</span>;  </span><br><span class="line">	&#125;   </span><br><span class="line">	<span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">	</span></span><br><span class="line"><span class="string">- 首先使用反射能达到上面的获取一个id的情况，但是比较麻烦，当需要返回一个数组我们就不得不使用这种方法了</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">	`</span><span class="string">``</span>javascript</span><br><span class="line">	private int[] getStyleableArryId(<span class="built_in">String</span> styleableName)&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			Class&lt;?&gt; loadClass = getContext().getClassLoader().loadClass(getContext().getPackageName() + <span class="string">".R"</span>);</span><br><span class="line">			Class&lt;?&gt;[] classes = loadClass.getClasses();</span><br><span class="line">			<span class="keyword">for</span>(int i=<span class="number">0</span> ;i&lt;classes.length ;i++)&#123;</span><br><span class="line">	    		Class&lt;?&gt; resClass = classes[i];</span><br><span class="line">				<span class="keyword">if</span>(resClass.getName().equals(getContext().getPackageName() + <span class="string">".R$styleable"</span>))&#123;</span><br><span class="line">	       			Field[] fields = resClass.getFields();</span><br><span class="line">	        		<span class="keyword">for</span> (int j = <span class="number">0</span>; j &lt; fields.length; j++) &#123;</span><br><span class="line">	            		<span class="keyword">if</span>(fields[j].getName().equals(styleableName))&#123;</span><br><span class="line">	                		int[] styleable = (int[]) fields[j].get(<span class="literal">null</span>);</span><br><span class="line">	               			<span class="keyword">return</span> styleable;</span><br><span class="line">	            		&#125;</span><br><span class="line">	        		&#125;</span><br><span class="line">	    		&#125;</span><br><span class="line">			&#125;</span><br><span class="line">	    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">	        e.printStackTrace();</span><br><span class="line">	    &#125;</span><br><span class="line">	    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
-<h4 id="但是在设置styleable的资源id的时候，如果你是自定义的View，如果需要引入自定义的attr-比如这样："><a href="#但是在设置styleable的资源id的时候，如果你是自定义的View，如果需要引入自定义的attr-比如这样：" class="headerlink" title="但是在设置styleable的资源id的时候，如果你是自定义的View，如果需要引入自定义的attr,比如这样："></a>但是在设置styleable的资源id的时候，如果你是自定义的View，如果需要引入自定义的attr,比如这样：</h4><pre><code class="javascript">public WheelVerticalView(Context context, final AttributeSet attrs) {
-   <span class="keyword">this</span>(context, attrs, R.attr.abstractWheelViewStyle);
-   <span class="keyword">this</span>(context, attrs, <span class="number">0</span>);
-}
-</code></pre>
+<h4 id="但是在设置styleable的资源id的时候，如果你是自定义的View，如果需要引入自定义的attr-比如这样："><a href="#但是在设置styleable的资源id的时候，如果你是自定义的View，如果需要引入自定义的attr-比如这样：" class="headerlink" title="但是在设置styleable的资源id的时候，如果你是自定义的View，如果需要引入自定义的attr,比如这样："></a>但是在设置styleable的资源id的时候，如果你是自定义的View，如果需要引入自定义的attr,比如这样：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public WheelVerticalView(Context context, final AttributeSet attrs) &#123;</span><br><span class="line">   <span class="keyword">this</span>(context, attrs, R.attr.abstractWheelViewStyle);</span><br><span class="line">   <span class="keyword">this</span>(context, attrs, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="那么你是不能通过上面的方法，来获取资源文件的，因为这是一个构造器，你只能另找它法了。"><a href="#那么你是不能通过上面的方法，来获取资源文件的，因为这是一个构造器，你只能另找它法了。" class="headerlink" title="那么你是不能通过上面的方法，来获取资源文件的，因为这是一个构造器，你只能另找它法了。"></a>那么你是不能通过上面的方法，来获取资源文件的，因为这是一个构造器，你只能另找它法了。</h4>
       
     </div>
