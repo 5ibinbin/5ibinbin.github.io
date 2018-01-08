@@ -118,7 +118,7 @@
 <meta property="og:site_name" content="ibinbin">
 <meta property="og:description" content="ionic混合开发调用Android系统相册，官方的cordova-image-picker插件在直接用的时候会在Android6.0以上的版本由于没有获得相应的存储权限而闪退。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-08T14:36:01.000Z">
+<meta property="og:updated_time" content="2018-01-08T14:42:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cordova修改相册插件和监听Android返回">
 <meta name="twitter:description" content="ionic混合开发调用Android系统相册，官方的cordova-image-picker插件在直接用的时候会在Android6.0以上的版本由于没有获得相应的存储权限而闪退。">
@@ -464,21 +464,19 @@
 </blockquote>
 <a id="more"></a>
 <ul>
-<li><p>解决方法一：</p>
-<ul>
-<li><p>在原有的<code>cordova</code>插件上面改动，添加了动态授权，我放在了<a href="https://github.com/5ibinbin/cordova-image-picker" target="_blank" rel="noopener">github</a> 用法和原来的相同。</p>
+<li>解决方法一：<blockquote>
+<p>在原有的<code>cordova</code>插件上面改动，添加了动态授权，我放在了<a href="https://github.com/5ibinbin/cordova-image-picker" target="_blank" rel="noopener">github</a> 用法和原来的相同。</p>
+</blockquote>
+</li>
+</ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getImgPicker</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> options = &#123;</span><br><span class="line">    maximumImagesCount: <span class="number">1</span>,</span><br><span class="line">    width: <span class="number">800</span>,</span><br><span class="line">    height: <span class="number">800</span>,</span><br><span class="line">    quality: <span class="number">80</span>,</span><br><span class="line">    title:<span class="string">''</span>,</span><br><span class="line">    message:<span class="string">''</span>,</span><br><span class="line">    outputType:<span class="number">1</span></span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="built_in">window</span>.imagePicker.getPictures(<span class="function"><span class="keyword">function</span> (<span class="params">results</span>) </span>&#123;</span><br><span class="line">    vm.userInfo.Url = results[<span class="number">0</span>];</span><br><span class="line">    <span class="built_in">console</span>.log(vm.userInfo.Url);</span><br><span class="line">    vm.upload(vm.userInfo.Url);</span><br><span class="line">  &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">    publicMethod.showLoadingNoBackdrop(<span class="string">'调取相册失败'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(angular.toJson(error, <span class="literal">true</span>));</span><br><span class="line">  &#125;, options);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>解决方法二：</p>
 <ul>
-<li><p>添加一个新的插件，专门获取所需的权限<a href="https://www.npmjs.com/package/cordova-plugin-android-permissions" target="_blank" rel="noopener">cordova-plugin-android-permissions</a>，下面是用法。</p>
+<li>解决方法二：</li>
+</ul>
+<blockquote>
+<p>添加一个新的插件，专门获取所需的权限<a href="https://www.npmjs.com/package/cordova-plugin-android-permissions" target="_blank" rel="noopener">cordova-plugin-android-permissions</a>，下面是用法。</p>
+</blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> permissions = cordova.plugins.permissions;</span><br><span class="line">permissions.hasPermission(permissions.CAMERA, checkPermissionCallback, <span class="literal">null</span>);</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkPermissionCallback</span>(<span class="params">status</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(!status.hasPermission) &#123;</span><br><span class="line">    <span class="keyword">var</span> errorCallback = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.warn(<span class="string">'Camera permission is not turned on'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    permissions.requestPermission(</span><br><span class="line">      permissions.CAMERA,</span><br><span class="line">      <span class="function"><span class="keyword">function</span>(<span class="params">status</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!status.hasPermission) errorCallback();</span><br><span class="line">      &#125;,</span><br><span class="line">      errorCallback);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
 <blockquote>
 <p><code>ionic</code> 监听<code>Android</code>的返回键和双击退出程序(直接上代码)</p>
 </blockquote>
@@ -547,8 +545,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/05/Android/Android观察者模式/" rel="next" title="Android观察者模式">
-                <i class="fa fa-chevron-left"></i> Android观察者模式
+              <a href="/2017/05/05/Android/Android MVC与MVP的区别和理解/" rel="next" title="Android MVC和MVP的区别和理解">
+                <i class="fa fa-chevron-left"></i> Android MVC和MVP的区别和理解
               </a>
             
           </div>
