@@ -110,19 +110,19 @@
 
 
 
-<meta name="description" content="哈希表  通过把关键码值映射到表中一个位置来访问记录，根据Key value而直接进行访问的数据结构。这个映射函数叫做散列函数，存放记录的数组叫做散列表。    对比  数组：查找容易，插入和删除较难链表：查找较难，插入和删除比较容易哈希表：把上述的两种优势有效的结合起来    简单实现 目标方法① put(key, value) 向哈希表中增加一个元素② remove(key) 从哈希表中删除">
+<meta name="description" content="致敬不再年轻的马努·吉诺比利 哈希表  通过把关键码值映射到表中一个位置来访问记录，根据Key value而直接进行访问的数据结构。这个映射函数叫做散列函数，存放记录的数组叫做散列表。    对比  数组：查找容易，插入和删除较难链表：查找较难，插入和删除比较容易哈希表：把上述的两种优势有效的结合起来    简单实现">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="哈希表">
 <meta property="og:url" content="http://5ibinbin.com/2018/01/11/Algorithm/哈希表/index.html">
 <meta property="og:site_name" content="ibinbin">
-<meta property="og:description" content="哈希表  通过把关键码值映射到表中一个位置来访问记录，根据Key value而直接进行访问的数据结构。这个映射函数叫做散列函数，存放记录的数组叫做散列表。    对比  数组：查找容易，插入和删除较难链表：查找较难，插入和删除比较容易哈希表：把上述的两种优势有效的结合起来    简单实现 目标方法① put(key, value) 向哈希表中增加一个元素② remove(key) 从哈希表中删除">
+<meta property="og:description" content="致敬不再年轻的马努·吉诺比利 哈希表  通过把关键码值映射到表中一个位置来访问记录，根据Key value而直接进行访问的数据结构。这个映射函数叫做散列函数，存放记录的数组叫做散列表。    对比  数组：查找容易，插入和删除较难链表：查找较难，插入和删除比较容易哈希表：把上述的两种优势有效的结合起来    简单实现">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://5ibinbin.com/img/Manu.jpeg">
-<meta property="og:updated_time" content="2018-01-11T01:32:26.000Z">
+<meta property="og:updated_time" content="2018-01-11T01:36:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="哈希表">
-<meta name="twitter:description" content="哈希表  通过把关键码值映射到表中一个位置来访问记录，根据Key value而直接进行访问的数据结构。这个映射函数叫做散列函数，存放记录的数组叫做散列表。    对比  数组：查找容易，插入和删除较难链表：查找较难，插入和删除比较容易哈希表：把上述的两种优势有效的结合起来    简单实现 目标方法① put(key, value) 向哈希表中增加一个元素② remove(key) 从哈希表中删除">
+<meta name="twitter:description" content="致敬不再年轻的马努·吉诺比利 哈希表  通过把关键码值映射到表中一个位置来访问记录，根据Key value而直接进行访问的数据结构。这个映射函数叫做散列函数，存放记录的数组叫做散列表。    对比  数组：查找容易，插入和删除较难链表：查找较难，插入和删除比较容易哈希表：把上述的两种优势有效的结合起来    简单实现">
 <meta name="twitter:image" content="http://5ibinbin.com/img/Manu.jpeg">
 
 
@@ -461,7 +461,7 @@
       
 
       
-        <p><img src="/img/Manu.jpeg" alt="吉诺比利"></p>
+        <h4 id="致敬不再年轻的马努·吉诺比利"><a href="#致敬不再年轻的马努·吉诺比利" class="headerlink" title="致敬不再年轻的马努·吉诺比利"></a>致敬不再年轻的马努·吉诺比利</h4><p><img src="/img/Manu.jpeg" alt="吉诺比利"></p>
 <p><strong>哈希表</strong></p>
 <blockquote>
 <p>通过把关键码值映射到表中一个位置来访问记录，根据<code>Key value</code>而直接进行访问的数据结构。这个映射函数叫做散列函数，存放记录的数组叫做散列表。  </p>
@@ -471,6 +471,7 @@
 <p>数组：查找容易，插入和删除较难<br>链表：查找较难，插入和删除比较容易<br>哈希表：把上述的两种优势有效的结合起来  </p>
 </blockquote>
 <p><strong>简单实现</strong></p>
+<a id="more"></a>
 <h6 id="目标方法"><a href="#目标方法" class="headerlink" title="目标方法"></a>目标方法</h6><p>① <code>put(key, value)</code> 向哈希表中增加一个元素<br>② <code>remove(key)</code> 从哈希表中删除一个元素<br>③ <code>get(key)</code> 查找特定元素  </p>
 <h6 id="创建HashTable"><a href="#创建HashTable" class="headerlink" title="创建HashTable"></a>创建<code>HashTable</code></h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">HashTable</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> table = [];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
