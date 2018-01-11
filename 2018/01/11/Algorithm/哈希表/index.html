@@ -94,7 +94,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="排序,算法," />
+  <meta name="keywords" content="算法," />
 
 
 
@@ -110,18 +110,20 @@
 
 
 
-<meta name="description" content="算法思想 和归并排序一样，快速排序也采用分治的思想  ① 先从数组中取出一个数作为基准数② 分区过程 – 将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边③ 再对左右区间重复第二步，直到各区间只有一个数  复杂度  快排的平均时间复杂度为O(nlogn)，空间复杂度为O(logn)，快速排序是不稳定的，但每次都能确定一个元素所在序列中的最终位置，复杂度与初始序列(基准值)有关">
-<meta name="keywords" content="排序,算法">
+<meta name="description" content="哈希表  通过把关键码值映射到表中一个位置来访问记录，根据Key value而直接进行访问的数据结构。这个映射函数叫做散列函数，存放记录的数组叫做散列表。    对比  数组：查找容易，插入和删除较难链表：查找较难，插入和删除比较容易哈希表：把上述的两种优势有效的结合起来    简单实现 目标方法① put(key, value) 向哈希表中增加一个元素② remove(key) 从哈希表中删除">
+<meta name="keywords" content="算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="快速排序">
-<meta property="og:url" content="http://5ibinbin.com/2018/01/07/Algorithm/快速排序/index.html">
+<meta property="og:title" content="哈希表">
+<meta property="og:url" content="http://5ibinbin.com/2018/01/11/Algorithm/哈希表/index.html">
 <meta property="og:site_name" content="ibinbin">
-<meta property="og:description" content="算法思想 和归并排序一样，快速排序也采用分治的思想  ① 先从数组中取出一个数作为基准数② 分区过程 – 将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边③ 再对左右区间重复第二步，直到各区间只有一个数  复杂度  快排的平均时间复杂度为O(nlogn)，空间复杂度为O(logn)，快速排序是不稳定的，但每次都能确定一个元素所在序列中的最终位置，复杂度与初始序列(基准值)有关">
+<meta property="og:description" content="哈希表  通过把关键码值映射到表中一个位置来访问记录，根据Key value而直接进行访问的数据结构。这个映射函数叫做散列函数，存放记录的数组叫做散列表。    对比  数组：查找容易，插入和删除较难链表：查找较难，插入和删除比较容易哈希表：把上述的两种优势有效的结合起来    简单实现 目标方法① put(key, value) 向哈希表中增加一个元素② remove(key) 从哈希表中删除">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-05T03:14:09.000Z">
+<meta property="og:image" content="http://5ibinbin.com/img/Manu%20Ginóbili.png">
+<meta property="og:updated_time" content="2018-01-11T01:27:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="快速排序">
-<meta name="twitter:description" content="算法思想 和归并排序一样，快速排序也采用分治的思想  ① 先从数组中取出一个数作为基准数② 分区过程 – 将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边③ 再对左右区间重复第二步，直到各区间只有一个数  复杂度  快排的平均时间复杂度为O(nlogn)，空间复杂度为O(logn)，快速排序是不稳定的，但每次都能确定一个元素所在序列中的最终位置，复杂度与初始序列(基准值)有关">
+<meta name="twitter:title" content="哈希表">
+<meta name="twitter:description" content="哈希表  通过把关键码值映射到表中一个位置来访问记录，根据Key value而直接进行访问的数据结构。这个映射函数叫做散列函数，存放记录的数组叫做散列表。    对比  数组：查找容易，插入和删除较难链表：查找较难，插入和删除比较容易哈希表：把上述的两种优势有效的结合起来    简单实现 目标方法① put(key, value) 向哈希表中增加一个元素② remove(key) 从哈希表中删除">
+<meta name="twitter:image" content="http://5ibinbin.com/img/Manu%20Ginóbili.png">
 
 
 
@@ -171,13 +173,13 @@
 
 
 
-  <link rel="canonical" href="http://5ibinbin.com/2018/01/07/Algorithm/快速排序/"/>
+  <link rel="canonical" href="http://5ibinbin.com/2018/01/11/Algorithm/哈希表/"/>
 
 
 
 
 
-  <title> 快速排序 | ibinbin </title>
+  <title> 哈希表 | ibinbin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -354,7 +356,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2018/01/07/Algorithm/快速排序/">
+    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2018/01/11/Algorithm/哈希表/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ibinbin">
@@ -375,7 +377,7 @@
             
             
               
-                快速排序
+                哈希表
               
             
           </h1>
@@ -390,8 +392,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-07T00:00:00+08:00">
-                2018-01-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-11T00:00:00+08:00">
+                2018-01-11
               </time>
             
 
@@ -430,7 +432,7 @@
 
           
           
-             <span id="/2018/01/07/Algorithm/快速排序/" class="leancloud_visitors" data-flag-title="快速排序">
+             <span id="/2018/01/11/Algorithm/哈希表/" class="leancloud_visitors" data-flag-title="哈希表">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -459,32 +461,40 @@
       
 
       
-        <p><strong>算法思想</strong></p>
-<p><strong>和归并排序一样，快速排序也采用分治的思想</strong></p>
+        <p><img src="/img/Manu Ginóbili.png" alt="吉诺比利"></p>
+<p><strong>哈希表</strong></p>
 <blockquote>
-<p>① 先从数组中取出一个数作为基准数<br>② 分区过程 – 将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边<br>③ 再对左右区间重复第二步，直到各区间只有一个数</p>
+<p>通过把关键码值映射到表中一个位置来访问记录，根据<code>Key value</code>而直接进行访问的数据结构。这个映射函数叫做散列函数，存放记录的数组叫做散列表。  </p>
 </blockquote>
-<p><strong>复杂度</strong></p>
+<p><strong>对比</strong></p>
 <blockquote>
-<p>快排的平均时间复杂度为<code>O(nlogn)</code>，空间复杂度为<code>O(logn)</code>，快速排序是不稳定的，但每次都能确定一个元素所在序列中的最终位置，复杂度与初始序列<code>(基准值)</code>有关  </p>
+<p>数组：查找容易，插入和删除较难<br>链表：查找较难，插入和删除比较容易<br>哈希表：把上述的两种优势有效的结合起来  </p>
 </blockquote>
-<a id="more"></a>
-<p><strong>代码实现</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">arr, indexLeft, indexRight</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (indexLeft &gt;= indexRight)&#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">let</span> index = position(arr, indexLeft, indexRight);</span><br><span class="line">	quickSort(arr, indexLeft, index - <span class="number">1</span>);</span><br><span class="line">	quickSort(arr, index + <span class="number">1</span>, indexRight);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>简单实现</strong></p>
+<h6 id="目标方法"><a href="#目标方法" class="headerlink" title="目标方法"></a>目标方法</h6><p>① <code>put(key, value)</code> 向哈希表中增加一个元素<br>② <code>remove(key)</code> 从哈希表中删除一个元素<br>③ <code>get(key)</code> 查找特定元素  </p>
+<h6 id="创建HashTable"><a href="#创建HashTable" class="headerlink" title="创建HashTable"></a>创建<code>HashTable</code></h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">HashTable</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> table = [];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>① <code>第2行</code>为递归的终止条件<br>② 可能有人对<code>第6、7行</code>有疑问，为什么递归的时候少了<code>index</code>，因为<code>index</code>就数组的基准值  </p>
+<p>使用数组来表示哈希表  </p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">position</span> (<span class="params">arr, indexLeft, indexRight</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> key = arr[indexLeft];</span><br><span class="line">	<span class="keyword">let</span> low = indexLeft;</span><br><span class="line">	<span class="keyword">let</span> high = indexRight;</span><br><span class="line">	<span class="keyword">while</span> (low &lt; high)&#123;</span><br><span class="line">		<span class="keyword">while</span> (arr[high] &gt; key)&#123;</span><br><span class="line">			high--;</span><br><span class="line">		&#125;</span><br><span class="line">		arr[low] = arr[high];</span><br><span class="line">		<span class="keyword">while</span> (arr[low] &lt; key)&#123;</span><br><span class="line">			low++;</span><br><span class="line">		&#125;</span><br><span class="line">		arr[high] = arr[low];</span><br><span class="line">	&#125;</span><br><span class="line">	arr[low] = key;</span><br><span class="line">	<span class="keyword">return</span> low;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="创建HashCode散列函数"><a href="#创建HashCode散列函数" class="headerlink" title="创建HashCode散列函数"></a>创建<code>HashCode</code>散列函数</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> HashCode = <span class="function"><span class="keyword">function</span>(<span class="params">key</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> hash = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i&lt; key.length; i++)&#123;</span><br><span class="line">		hash += key.charCodeAt(i);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> hash%<span class="number">37</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>① <code>第5行</code>判断数组长度大于<code>1</code><br>② <code>第6~9</code>行从数组末端开始和基准值<code>key</code>比较，如果大于<code>key</code>则往前移，否则和第<code>low</code>个值交换<br>③ <code>第10~13</code>从数组头部开始和基准值<code>key</code>比较，如果小于<code>key</code>则往后移，否则和第<code>high</code>个值交换<br>直到<code>low</code>不小于<code>high</code>，<code>while</code>循环结束，此时将基准值赋予角标为<code>low</code>处。</p>
+<p>使用<code>HashCode()</code>确定每个<code>key</code>所对应的<code>ASCII</code>值，把它当做<code>hash</code>值。这个函数就是我们所说的散列函数。  </p>
 </blockquote>
-<p><strong>可以看下面的例子，增加以下理解</strong></p>
-<p><strong><font color="green">5</font> 5 4 8 3 2 6 7 <font color="red">9</font></strong>      首先用<code>5</code>当作基准，使用<code>i j</code>两个指针分别从两边进行扫描，首先比较<code>9</code>和<code>5</code>，<code>9</code>比<code>5</code>大，<code>j</code>左移。继续比较，<code>7</code>&gt;<code>5</code>, <code>6</code>&gt;<code>5</code>, <code>j</code>左移两次，接着比较<code>2</code>和<code>5</code>，<code>2</code>&lt;<code>5</code>,交换</p>
-<p><strong><font color="green">5</font> <font color="red">2</font> 4 8 3 _ 6 7 9</strong>  将<code>2</code>移至<code>i</code>原来所在的位置，同时把<code>2</code>原来所在的位置空出来<font color="red">(相当于空出来，其实2还留在原地)</font>，并开始从左侧比较。<code>4</code>和<code>5</code>比较  </p>
-<p><strong><font color="green">5</font> 2 <font color="red">4</font>  8 3 _ 6 7 9</strong>  <code>4</code>&lt;<code>5</code>，不交换，<code>i</code>继续右移  </p>
-<p><strong><font color="green">5</font> 2 4 _ 3 <font color="red">8</font> 6 7 9</strong>  <code>8</code>&gt;<code>5</code>，将<code>8</code>与<code>j</code>所在的位置交换，<code>j</code>左移，将<code>3</code>与<code>5</code>比较</p>
-<p><strong><font color="green">5</font> 2 4 <font color="red">3</font> _  8 6 7 9</strong>  <code>3</code>&lt;<code>5</code>，<code>3</code>移至<code>i</code>所在的位置，<code>i</code>继续右移，此时<code>i=j</code>，循环结束。</p>
-<p><strong><font color="green">5</font> 2 4 3 <font color="red">5</font> 8 6 7 9</strong>  循环结束将基准值<code>5</code>移至空位。此时一轮排序到此结束，之后将以同样的方式继续比较，直到数据排列完成</p>
+<h6 id="put"><a href="#put" class="headerlink" title="put"></a><code>put</code></h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.put = <span class="function"><span class="keyword">function</span>(<span class="params">key, value</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> position = HashCode(key);</span><br><span class="line">	table[position] = value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>先得到<code>hash</code>值，然后把相应的<code>value</code>放入对应的位置  </p>
+</blockquote>
+<h6 id="get"><a href="#get" class="headerlink" title="get"></a><code>get</code></h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.get = <span class="function"><span class="keyword">function</span>(<span class="params">key</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> table[HashCode(key)];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>根据<code>hash</code>值取<code>value</code>  </p>
+</blockquote>
+<h6 id="remove"><a href="#remove" class="headerlink" title="remove"></a><code>remove</code></h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.remove = <span class="function"><span class="keyword">function</span>(<span class="params">key</span>)</span>&#123;</span><br><span class="line">	table[HashCode(key)] = <span class="literal">undefined</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>简单粗暴的置为<code>undefined</code>  </p>
+</blockquote>
+<p><strong>哈希冲突</strong></p>
+<h6 id="提到哈希表我们必然要解决的就是哈希冲突。本文将介绍两种方式：分离链接和线性探查"><a href="#提到哈希表我们必然要解决的就是哈希冲突。本文将介绍两种方式：分离链接和线性探查" class="headerlink" title="提到哈希表我们必然要解决的就是哈希冲突。本文将介绍两种方式：分离链接和线性探查"></a>提到哈希表我们必然要解决的就是哈希冲突。本文将介绍两种方式：分离链接和线性探查</h6><p><strong>分离链接</strong></p>
+<p><strong>线性探查</strong></p>
 
       
     </div>
@@ -493,7 +503,7 @@
       
         <div class="copyright">
         <p><span>
-        <b>本文地址：</b><a href="/2018/01/07/Algorithm/快速排序/" title="快速排序">http://5ibinbin.com/2018/01/07/Algorithm/快速排序/</a><br /><b>转载请注明出处！</b>
+        <b>本文地址：</b><a href="/2018/01/11/Algorithm/哈希表/" title="哈希表">http://5ibinbin.com/2018/01/11/Algorithm/哈希表/</a><br /><b>转载请注明出处！</b>
         </span></p>
         </div>
       
@@ -535,8 +545,6 @@
       
         <div class="post-tags">
           
-            <a href="/tags/排序/" rel="tag"><i class="fa fa-tag"></i> 排序</a>
-          
             <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
           
         </div>
@@ -550,8 +558,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/06/Algorithm/归并排序/" rel="next" title="归并排序">
-                <i class="fa fa-chevron-left"></i> 归并排序
+              <a href="/2018/01/09/Algorithm/二叉搜索树/" rel="next" title="二叉搜索树">
+                <i class="fa fa-chevron-left"></i> 二叉搜索树
               </a>
             
           </div>
@@ -559,10 +567,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/08/Algorithm/顺序二分查找/" rel="prev" title="顺序查找和二分查找">
-                顺序查找和二分查找 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
