@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[JavaScript 链表]]></title>
+    <url>%2F2018%2F01%2F19%2FJavaScript%2FJavaScript%20%E9%93%BE%E8%A1%A8%2F</url>
+    <content type="text"><![CDATA[萌神扣篮了 前言 我们知道数组是一个查找很迅速的数据结构而链表的优势就在于插入和删除很快的一种数据结构，此次将通过实例来实现链表的数据结构。 链表API append(element): 向列表尾部添加一个新的项 insert(position, element): 向列表的特定位置插入一个新项 remove(element): 从列表中移除 removeAt(position): 从列表的特定位置移除一项 isEmpty(): 判断列表是否为空 size(): 返回链表的元素个数 链表实现 类似这样 123456789101112function LinkedList()&#123; var length = 0; var head = null; var Node = function(element)&#123; this.element = element; this.next = null; &#125; // 具体方法 ··· ··· ···&#125; 首先新建了LinkList的数据结构，初始化了链表的长度为0，头结点(head)为null，并通过Node类声明了每个节点的数据结构(元素和指针组成)，之后的具体实现我们下面依次介绍。 append 1234567891011121314this.append = function(element)&#123; var node = new Node(element); var current = null; if (head === null)&#123; head = node; &#125; else &#123; current = head; while(current.next)&#123; current = current.next; &#125; current.next = node; &#125; length++;&#125; 首先初始化节点，判断当前链表是否为空，为空则为head节点，否则遍历链表知道找到最后一个节点，并把当前节点放到最后位置，长度(length)+ 1 insert 12345678910111213141516171819202122this.insert = function(position, element)&#123; if (position &gt;=0 &amp;&amp; position &lt;= length)&#123; var node = new Node(element); var current = head; var previous = null; var index = 0; if (position === 0)&#123; node.next = head; head = node; &#125; else &#123; while (index++ &lt; position)&#123; previous = current; current = current.next; &#125; node.next = current; previous.next = node; &#125; length++; return true; &#125; return false;&#125; ① 判断需要插入的位置，防止越界② position === 0，插入头结点③ position !== 0，遍历节点，找到要插入的位置和前一个位置，然后再插入其中 removeAt 1234567891011121314151617181920this.removeAt = function(position)&#123; if (position &gt;= 0 &amp;&amp; position &lt;= length)&#123; var current = head; var previous = null; var index = 0; if (position === 0)&#123; head = current.next; &#125; else &#123; while(index++ &lt; position)&#123; previous = current; current = current.next; &#125; current = current.next; previous.next = current; &#125; length--; return current.element; &#125; return null;&#125; 和插入方法类似，判断需要删除的位置，防止越界position === 0，删除头结点(将头结点的下一节点指向头结点)position !== 0，遍历节点，找到要删除的位置，将前一节点的下一节点指向当前节点的下一节点。如下图： remove 上一步我们已经实现removeAt，实现remove可以借助removeAt，如下所示：123456789101112this.indexOf = function(element)&#123; var current = head, var index = -1; while(current)&#123; if (element === current.element)&#123; return index; &#125; index++; current = current.next; &#125; return -1;&#125; 首先找到我们要删除的元素的位置(index) 1234this.remove = function(element)&#123; var index = this.indexOf(element); return this.removeAt(index);&#125; 然后借助removeAt删除元素 isEmpty 123this.isEmpty = function()&#123; return length === 0;&#125; 直接判断当前长度是否为0 size 123this.size = function()&#123; return length;&#125; 直接返回length 本次内容到此结束，我们下次再见！！！]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>链表</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[JavaScript 预处理机制]]></title>
     <url>%2F2018%2F01%2F17%2FJavaScript%2FJavaScript%20%E9%A2%84%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6%2F</url>
     <content type="text"><![CDATA[我韦德36岁生日快乐！ JavaScript是一种描述型脚本语言，它不同于java或C#等编译性语言,它不需要进行编译成中间语言,而是由浏览器进行动态地解析与执行 代码块 JS是按照代码块来进行编译和执行的，代码块间相互独立，但变量和方法共享(ES5)，ES6增加了块级作用域，故块级的变量和方法已不满足共享。 12345678方式一：&lt;script&gt; console.log('script代码块');&lt;/script&gt;方式二：&#123; console.log('&#123;&#125; 代码块');&#125; 函数定义 JavaScript中函数定义一般包括：匿名函数(赋值式函数)和 声明式函数12345678// 声明式函数function Func()&#123; // 函数体&#125;// 赋值式函数let Func = function()&#123; // 函数体&#125; 在页面加载过程中如果遇到声明式函数会对它进行预处理(预编译)，当遇到赋值式函数时只是将函数赋给变量。对于变量也只是将变量进行声明，并未进行初始化及赋值操作。 样例说明 1234Func(); // 输出：声明式函数function Func()&#123; console.log('声明式函数');&#125; 由此可见声明式函数Func已经进行了预处理，我们可以直接进行调用。 1234Func();var Func = function()&#123; console.log('赋值式函数');&#125; 在本例中会报Func is not a function，程序并没有对赋值式函数Func()进行预处理，这导致我们的并没有发现这个方法。这也是我们推荐使用显示的方式声明函数的原因。 同理，我们的变量也会遇到同样的问题1console.log(str); 此时会报str is not defined，我们根本就没有声明这个变量。接着看下面例子 12console.log(str);var str = 'string'; 此时程序会输出undefined，这是因为程序在预处理过程中对变量str进行了声明，但是没有进行初始化或赋值操作；如果将程序上下交换一下就会正常执行。 body body的onload函数与body内部函数的执行123456789101112&lt;script type="text/javascript"&gt; console.log("first"); function Func()&#123; console.log("third"); &#125; &lt;/script&gt; &lt;body onload="Func()"&gt; &lt;/body&gt; &lt;script type="text/javascript"&gt; console.log("second"); &lt;/script&gt; 根据HTML文档流的执行顺序，需要在页面元素渲染前执行的js代码应该放在&lt;body&gt;前面的&lt;script&gt;代码块中，而需要在页面元素加载完后的js放在&lt;/body&gt;元素后面，body标签的onload事件是在最后执行的。 执行期 下一篇我们将通过for循环与setTimeout来说明程序的同步执行问题。]]></content>
@@ -41,8 +52,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>查找</tag>
         <tag>算法</tag>
+        <tag>查找</tag>
       </tags>
   </entry>
   <entry>
@@ -53,8 +64,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>查找</tag>
         <tag>算法</tag>
+        <tag>查找</tag>
       </tags>
   </entry>
   <entry>
@@ -65,8 +76,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>排序</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -77,8 +88,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>排序</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -89,8 +100,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>排序</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -101,8 +112,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>排序</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -113,8 +124,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>排序</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
