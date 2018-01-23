@@ -94,7 +94,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="React Native," />
+  <meta name="keywords" content="闭包," />
 
 
 
@@ -110,18 +110,20 @@
 
 
 
-<meta name="description" content="在Android开发中有一个以key-value形式轻量级的数据存储方式—SharedPreferences, 类似的React Native中也有一个–AsyncStorage AsyncStorage是一个简单的、异步的、持久化的Key-Value存储系统，它对于App来说是全局性的  API1static getItem(key: string, callback?: ?(error: ?">
-<meta name="keywords" content="React Native">
+<meta name="description" content="考辛斯：听说有人要交易我？   本文转载自前端学习指南的这篇文章(写的很清晰易懂，实在不忍心修改)  《javascript高级程序设计》（第三版）第7章第2节：  闭包是指有权访问另一个函数作用域中的变量函数    《javascript权威指南》(第六版)第8章第6节：  从技术的角度讲，所有的JavaScript函数都是闭包：它们都是对象，它们都关联到作用域链。    本文作者的理解(当然我">
+<meta name="keywords" content="闭包">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React Native AsyncStorage 封装">
-<meta property="og:url" content="http://5ibinbin.com/2017/06/22/React Native 学习总结/React Native AsyncStorage 封装/index.html">
+<meta property="og:title" content="JavaScript 闭包">
+<meta property="og:url" content="http://5ibinbin.com/2018/01/23/JavaScript/JavaScript 闭包/index.html">
 <meta property="og:site_name" content="ibinbin">
-<meta property="og:description" content="在Android开发中有一个以key-value形式轻量级的数据存储方式—SharedPreferences, 类似的React Native中也有一个–AsyncStorage AsyncStorage是一个简单的、异步的、持久化的Key-Value存储系统，它对于App来说是全局性的  API1static getItem(key: string, callback?: ?(error: ?">
+<meta property="og:description" content="考辛斯：听说有人要交易我？   本文转载自前端学习指南的这篇文章(写的很清晰易懂，实在不忍心修改)  《javascript高级程序设计》（第三版）第7章第2节：  闭包是指有权访问另一个函数作用域中的变量函数    《javascript权威指南》(第六版)第8章第6节：  从技术的角度讲，所有的JavaScript函数都是闭包：它们都是对象，它们都关联到作用域链。    本文作者的理解(当然我">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-29T13:54:12.000Z">
+<meta property="og:image" content="http://5ibinbin.com/img/Cousins.jpg">
+<meta property="og:updated_time" content="2018-01-23T10:44:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React Native AsyncStorage 封装">
-<meta name="twitter:description" content="在Android开发中有一个以key-value形式轻量级的数据存储方式—SharedPreferences, 类似的React Native中也有一个–AsyncStorage AsyncStorage是一个简单的、异步的、持久化的Key-Value存储系统，它对于App来说是全局性的  API1static getItem(key: string, callback?: ?(error: ?">
+<meta name="twitter:title" content="JavaScript 闭包">
+<meta name="twitter:description" content="考辛斯：听说有人要交易我？   本文转载自前端学习指南的这篇文章(写的很清晰易懂，实在不忍心修改)  《javascript高级程序设计》（第三版）第7章第2节：  闭包是指有权访问另一个函数作用域中的变量函数    《javascript权威指南》(第六版)第8章第6节：  从技术的角度讲，所有的JavaScript函数都是闭包：它们都是对象，它们都关联到作用域链。    本文作者的理解(当然我">
+<meta name="twitter:image" content="http://5ibinbin.com/img/Cousins.jpg">
 
 
 
@@ -171,13 +173,13 @@
 
 
 
-  <link rel="canonical" href="http://5ibinbin.com/2017/06/22/React Native 学习总结/React Native AsyncStorage 封装/"/>
+  <link rel="canonical" href="http://5ibinbin.com/2018/01/23/JavaScript/JavaScript 闭包/"/>
 
 
 
 
 
-  <title> React Native AsyncStorage 封装 | ibinbin </title>
+  <title> JavaScript 闭包 | ibinbin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -354,7 +356,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/06/22/React Native 学习总结/React Native AsyncStorage 封装/">
+    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2018/01/23/JavaScript/JavaScript 闭包/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ibinbin">
@@ -375,7 +377,7 @@
             
             
               
-                React Native AsyncStorage 封装
+                JavaScript 闭包
               
             
           </h1>
@@ -390,8 +392,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-22T00:00:00+08:00">
-                2017-06-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-23T00:00:00+08:00">
+                2018-01-23
               </time>
             
 
@@ -413,8 +415,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/React-Native/" itemprop="url" rel="index">
-                    <span itemprop="name">React Native</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -430,7 +432,7 @@
 
           
           
-             <span id="/2017/06/22/React Native 学习总结/React Native AsyncStorage 封装/" class="leancloud_visitors" data-flag-title="React Native AsyncStorage 封装">
+             <span id="/2018/01/23/JavaScript/JavaScript 闭包/" class="leancloud_visitors" data-flag-title="JavaScript 闭包">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -459,29 +461,86 @@
       
 
       
-        <blockquote>
-<p>在<code>Android</code>开发中有一个以<code>key-value</code>形式轻量级的数据存储方式—<code>SharedPreferences</code>, 类似的<code>React Native</code>中也有一个–<code>AsyncStorage</code></p>
-<p><code>AsyncStorage</code>是一个简单的、异步的、持久化的<code>Key-Value</code>存储系统，它对于<code>App</code>来说是全局性的</p>
+        <p><strong>考辛斯：听说有人要交易我？</strong></p>
+<p><img src="/img/Cousins.jpg" alt="Cousins"></p>
+<blockquote>
+<p>本文转载自前端学习指南的<a href="https://zhuanlan.zhihu.com/p/22486908" target="_blank" rel="noopener">这篇文章</a>(写的很清晰易懂，实在不忍心修改)</p>
 </blockquote>
-<h4 id="API"><a href="#API" class="headerlink" title="API"></a>API</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> getItem(key: string, callback?: ?<span class="function">(<span class="params">error: ?<span class="built_in">Error</span>, result: ?string</span>) =&gt;</span> <span class="keyword">void</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>《javascript高级程序设计》（第三版）第7章第2节：</strong></p>
+<blockquote>
+<p>闭包是指有权访问另一个函数作用域中的变量函数  </p>
+</blockquote>
+<p><strong>《javascript权威指南》(第六版)第8章第6节：</strong></p>
+<blockquote>
+<p>从技术的角度讲，所有的<code>JavaScript</code>函数都是闭包：它们都是对象，它们都关联到作用域链。  </p>
+</blockquote>
+<p><strong>本文作者的理解(当然我的理解和本文作者的理解是一样的)</strong></p>
+<blockquote>
+<p>「函数」和「函数内部能访问到的变量」(也叫环境)的总和，就是一个闭包。</p>
+</blockquote>
 <a id="more"></a>
+<h6 id="请用自己的话简述"><a href="#请用自己的话简述" class="headerlink" title="请用自己的话简述"></a>请用自己的话简述</h6><ul>
+<li><code>什么是「闭包」</code></li>
+<li><code>「闭包」的作用是什么</code></li>
+</ul>
+<h5 id="首先来简述什么是闭包"><a href="#首先来简述什么是闭包" class="headerlink" title="首先来简述什么是闭包"></a>首先来简述什么是闭包</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> local = <span class="string">'变量'</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(local);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>读取<code>key</code>字段并将结果作为第二个参数传递给<code>callback</code>。如果有任何错误发生，则会传递一个<code>Error</code>对象作为第一个参数。返回一个<code>Promise</code>对象。</p>
+<p>① 假如上面三行代码在一个立即执行函数中。<br>② 三行代码中，有一个局部变量<code>local</code>，有一个函数<code>foo</code>，<code>foo</code>里面可以访问到<code>local</code>变量。这就是闭包。</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> setItem(key: string, <span class="attr">value</span>: string, callback?: ?<span class="function">(<span class="params">error: ?<span class="built_in">Error</span></span>) =&gt;</span> <span class="keyword">void</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>有的同学就疑惑了，闭包这么简单么？我听说闭包是需要函数套函数，然后 <code>return</code> 一个函数的呀！比如这样：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> local = <span class="number">1</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    local++</span><br><span class="line">    <span class="keyword">return</span> local</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> bar</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> func = foo()</span><br><span class="line">func()</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>将<code>key</code>字段的值设置成<code>value</code>，并在完成后调用<code>callback</code>函数。如果有任何错误发生，则会传递一个<code>Error</code>对象作为第一个参数。返回一个<code>Promise</code>对象。</p>
+<p>这里面确实有闭包，<code>local</code> 变量和 <code>bar</code> 函数就组成了一个闭包（Closure）。</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> removeItem(key: string, callback?: ?<span class="function">(<span class="params">error: ?<span class="built_in">Error</span></span>) =&gt;</span> <span class="keyword">void</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>为什么要函数套函数呢？</strong></p>
 <blockquote>
-<p>删除一个字段。返回一个<code>Promise</code>对象。</p>
+<p>是因为需要局部变量，所以才把<code>local</code>放在一个函数里，如果不把<code>local</code>放在一个函数里，<code>local</code>就是一个全局变量了，达不到使用闭包的目的——隐藏变量（等会会讲）。</p>
 </blockquote>
-<h4 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">    AsyncStorage</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</span><br><span class="line"><span class="keyword">import</span> JsonUtil <span class="keyword">from</span> <span class="string">'../utils/JsonUtil'</span></span><br><span class="line">	</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StorageUtil</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * 保存</span></span><br><span class="line"><span class="comment">     * */</span></span><br><span class="line">    <span class="keyword">static</span> save(key, value, callback) &#123;</span><br><span class="line">        <span class="keyword">return</span> AsyncStorage.setItem(key, JsonUtil.jsonToStr(value), callback);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * 获取</span></span><br><span class="line"><span class="comment">     * */</span></span><br><span class="line">    <span class="keyword">static</span> get(key) &#123;</span><br><span class="line">        <span class="keyword">return</span> AsyncStorage.getItem(key).then(<span class="function">(<span class="params">value</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">const</span> jsonValue = JsonUtil.strToJson(value);</span><br><span class="line">            <span class="keyword">return</span> jsonValue;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * 更新</span></span><br><span class="line"><span class="comment">     * */</span></span><br><span class="line">    <span class="keyword">static</span> update(key, value) &#123;</span><br><span class="line">        StorageUtil.get(key).then(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">            value = <span class="keyword">typeof</span> value === <span class="string">'string'</span> ? value : <span class="built_in">Object</span>.assign(&#123;&#125;, item, value);</span><br><span class="line">            <span class="keyword">return</span> AsyncStorage.setItem(key, JsonUtil.jsonToStr(value));</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * 删除</span></span><br><span class="line"><span class="comment">     * */</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">delete</span>(key, callback) &#123;</span><br><span class="line">        AsyncStorage.removeItem(key, callback);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> StorageUtil;</span><br></pre></td></tr></table></figure>
+<h6 id="这也是为什么我上面要说「运行在一个立即执行函数中」。"><a href="#这也是为什么我上面要说「运行在一个立即执行函数中」。" class="headerlink" title="这也是为什么我上面要说「运行在一个立即执行函数中」。"></a>这也是为什么我上面要说「运行在一个立即执行函数中」。</h6><h6 id="有些人看到「闭包」这个名字，就一定觉得要用什么包起来才行。其实这是翻译问题，闭包的原文是-Closure，跟「包」没有任何关系。"><a href="#有些人看到「闭包」这个名字，就一定觉得要用什么包起来才行。其实这是翻译问题，闭包的原文是-Closure，跟「包」没有任何关系。" class="headerlink" title="有些人看到「闭包」这个名字，就一定觉得要用什么包起来才行。其实这是翻译问题，闭包的原文是 Closure，跟「包」没有任何关系。"></a>有些人看到「闭包」这个名字，就一定觉得要用什么包起来才行。其实这是翻译问题，闭包的原文是 <code>Closure</code>，跟「包」没有任何关系。</h6><p><strong><font color="red">所以函数套函数只是为了造出一个局部变量，跟闭包无关。</font></strong></p>
+<p><strong>为什么要 return bar 呢？</strong></p>
 <blockquote>
-<p>其中<code>JsonUtil</code>是封装的一个<code>Json</code>格式转换的工具类，其中保存和删除添加了一个回调函数</p>
+<p>因为如果不 <code>return</code>，你就无法使用这个闭包。把<code>return bar</code>改成<code>window.bar = bar</code>也是一样的，只要让外面可以访问到这个<code>bar</code>函数就行了。</p>
 </blockquote>
-<h4 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h4><h6 id="保存"><a href="#保存" class="headerlink" title="保存"></a>保存</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">StorageUtil.save(<span class="string">'sessionToken'</span>, res.sessionToken, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">'成功'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h6 id="调用-1"><a href="#调用-1" class="headerlink" title="调用"></a>调用</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">StorageUtil.get(<span class="string">'sessionToken'</span>).then(<span class="function">(<span class="params">username</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">        username:username</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong><font color="red">所以<code>return bar</code>只是为了<code>bar</code>能被使用，也跟闭包无关。</font></strong></p>
+<p><strong>闭包的作用</strong></p>
+<blockquote>
+<p>闭包常常用来「间接访问一个变量」。换句话说，「隐藏一个变量」。</p>
+</blockquote>
+<p>假设我们在做一个游戏，在写其中关于「还剩几条命」的代码。<br>如果不用闭包，你可以直接用一个全局变量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.lives = 30 // 还有三十条命</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>① 这样看起来很不妥。万一不小心把这个值改成 -1 了怎么办。所以我们不能让别人「直接访问」这个变量。怎么办呢？<br>② 用局部变量。但是用局部变量别人又访问不到，怎么办呢？<br>③ 暴露一个访问器（函数），让别人可以「间接访问」。</p>
+</blockquote>
+<p>代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> lives = <span class="number">50</span></span><br><span class="line">    <span class="built_in">window</span>.add = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        lives += <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">window</span>.minus = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        lives -= <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>那么在其他的<code>JS</code>文件，就可以使用<code>window.add()</code>来涨命，使用 <code>window.minus()</code>来让角色掉一条命。这里会形成两个闭包，<code>lives+window.add</code>、<code>lives+window.minus</code></p>
+</blockquote>
+<p><strong>我们来重新审视下闭包的代码：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> local = <span class="string">'变量'</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(local);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>第一句是变量声明，第二句是函数声明，第三句是 <code>console.log。</code><br>每一句我都学过，为什么合起来我就看不出来是闭包？</p>
+</blockquote>
+<p>我告诉你答案，你根本不需要知道闭包这个概念，一样可以使用闭包！</p>
+<p><strong><font color="red">闭包是<code>JS</code>函数作用域的副产品。</font></strong></p>
+<blockquote>
+<p>换句话说，正是由于<code>JS</code>的函数内部可以使用函数外部的变量，所以这段代码正好符合了闭包的定义。而不是<code>JS</code>故意要使用闭包。很多编程语言也支持闭包，另外有一些语言则不支持闭包。只要你懂了<code>JS</code>的作用域，你自然而然就懂了闭包，即使你不知道那就是闭包！</p>
+</blockquote>
+<p><strong>所谓闭包的作用</strong></p>
+<blockquote>
+<p>如果我们在写代码时，根本就不知道闭包，只是按照自己的意图写，最后，发现满足了闭包的定义。那么请问，这算是闭包的作用吗？</p>
+</blockquote>
+<p><strong>关于闭包的谣言</strong></p>
+<p><strong>闭包会造成内存泄露？</strong></p>
+<blockquote>
+<p>错。</p>
+</blockquote>
+<p>说这话的人根本不知道什么是内存泄露。内存泄露是指你用不到（访问不到）的变量，依然占居着内存空间，不能被再次利用起来。</p>
+<p>闭包里面的变量明明就是我们需要的变量（lives），凭什么说是内存泄露？</p>
+<h6 id="这个谣言是如何来的？"><a href="#这个谣言是如何来的？" class="headerlink" title="这个谣言是如何来的？"></a>这个谣言是如何来的？</h6><blockquote>
+<p>因为<code>IE</code>。<code>IE</code>有<code>bug</code>，<code>IE</code>在我们使用完闭包之后，依然回收不了闭包里面引用的变量。<br>这是<code>IE</code>的问题，不是闭包的问题。参见司徒正美的<a href="http://www.cnblogs.com/rubylouvre/p/3345294.html" target="_blank" rel="noopener">这篇文章</a>。</p>
+</blockquote>
+
       
     </div>
 
@@ -489,7 +548,7 @@
       
         <div class="copyright">
         <p><span>
-        <b>本文地址：</b><a href="/2017/06/22/React Native 学习总结/React Native AsyncStorage 封装/" title="React Native AsyncStorage 封装">http://5ibinbin.com/2017/06/22/React Native 学习总结/React Native AsyncStorage 封装/</a><br /><b>转载请注明出处！</b>
+        <b>本文地址：</b><a href="/2018/01/23/JavaScript/JavaScript 闭包/" title="JavaScript 闭包">http://5ibinbin.com/2018/01/23/JavaScript/JavaScript 闭包/</a><br /><b>转载请注明出处！</b>
         </span></p>
         </div>
       
@@ -531,7 +590,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/React-Native/" rel="tag"><i class="fa fa-tag"></i> React Native</a>
+            <a href="/tags/闭包/" rel="tag"><i class="fa fa-tag"></i> 闭包</a>
           
         </div>
       
@@ -544,8 +603,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/21/React Native 学习总结/React Native 自定义组件/" rel="next" title="React Native 自定义组件">
-                <i class="fa fa-chevron-left"></i> React Native 自定义组件
+              <a href="/2018/01/19/JavaScript/JavaScript 链表/" rel="next" title="JavaScript 链表的实现">
+                <i class="fa fa-chevron-left"></i> JavaScript 链表的实现
               </a>
             
           </div>
@@ -553,10 +612,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/23/React Native 学习总结/React Native TextInput高度自适应/" rel="prev" title="React Native TextInput 高度自适应">
-                React Native TextInput 高度自适应 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
