@@ -25,6 +25,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Best Time to Buy and Sell Stock I]]></title>
+    <url>%2F2018%2F03%2F25%2FLeetCode%2F121%2F</url>
+    <content type="text"><![CDATA[题目 Best Time to Buy and Sell Stock I 描述 Say you have an array for which the ith element is the price of a given stock on day i.If you were only permitted to complete at most one transaction (ie, buy one and sell one share of the stock), design an algorithm to find the maximum profit. 示例 Input: [7, 1, 5, 3, 6, 4]Output: 5 讲解 题目理解：数组里的第几个值就代表股票在第几天的价格，股票当天可买可卖，求能赚取到的最大值。 解题思路：可以直接找最大值最小值求得最优解 JavaScript解题思路 123456789101112131415var maxProfit = function(prices) &#123; if (!prices || prices.length == 0)&#123; return 0; &#125; var min = prices[0]; var profit = 0; for (var i = 1; i&lt;prices.length; i++)&#123; if(min &gt; prices[i])&#123; min = prices[i]; &#125; else &#123; profit = Math.max(profit, prices[i] - min); &#125; &#125; return profit;&#125;;]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[JavaScript 闭包]]></title>
     <url>%2F2018%2F01%2F23%2FJavaScript%2FJavaScript%20%E9%97%AD%E5%8C%85%2F</url>
     <content type="text"><![CDATA[考辛斯：听说有人要交易我？(44+24+10) 本文转载自前端学习指南的这篇文章(写的很清晰易懂，实在不忍心修改) 《javascript高级程序设计》（第三版）第7章第2节： 闭包是指有权访问另一个函数作用域中的变量函数 《javascript权威指南》(第六版)第8章第6节： 从技术的角度讲，所有的JavaScript函数都是闭包：它们都是对象，它们都关联到作用域链。 本文作者的理解(当然我的理解和本文作者的理解是一样的) 「函数」和「函数内部能访问到的变量」(也叫环境)的总和，就是一个闭包。 请用自己的话简述 什么是「闭包」 「闭包」的作用是什么 首先来简述什么是闭包1234var local = '变量';function foo()&#123; console.log(local);&#125; ① 假如上面三行代码在一个立即执行函数中。② 三行代码中，有一个局部变量local，有一个函数foo，foo里面可以访问到local变量。这就是闭包。 有的同学就疑惑了，闭包这么简单么？我听说闭包是需要函数套函数，然后 return 一个函数的呀！比如这样： 12345678910function foo()&#123; var local = 1 function bar()&#123; local++ return local &#125; return bar&#125;var func = foo()func() 这里面确实有闭包，local 变量和 bar 函数就组成了一个闭包（Closure）。 为什么要函数套函数呢？ 是因为需要局部变量，所以才把local放在一个函数里，如果不把local放在一个函数里，local就是一个全局变量了，达不到使用闭包的目的——隐藏变量（等会会讲）。 这也是为什么我上面要说「运行在一个立即执行函数中」。有些人看到「闭包」这个名字，就一定觉得要用什么包起来才行。其实这是翻译问题，闭包的原文是 Closure，跟「包」没有任何关系。所以函数套函数只是为了造出一个局部变量，跟闭包无关。 为什么要 return bar 呢？ 因为如果不 return，你就无法使用这个闭包。把return bar改成window.bar = bar也是一样的，只要让外面可以访问到这个bar函数就行了。 所以return bar只是为了bar能被使用，也跟闭包无关。 闭包的作用 闭包常常用来「间接访问一个变量」。换句话说，「隐藏一个变量」。 假设我们在做一个游戏，在写其中关于「还剩几条命」的代码。如果不用闭包，你可以直接用一个全局变量： 1window.lives = 30 // 还有三十条命 ① 这样看起来很不妥。万一不小心把这个值改成 -1 了怎么办。所以我们不能让别人「直接访问」这个变量。怎么办呢？② 用局部变量。但是用局部变量别人又访问不到，怎么办呢？③ 暴露一个访问器（函数），让别人可以「间接访问」。 代码如下： 123456789function()&#123; var lives = 50 window.add = function()&#123; lives += 1 &#125; window.minus = function()&#123; lives -= 1 &#125;&#125;() 那么在其他的JS文件，就可以使用window.add()来涨命，使用 window.minus()来让角色掉一条命。这里会形成两个闭包，lives+window.add、lives+window.minus 我们来重新审视下闭包的代码： 1234var local = '变量';function foo()&#123; console.log(local);&#125; 第一句是变量声明，第二句是函数声明，第三句是 console.log。每一句我都学过，为什么合起来我就看不出来是闭包？ 我告诉你答案，你根本不需要知道闭包这个概念，一样可以使用闭包！ 闭包是JS函数作用域的副产品。 换句话说，正是由于JS的函数内部可以使用函数外部的变量，所以这段代码正好符合了闭包的定义。而不是JS故意要使用闭包。很多编程语言也支持闭包，另外有一些语言则不支持闭包。只要你懂了JS的作用域，你自然而然就懂了闭包，即使你不知道那就是闭包！ 所谓闭包的作用 如果我们在写代码时，根本就不知道闭包，只是按照自己的意图写，最后，发现满足了闭包的定义。那么请问，这算是闭包的作用吗？ 关于闭包的谣言 闭包会造成内存泄露？ 错。 说这话的人根本不知道什么是内存泄露。内存泄露是指你用不到（访问不到）的变量，依然占居着内存空间，不能被再次利用起来。 闭包里面的变量明明就是我们需要的变量（lives），凭什么说是内存泄露？ 这个谣言是如何来的？ 因为IE。IE有bug，IE在我们使用完闭包之后，依然回收不了闭包里面引用的变量。这是IE的问题，不是闭包的问题。参见司徒正美的这篇文章。]]></content>
@@ -87,8 +99,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>查找</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -99,8 +111,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>查找</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -111,8 +123,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>排序</tag>
         <tag>算法</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -123,8 +135,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>排序</tag>
         <tag>算法</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -135,8 +147,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>排序</tag>
         <tag>算法</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -147,8 +159,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>排序</tag>
         <tag>算法</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -159,8 +171,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>排序</tag>
         <tag>算法</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
