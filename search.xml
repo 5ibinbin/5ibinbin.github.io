@@ -13,9 +13,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[LeetCode：452.Minimum Number of Arrows to Burst Balloons]]></title>
-    <url>%2F2018%2F03%2F25%2FLeetCode%2F452%2F</url>
-    <content type="text"><![CDATA[题目 Minimum Number of Arrows to Burst Balloons 描述 There are a number of spherical balloons spread in two-dimensional space. For each balloon, provided input is the start and end coordinates of the horizontal diameter. Since it’s horizontal, y-coordinates don’t matter and hence the x-coordinates of start and end of the diameter suffice. Start is always smaller than end. There will be at most 104 balloons.An arrow can be shot up exactly vertically from different points along the x-axis. A balloon with xstart and xend bursts by an arrow shot at x if xstart ≤ x ≤ xend. There is no limit to the number of arrows that can be shot. An arrow once shot keeps travelling up infinitely. The problem is to find the minimum number of arrows that must be shot to burst all balloons. 示例 Input:[[10,16], [2,8], [1,6], [7,12]] Output:2 讲解 题目理解：将气球看成一个X轴上的坐标范围，飞镖垂直穿过X轴上的每一个气球，最少需要几次？ 解题思路：按照数组的第二个值进行排序，以第一个气球的结束位置为基准值，之后的气球的起始位置若小于基准值则继续，否则飞镖数量加一 JavaScript解题思路 12345678910111213141516var findMinArrowShots = function(points) &#123; if(points==null || points.length == 0) &#123; return 0; &#125; points.sort((x,y) =&gt; x[1]-y[1]); var end = points[0][1]; var counts = 1; for (var i = 0; i &lt; points.length; i++)&#123; if (points[i][0] &lt;= end)&#123; continue; &#125; counts++; end = points[i][1]; &#125; return counts;&#125;;]]></content>
+    <title><![CDATA[LeetCode：122.Best Time to Buy and Sell Stock II]]></title>
+    <url>%2F2018%2F03%2F25%2FLeetCode%2F122%2F</url>
+    <content type="text"><![CDATA[题目 Best Time to Buy and Sell Stock II 描述 Say you have an array for which the ith element is the price of a given stock on day i.Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times). However, you may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again). 讲解 题目理解：数组里的第几个值就代表股票在第几天的价格，股票当天可买可卖，求能赚取到的最大值。 解题思路：假如有[a,b,c]三只股票，最大收益为c-a(a&lt;b&lt;c), 因为 c-a=(b-a)+(c-b)，同理可知如果第二天的收益大于第一天的那我们就加上反之舍弃，通过局部的最优解求整体的最优解。 JavaScript解题思路 123456789101112var maxProfit = function(prices) &#123; let maxProfit = 0; if (prices.length &lt;= 0)&#123; return 0; &#125; for (var i = 1; i &lt; prices.length; i++)&#123; if (prices[i] &gt; prices[i-1])&#123; maxProfit += (prices[i] - prices[i-1]); &#125; &#125; return maxProfit;&#125;;]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -25,9 +25,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[LeetCode：122.Best Time to Buy and Sell Stock II]]></title>
-    <url>%2F2018%2F03%2F25%2FLeetCode%2F122%2F</url>
-    <content type="text"><![CDATA[题目 Best Time to Buy and Sell Stock II 描述 Say you have an array for which the ith element is the price of a given stock on day i.Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times). However, you may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again). 讲解 题目理解：数组里的第几个值就代表股票在第几天的价格，股票当天可买可卖，求能赚取到的最大值。 解题思路：假如有[a,b,c]三只股票，最大收益为c-a(a&lt;b&lt;c), 因为 c-a=(b-a)+(c-b)，同理可知如果第二天的收益大于第一天的那我们就加上反之舍弃，通过局部的最优解求整体的最优解。 JavaScript解题思路 123456789101112var maxProfit = function(prices) &#123; let maxProfit = 0; if (prices.length &lt;= 0)&#123; return 0; &#125; for (var i = 1; i &lt; prices.length; i++)&#123; if (prices[i] &gt; prices[i-1])&#123; maxProfit += (prices[i] - prices[i-1]); &#125; &#125; return maxProfit;&#125;;]]></content>
+    <title><![CDATA[LeetCode：452.Minimum Number of Arrows to Burst Balloons]]></title>
+    <url>%2F2018%2F03%2F25%2FLeetCode%2F452%2F</url>
+    <content type="text"><![CDATA[题目 Minimum Number of Arrows to Burst Balloons 描述 There are a number of spherical balloons spread in two-dimensional space. For each balloon, provided input is the start and end coordinates of the horizontal diameter. Since it’s horizontal, y-coordinates don’t matter and hence the x-coordinates of start and end of the diameter suffice. Start is always smaller than end. There will be at most 104 balloons.An arrow can be shot up exactly vertically from different points along the x-axis. A balloon with xstart and xend bursts by an arrow shot at x if xstart ≤ x ≤ xend. There is no limit to the number of arrows that can be shot. An arrow once shot keeps travelling up infinitely. The problem is to find the minimum number of arrows that must be shot to burst all balloons. 示例 Input:[[10,16], [2,8], [1,6], [7,12]] Output:2 讲解 题目理解：将气球看成一个X轴上的坐标范围，飞镖垂直穿过X轴上的每一个气球，最少需要几次？ 解题思路：按照数组的第二个值进行排序，以第一个气球的结束位置为基准值，之后的气球的起始位置若小于基准值则继续，否则飞镖数量加一 JavaScript解题思路 12345678910111213141516var findMinArrowShots = function(points) &#123; if(points==null || points.length == 0) &#123; return 0; &#125; points.sort((x,y) =&gt; x[1]-y[1]); var end = points[0][1]; var counts = 1; for (var i = 0; i &lt; points.length; i++)&#123; if (points[i][0] &lt;= end)&#123; continue; &#125; counts++; end = points[i][1]; &#125; return counts;&#125;;]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -383,8 +383,8 @@
         <category>AngularJs</category>
       </categories>
       <tags>
-        <tag>Android</tag>
         <tag>AngularJs</tag>
+        <tag>Android</tag>
       </tags>
   </entry>
   <entry>
