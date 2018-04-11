@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[LeetCode：121.Best Time to Buy and Sell Stock I]]></title>
-    <url>%2F2018%2F03%2F25%2FLeetCode%2F121%2F</url>
-    <content type="text"><![CDATA[题目 Best Time to Buy and Sell Stock I 描述 Say you have an array for which the ith element is the price of a given stock on day i.If you were only permitted to complete at most one transaction (ie, buy one and sell one share of the stock), design an algorithm to find the maximum profit. 示例 Input: [7, 1, 5, 3, 6, 4]Output: 5 讲解 题目理解：数组里的第几个值就代表股票在第几天的价格，股票当天可买可卖，求能赚取到的最大值。 解题思路：可以直接找最大值最小值求得最优解 JavaScript解题思路 123456789101112131415var maxProfit = function(prices) &#123; if (!prices || prices.length == 0)&#123; return 0; &#125; var min = prices[0]; var profit = 0; for (var i = 1; i&lt;prices.length; i++)&#123; if(min &gt; prices[i])&#123; min = prices[i]; &#125; else &#123; profit = Math.max(profit, prices[i] - min); &#125; &#125; return profit;&#125;;]]></content>
+    <title><![CDATA[LeetCode：452.Minimum Number of Arrows to Burst Balloons]]></title>
+    <url>%2F2018%2F03%2F25%2FLeetCode%2F452%2F</url>
+    <content type="text"><![CDATA[题目 Minimum Number of Arrows to Burst Balloons 描述 There are a number of spherical balloons spread in two-dimensional space. For each balloon, provided input is the start and end coordinates of the horizontal diameter. Since it’s horizontal, y-coordinates don’t matter and hence the x-coordinates of start and end of the diameter suffice. Start is always smaller than end. There will be at most 104 balloons.An arrow can be shot up exactly vertically from different points along the x-axis. A balloon with xstart and xend bursts by an arrow shot at x if xstart ≤ x ≤ xend. There is no limit to the number of arrows that can be shot. An arrow once shot keeps travelling up infinitely. The problem is to find the minimum number of arrows that must be shot to burst all balloons. 示例 Input:[[10,16], [2,8], [1,6], [7,12]] Output:2 讲解 题目理解：将气球看成一个X轴上的坐标范围，飞镖垂直穿过X轴上的每一个气球，最少需要几次？ 解题思路：按照数组的第二个值进行排序，以第一个气球的结束位置为基准值，之后的气球的起始位置若小于基准值则继续，否则飞镖数量加一 JavaScript解题思路 12345678910111213141516var findMinArrowShots = function(points) &#123; if(points==null || points.length == 0) &#123; return 0; &#125; points.sort((x,y) =&gt; x[1]-y[1]); var end = points[0][1]; var counts = 1; for (var i = 0; i &lt; points.length; i++)&#123; if (points[i][0] &lt;= end)&#123; continue; &#125; counts++; end = points[i][1]; &#125; return counts;&#125;;]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -25,9 +25,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[LeetCode：452.Minimum Number of Arrows to Burst Balloons]]></title>
-    <url>%2F2018%2F03%2F25%2FLeetCode%2F452%2F</url>
-    <content type="text"><![CDATA[题目 Minimum Number of Arrows to Burst Balloons 描述 There are a number of spherical balloons spread in two-dimensional space. For each balloon, provided input is the start and end coordinates of the horizontal diameter. Since it’s horizontal, y-coordinates don’t matter and hence the x-coordinates of start and end of the diameter suffice. Start is always smaller than end. There will be at most 104 balloons.An arrow can be shot up exactly vertically from different points along the x-axis. A balloon with xstart and xend bursts by an arrow shot at x if xstart ≤ x ≤ xend. There is no limit to the number of arrows that can be shot. An arrow once shot keeps travelling up infinitely. The problem is to find the minimum number of arrows that must be shot to burst all balloons. 示例 Input:[[10,16], [2,8], [1,6], [7,12]] Output:2 讲解 题目理解：将气球看成一个X轴上的坐标范围，飞镖垂直穿过X轴上的每一个气球，最少需要几次？ 解题思路：按照数组的第二个值进行排序，以第一个气球的结束位置为基准值，之后的气球的起始位置若小于基准值则继续，否则飞镖数量加一 JavaScript解题思路 12345678910111213141516var findMinArrowShots = function(points) &#123; if(points==null || points.length == 0) &#123; return 0; &#125; points.sort((x,y) =&gt; x[1]-y[1]); var end = points[0][1]; var counts = 1; for (var i = 0; i &lt; points.length; i++)&#123; if (points[i][0] &lt;= end)&#123; continue; &#125; counts++; end = points[i][1]; &#125; return counts;&#125;;]]></content>
+    <title><![CDATA[LeetCode：121.Best Time to Buy and Sell Stock I]]></title>
+    <url>%2F2018%2F03%2F25%2FLeetCode%2F121%2F</url>
+    <content type="text"><![CDATA[题目 Best Time to Buy and Sell Stock I 描述 Say you have an array for which the ith element is the price of a given stock on day i.If you were only permitted to complete at most one transaction (ie, buy one and sell one share of the stock), design an algorithm to find the maximum profit. 示例 Input: [7, 1, 5, 3, 6, 4]Output: 5 讲解 题目理解：数组里的第几个值就代表股票在第几天的价格，股票当天可买可卖，求能赚取到的最大值。 解题思路：可以直接找最大值最小值求得最优解 JavaScript解题思路 123456789101112131415var maxProfit = function(prices) &#123; if (!prices || prices.length == 0)&#123; return 0; &#125; var min = prices[0]; var profit = 0; for (var i = 1; i&lt;prices.length; i++)&#123; if(min &gt; prices[i])&#123; min = prices[i]; &#125; else &#123; profit = Math.max(profit, prices[i] - min); &#125; &#125; return profit;&#125;;]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -99,8 +99,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>查找</tag>
         <tag>算法</tag>
+        <tag>查找</tag>
       </tags>
   </entry>
   <entry>
@@ -111,8 +111,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>查找</tag>
         <tag>算法</tag>
+        <tag>查找</tag>
       </tags>
   </entry>
   <entry>
@@ -123,8 +123,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>排序</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -135,8 +135,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>排序</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -147,8 +147,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>排序</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -159,8 +159,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>排序</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -171,8 +171,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>排序</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
