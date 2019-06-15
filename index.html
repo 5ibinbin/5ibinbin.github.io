@@ -94,7 +94,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="前端 程序猿" />
+  <meta name="keywords" content="攻城狮" />
 
 
 
@@ -112,13 +112,13 @@
 
 <meta name="description" content="大道至简">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Nickyzhang">
+<meta property="og:title" content="nickyzhang">
 <meta property="og:url" content="http://5ibinbin.com/index.html">
-<meta property="og:site_name" content="Nickyzhang">
+<meta property="og:site_name" content="nickyzhang">
 <meta property="og:description" content="大道至简">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nickyzhang">
+<meta name="twitter:title" content="nickyzhang">
 <meta name="twitter:description" content="大道至简">
 
 
@@ -136,9 +136,9 @@
       author: '博主'
     },
     algolia: {
-      applicationID: 'K4NJ5NB3MG',
-      apiKey: 'e1e30fb0b0b74037a43a11697e95c2be',
-      indexName: 'my-blog',
+      applicationID: '6PW0R2U8B6',
+      apiKey: '4c9f6a3f55f38e2ae34680174334ec31',
+      indexName: 'blog',
       hits: {"per_page":10},
       labels: {"input_placeholder":"输入关键字","hits_empty":"没有找到与【${query}】相关的内容","hits_stats":"${hits}条相关记录，共耗时 ${time} ms"}
     }
@@ -175,7 +175,7 @@
 
 
 
-  <title> Nickyzhang </title>
+  <title> nickyzhang </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -213,7 +213,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Nickyzhang</span>
+        <span class="site-title">nickyzhang</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -354,187 +354,16 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2018/03/25/LeetCode/452/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nickyzhang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nickyzhang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2018/03/25/LeetCode/452/" itemprop="url">
-                  LeetCode：452.Minimum Number of Arrows to Burst Balloons
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-25T00:00:00+08:00">
-                2018-03-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/03/25/LeetCode/452/" class="leancloud_visitors" data-flag-title="LeetCode：452.Minimum Number of Arrows to Burst Balloons">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><strong>题目</strong></p>
-<blockquote>
-<p>Minimum Number of Arrows to Burst Balloons</p>
-</blockquote>
-<p><strong>描述</strong></p>
-<h6 id="There-are-a-number-of-spherical-balloons-spread-in-two-dimensional-space-For-each-balloon-provided-input-is-the-start-and-end-coordinates-of-the-horizontal-diameter-Since-it’s-horizontal-y-coordinates-don’t-matter-and-hence-the-x-coordinates-of-start-and-end-of-the-diameter-suffice-Start-is-always-smaller-than-end-There-will-be-at-most-104-balloons"><a href="#There-are-a-number-of-spherical-balloons-spread-in-two-dimensional-space-For-each-balloon-provided-input-is-the-start-and-end-coordinates-of-the-horizontal-diameter-Since-it’s-horizontal-y-coordinates-don’t-matter-and-hence-the-x-coordinates-of-start-and-end-of-the-diameter-suffice-Start-is-always-smaller-than-end-There-will-be-at-most-104-balloons" class="headerlink" title="There are a number of spherical balloons spread in two-dimensional space. For each balloon, provided input is the start and end coordinates of the horizontal diameter. Since it’s horizontal, y-coordinates don’t matter and hence the x-coordinates of start and end of the diameter suffice. Start is always smaller than end. There will be at most 104 balloons."></a>There are a number of spherical balloons spread in two-dimensional space. For each balloon, provided input is the start and end coordinates of the horizontal diameter. Since it’s horizontal, y-coordinates don’t matter and hence the x-coordinates of start and end of the diameter suffice. Start is always smaller than end. There will be at most 104 balloons.</h6><h6 id="An-arrow-can-be-shot-up-exactly-vertically-from-different-points-along-the-x-axis-A-balloon-with-xstart-and-xend-bursts-by-an-arrow-shot-at-x-if-xstart-≤-x-≤-xend-There-is-no-limit-to-the-number-of-arrows-that-can-be-shot-An-arrow-once-shot-keeps-travelling-up-infinitely-The-problem-is-to-find-the-minimum-number-of-arrows-that-must-be-shot-to-burst-all-balloons"><a href="#An-arrow-can-be-shot-up-exactly-vertically-from-different-points-along-the-x-axis-A-balloon-with-xstart-and-xend-bursts-by-an-arrow-shot-at-x-if-xstart-≤-x-≤-xend-There-is-no-limit-to-the-number-of-arrows-that-can-be-shot-An-arrow-once-shot-keeps-travelling-up-infinitely-The-problem-is-to-find-the-minimum-number-of-arrows-that-must-be-shot-to-burst-all-balloons" class="headerlink" title="An arrow can be shot up exactly vertically from different points along the x-axis. A balloon with xstart and xend bursts by an arrow shot at x if xstart ≤ x ≤ xend. There is no limit to the number of arrows that can be shot. An arrow once shot keeps travelling up infinitely. The problem is to find the minimum number of arrows that must be shot to burst all balloons."></a>An arrow can be shot up exactly vertically from different points along the x-axis. A balloon with xstart and xend bursts by an arrow shot at x if xstart ≤ x ≤ xend. There is no limit to the number of arrows that can be shot. An arrow once shot keeps travelling up infinitely. The problem is to find the minimum number of arrows that must be shot to burst all balloons.</h6>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/25/LeetCode/452/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div align="left">
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2018/03/25/LeetCode/122/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
     </span>
 
     
@@ -699,13 +528,13 @@
     <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2018/03/25/LeetCode/121/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
     </span>
 
     
@@ -867,16 +696,187 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2018/01/23/JavaScript/JavaScript 闭包/">
+    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2018/03/25/LeetCode/452/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/03/25/LeetCode/452/" itemprop="url">
+                  LeetCode：452.Minimum Number of Arrows to Burst Balloons
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-25T00:00:00+08:00">
+                2018-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/03/25/LeetCode/452/" class="leancloud_visitors" data-flag-title="LeetCode：452.Minimum Number of Arrows to Burst Balloons">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><strong>题目</strong></p>
+<blockquote>
+<p>Minimum Number of Arrows to Burst Balloons</p>
+</blockquote>
+<p><strong>描述</strong></p>
+<h6 id="There-are-a-number-of-spherical-balloons-spread-in-two-dimensional-space-For-each-balloon-provided-input-is-the-start-and-end-coordinates-of-the-horizontal-diameter-Since-it’s-horizontal-y-coordinates-don’t-matter-and-hence-the-x-coordinates-of-start-and-end-of-the-diameter-suffice-Start-is-always-smaller-than-end-There-will-be-at-most-104-balloons"><a href="#There-are-a-number-of-spherical-balloons-spread-in-two-dimensional-space-For-each-balloon-provided-input-is-the-start-and-end-coordinates-of-the-horizontal-diameter-Since-it’s-horizontal-y-coordinates-don’t-matter-and-hence-the-x-coordinates-of-start-and-end-of-the-diameter-suffice-Start-is-always-smaller-than-end-There-will-be-at-most-104-balloons" class="headerlink" title="There are a number of spherical balloons spread in two-dimensional space. For each balloon, provided input is the start and end coordinates of the horizontal diameter. Since it’s horizontal, y-coordinates don’t matter and hence the x-coordinates of start and end of the diameter suffice. Start is always smaller than end. There will be at most 104 balloons."></a>There are a number of spherical balloons spread in two-dimensional space. For each balloon, provided input is the start and end coordinates of the horizontal diameter. Since it’s horizontal, y-coordinates don’t matter and hence the x-coordinates of start and end of the diameter suffice. Start is always smaller than end. There will be at most 104 balloons.</h6><h6 id="An-arrow-can-be-shot-up-exactly-vertically-from-different-points-along-the-x-axis-A-balloon-with-xstart-and-xend-bursts-by-an-arrow-shot-at-x-if-xstart-≤-x-≤-xend-There-is-no-limit-to-the-number-of-arrows-that-can-be-shot-An-arrow-once-shot-keeps-travelling-up-infinitely-The-problem-is-to-find-the-minimum-number-of-arrows-that-must-be-shot-to-burst-all-balloons"><a href="#An-arrow-can-be-shot-up-exactly-vertically-from-different-points-along-the-x-axis-A-balloon-with-xstart-and-xend-bursts-by-an-arrow-shot-at-x-if-xstart-≤-x-≤-xend-There-is-no-limit-to-the-number-of-arrows-that-can-be-shot-An-arrow-once-shot-keeps-travelling-up-infinitely-The-problem-is-to-find-the-minimum-number-of-arrows-that-must-be-shot-to-burst-all-balloons" class="headerlink" title="An arrow can be shot up exactly vertically from different points along the x-axis. A balloon with xstart and xend bursts by an arrow shot at x if xstart ≤ x ≤ xend. There is no limit to the number of arrows that can be shot. An arrow once shot keeps travelling up infinitely. The problem is to find the minimum number of arrows that must be shot to burst all balloons."></a>An arrow can be shot up exactly vertically from different points along the x-axis. A balloon with xstart and xend bursts by an arrow shot at x if xstart ≤ x ≤ xend. There is no limit to the number of arrows that can be shot. An arrow once shot keeps travelling up infinitely. The problem is to find the minimum number of arrows that must be shot to burst all balloons.</h6>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/25/LeetCode/452/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div align="left">
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2018/01/23/JavaScript/JavaScript 闭包/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nickyzhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="nickyzhang">
     </span>
 
     
@@ -1052,13 +1052,13 @@
     <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2018/01/19/JavaScript/JavaScript 链表/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
     </span>
 
     
@@ -1233,13 +1233,13 @@
     <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2018/01/17/JavaScript/JavaScript 预处理机制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
     </span>
 
     
@@ -1405,13 +1405,13 @@
     <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2018/01/15/JavaScript/JavaScript 同步异步/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
     </span>
 
     
@@ -1576,13 +1576,13 @@
     <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2018/01/11/JavaScript/JavaScript 哈希表/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
     </span>
 
     
@@ -1751,13 +1751,13 @@
     <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2018/01/09/Algorithm/二叉搜索树/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
     </span>
 
     
@@ -1931,13 +1931,13 @@
     <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2018/01/08/Algorithm/顺序二分查找/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
     </span>
 
     
@@ -2096,7 +2096,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2130,8 +2130,8 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
-               alt="Nickyzhang" />
-          <p class="site-author-name" itemprop="name">Nickyzhang</p>
+               alt="nickyzhang" />
+          <p class="site-author-name" itemprop="name">nickyzhang</p>
            
               <p class="site-description motion-element" itemprop="description">大道至简</p>
           
@@ -2141,7 +2141,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-count">37</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2163,7 +2163,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -2195,11 +2195,11 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://twitter.com/5ibinbin" target="_blank" title="Twitter">
+                <a href="https://juejin.im/user/5710677fc4c9710054a72c1c" target="_blank" title="掘金">
                   
-                    <i class="fa fa-fw fa-twitter"></i>
+                    <i class="fa fa-fw fa-globe"></i>
                   
-                  Twitter
+                  掘金
                 </a>
               </span>
             
@@ -2219,19 +2219,11 @@
             <ul class="links-of-blogroll-list">
               
                 <li class="links-of-blogroll-item">
-                  <a href="http://www.polayoutu.com/collections" title="泼辣有图" target="_blank">泼辣有图</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
                   <a href="https://stocksnap.io" title="图片下载" target="_blank">图片下载</a>
                 </li>
               
                 <li class="links-of-blogroll-item">
                   <a href="https://www.pexels.com" title="唯美图片" target="_blank">唯美图片</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://unsplash.com" title="随手拍图" target="_blank">随手拍图</a>
                 </li>
               
                 <li class="links-of-blogroll-item">
@@ -2255,7 +2247,7 @@
                 </li>
               
                 <li class="links-of-blogroll-item">
-                  <a href="https://ifttt.com/discover" title="网络自动化神奇" target="_blank">网络自动化神奇</a>
+                  <a href="https://ifttt.com/discover" title="IFTTT" target="_blank">IFTTT</a>
                 </li>
               
             </ul>
@@ -2285,11 +2277,11 @@
 <div class="copyright" >
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Nickyzhang</span>
+  <span class="author" itemprop="copyrightHolder">nickyzhang</span>
 </div>
 
 
@@ -2305,7 +2297,7 @@
 -->
 
 <div class="powered-by">
-<span class="post-count">博客全站共26.6k字</span>
+<span class="post-count">博客全站共22.8k字</span>
 </div>
   
 

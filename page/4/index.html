@@ -94,7 +94,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="前端 程序猿" />
+  <meta name="keywords" content="攻城狮" />
 
 
 
@@ -112,13 +112,13 @@
 
 <meta name="description" content="大道至简">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Nickyzhang">
+<meta property="og:title" content="nickyzhang">
 <meta property="og:url" content="http://5ibinbin.com/page/4/index.html">
-<meta property="og:site_name" content="Nickyzhang">
+<meta property="og:site_name" content="nickyzhang">
 <meta property="og:description" content="大道至简">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nickyzhang">
+<meta name="twitter:title" content="nickyzhang">
 <meta name="twitter:description" content="大道至简">
 
 
@@ -136,9 +136,9 @@
       author: '博主'
     },
     algolia: {
-      applicationID: 'K4NJ5NB3MG',
-      apiKey: 'e1e30fb0b0b74037a43a11697e95c2be',
-      indexName: 'my-blog',
+      applicationID: '6PW0R2U8B6',
+      apiKey: '4c9f6a3f55f38e2ae34680174334ec31',
+      indexName: 'blog',
       hits: {"per_page":10},
       labels: {"input_placeholder":"输入关键字","hits_empty":"没有找到与【${query}】相关的内容","hits_stats":"${hits}条相关记录，共耗时 ${time} ms"}
     }
@@ -175,7 +175,7 @@
 
 
 
-  <title> Nickyzhang </title>
+  <title> nickyzhang </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -213,7 +213,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Nickyzhang</span>
+        <span class="site-title">nickyzhang</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -354,186 +354,16 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/06/22/React Native 学习总结/React Native AsyncStorage 封装/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nickyzhang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nickyzhang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/06/22/React Native 学习总结/React Native AsyncStorage 封装/" itemprop="url">
-                  React Native AsyncStorage 封装
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-22T00:00:00+08:00">
-                2017-06-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/React-Native/" itemprop="url" rel="index">
-                    <span itemprop="name">React Native</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/06/22/React Native 学习总结/React Native AsyncStorage 封装/" class="leancloud_visitors" data-flag-title="React Native AsyncStorage 封装">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>在<code>Android</code>开发中有一个以<code>key-value</code>形式轻量级的数据存储方式—<code>SharedPreferences</code>, 类似的<code>React Native</code>中也有一个–<code>AsyncStorage</code></p>
-<p><code>AsyncStorage</code>是一个简单的、异步的、持久化的<code>Key-Value</code>存储系统，它对于<code>App</code>来说是全局性的</p>
-</blockquote>
-<h4 id="API"><a href="#API" class="headerlink" title="API"></a>API</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> getItem(key: string, callback?: ?<span class="function">(<span class="params">error: ?<span class="built_in">Error</span>, result: ?string</span>) =&gt;</span> <span class="keyword">void</span>)</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/22/React Native 学习总结/React Native AsyncStorage 封装/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div align="left">
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/06/21/React Native 学习总结/React Native 自定义组件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
     </span>
 
     
@@ -697,13 +527,13 @@
     <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/06/20/React Native 学习总结/React Native 网络请求封装/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
     </span>
 
     
@@ -865,13 +695,13 @@
     <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/06/10/AngularJs/getResourcesId/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
     </span>
 
     
@@ -1031,13 +861,13 @@
     <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/05/15/AngularJs/imageCover/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
     </span>
 
     
@@ -1204,13 +1034,13 @@
     <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/05/10/AngularJs/ionic监听Android返回/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
     </span>
 
     
@@ -1369,16 +1199,16 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/05/05/Android/Android MVC与MVP的区别和理解/">
+    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/04/22/前端/Mac跨域/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
     </span>
 
     
@@ -1391,349 +1221,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/05/05/Android/Android MVC与MVP的区别和理解/" itemprop="url">
-                  Android MVC和MVP的区别和理解
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-05T00:00:00+08:00">
-                2017-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/05/05/Android/Android MVC与MVP的区别和理解/" class="leancloud_visitors" data-flag-title="Android MVC和MVP的区别和理解">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="MVC架构："><a href="#MVC架构：" class="headerlink" title="MVC架构："></a>MVC架构：</h3><h4 id="MVC就是Model-View-Controller，它们的作用是："><a href="#MVC就是Model-View-Controller，它们的作用是：" class="headerlink" title="MVC就是Model-View-Controller，它们的作用是："></a>MVC就是Model-View-Controller，它们的作用是：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(数据模型)Model：数据的封装和保存，业务逻辑和实体模型</span><br><span class="line">(视图)View：视图界面，对应于布局文件</span><br><span class="line">(控制器)Controller：业务逻辑，对应于Activity、Fragment等</span><br></pre></td></tr></table></figure>
-<h4 id="它们之间的关系如下图所示："><a href="#它们之间的关系如下图所示：" class="headerlink" title="它们之间的关系如下图所示："></a>它们之间的关系如下图所示：</h4><h6 id="View传送指令到Controller-Controller完成业务逻辑后，改变Model的状态，Model将新的数据发送到View，这就是MVC模式的处理逻辑。"><a href="#View传送指令到Controller-Controller完成业务逻辑后，改变Model的状态，Model将新的数据发送到View，这就是MVC模式的处理逻辑。" class="headerlink" title="View传送指令到Controller,Controller完成业务逻辑后，改变Model的状态，Model将新的数据发送到View，这就是MVC模式的处理逻辑。"></a>View传送指令到Controller,Controller完成业务逻辑后，改变Model的状态，Model将新的数据发送到View，这就是MVC模式的处理逻辑。</h6>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/05/Android/Android MVC与MVP的区别和理解/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div align="left">
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/05/05/Android/Android观察者模式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nickyzhang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nickyzhang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/05/05/Android/Android观察者模式/" itemprop="url">
-                  Android观察者模式
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-05T00:00:00+08:00">
-                2017-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/05/05/Android/Android观察者模式/" class="leancloud_visitors" data-flag-title="Android观察者模式">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="观察者模式理解"><a href="#观察者模式理解" class="headerlink" title="观察者模式理解"></a>观察者模式理解</h2><h4 id="观察者模式-Observer"><a href="#观察者模式-Observer" class="headerlink" title="观察者模式 Observer"></a>观察者模式 Observer</h4><ul>
-<li>观察者模式定义了一个一对多的依赖关系，让多个观察者对象同时监听一个主题对象</li>
-<li>当这个主题对象改变时，会通知所有的观察者，让他们能够自动的更新自己</li>
-</ul>
-<h4 id="观察者模式的组成"><a href="#观察者模式的组成" class="headerlink" title="观察者模式的组成"></a>观察者模式的组成</h4><ul>
-<li>抽象主题：把所有的对观察者对象的引用保存在一个集合中，抽象主题提供一个接口，可以注册和移除观察者；</li>
-<li>抽象观察者：为所有的观察者定义一个接口，当主题的数据更新时给登记的观察者提供通知；</li>
-<li>具体主题：在具体主题内部状态改变时，给所有登记过的观察者发出通知；</li>
-<li>具体观察者：实现抽象观察者提供的更新接口，以便本身的状态能够及时更新；</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/05/Android/Android观察者模式/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div align="left">
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/04/22/Tech/Mac跨域/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nickyzhang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nickyzhang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/22/Tech/Mac跨域/" itemprop="url">
+                <a class="post-title-link" href="/2017/04/22/前端/Mac跨域/" itemprop="url">
                   Mac跨域
                 </a>
               
@@ -1790,7 +1278,7 @@
 
           
           
-             <span id="/2017/04/22/Tech/Mac跨域/" class="leancloud_visitors" data-flag-title="Mac跨域">
+             <span id="/2017/04/22/前端/Mac跨域/" class="leancloud_visitors" data-flag-title="Mac跨域">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1833,7 +1321,7 @@
 </ul>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/04/22/Tech/Mac跨域/#more" rel="contents">
+            <a class="btn" href="/2017/04/22/前端/Mac跨域/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1887,16 +1375,16 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/04/20/Android/weChat-login/">
+    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2017/04/01/前端/Hexo博客优化/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
     </span>
 
     
@@ -1909,8 +1397,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/04/20/Android/weChat-login/" itemprop="url">
-                  Android 微信sdk登录和分享
+                <a class="post-title-link" href="/2017/04/01/前端/Hexo博客优化/" itemprop="url">
+                  Hexo Next 博客搭建资源整理
                 </a>
               
             
@@ -1926,8 +1414,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-20T00:00:00+08:00">
-                2017-04-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-01T00:00:00+08:00">
+                2017-04-01
               </time>
             
 
@@ -1949,8 +1437,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/资源/" itemprop="url" rel="index">
+                    <span itemprop="name">资源</span>
                   </a>
                 </span>
 
@@ -1966,7 +1454,7 @@
 
           
           
-             <span id="/2017/04/20/Android/weChat-login/" class="leancloud_visitors" data-flag-title="Android 微信sdk登录和分享">
+             <span id="/2017/04/01/前端/Hexo博客优化/" class="leancloud_visitors" data-flag-title="Hexo Next 博客搭建资源整理">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1996,23 +1484,23 @@
 
       
         
-          <ul>
-<li>准备材料：<ul>
-<li><a href="https://open.weixin.qq.com" target="_blank" rel="noopener">微信开发者账号</a></li>
-<li>注册你的<code>APP</code></li>
-<li><code>libammsdk.jar</code>包</li>
-<li><code>debug.keystore</code>文件</li>
-</ul>
-</li>
-</ul>
-<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
-<li>申请你的<code>APPID</code></li>
-<li>导入<code>libammsdk.jar</code>包</li>
-<li>在<code>AndroidManifest.xml</code>中设置权限</li>
-</ul>
+          <blockquote>
+<p> Next Theme版本5.1.0</p>
+</blockquote>
+<p><strong>hexo博客搭建遇到的问题处理和优化所需的资源</strong></p>
+<ol>
+<li><a href="http://www.jianshu.com/p/99665608d295" target="_blank" rel="noopener">hexo开始搭建</a></li>
+<li><a href="http://www.jianshu.com/p/4fbc57269f1b" target="_blank" rel="noopener">底部Powered By</a></li>
+<li><a href="https://github.com/iissnan/hexo-theme-next/issues/1084" target="_blank" rel="noopener">algolia问题</a></li>
+<li><a href="http://theme-next.iissnan.com/third-party-services.html" target="_blank" rel="noopener">三方服务</a></li>
+<li><a href="http://blog.lisanlai.cn/" target="_blank" rel="noopener">Cannot find module ‘hexo-util’</a></li>
+<li><a href="http://blog.csdn.net/willxue123/article/details/50994852" target="_blank" rel="noopener">配置文件属性说明</a> </li>
+<li><a href="http://zhuweisheng.com.cn/technology/leancloud-counter/" target="_blank" rel="noopener">集成LeanCloud记录次数</a></li>
+<li><a href="http://www.jianshu.com/p/4fbc57269f1b" target="_blank" rel="noopener">hexo next 底部Logo栏(powered by)</a></li>
+</ol>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/04/20/Android/weChat-login/#more" rel="contents">
+            <a class="btn" href="/2017/04/01/前端/Hexo博客优化/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2061,7 +1549,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
   </nav>
 
 
@@ -2095,8 +1583,8 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
-               alt="Nickyzhang" />
-          <p class="site-author-name" itemprop="name">Nickyzhang</p>
+               alt="nickyzhang" />
+          <p class="site-author-name" itemprop="name">nickyzhang</p>
            
               <p class="site-description motion-element" itemprop="description">大道至简</p>
           
@@ -2106,7 +1594,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-count">37</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2128,7 +1616,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -2160,11 +1648,11 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://twitter.com/5ibinbin" target="_blank" title="Twitter">
+                <a href="https://juejin.im/user/5710677fc4c9710054a72c1c" target="_blank" title="掘金">
                   
-                    <i class="fa fa-fw fa-twitter"></i>
+                    <i class="fa fa-fw fa-globe"></i>
                   
-                  Twitter
+                  掘金
                 </a>
               </span>
             
@@ -2184,19 +1672,11 @@
             <ul class="links-of-blogroll-list">
               
                 <li class="links-of-blogroll-item">
-                  <a href="http://www.polayoutu.com/collections" title="泼辣有图" target="_blank">泼辣有图</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
                   <a href="https://stocksnap.io" title="图片下载" target="_blank">图片下载</a>
                 </li>
               
                 <li class="links-of-blogroll-item">
                   <a href="https://www.pexels.com" title="唯美图片" target="_blank">唯美图片</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://unsplash.com" title="随手拍图" target="_blank">随手拍图</a>
                 </li>
               
                 <li class="links-of-blogroll-item">
@@ -2220,7 +1700,7 @@
                 </li>
               
                 <li class="links-of-blogroll-item">
-                  <a href="https://ifttt.com/discover" title="网络自动化神奇" target="_blank">网络自动化神奇</a>
+                  <a href="https://ifttt.com/discover" title="IFTTT" target="_blank">IFTTT</a>
                 </li>
               
             </ul>
@@ -2250,11 +1730,11 @@
 <div class="copyright" >
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Nickyzhang</span>
+  <span class="author" itemprop="copyrightHolder">nickyzhang</span>
 </div>
 
 
@@ -2270,7 +1750,7 @@
 -->
 
 <div class="powered-by">
-<span class="post-count">博客全站共26.6k字</span>
+<span class="post-count">博客全站共22.8k字</span>
 </div>
   
 

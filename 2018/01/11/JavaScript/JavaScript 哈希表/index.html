@@ -115,7 +115,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript 哈希表的实现">
 <meta property="og:url" content="http://5ibinbin.com/2018/01/11/JavaScript/JavaScript 哈希表/index.html">
-<meta property="og:site_name" content="Nickyzhang">
+<meta property="og:site_name" content="nickyzhang">
 <meta property="og:description" content="致敬不再年轻的马努·吉诺比利 哈希表  通过把关键码值映射到表中一个位置来访问记录，根据Key value而直接进行访问的数据结构。这个映射函数叫做散列函数，存放记录的数组叫做散列表。    对比  数组：查找容易，插入和删除较难链表：查找较难，插入和删除比较容易哈希表：把上述的两种优势有效的结合起来    简单实现">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://5ibinbin.com/img/manu.png">
@@ -140,9 +140,9 @@
       author: '博主'
     },
     algolia: {
-      applicationID: 'K4NJ5NB3MG',
-      apiKey: 'e1e30fb0b0b74037a43a11697e95c2be',
-      indexName: 'my-blog',
+      applicationID: '6PW0R2U8B6',
+      apiKey: '4c9f6a3f55f38e2ae34680174334ec31',
+      indexName: 'blog',
       hits: {"per_page":10},
       labels: {"input_placeholder":"输入关键字","hits_empty":"没有找到与【${query}】相关的内容","hits_stats":"${hits}条相关记录，共耗时 ${time} ms"}
     }
@@ -179,7 +179,7 @@
 
 
 
-  <title> JavaScript 哈希表的实现 | Nickyzhang </title>
+  <title> JavaScript 哈希表的实现 | nickyzhang </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -215,7 +215,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Nickyzhang</span>
+        <span class="site-title">nickyzhang</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -359,13 +359,13 @@
     <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2018/01/11/JavaScript/JavaScript 哈希表/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nickyzhang">
+      <meta itemprop="name" content="nickyzhang">
     </span>
 
     
@@ -664,8 +664,8 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
-               alt="Nickyzhang" />
-          <p class="site-author-name" itemprop="name">Nickyzhang</p>
+               alt="nickyzhang" />
+          <p class="site-author-name" itemprop="name">nickyzhang</p>
            
               <p class="site-description motion-element" itemprop="description">大道至简</p>
           
@@ -675,7 +675,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-count">37</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -697,7 +697,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -729,11 +729,11 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://twitter.com/5ibinbin" target="_blank" title="Twitter">
+                <a href="https://juejin.im/user/5710677fc4c9710054a72c1c" target="_blank" title="掘金">
                   
-                    <i class="fa fa-fw fa-twitter"></i>
+                    <i class="fa fa-fw fa-globe"></i>
                   
-                  Twitter
+                  掘金
                 </a>
               </span>
             
@@ -753,19 +753,11 @@
             <ul class="links-of-blogroll-list">
               
                 <li class="links-of-blogroll-item">
-                  <a href="http://www.polayoutu.com/collections" title="泼辣有图" target="_blank">泼辣有图</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
                   <a href="https://stocksnap.io" title="图片下载" target="_blank">图片下载</a>
                 </li>
               
                 <li class="links-of-blogroll-item">
                   <a href="https://www.pexels.com" title="唯美图片" target="_blank">唯美图片</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://unsplash.com" title="随手拍图" target="_blank">随手拍图</a>
                 </li>
               
                 <li class="links-of-blogroll-item">
@@ -789,7 +781,7 @@
                 </li>
               
                 <li class="links-of-blogroll-item">
-                  <a href="https://ifttt.com/discover" title="网络自动化神奇" target="_blank">网络自动化神奇</a>
+                  <a href="https://ifttt.com/discover" title="IFTTT" target="_blank">IFTTT</a>
                 </li>
               
             </ul>
@@ -819,11 +811,11 @@
 <div class="copyright" >
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Nickyzhang</span>
+  <span class="author" itemprop="copyrightHolder">nickyzhang</span>
 </div>
 
 
@@ -839,7 +831,7 @@
 -->
 
 <div class="powered-by">
-<span class="post-count">博客全站共26.6k字</span>
+<span class="post-count">博客全站共22.8k字</span>
 </div>
   
 
