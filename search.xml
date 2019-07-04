@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LeetCode：950.按递增顺序显示卡牌]]></title>
+    <url>%2F2019%2F07%2F04%2FLeetCode%2F950%2F</url>
+    <content type="text"><![CDATA[题目 按递增顺序显示卡牌 描述 牌组中的每张卡牌都对应有一个唯一的整数。你可以按你想要的顺序对这套卡片进行排序。最初，这些卡牌在牌组里是正面朝下的（即，未显示状态）。现在，重复执行以下步骤，直到显示所有卡牌为止：从牌组顶部抽一张牌，显示它，然后将其从牌组中移出。如果牌组中仍有牌，则将下一张处于牌组顶部的牌放在牌组的底部。如果仍有未显示的牌，那么返回步骤 1。否则，停止行动。返回能以递增顺序显示卡牌的牌组顺序。答案中的第一张牌被认为处于牌堆顶部。 示例 输入：[17,13,11,2,3,5,7] 输出：[2,13,3,11,5,17,7] 过程演示 我们得到的牌组顺序为 [17,13,11,2,3,5,7]（这个顺序不重要），然后将其重新排序。重新排序后，牌组以 [2,13,3,11,5,17,7] 开始，其中 2 位于牌组的顶部。我们显示 2，然后将 13 移到底部。牌组现在是 [3,11,5,17,7,13]。我们显示 3，并将 11 移到底部。牌组现在是 [5,17,7,13,11]。我们显示 5，然后将 17 移到底部。牌组现在是 [7,13,11,17]。我们显示 7，并将 13 移到底部。牌组现在是 [11,17,13]。我们显示 11，然后将 17 移到底部。牌组现在是 [13,17]。我们展示 13，然后将 17 移到底部。牌组现在是 [17]。我们显示 17。由于所有卡片都是按递增顺序排列显示的，所以答案是正确的。 讲解 题目理解：整个抽牌过程我们可以理解为：牌组顶部抽一张，将下一张放到牌组底部。我们可以先将数组排序，然后倒推整个过程：将牌组底部的牌弹出并放到牌组顶部，再在牌组顶部放一张牌 解题思路 1234567891011var deckRevealedIncreasing = function(deck) &#123; deck.sort((x, y) =&gt; x - y); //排序 let result = []; while (deck.length &gt; 0) &#123; if (result.length &gt; 0) &#123; result.unshift(result.pop()) //先将元素从尾部到首部 &#125; result.unshift(deck.pop()) //再将元素放到首部 &#125; return result;&#125;;]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode：11.盛最多水的容器]]></title>
     <url>%2F2019%2F06%2F16%2FLeetCode%2F11%2F</url>
     <content type="text"><![CDATA[题目 盛最多水的容器 描述 给定 n 个非负整数 a1，a2，…，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0)。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。 说明：你不能倾斜容器，且 n 的值至少为 2。 图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为 49。 示例 输入: [1,8,6,2,5,4,8,3,7]输出: 49 讲解 题目理解：如上图，垂直的两条线段将会与坐标轴构成一个矩形区域，矩形面积越大代表容器可以容纳更多的水，所以此题可理解为求矩形区域面积的最大值 解题思路 方法一：暴力求解可以通过两次for循环求出所有的可能出现的情况，找出最大值 1234567891011var maxArea = function(height) &#123; let len = height.length; let maxArea = 0; if(len &lt; 2) return; // 判断数组长度不小于2 for(let i = 0; i &lt; len; i++)&#123; for (let j = i+1; j &lt; len; j++)&#123; maxArea = Math.max(maxArea, (j-i) * Math.min(height[i], height[j])) &#125; &#125; return maxArea&#125;; 复杂度分析 时间复杂度：O(n2)，计算所有的n(n-1)/2种情况 空间复杂度：O(1) 方法一：双指针法将两个指针放到数组的开始和结尾，使用maxArea来存储矩形面积。每循环一次都会更新maxArea，并移动较小数值所对应的指针(为什么移动较小数值的？看这个矩形，在宽度一定(两个指针移动之后的宽度都是-1，所以宽度一定)的情况下，是不是保留高度高的情况下才有可能使面积更大)，最后就得出了最大的面积 12345678910111213141516var maxArea = function(height) &#123; let len = height.length; let maxArea = 0; let left = 0; let right = len - 1; if(len &lt; 2) return; while(left &lt; right)&#123; maxArea = Math.max(maxArea, (right - left)*Math.min(height[left], height[right])); if (height[left] &lt;= height[right])&#123; left++ &#125; else &#123; right-- &#125; &#125; return maxArea&#125;; 复杂度分析 时间复杂度：O(n)，只需要扫描一次 空间复杂度：O(1)]]></content>

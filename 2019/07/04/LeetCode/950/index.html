@@ -94,7 +94,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="数据结构," />
+  <meta name="keywords" content="LeetCode," />
 
 
 
@@ -110,20 +110,18 @@
 
 
 
-<meta name="description" content="序言：本文将带你掌握二叉树、二叉搜索树以及他们的构建、元素的查找和删除  二叉树  满足树中的节点最多只能有两个的就称为二叉树  二叉搜索树(BTS)   在满足二叉树的基础上且满足左侧节点的值比父节点小，右侧节点的值比左侧节点大的称为二叉搜索树。  二叉树特性    由于这种树形的数据结构使得其无论是增删还是查找，算法的时间复杂度都为O(h)，h为数的高度。因此二叉树应尽可能的使左右平衡。">
-<meta name="keywords" content="数据结构">
+<meta name="description" content="题目  按递增顺序显示卡牌  描述 牌组中的每张卡牌都对应有一个唯一的整数。你可以按你想要的顺序对这套卡片进行排序。最初，这些卡牌在牌组里是正面朝下的（即，未显示状态）。现在，重复执行以下步骤，直到显示所有卡牌为止：从牌组顶部抽一张牌，显示它，然后将其从牌组中移出。如果牌组中仍有牌，则将下一张处于牌组顶部的牌放在牌组的底部。如果仍有未显示的牌，那么返回步骤 1。否则，停止行动。返回能以递增顺序显示">
+<meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二叉搜索树">
-<meta property="og:url" content="http://5ibinbin.com/2018/01/09/Structure/二叉搜索树/index.html">
+<meta property="og:title" content="LeetCode：950.按递增顺序显示卡牌">
+<meta property="og:url" content="http://5ibinbin.com/2019/07/04/LeetCode/950/index.html">
 <meta property="og:site_name" content="nickyzhang">
-<meta property="og:description" content="序言：本文将带你掌握二叉树、二叉搜索树以及他们的构建、元素的查找和删除  二叉树  满足树中的节点最多只能有两个的就称为二叉树  二叉搜索树(BTS)   在满足二叉树的基础上且满足左侧节点的值比父节点小，右侧节点的值比左侧节点大的称为二叉搜索树。  二叉树特性    由于这种树形的数据结构使得其无论是增删还是查找，算法的时间复杂度都为O(h)，h为数的高度。因此二叉树应尽可能的使左右平衡。">
+<meta property="og:description" content="题目  按递增顺序显示卡牌  描述 牌组中的每张卡牌都对应有一个唯一的整数。你可以按你想要的顺序对这套卡片进行排序。最初，这些卡牌在牌组里是正面朝下的（即，未显示状态）。现在，重复执行以下步骤，直到显示所有卡牌为止：从牌组顶部抽一张牌，显示它，然后将其从牌组中移出。如果牌组中仍有牌，则将下一张处于牌组顶部的牌放在牌组的底部。如果仍有未显示的牌，那么返回步骤 1。否则，停止行动。返回能以递增顺序显示">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://5ibinbin.com/img/delete_node.png">
-<meta property="og:updated_time" content="2019-06-15T15:21:51.000Z">
+<meta property="og:updated_time" content="2019-07-04T00:17:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="二叉搜索树">
-<meta name="twitter:description" content="序言：本文将带你掌握二叉树、二叉搜索树以及他们的构建、元素的查找和删除  二叉树  满足树中的节点最多只能有两个的就称为二叉树  二叉搜索树(BTS)   在满足二叉树的基础上且满足左侧节点的值比父节点小，右侧节点的值比左侧节点大的称为二叉搜索树。  二叉树特性    由于这种树形的数据结构使得其无论是增删还是查找，算法的时间复杂度都为O(h)，h为数的高度。因此二叉树应尽可能的使左右平衡。">
-<meta name="twitter:image" content="http://5ibinbin.com/img/delete_node.png">
+<meta name="twitter:title" content="LeetCode：950.按递增顺序显示卡牌">
+<meta name="twitter:description" content="题目  按递增顺序显示卡牌  描述 牌组中的每张卡牌都对应有一个唯一的整数。你可以按你想要的顺序对这套卡片进行排序。最初，这些卡牌在牌组里是正面朝下的（即，未显示状态）。现在，重复执行以下步骤，直到显示所有卡牌为止：从牌组顶部抽一张牌，显示它，然后将其从牌组中移出。如果牌组中仍有牌，则将下一张处于牌组顶部的牌放在牌组的底部。如果仍有未显示的牌，那么返回步骤 1。否则，停止行动。返回能以递增顺序显示">
 
 
 
@@ -173,13 +171,13 @@
 
 
 
-  <link rel="canonical" href="http://5ibinbin.com/2018/01/09/Structure/二叉搜索树/"/>
+  <link rel="canonical" href="http://5ibinbin.com/2019/07/04/LeetCode/950/"/>
 
 
 
 
 
-  <title> 二叉搜索树 | nickyzhang </title>
+  <title> LeetCode：950.按递增顺序显示卡牌 | nickyzhang </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -356,7 +354,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2018/01/09/Structure/二叉搜索树/">
+    <link itemprop="mainEntityOfPage" href="http://5ibinbin.com/2019/07/04/LeetCode/950/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="nickyzhang">
@@ -377,7 +375,7 @@
             
             
               
-                二叉搜索树
+                LeetCode：950.按递增顺序显示卡牌
               
             
           </h1>
@@ -392,8 +390,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-09T00:00:00+08:00">
-                2018-01-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-04T00:00:00+08:00">
+                2019-07-04
               </time>
             
 
@@ -415,8 +413,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
                   </a>
                 </span>
 
@@ -432,7 +430,7 @@
 
           
           
-             <span id="/2018/01/09/Structure/二叉搜索树/" class="leancloud_visitors" data-flag-title="二叉搜索树">
+             <span id="/2019/07/04/LeetCode/950/" class="leancloud_visitors" data-flag-title="LeetCode：950.按递增顺序显示卡牌">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -461,71 +459,25 @@
       
 
       
-        <blockquote>
-<p>序言：本文将带你掌握二叉树、二叉搜索树以及他们的构建、元素的查找和删除</p>
-</blockquote>
-<p><strong>二叉树</strong></p>
+        <p><strong>题目</strong></p>
 <blockquote>
-<p>满足树中的节点最多只能有两个的就称为二叉树</p>
+<p><a href="https://leetcode-cn.com/problems/reveal-cards-in-increasing-order/" target="_blank" rel="noopener">按递增顺序显示卡牌</a></p>
 </blockquote>
-<p><strong>二叉搜索树<code>(BTS)</code></strong> </p>
+<p><strong>描述</strong></p>
+<h5 id="牌组中的每张卡牌都对应有一个唯一的整数。你可以按你想要的顺序对这套卡片进行排序。"><a href="#牌组中的每张卡牌都对应有一个唯一的整数。你可以按你想要的顺序对这套卡片进行排序。" class="headerlink" title="牌组中的每张卡牌都对应有一个唯一的整数。你可以按你想要的顺序对这套卡片进行排序。"></a>牌组中的每张卡牌都对应有一个唯一的整数。你可以按你想要的顺序对这套卡片进行排序。</h5><h5 id="最初，这些卡牌在牌组里是正面朝下的（即，未显示状态）。"><a href="#最初，这些卡牌在牌组里是正面朝下的（即，未显示状态）。" class="headerlink" title="最初，这些卡牌在牌组里是正面朝下的（即，未显示状态）。"></a>最初，这些卡牌在牌组里是正面朝下的（即，未显示状态）。</h5><h5 id="现在，重复执行以下步骤，直到显示所有卡牌为止："><a href="#现在，重复执行以下步骤，直到显示所有卡牌为止：" class="headerlink" title="现在，重复执行以下步骤，直到显示所有卡牌为止："></a>现在，重复执行以下步骤，直到显示所有卡牌为止：</h5><h5 id="从牌组顶部抽一张牌，显示它，然后将其从牌组中移出。如果牌组中仍有牌，则将下一张处于牌组顶部的牌放在牌组的底部。如果仍有未显示的牌，那么返回步骤-1。否则，停止行动。返回能以递增顺序显示卡牌的牌组顺序。"><a href="#从牌组顶部抽一张牌，显示它，然后将其从牌组中移出。如果牌组中仍有牌，则将下一张处于牌组顶部的牌放在牌组的底部。如果仍有未显示的牌，那么返回步骤-1。否则，停止行动。返回能以递增顺序显示卡牌的牌组顺序。" class="headerlink" title="从牌组顶部抽一张牌，显示它，然后将其从牌组中移出。如果牌组中仍有牌，则将下一张处于牌组顶部的牌放在牌组的底部。如果仍有未显示的牌，那么返回步骤 1。否则，停止行动。返回能以递增顺序显示卡牌的牌组顺序。"></a>从牌组顶部抽一张牌，显示它，然后将其从牌组中移出。如果牌组中仍有牌，则将下一张处于牌组顶部的牌放在牌组的底部。如果仍有未显示的牌，那么返回步骤 1。否则，停止行动。返回能以递增顺序显示卡牌的牌组顺序。</h5><h5 id="答案中的第一张牌被认为处于牌堆顶部。"><a href="#答案中的第一张牌被认为处于牌堆顶部。" class="headerlink" title="答案中的第一张牌被认为处于牌堆顶部。"></a>答案中的第一张牌被认为处于牌堆顶部。</h5><a id="more"></a>
+<p><strong>示例</strong></p>
 <blockquote>
-<p>在满足二叉树的基础上且满足左侧节点的值比父节点小，右侧节点的值比左侧节点大的称为二叉搜索树。</p>
+<p>输入：[17,13,11,2,3,5,7]</p>
+<p>输出：[2,13,3,11,5,17,7]</p>
 </blockquote>
-<p><strong>二叉树特性</strong>  </p>
+<p><strong>过程演示</strong></p>
+<p>我们得到的牌组顺序为 [17,13,11,2,3,5,7]（这个顺序不重要），然后将其重新排序。<br>重新排序后，牌组以 [2,13,3,11,5,17,7] 开始，其中 2 位于牌组的顶部。<br>我们显示 2，然后将 13 移到底部。牌组现在是 [3,11,5,17,7,13]。<br>我们显示 3，并将 11 移到底部。牌组现在是 [5,17,7,13,11]。<br>我们显示 5，然后将 17 移到底部。牌组现在是 [7,13,11,17]。<br>我们显示 7，并将 13 移到底部。牌组现在是 [11,17,13]。<br>我们显示 11，然后将 17 移到底部。牌组现在是 [13,17]。<br>我们展示 13，然后将 17 移到底部。牌组现在是 [17]。<br>我们显示 17。<br>由于所有卡片都是按递增顺序排列显示的，所以答案是正确的。</p>
+<p><strong>讲解</strong></p>
 <blockquote>
-<p>由于这种树形的数据结构使得其无论是增删还是查找，算法的时间复杂度都为<code>O(h)</code>，<code>h</code>为数的高度。因此二叉树应尽可能的使左右平衡。  </p>
+<p>题目理解：整个抽牌过程我们可以理解为：牌组顶部抽一张，将下一张放到牌组底部。我们可以先将数组排序，然后倒推整个过程：将牌组底部的牌弹出并放到牌组顶部，再在牌组顶部放一张牌</p>
 </blockquote>
-<a id="more"></a>
-<p><strong>二叉搜索树的构建</strong>  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">BinarySearchTree</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> Node = <span class="function"><span class="keyword">function</span>(<span class="params">key</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.key = key;</span><br><span class="line">		<span class="keyword">this</span>.left = <span class="literal">null</span>;</span><br><span class="line">		<span class="keyword">this</span>.right = <span class="literal">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">let</span> root = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>创建<code>BinarySearchTree</code>类，声明每一个节点的数据结构，并将初始的根节点置为<code>null(行7)</code>  </p>
-</blockquote>
-<p><strong>二叉搜索树的插入<code>(insert)</code></strong>  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.insert = <span class="function"><span class="keyword">function</span>(<span class="params">key</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> newNode = <span class="keyword">new</span> Node(key);  </span><br><span class="line">	<span class="keyword">if</span> (root === <span class="literal">null</span>)&#123;</span><br><span class="line">		root = newNode;   </span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		insertNode(root, newNode);  </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>① 创建<code>Node</code>实例来生成一个新的节点<code>行2</code><br>② 判断根节点是否为<code>null</code>，若是则新建节点为根节点，否则插入节点  </p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> insertNode = <span class="function"><span class="keyword">function</span>(<span class="params">node, newNode</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (newNode.key &lt; node.key)&#123;</span><br><span class="line">		<span class="keyword">if</span> (node.left === <span class="literal">null</span>)&#123;</span><br><span class="line">			node.left = newNode;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			insertNode(node.left, newNode);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> (node.right === <span class="literal">null</span>)&#123;</span><br><span class="line">			node.right = newNode</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			insertNode(node.right, newNode);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>树非空情况下，先判断新节点是否小于当前节点(局部根节点)，若小于需要判断当前节点的左节点是否为空，若为空则将当前节点的左节点赋值为新节点，否则继续递归调用<code>insertNode</code>方法。若新节点大于当前节点的情况和小于的类似。  </p>
-</blockquote>
-<p><strong>搜索最大值最小值</strong></p>
-<blockquote>
-<p>我们知道二叉搜索树的左节点小于根节点小于右节点，我们可以根据这个特性来求得最大值最小值，方法如下：</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.minNode = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (root)&#123;</span><br><span class="line">		<span class="keyword">while</span>(root &amp;&amp; root.left !== <span class="literal">null</span>)&#123;</span><br><span class="line">			root = root.left;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> root.key;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.maxNode = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (root)&#123;</span><br><span class="line">		<span class="keyword">while</span>(root &amp;&amp; root.right !== <span class="literal">null</span>)&#123;</span><br><span class="line">			root = root.right;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> root.key;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>查找特定的值</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.search = <span class="function"><span class="keyword">function</span>(<span class="params">root, key</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (root === <span class="literal">null</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (key &lt; root.key)&#123;</span><br><span class="line">		<span class="keyword">return</span> search(root.left, key);</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (key &gt; root.key)&#123;</span><br><span class="line">		<span class="keyword">return</span> search(root.right, key);</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (key === root.key)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>依然使用了递归的思想。如果目标值比当前节点小则继续在左侧子树上搜索，比当前节点大则在右侧子树搜索直到找到目标值。</p>
-</blockquote>
-<p><strong>遍历二叉树</strong></p>
-<p><strong>中序遍历<code>(第二个遍历父节点)</code></strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.inOrderTraverse = <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>)</span>&#123;	inOrderTraverseNode(root, callback);&#125;;</span><br><span class="line"><span class="keyword">let</span> inOrderTraverse = <span class="function"><span class="keyword">function</span>(<span class="params">node, callback</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (node !== <span class="literal">null</span>)&#123;</span><br><span class="line">		inOrderTraverse(node.left, callback);</span><br><span class="line">		callback(node.key);</span><br><span class="line">		inOrderTraverse(node.right, callback);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// callback 回调函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printNode</span>(<span class="params">key</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(key);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>中序遍历顾名思义就是先遍历左侧节点然后是中间父节点最后右侧节点。采用递归的思路对二叉树进行遍历。  </p>
-</blockquote>
-<p><strong>先序遍历<code>(先遍历父节点)</code></strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.preOrderTraverse = <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>)</span>&#123;</span><br><span class="line">	preOrderTraverseNode(root, callback);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> preOrderTraverseNode = <span class="function"><span class="keyword">function</span>(<span class="params">node, callback</span>)</span>&#123;</span><br><span class="line">	callback(node.key);</span><br><span class="line">	preOrderTraverseNode(node.left, callback);</span><br><span class="line">	preOrderTraverseNode(node.right, callback);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 回调函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printNode</span>(<span class="params">key</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(key);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>先序遍历就是先遍历父节点然后是左侧节点最后是右侧节点，同样采用的是递归思路对二叉树进行遍历。</p>
-</blockquote>
-<p><strong>后序遍历<code>(最后遍历父节点)</code></strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.postOrderTraverse = <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>)</span>&#123;</span><br><span class="line">	postOrderTraverseNode(root, callback);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> postOrderTraverseNode = <span class="function"><span class="keyword">function</span>(<span class="params">node, callback</span>)</span>&#123;</span><br><span class="line">	postOrderTraverseNode(node.left, callback);</span><br><span class="line">	postOrderTraverseNode(node.right, callback);</span><br><span class="line">	callback(node.key);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 回调函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printNode</span>(<span class="params">key</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(key);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>后序遍历就是先遍历左节点然后是右节点最后遍历父节点，同样采用递归思路对二叉树进行遍历。</p>
-</blockquote>
-<p><strong>删除节点</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.remove = <span class="function"><span class="keyword">function</span>(<span class="params">key</span>)</span>&#123;</span><br><span class="line">	root = removeNode(root, key);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> removeNode = <span class="function"><span class="keyword">function</span>(<span class="params">node, key</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (node === <span class="literal">null</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (key &lt; node.key)&#123;</span><br><span class="line">		node.left = removeNode(node.left, key);</span><br><span class="line">		<span class="keyword">return</span> node;</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (key &gt; node.key)&#123;</span><br><span class="line">		node.right = removeNode(node.right, key);</span><br><span class="line">		<span class="keyword">return</span> node;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="comment">// 第一种情况--一个叶子节点</span></span><br><span class="line">		<span class="keyword">if</span> (node.left === <span class="literal">null</span> &amp;&amp; node.right === <span class="literal">null</span>)&#123;</span><br><span class="line">			node = <span class="literal">null</span>;</span><br><span class="line">			<span class="keyword">return</span> node;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 第二种情况--一个只有一个子节点的节点</span></span><br><span class="line">		<span class="keyword">if</span> (node.left === <span class="literal">null</span>)&#123;</span><br><span class="line">			node = node.right;</span><br><span class="line">			<span class="keyword">return</span> node;</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (node.right === <span class="literal">null</span>)&#123;</span><br><span class="line">			node = node.left;</span><br><span class="line">			<span class="keyword">return</span> node;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 第三种情况--一个有两个子节点的节点</span></span><br><span class="line">		<span class="keyword">let</span> minNode = findMinNode(node.right);</span><br><span class="line">		node.key = minNode.key;</span><br><span class="line">		node.right = removeNode(node.right, minNode);</span><br><span class="line">		<span class="keyword">return</span> node;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 找到右侧的最小节点</span></span><br><span class="line"><span class="keyword">let</span> findMinNode = <span class="function"><span class="keyword">function</span>(<span class="params">node</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (node)&#123;</span><br><span class="line">		<span class="keyword">while</span>(node &amp;&amp; node.left !== <span class="literal">null</span>)&#123;</span><br><span class="line">			node = node.left;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> node;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>要想移除节点，首先需要找到节点<code>node.key === key</code>，移除节点分三种情况：<br>① 只有一个叶子节点，我们只需要把节点置空就可以了<br>② 只有一个子节点的节点，需要把它的子节点覆盖当前节点<br>③ 有两个子节点，首先调用<code>findMinNode</code>找到当前节点的右子节点内的最小节点，然后将这个最小节点赋值给当前节点(把要删除的节点给覆盖删除)，最后再把之前找到的最小节点从原来的位置删除。  </p>
-</blockquote>
-<p><strong>关于第三种情况看一看下图以加深理解</strong></p>
-<p><img src="/img/delete_node.png" alt="双子节点"></p>
-
+<p><strong>解题思路</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> deckRevealedIncreasing = <span class="function"><span class="keyword">function</span>(<span class="params">deck</span>) </span>&#123;</span><br><span class="line">    deck.sort(<span class="function">(<span class="params">x, y</span>) =&gt;</span> x - y); <span class="comment">//排序</span></span><br><span class="line">    <span class="keyword">let</span> result = [];</span><br><span class="line">    <span class="keyword">while</span> (deck.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (result.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            result.unshift(result.pop()) <span class="comment">//先将元素从尾部到首部</span></span><br><span class="line">        &#125;</span><br><span class="line">        result.unshift(deck.pop()) <span class="comment">//再将元素放到首部</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -533,7 +485,7 @@
       
         <div class="copyright">
         <p><span>
-        <b>本文地址：</b><a href="/2018/01/09/Structure/二叉搜索树/" title="二叉搜索树">http://5ibinbin.com/2018/01/09/Structure/二叉搜索树/</a><br /><b>转载请注明出处！</b>
+        <b>本文地址：</b><a href="/2019/07/04/LeetCode/950/" title="LeetCode：950.按递增顺序显示卡牌">http://5ibinbin.com/2019/07/04/LeetCode/950/</a><br /><b>转载请注明出处！</b>
         </span></p>
         </div>
       
@@ -575,7 +527,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/数据结构/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
+            <a href="/tags/LeetCode/" rel="tag"><i class="fa fa-tag"></i> LeetCode</a>
           
         </div>
       
@@ -588,8 +540,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/08/Algorithm/顺序二分查找/" rel="next" title="顺序查找和二分查找">
-                <i class="fa fa-chevron-left"></i> 顺序查找和二分查找
+              <a href="/2019/06/16/LeetCode/11/" rel="next" title="LeetCode：11.盛最多水的容器">
+                <i class="fa fa-chevron-left"></i> LeetCode：11.盛最多水的容器
               </a>
             
           </div>
@@ -597,10 +549,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/11/Structure/JavaScript 哈希表/" rel="prev" title="JavaScript 哈希表的实现">
-                JavaScript 哈希表的实现 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
